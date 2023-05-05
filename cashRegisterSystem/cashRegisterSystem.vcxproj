@@ -86,14 +86,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="login_form.cpp" />
     <ClCompile Include="sqlite\sqlite3.c" />
     <QtRcc Include="cashRegisterSystem.qrc" />
     <QtUic Include="cashRegisterSystem.ui" />
     <QtMoc Include="cashRegisterSystem.h" />
     <ClCompile Include="cashRegisterSystem.cpp" />
     <ClCompile Include="main.cpp" />
+    <QtUic Include="login_form.ui" />
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="login_form.h" />
     <ClInclude Include="sqlite\sqlite3.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

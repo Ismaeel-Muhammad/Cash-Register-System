@@ -1,1 +1,1 @@
-G:\Projects\cash-register-system\cashRegisterSystem\x64\Debug\cashRegisterSystem.exe
+C:\Users\hp\source\repos\cashRegisterSystem\x64\Debug\cashRegisterSystem.exe
