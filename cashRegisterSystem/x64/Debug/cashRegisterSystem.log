@@ -1,0 +1,7 @@
+﻿  Reading Qt configuration (C:/Qt/6.5.0/msvc2019_64/bin/qmake)
+  sqlite3.c
+  cashRegisterSystem.cpp
+  main.cpp
+  qrc_cashRegisterSystem.cpp
+  moc_cashRegisterSystem.cpp
+  cashRegisterSystem.vcxproj -> G:\Projects\cash-register-system\cashRegisterSystem\x64\Debug\cashRegisterSystem.exe
