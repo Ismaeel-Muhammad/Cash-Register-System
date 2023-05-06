@@ -28,255 +28,85 @@ cashRegisterSystem::~cashRegisterSystem()
 }
 void cashRegisterSystem::on_snacks_clicked() {
 
-    if (m_type[0] == false)
+    if (!m_type[0])
     {
         m_ui->stackedWidget->setCurrentIndex(0);
         m_type[0] = true;
-
-        QVBoxLayout* layout = qobject_cast<QVBoxLayout*> (m_ui->frame_snacks->layout());
-
-
-        int rc = sqlite3_open("mydatabase.db", &m_db);
-        const  char* sql = "select * from products where type ='snacks'";
-        sqlite3_stmt* stmt;
-        int i = 0;
-        int id;
-        QString name;
-        int quantity;
-        QString price;
-        rc = sqlite3_prepare_v2(m_db, sql, -1, &stmt, NULL);
-        while (sqlite3_step(stmt) == SQLITE_ROW) {
-
-
-            id = sqlite3_column_int(stmt, 0);
-            name = QString::fromUtf8(reinterpret_cast<const char*>(sqlite3_column_text(stmt, 1)));
-            quantity = sqlite3_column_int(stmt, 2);
-            price = QString::fromUtf8(reinterpret_cast<const char*>(sqlite3_column_text(stmt, 3)));
-            QHBoxLayout* newLayout = new QHBoxLayout();
-            QLabel* names = new QLabel(tr("Name: %1").arg(name));
-            newLayout->addWidget(names);
-            names->setAlignment(Qt::AlignCenter);
-            names->setStyleSheet("border:none; background-color:#91a7ff");
-
-            QLabel* quantities = new QLabel(tr("quantity: %1").arg(quantity));
-            newLayout->addWidget(quantities);
-            quantities->setAlignment(Qt::AlignCenter);
-            quantities->setStyleSheet("border:none; background-color:#91a7ff");
-
-            QLabel* prices = new QLabel(tr("Price: %1").arg(price));
-            newLayout->addWidget(prices);
-            prices->setAlignment(Qt::AlignCenter);
-            prices->setStyleSheet("border:none; background-color:#91a7ff");
-            QPushButton* add = new QPushButton(tr("add"));
-            add->setObjectName("add");
-            add->setStyleSheet("QPushButton {"
-                "  border: 2px solid gray;"
-                "  border-radius: 5px;"
-                "  background-color: qradialgradient(cx:0.5, cy:0.5, radius: 1, fx:0.5, fy:0.5, stop:0 white, stop:1 #adadad);"
-                "  color: black;"
-                "  padding: 5px 10px;"
-                "}");
-
-            newLayout->addWidget(add);
-            layout->addLayout(newLayout);
-        }
-
-        sqlite3_finalize(stmt);
-        sqlite3_close(m_db);
-
+        populateProductList(qobject_cast<QVBoxLayout*> (m_ui->frame_snacks->layout()), "select * from products where type ='snacks'");
     }
-    else if (m_type[0] == true) {
-        m_ui->stackedWidget->setCurrentIndex(0);
-    }
-
+    else m_ui->stackedWidget->setCurrentIndex(0);
 }
 
 void cashRegisterSystem::on_vegetables_clicked() {
-    if (m_type[1] == false)
+    if (!m_type[1])
     {
         m_ui->stackedWidget->setCurrentIndex(3);
         m_type[1] = true;
-        QVBoxLayout* layout = qobject_cast<QVBoxLayout*> (m_ui->frame_vegetables->layout());
-
-
-        int rc = sqlite3_open("mydatabase.db", &m_db);
-        const  char* sql = "select * from products where type ='vegetables'";
-        sqlite3_stmt* stmt;
-        int i = 0;
-        int id;
-        QString name;
-        int quantity;
-        QString price;
-        rc = sqlite3_prepare_v2(m_db, sql, -1, &stmt, NULL);
-        while (sqlite3_step(stmt) == SQLITE_ROW) {
-
-
-            id = sqlite3_column_int(stmt, 0);
-            name = QString::fromUtf8(reinterpret_cast<const char*>(sqlite3_column_text(stmt, 1)));
-            quantity = sqlite3_column_int(stmt, 2);
-            price = QString::fromUtf8(reinterpret_cast<const char*>(sqlite3_column_text(stmt, 3)));
-            QHBoxLayout* newLayout = new QHBoxLayout();
-            QLabel* names = new QLabel(tr("Name: %1").arg(name));
-            newLayout->addWidget(names);
-            names->setAlignment(Qt::AlignCenter);
-            names->setStyleSheet("border:none; background-color:#91a7ff");
-            QLabel* quantities = new QLabel(tr("quantity: %1").arg(quantity));
-            newLayout->addWidget(quantities);
-            quantities->setAlignment(Qt::AlignCenter);
-            quantities->setStyleSheet("border:none; background-color:#91a7ff");
-            QLabel* prices = new QLabel(tr("Price: %1").arg(price));
-            newLayout->addWidget(prices);
-            prices->setAlignment(Qt::AlignCenter);
-            prices->setStyleSheet("border:none; background-color:#91a7ff");
-            QPushButton* add = new QPushButton(tr("add"));
-            add->setObjectName("add");
-            add->setStyleSheet("QPushButton {"
-                "  border: 2px solid gray;"
-                "  border-radius: 5px;"
-                "  background-color: qradialgradient(cx:0.5, cy:0.5, radius: 1, fx:0.5, fy:0.5, stop:0 white, stop:1 #adadad);"
-                "  color: black;"
-                "  padding: 5px 10px;"
-                "}"
-                "QPushButton:hover{cursor:pointer;}"
-            );
-            add->setCursor(Qt::ArrowCursor);
-
-            newLayout->addWidget(add);
-            layout->addLayout(newLayout);
-        }
-
-        sqlite3_finalize(stmt);
-        sqlite3_close(m_db);
+        populateProductList(qobject_cast<QVBoxLayout*> (m_ui->frame_vegetables->layout()), "select * from products where type ='vegetables'");
     }
-    else if (m_type[1] == true)
-    {
-        m_ui->stackedWidget->setCurrentIndex(3);
-
-    }
+    else m_ui->stackedWidget->setCurrentIndex(3);
 }
 
 void cashRegisterSystem::on_fruits_clicked() {
-    if (m_type[2] == false)
+    if (!m_type[2])
     {
         m_ui->stackedWidget->setCurrentIndex(1);
         m_type[2] = true;
-
-        QVBoxLayout* layout = qobject_cast<QVBoxLayout*> (m_ui->frame_fruits->layout());
-
-
-        int rc = sqlite3_open("mydatabase.db", &m_db);
-        const  char* sql = "select * from products where type ='fruit'";
-        sqlite3_stmt* stmt;
-        int i = 0;
-        int id;
-        QString name;
-        int quantity;
-        QString price;
-        rc = sqlite3_prepare_v2(m_db, sql, -1, &stmt, NULL);
-        while (sqlite3_step(stmt) == SQLITE_ROW) {
-
-
-            id = sqlite3_column_int(stmt, 0);
-            name = QString::fromUtf8(reinterpret_cast<const char*>(sqlite3_column_text(stmt, 1)));
-            quantity = sqlite3_column_int(stmt, 2);
-            price = QString::fromUtf8(reinterpret_cast<const char*>(sqlite3_column_text(stmt, 3)));
-            QHBoxLayout* newLayout = new QHBoxLayout();
-            QLabel* names = new QLabel(tr("Name: %1").arg(name));
-            newLayout->addWidget(names);
-            names->setAlignment(Qt::AlignCenter);
-            names->setStyleSheet("border:none; background-color:#91a7ff");
-            QLabel* quantities = new QLabel(tr("quantity: %1").arg(quantity));
-            newLayout->addWidget(quantities);
-            quantities->setAlignment(Qt::AlignCenter);
-            quantities->setStyleSheet("border:none; background-color:#91a7ff");
-            QLabel* prices = new QLabel(tr("Price: %1").arg(price));
-            newLayout->addWidget(prices);
-            prices->setAlignment(Qt::AlignCenter);
-            prices->setStyleSheet("border:none; background-color:#91a7ff");
-            QPushButton* add = new QPushButton(tr("add"));
-            add->setObjectName("add");
-            add->setStyleSheet("QPushButton {"
-                "  border: 2px solid gray;"
-                "  border-radius: 5px;"
-                "  background-color: qradialgradient(cx:0.5, cy:0.5, radius: 1, fx:0.5, fy:0.5, stop:0 white, stop:1 #adadad);"
-                "  color: black;"
-                "  padding: 5px 10px;"
-                "}"
-                "QPushButton:hover{cursor:pointer;}"
-            );
-            add->setCursor(Qt::ArrowCursor);
-
-            newLayout->addWidget(add);
-            layout->addLayout(newLayout);
-        }
-
-        sqlite3_finalize(stmt);
-        sqlite3_close(m_db);
+        populateProductList(qobject_cast<QVBoxLayout*> (m_ui->frame_fruits->layout()), "select * from products where type ='fruit'");
     }
-    else if (m_type[2] == true)
-    {
-        m_ui->stackedWidget->setCurrentIndex(1);
-
-    }
-
+    else m_ui->stackedWidget->setCurrentIndex(1);
 }
-
 
 void cashRegisterSystem::on_drinks_clicked() {
     if (m_type[3] == false)
     {
         m_ui->stackedWidget->setCurrentIndex(2);
         m_type[3] = true;
-
-        QVBoxLayout* layout = qobject_cast<QVBoxLayout*> (m_ui->frame_drinks->layout());
-
-
-        int rc = sqlite3_open("mydatabase.db", &m_db);
-        const  char* sql = "select * from products where type ='drink'";
-        sqlite3_stmt* stmt;
-        int i = 0;
-        int id;
-        QString name;
-        int quantity;
-        QString price;
-        rc = sqlite3_prepare_v2(m_db, sql, -1, &stmt, NULL);
-        while (sqlite3_step(stmt) == SQLITE_ROW) {
-
-            id = sqlite3_column_int(stmt, 0);
-            name = QString::fromUtf8(reinterpret_cast<const char*>(sqlite3_column_text(stmt, 1)));
-            quantity = sqlite3_column_int(stmt, 2);
-            price = QString::fromUtf8(reinterpret_cast<const char*>(sqlite3_column_text(stmt, 3)));
-            QHBoxLayout* newLayout = new QHBoxLayout();
-            QLabel* names = new QLabel(tr("Name: %1").arg(name));
-            newLayout->addWidget(names);
-            names->setAlignment(Qt::AlignCenter);
-            names->setStyleSheet("border:none; background-color:#91a7ff");
-            QLabel* quantities = new QLabel(tr("quantity: %1").arg(quantity));
-            newLayout->addWidget(quantities);
-            quantities->setAlignment(Qt::AlignCenter);
-            quantities->setStyleSheet("border:none; background-color:#91a7ff");
-            QLabel* prices = new QLabel(tr("Price: %1").arg(price));
-            newLayout->addWidget(prices);
-            prices->setAlignment(Qt::AlignCenter);
-            prices->setStyleSheet("border:none; background-color:#91a7ff");
-            QPushButton* add = new QPushButton(tr("add"));
-            add->setObjectName("add");
-            add->setStyleSheet("QPushButton {"
-                "  border: 2px solid gray;"
-                "  border-radius: 5px;"
-                "  background-color: qradialgradient(cx:0.5, cy:0.5, radius: 1, fx:0.5, fy:0.5, stop:0 white, stop:1 #adadad);"
-                "  color: black;"
-                "  padding: 5px 10px;"
-                "}");
-
-            newLayout->addWidget(add);
-            layout->addLayout(newLayout);
-        }
-
-        sqlite3_finalize(stmt);
-        sqlite3_close(m_db);
+        populateProductList(qobject_cast<QVBoxLayout*> (m_ui->frame_drinks->layout()), "select * from products where type ='drink'");
     }
-    else if (m_type[3] == true)
-        m_ui->stackedWidget->setCurrentIndex(2);
+    else if (m_type[3] == true) m_ui->stackedWidget->setCurrentIndex(2);
+}
 
+void cashRegisterSystem::populateProductList(QVBoxLayout* layout, const char* sqlQuery) {
+    int rc = sqlite3_open("mydatabase.db", &m_db);
+    sqlite3_stmt* stmt;
+    int id;
+    QString name;
+    int quantity;
+    QString price;
+    rc = sqlite3_prepare_v2(m_db, sqlQuery, -1, &stmt, NULL);
+    while (sqlite3_step(stmt) == SQLITE_ROW) {
+        id = sqlite3_column_int(stmt, 0);
+        name = QString::fromUtf8(reinterpret_cast<const char*>(sqlite3_column_text(stmt, 1)));
+        quantity = sqlite3_column_int(stmt, 2);
+        price = QString::fromUtf8(reinterpret_cast<const char*>(sqlite3_column_text(stmt, 3)));
+        QHBoxLayout* newLayout = new QHBoxLayout();
+        QLabel* names = new QLabel(tr("Name: %1").arg(name));
+        newLayout->addWidget(names);
+        names->setAlignment(Qt::AlignCenter);
+        names->setStyleSheet("border:none; background-color:#91a7ff");
+        QLabel* quantities = new QLabel(tr("quantity: %1").arg(quantity));
+        newLayout->addWidget(quantities);
+        quantities->setAlignment(Qt::AlignCenter);
+        quantities->setStyleSheet("border:none; background-color:#91a7ff");
+        QLabel* prices = new QLabel(tr("Price: %1").arg(price));
+        newLayout->addWidget(prices);
+        prices->setAlignment(Qt::AlignCenter);
+        prices->setStyleSheet("border:none; background-color:#91a7ff");
+        QPushButton* add = new QPushButton(tr("add"));
+        add->setObjectName("add");
+        add->setStyleSheet("QPushButton {"
+            "  border: 2px solid gray;"
+            "  border-radius: 5px;"
+            "  background-color: qradialgradient(cx:0.5, cy:0.5, radius: 1, fx:0.5, fy:0.5, stop:0 white, stop:1 #adadad);"
+            "  color: black;"
+            "  padding: 5px 10px;"
+            "}");
+
+        newLayout->addWidget(add);
+        layout->addLayout(newLayout);
+    }
+
+    sqlite3_finalize(stmt);
+    sqlite3_close(m_db);
 }

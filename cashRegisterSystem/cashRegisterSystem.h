@@ -28,8 +28,8 @@ private:
     Ui::TestShitClass* m_ui;
     sqlite3* m_db;
     bool m_type[4];
-    void displayProducts(const QString& productType);
-    void productsHelper(QVBoxLayout*, const QString&, int);
+    void populateProductList(QVBoxLayout*, const char*);
+
 private slots:
     void on_snacks_clicked();
     void on_vegetables_clicked();
