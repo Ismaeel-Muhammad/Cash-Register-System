@@ -86,6 +86,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="database.cpp" />
     <ClCompile Include="login_form.cpp" />
     <ClCompile Include="sqlite\sqlite3.c" />
     <QtRcc Include="cashRegisterSystem.qrc" />
@@ -97,6 +98,7 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="login_form.h" />
+    <ClInclude Include="database.h" />
     <ClInclude Include="sqlite\sqlite3.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

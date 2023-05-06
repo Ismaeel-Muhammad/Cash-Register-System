@@ -13,7 +13,7 @@ public:
 	~login_form();
 
 private:
-	Ui::login_formClass* m_ui;
+	Ui::Form* m_ui;
 
 private slots:
 	void on_login_btn_clicked();

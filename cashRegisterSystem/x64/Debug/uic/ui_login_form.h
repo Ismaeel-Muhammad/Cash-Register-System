@@ -64,7 +64,7 @@ public:
 };
 
 namespace Ui {
-    class login_formClass : public Ui_Form {};
+    class Form: public Ui_Form {};
 } // namespace Ui
 
 QT_END_NAMESPACE

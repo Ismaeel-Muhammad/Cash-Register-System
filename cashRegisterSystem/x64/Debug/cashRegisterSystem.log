@@ -1,4 +1,8 @@
-﻿  login_form.cpp
+﻿  moc login_form.h
+  login_form.cpp
   main.cpp
+  sqlite3.c
+  qrc_cashRegisterSystem.cpp
+  moc_cashRegisterSystem.cpp
   moc_login_form.cpp
-  cashRegisterSystem.vcxproj -> C:\Users\hp\source\repos\cashRegisterSystem\x64\Debug\cashRegisterSystem.exe
+  cashRegisterSystem.vcxproj -> G:\Projects\cash-register-system\cashRegisterSystem\x64\Debug\cashRegisterSystem.exe
