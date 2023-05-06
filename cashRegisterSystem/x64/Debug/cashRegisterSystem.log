@@ -1,8 +1,9 @@
-﻿  moc login_form.h
+﻿  moc cashRegisterSystem.h
+  cashRegisterSystem.cpp
   login_form.cpp
   main.cpp
-  sqlite3.c
-  qrc_cashRegisterSystem.cpp
   moc_cashRegisterSystem.cpp
   moc_login_form.cpp
+  qrc_cashRegisterSystem.cpp
+  LINK : G:\Projects\cash-register-system\cashRegisterSystem\x64\Debug\cashRegisterSystem.exe not found or not built by the last incremental link; performing full link
   cashRegisterSystem.vcxproj -> G:\Projects\cash-register-system\cashRegisterSystem\x64\Debug\cashRegisterSystem.exe

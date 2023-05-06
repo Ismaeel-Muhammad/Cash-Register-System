@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
     cashRegisterSystem w;
     login_form login;
-    login.show();
+    w.show();
     /*Database db("mydatabase.db");
     db.initialize();
     db.insertRows("p1","15",20, "drink");
