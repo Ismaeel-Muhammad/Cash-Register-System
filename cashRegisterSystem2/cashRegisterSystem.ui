@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>cashRegisterSystem2Class</class>
+ <widget class="QMainWindow" name="cashRegisterSystem2Class">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>802</width>
+    <height>515</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>cashRegisterSystem2</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QStackedWidget" name="formsStackedWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>801</width>
+      <height>481</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="login">
+     <widget class="QLineEdit" name="username_field">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>140</y>
+        <width>200</width>
+        <height>31</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="passwod_label">
+      <property name="geometry">
+       <rect>
+        <x>510</x>
+        <y>200</y>
+        <width>91</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font-weight:bold;
+font-size:18px;</string>
+      </property>
+      <property name="text">
+       <string>الرقم السري</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="login_btn">
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>270</y>
+        <width>100</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font-weight:bold;
+font-size:18px;</string>
+      </property>
+      <property name="text">
+       <string>دخول</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="password_field">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>200</y>
+        <width>201</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="echoMode">
+       <enum>QLineEdit::Normal</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="username_label">
+      <property name="geometry">
+       <rect>
+        <x>490</x>
+        <y>140</y>
+        <width>111</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font-weight:bold;
+font-size:18px;
+</string>
+      </property>
+      <property name="text">
+       <string>اسم المستخدم</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="main_form">
+     <widget class="QPushButton" name="snacks">
+      <property name="geometry">
+       <rect>
+        <x>670</x>
+        <y>20</y>
+        <width>71</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>snacks</string>
+      </property>
+     </widget>
+     <widget class="QStackedWidget" name="ProductsStackedWidget">
+      <property name="geometry">
+       <rect>
+        <x>330</x>
+        <y>80</y>
+        <width>451</width>
+        <height>381</height>
+       </rect>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="page_3">
+       <widget class="QScrollArea" name="scrollArea">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>0</y>
+          <width>441</width>
+          <height>381</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 1px solid black;
+</string>
+        </property>
+        <property name="widgetResizable">
+         <bool>true</bool>
+        </property>
+        <widget class="QWidget" name="scrollAreaSnacksContents">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>439</width>
+           <height>379</height>
+          </rect>
+         </property>
+        </widget>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="page_4">
+       <widget class="QScrollArea" name="scrollArea_2">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>0</y>
+          <width>441</width>
+          <height>381</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 1px solid black;
+</string>
+        </property>
+        <property name="widgetResizable">
+         <bool>true</bool>
+        </property>
+        <widget class="QWidget" name="scrollAreaDrinksContents">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>439</width>
+           <height>379</height>
+          </rect>
+         </property>
+        </widget>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="page_5">
+       <widget class="QScrollArea" name="scrollArea_3">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>0</y>
+          <width>441</width>
+          <height>381</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 1px solid black;
+</string>
+        </property>
+        <property name="widgetResizable">
+         <bool>true</bool>
+        </property>
+        <widget class="QWidget" name="scrollAreaVegetablesContents">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>439</width>
+           <height>379</height>
+          </rect>
+         </property>
+        </widget>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="page_6">
+       <widget class="QScrollArea" name="scrollArea_4">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>0</y>
+          <width>441</width>
+          <height>381</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 1px solid black;
+</string>
+        </property>
+        <property name="widgetResizable">
+         <bool>true</bool>
+        </property>
+        <widget class="QWidget" name="scrollAreaFruitsContents">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>439</width>
+           <height>379</height>
+          </rect>
+         </property>
+        </widget>
+       </widget>
+      </widget>
+     </widget>
+     <widget class="QPushButton" name="fruits">
+      <property name="geometry">
+       <rect>
+        <x>490</x>
+        <y>20</y>
+        <width>71</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>fruits</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="vegetables">
+      <property name="geometry">
+       <rect>
+        <x>580</x>
+        <y>20</y>
+        <width>71</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>vegetables</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="drinks">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>20</y>
+        <width>81</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>drinks</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>802</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="cashRegisterSystem2.qrc"/>
+ </resources>
+ <connections/>
+</ui>

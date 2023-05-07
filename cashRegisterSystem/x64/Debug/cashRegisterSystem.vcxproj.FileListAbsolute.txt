@@ -1,3 +1,0 @@
-C:\Users\hp\source\repos\cashRegisterSystem\x64\Debug\cashRegisterSystem.exe
-G:\Projects\cash-register-system\cashRegisterSystem\x64\Debug\cashRegisterSystem.exe
-D:\Projects\TestQT\cashRegisterSystem\cashRegisterSystem\x64\Debug\cashRegisterSystem.exe
