@@ -1,4 +1,5 @@
 #include "cashRegisterSystem.h"
-void cashRegisterSystem::on_name_button_clicked() {
-    QMessageBox::warning(this, "hey", "I am working here!!!");
+
+void cashRegisterSystem::on_name_button_clicked(int quantity) {
+    QMessageBox::warning(this, "hey", QString::number(quantity));
 }

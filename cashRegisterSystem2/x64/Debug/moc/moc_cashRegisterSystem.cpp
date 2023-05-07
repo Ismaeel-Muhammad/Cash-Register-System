@@ -100,15 +100,15 @@ Q_CONSTINIT static const uint qt_meta_data_CLASScashRegisterSystemENDCLASS[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,   50,    2, 0x08,    1 /* Private */,
-       3,    0,   51,    2, 0x08,    2 /* Private */,
-       4,    0,   52,    2, 0x08,    3 /* Private */,
-       5,    0,   53,    2, 0x08,    4 /* Private */,
-       6,    0,   54,    2, 0x08,    5 /* Private */,
-       7,    0,   55,    2, 0x08,    6 /* Private */,
+       1,    1,   50,    2, 0x0a,    1 /* Public */,
+       3,    0,   53,    2, 0x08,    3 /* Private */,
+       4,    0,   54,    2, 0x08,    4 /* Private */,
+       5,    0,   55,    2, 0x08,    5 /* Private */,
+       6,    0,   56,    2, 0x08,    6 /* Private */,
+       7,    0,   57,    2, 0x08,    7 /* Private */,
 
  // slots: parameters
-    QMetaType::Void,
+    QMetaType::Void, QMetaType::Int,    2,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -129,6 +129,7 @@ Q_CONSTINIT const QMetaObject cashRegisterSystem::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<cashRegisterSystem, std::true_type>,
         // method 'on_name_button_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<int, std::false_type>,
         // method 'on_snacks_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_drinks_clicked'
@@ -149,7 +150,7 @@ void cashRegisterSystem::qt_static_metacall(QObject *_o, QMetaObject::Call _c, i
         auto *_t = static_cast<cashRegisterSystem *>(_o);
         (void)_t;
         switch (_id) {
-        case 0: _t->on_name_button_clicked(); break;
+        case 0: _t->on_name_button_clicked((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
         case 1: _t->on_snacks_clicked(); break;
         case 2: _t->on_drinks_clicked(); break;
         case 3: _t->on_vegetables_clicked(); break;
@@ -158,7 +159,6 @@ void cashRegisterSystem::qt_static_metacall(QObject *_o, QMetaObject::Call _c, i
         default: ;
         }
     }
-    (void)_a;
 }
 
 const QMetaObject *cashRegisterSystem::metaObject() const

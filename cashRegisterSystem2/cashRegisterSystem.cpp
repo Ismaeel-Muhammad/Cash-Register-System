@@ -70,6 +70,7 @@ void cashRegisterSystem::populateProductList(QWidget* scrollContents, QString pr
     QGridLayout* layout = new QGridLayout(this);
 
     QVector<QPushButton*> name_button;
+    QVector<QSpinBox*> quantityBox;
     while (sqlite3_step(stmt) == SQLITE_ROW) {
         //int id = sqlite3_column_int(stmt, 0);
         int quantity = sqlite3_column_int(stmt, 2);
@@ -79,9 +80,11 @@ void cashRegisterSystem::populateProductList(QWidget* scrollContents, QString pr
 
         //Assigning the strings to widgets...
         name_button.push_back(new QPushButton(name));
+        quantityBox.push_back(new QSpinBox());
         QLabel* lab = new QLabel("Price: " + QString::fromUtf8(price) + ", Quantity: " + QString::number(quantity) + ".");
-        lab->setStyleSheet("background:transparent; Text-align:left;font-family:century gothic;font-size:18px; color:black");
         QFrame* line;
+        //Setting up the lable style sheet
+        lab->setStyleSheet("background:transparent; Text-align:left;font-family:century gothic;font-size:18px; color:black");
         //Creating horizontal line with desired properties...
         line = new QFrame();
         line->setFrameShape(QFrame::HLine);
@@ -96,11 +99,15 @@ void cashRegisterSystem::populateProductList(QWidget* scrollContents, QString pr
             " QPushButton#btnName_1:hover {"
             "     color: indigo;font-size:25px;"
             " }");
+        //Setting up quantityBox proberties
+        quantityBox.back()->setObjectName("quantityBox_1");
 
-        connect(name_button.back(), SIGNAL(clicked()), this, SLOT(on_name_button_clicked()));
-
+        connect(name_button.back(), &QPushButton::clicked, [this, quantityBoxPtr = quantityBox.back()]() {
+            on_name_button_clicked(quantityBoxPtr->value());
+        });
         //adding all the widgets to the previously cretaed grid layout...
         layout->addWidget(name_button.back());
+        layout->addWidget(quantityBox.back());
         layout->addWidget(lab);
         layout->addWidget(line);
         scrollContents->setLayout(layout);
