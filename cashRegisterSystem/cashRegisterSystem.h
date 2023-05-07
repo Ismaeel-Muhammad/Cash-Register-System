@@ -12,6 +12,7 @@
 #include "sqlite/sqlite3.h"
 #include <QtCore>
 
+
 using namespace std;
 
 class cashRegisterSystem : public QWidget
@@ -35,6 +36,8 @@ private slots:
     void on_vegetables_clicked();
     void on_fruits_clicked();
     void on_drinks_clicked();
-
+    void on_login_btn_clicked();
+    void on_search_clicked();
+    void on_back_clicked();
 };
 #endif // CASH_REGISTER_SYSTEM_H

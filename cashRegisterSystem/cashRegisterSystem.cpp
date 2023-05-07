@@ -1,5 +1,8 @@
 #include "cashRegisterSystem.h"
 
+
+
+
 cashRegisterSystem::cashRegisterSystem(QWidget* parent)
     : QWidget(parent), m_ui(new Ui::TestShitClass)
 {
@@ -75,6 +78,7 @@ void cashRegisterSystem::populateProductList(QVBoxLayout* layout, const char* sq
     int quantity;
     QString price;
     rc = sqlite3_prepare_v2(m_db, sqlQuery, -1, &stmt, NULL);
+        layout->setAlignment(Qt::AlignTop);
     while (sqlite3_step(stmt) == SQLITE_ROW) {
         id = sqlite3_column_int(stmt, 0);
         name = QString::fromUtf8(reinterpret_cast<const char*>(sqlite3_column_text(stmt, 1)));
@@ -110,3 +114,44 @@ void cashRegisterSystem::populateProductList(QVBoxLayout* layout, const char* sq
     sqlite3_finalize(stmt);
     sqlite3_close(m_db);
 }
+void cashRegisterSystem::on_login_btn_clicked()
+{
+    QString name = m_ui->name->text();
+    QString password = m_ui->password->text();
+    m_ui->password->setEchoMode(QLineEdit::Password);
+    m_ui->password->setHidden(true);
+    if (name == "admin" && password == "admin") {
+        QMessageBox::information(this, "Login", "Welcome Admin!");
+        m_ui->stackedWidget_2->setCurrentIndex(1);
+    }
+}
+
+void cashRegisterSystem::on_search_clicked()
+{
+    int rc = sqlite3_open("mydatabase.db", &m_db);
+    sqlite3_stmt* stmt;
+
+    m_ui->stackedWidget_2->setCurrentIndex(2);
+    QString search_term = m_ui->lineEdit->text();
+    rc = sqlite3_prepare_v2(m_db, "SELECT * FROM Customers WHERE id=:search_term", -1, &stmt, NULL);
+    sqlite3_bind_text(stmt, 1, search_term.toUtf8().constData(), -1, SQLITE_TRANSIENT);
+    rc = sqlite3_step(stmt);
+    int id = sqlite3_column_int(stmt, 0);
+    QString name = QString::fromUtf8(reinterpret_cast<const char*>(sqlite3_column_text(stmt, 1)));
+    QString Phone = QString::fromUtf8(reinterpret_cast<const char*>(sqlite3_column_text(stmt, 2)));
+    int total_paid = sqlite3_column_int(stmt, 3);
+    QString Class = QString::fromUtf8(reinterpret_cast<const char*>(sqlite3_column_text(stmt, 4)));
+    m_ui->customername->setText(name);
+    m_ui->customerPH->setText(Phone);
+    m_ui->class_2->setText(Class);
+    m_ui->totalpaid->display(total_paid);
+    m_ui->id->display(id);
+    sqlite3_finalize(stmt);
+    sqlite3_close(m_db);
+}
+
+void cashRegisterSystem::on_back_clicked()
+{
+    m_ui->stackedWidget_2->setCurrentIndex(1);
+}
+

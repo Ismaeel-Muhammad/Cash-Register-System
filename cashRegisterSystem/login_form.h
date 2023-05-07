@@ -16,7 +16,7 @@ private:
 	Ui::Form* m_ui;
 
 private slots:
-	void on_login_btn_clicked();
+	//void on_login_btn_clicked();
 
 };
 #endif // LOGIN_FORM_H

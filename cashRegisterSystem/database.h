@@ -9,7 +9,8 @@ public:
     Database(const char* filename);
     ~Database();
     void initialize();
-    void insertRows(string name, string price, int quantity, string type);
+    void insertCustomerRows(string name, string phone_number, int total_paid, string Class);
+    void insertProdRows(string name, string price, int quantity, string type);
 private:
     sqlite3* m_db;
     int getRowCount(sqlite3*, const char*);
