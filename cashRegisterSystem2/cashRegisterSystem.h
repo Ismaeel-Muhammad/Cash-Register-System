@@ -10,7 +10,9 @@
 #include <QLabel>
 #include <QGridLayout>
 #include <sstream>
-
+#include "database.h"
+#include <string>
+using namespace std;
 class cashRegisterSystem : public QMainWindow {
     Q_OBJECT
 public slots:
@@ -32,6 +34,9 @@ private slots:
     void on_vegetables_clicked();
     void on_fruits_clicked();
     void on_login_btn_clicked();
+    void on_AddNewCustomer_clicked();
+    void on_add_new_clicked();
+    void on_go_back_clicked();
 };
 
 #endif // CASH_REG_SYSTEM_H

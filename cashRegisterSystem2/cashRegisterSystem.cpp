@@ -7,8 +7,11 @@ cashRegisterSystem::cashRegisterSystem(QWidget* parent)
     std::fill_n(m_loadedOnce, 4, false);
     m_ui->setupUi(this);
     m_ui->password_field->setEchoMode(QLineEdit::Password);
-  /*  m_ui->scrollAreaSnacksContents->setStyleSheet("background-color:#FFFFFF;");
-    m_ui->scrollArea->setStyleSheet("border:none; border-radius:2px;");*/
+    
+    m_ui->class_box->addItem("\u0639\u0645\u064A\u0644 \u0639\u0627\u062F\u064A"); // Úãíá ÚÇÏí
+    m_ui->class_box->addItem("\u0639\u0645\u064A\u0644 \u0645\u0647\u0645"); // Úãíá ãåã
+    m_ui->class_box->addItem("\u0637\u0627\u0644\u0628"); // ØÇáÈ
+
 }
 
 cashRegisterSystem::~cashRegisterSystem()
@@ -132,4 +135,9 @@ void cashRegisterSystem::populateProductList(QWidget* scrollContents, QString pr
 
     sqlite3_finalize(stmt);
     sqlite3_close(m_ProductsDB);
+}
+
+void cashRegisterSystem::on_AddNewCustomer_clicked()
+{
+    m_ui->formsStackedWidget->setCurrentIndex(2);
 }

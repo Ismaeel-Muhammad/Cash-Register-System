@@ -133,7 +133,7 @@ font-size:18px;
        </rect>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="page_3">
        <widget class="QScrollArea" name="scrollArea">
@@ -298,6 +298,125 @@ font-size:18px;
       </property>
       <property name="text">
        <string>drinks</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="AddNewCustomer">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>30</y>
+        <width>161</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>اضافة عميل</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="creating_customer_account">
+     <widget class="QPushButton" name="add_new">
+      <property name="geometry">
+       <rect>
+        <x>700</x>
+        <y>470</y>
+        <width>121</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>اضافة</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="go_back">
+      <property name="geometry">
+       <rect>
+        <x>400</x>
+        <y>470</y>
+        <width>131</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>عودة</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="new_customer_name">
+      <property name="geometry">
+       <rect>
+        <x>520</x>
+        <y>140</y>
+        <width>201</width>
+        <height>41</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="new_customer_phone">
+      <property name="geometry">
+       <rect>
+        <x>520</x>
+        <y>200</y>
+        <width>201</width>
+        <height>41</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="nameLable">
+      <property name="geometry">
+       <rect>
+        <x>730</x>
+        <y>150</y>
+        <width>71</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>اسم العميل</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="phoneLable">
+      <property name="geometry">
+       <rect>
+        <x>730</x>
+        <y>210</y>
+        <width>71</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>رقم الموبايل</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="classLable">
+      <property name="geometry">
+       <rect>
+        <x>730</x>
+        <y>300</y>
+        <width>81</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>تصنيف العميل</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="class_box">
+      <property name="geometry">
+       <rect>
+        <x>520</x>
+        <y>290</y>
+        <width>201</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="editable">
+       <bool>false</bool>
+      </property>
+      <property name="currentText">
+       <string/>
+      </property>
+      <property name="currentIndex">
+       <number>-1</number>
       </property>
      </widget>
     </widget>

@@ -84,6 +84,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="cart.cpp" />
+    <ClCompile Include="CreatingAccount.cpp" />
     <ClCompile Include="database.cpp" />
     <ClCompile Include="login.cpp" />
     <ClCompile Include="sqlite\sqlite3.c" />
