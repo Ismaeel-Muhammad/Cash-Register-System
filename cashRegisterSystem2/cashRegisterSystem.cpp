@@ -7,6 +7,8 @@ cashRegisterSystem::cashRegisterSystem(QWidget* parent)
     std::fill_n(m_loadedOnce, 4, false);
     m_ui->setupUi(this);
     m_ui->password_field->setEchoMode(QLineEdit::Password);
+  /*  m_ui->scrollAreaSnacksContents->setStyleSheet("background-color:#FFFFFF;");
+    m_ui->scrollArea->setStyleSheet("border:none; border-radius:2px;");*/
 }
 
 cashRegisterSystem::~cashRegisterSystem()
@@ -69,48 +71,63 @@ void cashRegisterSystem::populateProductList(QWidget* scrollContents, QString pr
     //Creating a grid layout...
     QGridLayout* layout = new QGridLayout(this);
 
-    QVector<QPushButton*> name_button;
+    int verticalItems = 0;
+    int horizontalItems = 0;
+    QLabel* nameLabel;
+    QVector<QPushButton*> add_button;
     QVector<QSpinBox*> quantityBox;
+    int i = 0;
     while (sqlite3_step(stmt) == SQLITE_ROW) {
         //int id = sqlite3_column_int(stmt, 0);
+        
         int quantity = sqlite3_column_int(stmt, 2);
         const char* name = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 1));
         const char* price = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 3));
         //const char* type = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 4));
-
+        QFrame* frame = new QFrame;
+        QVBoxLayout* vboxLayout = new QVBoxLayout(frame);
+        nameLabel = new QLabel("Name: " + QString::fromUtf8(name));
+        nameLabel->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
+        layout->setAlignment(Qt::AlignTop);
         //Assigning the strings to widgets...
-        name_button.push_back(new QPushButton(name));
+        add_button.push_back(new QPushButton("Add To Cart!"));
         quantityBox.push_back(new QSpinBox());
-        QLabel* lab = new QLabel("Price: " + QString::fromUtf8(price) + ", Quantity: " + QString::number(quantity) + ".");
-        QFrame* line;
+        QLabel* lab = new QLabel("Price: " + QString::fromUtf8(price) + ", Quantity: " + QString::number(quantity));
         //Setting up the lable style sheet
-        lab->setStyleSheet("background:transparent; Text-align:left;font-family:century gothic;font-size:18px; color:black");
         //Creating horizontal line with desired properties...
-        line = new QFrame();
-        line->setFrameShape(QFrame::HLine);
-        line->setFrameShadow(QFrame::Sunken);
-        line->setStyleSheet("background:transparent");
         //Setting up the pushbutton with the on-hover changes...
-        name_button.back()->setObjectName("btnName_1");
-        name_button.back()->setStyleSheet(
-            "   QPushButton#btnName_1 {"
-            "     background:transparent; Text-align:left;font-family:century gothic;font-size:18px; color:navy;"
-            " }"
-            " QPushButton#btnName_1:hover {"
-            "     color: indigo;font-size:25px;"
-            " }");
+        add_button.back()->setObjectName("btnName_1");
+        lab->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+
         //Setting up quantityBox proberties
         quantityBox.back()->setObjectName("quantityBox_1");
-
-        connect(name_button.back(), &QPushButton::clicked, [this, quantityBoxPtr = quantityBox.back()]() {
+ 
+        connect(add_button.back(), &QPushButton::clicked, [this, quantityBoxPtr = quantityBox.back()]() {
             on_name_button_clicked(quantityBoxPtr->value());
         });
+        vboxLayout->addWidget(nameLabel);
+        vboxLayout->addWidget(lab);
+        vboxLayout->addWidget(quantityBox.back());
+        vboxLayout->addWidget(add_button.back());
+        if (i % 2==1)
+        {
+            frame->setStyleSheet("QFrame{background-color:rgba(184, 184, 184, 255)}");
+            
+            
+        }
+        
+        
+
         //adding all the widgets to the previously cretaed grid layout...
-        layout->addWidget(name_button.back());
-        layout->addWidget(quantityBox.back());
-        layout->addWidget(lab);
-        layout->addWidget(line);
+        layout->addWidget(frame, verticalItems, horizontalItems);
         scrollContents->setLayout(layout);
+        horizontalItems++;
+        if (horizontalItems % 5 == 0)
+        {
+            verticalItems++;
+            horizontalItems = 0;
+        }
+        i++;
     }
 
     sqlite3_finalize(stmt);

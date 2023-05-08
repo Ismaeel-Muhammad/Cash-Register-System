@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>802</width>
-    <height>515</height>
+    <width>1259</width>
+    <height>715</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,21 +17,21 @@
    <widget class="QStackedWidget" name="formsStackedWidget">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>801</width>
-      <height>481</height>
+      <x>30</x>
+      <y>10</y>
+      <width>1191</width>
+      <height>601</height>
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="login">
      <widget class="QLineEdit" name="username_field">
       <property name="geometry">
        <rect>
-        <x>270</x>
-        <y>140</y>
+        <x>460</x>
+        <y>150</y>
         <width>200</width>
         <height>31</height>
        </rect>
@@ -40,8 +40,8 @@
      <widget class="QLabel" name="passwod_label">
       <property name="geometry">
        <rect>
-        <x>510</x>
-        <y>200</y>
+        <x>700</x>
+        <y>210</y>
         <width>91</width>
         <height>31</height>
        </rect>
@@ -57,8 +57,8 @@ font-size:18px;</string>
      <widget class="QPushButton" name="login_btn">
       <property name="geometry">
        <rect>
-        <x>320</x>
-        <y>270</y>
+        <x>510</x>
+        <y>280</y>
         <width>100</width>
         <height>61</height>
        </rect>
@@ -74,8 +74,8 @@ font-size:18px;</string>
      <widget class="QLineEdit" name="password_field">
       <property name="geometry">
        <rect>
-        <x>270</x>
-        <y>200</y>
+        <x>460</x>
+        <y>210</y>
         <width>201</width>
         <height>31</height>
        </rect>
@@ -90,8 +90,8 @@ font-size:18px;</string>
      <widget class="QLabel" name="username_label">
       <property name="geometry">
        <rect>
-        <x>490</x>
-        <y>140</y>
+        <x>680</x>
+        <y>150</y>
         <width>111</width>
         <height>31</height>
        </rect>
@@ -110,11 +110,14 @@ font-size:18px;
      <widget class="QPushButton" name="snacks">
       <property name="geometry">
        <rect>
-        <x>670</x>
+        <x>830</x>
         <y>20</y>
         <width>71</width>
         <height>41</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
       </property>
       <property name="text">
        <string>snacks</string>
@@ -125,8 +128,8 @@ font-size:18px;
        <rect>
         <x>330</x>
         <y>80</y>
-        <width>451</width>
-        <height>381</height>
+        <width>781</width>
+        <height>481</height>
        </rect>
       </property>
       <property name="currentIndex">
@@ -138,8 +141,8 @@ font-size:18px;
          <rect>
           <x>10</x>
           <y>0</y>
-          <width>441</width>
-          <height>381</height>
+          <width>771</width>
+          <height>481</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -154,8 +157,8 @@ font-size:18px;
           <rect>
            <x>0</x>
            <y>0</y>
-           <width>439</width>
-           <height>379</height>
+           <width>769</width>
+           <height>479</height>
           </rect>
          </property>
         </widget>
@@ -167,8 +170,8 @@ font-size:18px;
          <rect>
           <x>10</x>
           <y>0</y>
-          <width>441</width>
-          <height>381</height>
+          <width>771</width>
+          <height>481</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -183,8 +186,8 @@ font-size:18px;
           <rect>
            <x>0</x>
            <y>0</y>
-           <width>439</width>
-           <height>379</height>
+           <width>769</width>
+           <height>479</height>
           </rect>
          </property>
         </widget>
@@ -196,8 +199,8 @@ font-size:18px;
          <rect>
           <x>10</x>
           <y>0</y>
-          <width>441</width>
-          <height>381</height>
+          <width>771</width>
+          <height>481</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -212,8 +215,8 @@ font-size:18px;
           <rect>
            <x>0</x>
            <y>0</y>
-           <width>439</width>
-           <height>379</height>
+           <width>769</width>
+           <height>479</height>
           </rect>
          </property>
         </widget>
@@ -225,8 +228,8 @@ font-size:18px;
          <rect>
           <x>10</x>
           <y>0</y>
-          <width>441</width>
-          <height>381</height>
+          <width>771</width>
+          <height>481</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -241,8 +244,8 @@ font-size:18px;
           <rect>
            <x>0</x>
            <y>0</y>
-           <width>439</width>
-           <height>379</height>
+           <width>769</width>
+           <height>479</height>
           </rect>
          </property>
         </widget>
@@ -252,11 +255,14 @@ font-size:18px;
      <widget class="QPushButton" name="fruits">
       <property name="geometry">
        <rect>
-        <x>490</x>
+        <x>650</x>
         <y>20</y>
         <width>71</width>
         <height>41</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
       </property>
       <property name="text">
        <string>fruits</string>
@@ -265,11 +271,14 @@ font-size:18px;
      <widget class="QPushButton" name="vegetables">
       <property name="geometry">
        <rect>
-        <x>580</x>
+        <x>740</x>
         <y>20</y>
         <width>71</width>
         <height>41</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
       </property>
       <property name="text">
        <string>vegetables</string>
@@ -278,11 +287,14 @@ font-size:18px;
      <widget class="QPushButton" name="drinks">
       <property name="geometry">
        <rect>
-        <x>390</x>
+        <x>560</x>
         <y>20</y>
         <width>81</width>
         <height>41</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
       </property>
       <property name="text">
        <string>drinks</string>
@@ -296,7 +308,7 @@ font-size:18px;
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>802</width>
+     <width>1259</width>
      <height>22</height>
     </rect>
    </property>
