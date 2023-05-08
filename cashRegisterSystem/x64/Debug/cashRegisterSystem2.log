@@ -1,0 +1,11 @@
+﻿  cashRegisterSystem.cpp
+G:\Projects\cash-register-system\cashRegisterSystem2\cashRegisterSystem.cpp(1,1): warning C4828: The file contains a character starting at offset 0x19b that is illegal in the current source character set (codepage 65001).
+G:\Projects\cash-register-system\cashRegisterSystem2\cashRegisterSystem.cpp(1,1): warning C4828: The file contains a character starting at offset 0x19d that is illegal in the current source character set (codepage 65001).
+G:\Projects\cash-register-system\cashRegisterSystem2\cashRegisterSystem.cpp(1,1): warning C4828: The file contains a character starting at offset 0x1a0 that is illegal in the current source character set (codepage 65001).
+G:\Projects\cash-register-system\cashRegisterSystem2\cashRegisterSystem.cpp(1,1): warning C4828: The file contains a character starting at offset 0x1a2 that is illegal in the current source character set (codepage 65001).
+G:\Projects\cash-register-system\cashRegisterSystem2\cashRegisterSystem.cpp(1,1): warning C4828: The file contains a character starting at offset 0x1f6 that is illegal in the current source character set (codepage 65001).
+G:\Projects\cash-register-system\cashRegisterSystem2\cashRegisterSystem.cpp(1,1): warning C4828: The file contains a character starting at offset 0x1f8 that is illegal in the current source character set (codepage 65001).
+G:\Projects\cash-register-system\cashRegisterSystem2\cashRegisterSystem.cpp(1,1): warning C4828: The file contains a character starting at offset 0x1fb that is illegal in the current source character set (codepage 65001).
+G:\Projects\cash-register-system\cashRegisterSystem2\cashRegisterSystem.cpp(1,1): warning C4828: The file contains a character starting at offset 0x23d that is illegal in the current source character set (codepage 65001).
+G:\Projects\cash-register-system\cashRegisterSystem2\cashRegisterSystem.cpp(1,1): warning C4828: The file contains a character starting at offset 0x23f that is illegal in the current source character set (codepage 65001).
+  cashRegisterSystem2.vcxproj -> G:\Projects\cash-register-system\cashRegisterSystem2\x64\Debug\cashRegisterSystem2.exe
