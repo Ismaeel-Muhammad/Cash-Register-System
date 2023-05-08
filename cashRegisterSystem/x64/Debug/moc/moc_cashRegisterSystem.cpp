@@ -51,11 +51,15 @@ static constexpr auto qt_meta_stringdata_CLASScashRegisterSystemENDCLASS = QtMoc
     "on_add_new_clicked",
     "on_go_back_clicked",
     "Delete_On_Click",
-    "on_check_discount_clicked"
+    "QPushButton*",
+    "on_check_discount_clicked",
+    "on_cancel_order_clicked",
+    "on_sell_clicked",
+    "on_retrieve_clicked"
 );
 #else  // !QT_MOC_HAS_STRING_DATA
 struct qt_meta_stringdata_CLASScashRegisterSystemENDCLASS_t {
-    uint offsetsAndSizes[26];
+    uint offsetsAndSizes[34];
     char stringdata0[19];
     char stringdata1[23];
     char stringdata2[1];
@@ -68,7 +72,11 @@ struct qt_meta_stringdata_CLASScashRegisterSystemENDCLASS_t {
     char stringdata9[19];
     char stringdata10[19];
     char stringdata11[16];
-    char stringdata12[26];
+    char stringdata12[13];
+    char stringdata13[26];
+    char stringdata14[24];
+    char stringdata15[16];
+    char stringdata16[20];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_CLASScashRegisterSystemENDCLASS_t::offsetsAndSizes) + ofs), len 
@@ -86,7 +94,11 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASScashRegisterSystemENDCLASS_t qt
         QT_MOC_LITERAL(166, 18),  // "on_add_new_clicked"
         QT_MOC_LITERAL(185, 18),  // "on_go_back_clicked"
         QT_MOC_LITERAL(204, 15),  // "Delete_On_Click"
-        QT_MOC_LITERAL(220, 25)   // "on_check_discount_clicked"
+        QT_MOC_LITERAL(220, 12),  // "QPushButton*"
+        QT_MOC_LITERAL(233, 25),  // "on_check_discount_clicked"
+        QT_MOC_LITERAL(259, 23),  // "on_cancel_order_clicked"
+        QT_MOC_LITERAL(283, 15),  // "on_sell_clicked"
+        QT_MOC_LITERAL(299, 19)   // "on_retrieve_clicked"
     },
     "cashRegisterSystem",
     "on_name_button_clicked",
@@ -100,7 +112,11 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASScashRegisterSystemENDCLASS_t qt
     "on_add_new_clicked",
     "on_go_back_clicked",
     "Delete_On_Click",
-    "on_check_discount_clicked"
+    "QPushButton*",
+    "on_check_discount_clicked",
+    "on_cancel_order_clicked",
+    "on_sell_clicked",
+    "on_retrieve_clicked"
 };
 #undef QT_MOC_LITERAL
 #endif // !QT_MOC_HAS_STRING_DATA
@@ -112,7 +128,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASScashRegisterSystemENDCLASS[] = {
       11,       // revision
        0,       // classname
        0,    0, // classinfo
-      11,   14, // methods
+      14,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -120,17 +136,20 @@ Q_CONSTINIT static const uint qt_meta_data_CLASScashRegisterSystemENDCLASS[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    3,   80,    2, 0x08,    1 /* Private */,
-       3,    0,   87,    2, 0x08,    5 /* Private */,
-       4,    0,   88,    2, 0x08,    6 /* Private */,
-       5,    0,   89,    2, 0x08,    7 /* Private */,
-       6,    0,   90,    2, 0x08,    8 /* Private */,
-       7,    0,   91,    2, 0x08,    9 /* Private */,
-       8,    0,   92,    2, 0x08,   10 /* Private */,
-       9,    0,   93,    2, 0x08,   11 /* Private */,
-      10,    0,   94,    2, 0x08,   12 /* Private */,
-      11,    0,   95,    2, 0x08,   13 /* Private */,
-      12,    0,   96,    2, 0x08,   14 /* Private */,
+       1,    3,   98,    2, 0x08,    1 /* Private */,
+       3,    0,  105,    2, 0x08,    5 /* Private */,
+       4,    0,  106,    2, 0x08,    6 /* Private */,
+       5,    0,  107,    2, 0x08,    7 /* Private */,
+       6,    0,  108,    2, 0x08,    8 /* Private */,
+       7,    0,  109,    2, 0x08,    9 /* Private */,
+       8,    0,  110,    2, 0x08,   10 /* Private */,
+       9,    0,  111,    2, 0x08,   11 /* Private */,
+      10,    0,  112,    2, 0x08,   12 /* Private */,
+      11,    2,  113,    2, 0x08,   13 /* Private */,
+      13,    0,  118,    2, 0x08,   16 /* Private */,
+      14,    0,  119,    2, 0x08,   17 /* Private */,
+      15,    0,  120,    2, 0x08,   18 /* Private */,
+      16,    0,  121,    2, 0x08,   19 /* Private */,
 
  // slots: parameters
     QMetaType::Void, QMetaType::Int, QMetaType::QString, QMetaType::Float,    2,    2,    2,
@@ -140,6 +159,9 @@ Q_CONSTINIT static const uint qt_meta_data_CLASScashRegisterSystemENDCLASS[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void, 0x80000000 | 12, QMetaType::Float,    2,    2,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -180,7 +202,15 @@ Q_CONSTINIT const QMetaObject cashRegisterSystem::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'Delete_On_Click'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<QPushButton *, std::false_type>,
+        QtPrivate::TypeAndForceComplete<float, std::false_type>,
         // method 'on_check_discount_clicked'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_cancel_order_clicked'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_sell_clicked'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_retrieve_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
@@ -201,9 +231,23 @@ void cashRegisterSystem::qt_static_metacall(QObject *_o, QMetaObject::Call _c, i
         case 6: _t->on_AddNewCustomer_clicked(); break;
         case 7: _t->on_add_new_clicked(); break;
         case 8: _t->on_go_back_clicked(); break;
-        case 9: _t->Delete_On_Click(); break;
+        case 9: _t->Delete_On_Click((*reinterpret_cast< std::add_pointer_t<QPushButton*>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<float>>(_a[2]))); break;
         case 10: _t->on_check_discount_clicked(); break;
+        case 11: _t->on_cancel_order_clicked(); break;
+        case 12: _t->on_sell_clicked(); break;
+        case 13: _t->on_retrieve_clicked(); break;
         default: ;
+        }
+    } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
+        switch (_id) {
+        default: *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType(); break;
+        case 9:
+            switch (*reinterpret_cast<int*>(_a[1])) {
+            default: *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType(); break;
+            case 0:
+                *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType::fromType< QPushButton* >(); break;
+            }
+            break;
         }
     }
 }
@@ -227,13 +271,13 @@ int cashRegisterSystem::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 11)
+        if (_id < 14)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 11;
+        _id -= 14;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 11)
-            *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 11;
+        if (_id < 14)
+            qt_static_metacall(this, _c, _id, _a);
+        _id -= 14;
     }
     return _id;
 }

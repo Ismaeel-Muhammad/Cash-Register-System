@@ -1,5 +1,4 @@
 #include "database.h"
-#include <QMessageBox>
 Database::Database(const char* filename) {
     int rc = sqlite3_open(filename, &m_db);
     if (rc != SQLITE_OK) {
@@ -43,11 +42,25 @@ void Database::insertCustomerRows(string name, string phone_number, int total_pa
         msg.exec();
     }
 }
+
+void Database::updateCustomerTotalPaid(string phone_number, float additional_pay)
+{
+    const char* gettingTotalPaid = sqlite3_mprintf("SELECT total_paid FROM Customers WHERE phone_number = '%q';", phone_number.c_str());
+    char* errMsg;
+    int rc = sqlite3_exec(m_db, gettingTotalPaid, NULL, NULL, &errMsg);
+    if (rc != SQLITE_OK) {
+        QMessageBox msg;
+        msg.setText(errMsg);
+        msg.exec();
+    }
+    QMessageBox msg;
+    msg.setText(gettingTotalPaid);
+    msg.exec();
+    //const char* updatingTotalPaid = sqlite3_mprintf("UPDATE customers SET total_paid = '%q' WHERE phone_number = '%q';", additional_pay, phone_number.c_str());
+}
+
 void Database::insertProdRows(string name, string price, int quantity, string type)
 {
-
-  
-
     int id = getRowCount(m_db, "Products") + 1;
     const char* insertProduct = sqlite3_mprintf("INSERT INTO Products(id, name, price, quantity, type) VALUES(%d, '%q', '%q', %d, '%q');", id, name.c_str(), price.c_str(), quantity, type.c_str());
     char* errMsg;

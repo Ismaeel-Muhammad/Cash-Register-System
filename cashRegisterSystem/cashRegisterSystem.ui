@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1327</width>
+    <width>1296</width>
     <height>715</height>
    </rect>
   </property>
@@ -361,7 +361,7 @@ font-size:18px;
            <height>411</height>
           </rect>
          </property>
-         <layout class="QVBoxLayout" name="verticalLayout">
+         <layout class="QVBoxLayout" name="cartVerticalLayout">
           <item>
            <spacer name="verticalSpacer">
             <property name="orientation">
@@ -431,7 +431,7 @@ font-size:18px;
         <string>رقم الموبايل</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="retrieve_2">
+      <widget class="QPushButton" name="cancel_order">
        <property name="geometry">
         <rect>
          <x>10</x>
@@ -644,7 +644,7 @@ font-size: 14px;</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1327</width>
+     <width>1296</width>
      <height>22</height>
     </rect>
    </property>

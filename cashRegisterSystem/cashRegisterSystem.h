@@ -12,6 +12,7 @@
 #include <sstream>
 #include "database.h"
 #include <string>
+
 using namespace std;
 class cashRegisterSystem : public QMainWindow {
     Q_OBJECT
@@ -41,8 +42,12 @@ private slots:
     void on_AddNewCustomer_clicked();
     void on_add_new_clicked();
     void on_go_back_clicked();
-    void Delete_On_Click();
+    void Delete_On_Click(QPushButton*, float);
     void on_check_discount_clicked();
+    void on_cancel_order_clicked();
+    void on_sell_clicked();
+    void on_retrieve_clicked();
+
 };
 
 #endif // CASH_REG_SYSTEM_H

@@ -1,6 +1,7 @@
 #ifndef DATABASE_H
 #define DATABASE_H
-
+#include "cashRegisterSystem.h"
+#include <QMessageBox>
 #include "./sqlite/sqlite3.h"
 #include <string>
 using namespace std;
@@ -9,8 +10,9 @@ public:
     Database(const char* filename);
     ~Database();
     void initialize();
-    void insertCustomerRows(string name, string phone_number, int total_paid, string Class);
-    void insertProdRows(string name, string price, int quantity, string type);
+    void insertCustomerRows(string, string, int, string);
+    void insertProdRows(string, string, int, string);
+    void updateCustomerTotalPaid(string, float);
 private:
     sqlite3* m_db;
     int getRowCount(sqlite3*, const char*);

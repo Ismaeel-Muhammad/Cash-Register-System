@@ -1,3 +1,4 @@
 C:\Users\hp\source\repos\cashRegisterSystem2\x64\Debug\cashRegisterSystem2.exe
 G:\Projects\cash-register-system\cashRegisterSystem2\x64\Debug\cashRegisterSystem2.exe
 D:\Projects\cashing\cash-register-system\cashRegisterSystem\x64\Debug\cashRegisterSystem2.exe
+G:\Projects\cash-register-system\cashRegisterSystem\x64\Debug\cashRegisterSystem2.exe
