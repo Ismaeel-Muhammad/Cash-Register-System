@@ -24,6 +24,11 @@ private:
     Ui::cashRegisterSystem2Class* m_ui;
     bool m_loadedOnce[4];
     sqlite3* m_ProductsDB;
+    sqlite3* m_customersDB;
+    float TotalBalanceForOperation;
+
+    QHash<QPushButton*, QFrame*> MappingLayout;
+
     void populateProductList(QWidget*, QString);
 
 private slots:
@@ -36,6 +41,8 @@ private slots:
     void on_AddNewCustomer_clicked();
     void on_add_new_clicked();
     void on_go_back_clicked();
+    void Delete_On_Click();
+    void on_check_discount_clicked();
 };
 
 #endif // CASH_REG_SYSTEM_H

@@ -66,13 +66,13 @@ public:
     QSpacerItem *verticalSpacer;
     QPushButton *sell;
     QPushButton *retrieve;
-    QLineEdit *lineEdit;
+    QLineEdit *phone_number;
     QLabel *label;
     QPushButton *retrieve_2;
     QLabel *price_before_const;
     QLabel *price_after_const;
-    QLabel *price_before_const_2;
-    QLabel *price_after_const_2;
+    QLabel *price_before;
+    QLabel *price_after;
     QPushButton *check_discount;
     QWidget *creating_customer_account;
     QPushButton *add_new;
@@ -91,7 +91,7 @@ public:
     {
         if (cashRegisterSystem2Class->objectName().isEmpty())
             cashRegisterSystem2Class->setObjectName("cashRegisterSystem2Class");
-        cashRegisterSystem2Class->resize(1262, 715);
+        cashRegisterSystem2Class->resize(1327, 715);
         centralWidget = new QWidget(cashRegisterSystem2Class);
         centralWidget->setObjectName("centralWidget");
         formsStackedWidget = new QStackedWidget(centralWidget);
@@ -231,12 +231,12 @@ public:
         retrieve = new QPushButton(frame);
         retrieve->setObjectName("retrieve");
         retrieve->setGeometry(QRect(130, 500, 101, 31));
-        lineEdit = new QLineEdit(frame);
-        lineEdit->setObjectName("lineEdit");
-        lineEdit->setGeometry(QRect(100, 420, 171, 21));
+        phone_number = new QLineEdit(frame);
+        phone_number->setObjectName("phone_number");
+        phone_number->setGeometry(QRect(100, 420, 171, 31));
         label = new QLabel(frame);
         label->setObjectName("label");
-        label->setGeometry(QRect(270, 420, 71, 21));
+        label->setGeometry(QRect(270, 420, 71, 31));
         label->setStyleSheet(QString::fromUtf8("border: none;"));
         retrieve_2 = new QPushButton(frame);
         retrieve_2->setObjectName("retrieve_2");
@@ -253,21 +253,21 @@ public:
 "color: #c92a2a;\n"
 "font-weight: bold;\n"
 "font-size: 14px;"));
-        price_before_const_2 = new QLabel(frame);
-        price_before_const_2->setObjectName("price_before_const_2");
-        price_before_const_2->setGeometry(QRect(180, 450, 61, 31));
-        price_before_const_2->setStyleSheet(QString::fromUtf8("border: none;\n"
+        price_before = new QLabel(frame);
+        price_before->setObjectName("price_before");
+        price_before->setGeometry(QRect(180, 450, 61, 31));
+        price_before->setStyleSheet(QString::fromUtf8("border: none;\n"
 "font-size: 14px"));
-        price_after_const_2 = new QLabel(frame);
-        price_after_const_2->setObjectName("price_after_const_2");
-        price_after_const_2->setGeometry(QRect(10, 450, 51, 31));
-        price_after_const_2->setStyleSheet(QString::fromUtf8("border: none;\n"
+        price_after = new QLabel(frame);
+        price_after->setObjectName("price_after");
+        price_after->setGeometry(QRect(10, 450, 51, 31));
+        price_after->setStyleSheet(QString::fromUtf8("border: none;\n"
 "color: #c92a2a;\n"
 "font-weight: bold;\n"
 "font-size: 14px;"));
         check_discount = new QPushButton(frame);
         check_discount->setObjectName("check_discount");
-        check_discount->setGeometry(QRect(10, 420, 71, 21));
+        check_discount->setGeometry(QRect(10, 420, 71, 31));
         formsStackedWidget->addWidget(main_form);
         creating_customer_account = new QWidget();
         creating_customer_account->setObjectName("creating_customer_account");
@@ -300,7 +300,7 @@ public:
         cashRegisterSystem2Class->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(cashRegisterSystem2Class);
         menuBar->setObjectName("menuBar");
-        menuBar->setGeometry(QRect(0, 0, 1262, 22));
+        menuBar->setGeometry(QRect(0, 0, 1327, 22));
         cashRegisterSystem2Class->setMenuBar(menuBar);
         mainToolBar = new QToolBar(cashRegisterSystem2Class);
         mainToolBar->setObjectName("mainToolBar");
@@ -337,8 +337,8 @@ public:
         retrieve_2->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\331\204\330\272\330\247\330\241 \330\247\331\204\330\247\331\210\330\261\330\257\330\261", nullptr));
         price_before_const->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\331\204\330\263\330\271\330\261 \331\202\330\250\331\204 \330\247\331\204\330\256\330\265\331\205:", nullptr));
         price_after_const->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\331\204\330\263\330\271\330\261 \330\250\330\271\330\257 \330\247\331\204\330\256\330\265\331\205:", nullptr));
-        price_before_const_2->setText(QCoreApplication::translate("cashRegisterSystem2Class", "0", nullptr));
-        price_after_const_2->setText(QCoreApplication::translate("cashRegisterSystem2Class", "0", nullptr));
+        price_before->setText(QCoreApplication::translate("cashRegisterSystem2Class", "0", nullptr));
+        price_after->setText(QCoreApplication::translate("cashRegisterSystem2Class", "0", nullptr));
         check_discount->setText(QCoreApplication::translate("cashRegisterSystem2Class", "check", nullptr));
         add_new->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\330\266\330\247\331\201\330\251", nullptr));
         go_back->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\271\331\210\330\257\330\251", nullptr));

@@ -4,9 +4,10 @@ cashRegisterSystem::cashRegisterSystem(QWidget* parent)
     : QMainWindow(parent), m_ui(new Ui::cashRegisterSystem2Class)
 {
     m_ProductsDB = NULL;
+    m_customersDB = NULL;
+    TotalBalanceForOperation = 0;
     std::fill_n(m_loadedOnce, 4, false);
     m_ui->setupUi(this);
-
     m_ui->password_field->setEchoMode(QLineEdit::Password);
     
     m_ui->class_box->addItem("\u0639\u0645\u064A\u0644 \u0639\u0627\u062F\u064A"); // Úãíá ÚÇÏí
@@ -88,7 +89,7 @@ void cashRegisterSystem::populateProductList(QWidget* scrollContents, QString pr
         const char* price = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 3));
         QFrame* frame = new QFrame;
         QVBoxLayout* vboxLayout = new QVBoxLayout(frame);
-        nameLabel = new QLabel("Name: " + QString::fromUtf8(name));
+        nameLabel = new QLabel(QString::fromUtf8(name));
         nameLabel->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
         layout->setAlignment(Qt::AlignTop);
         //Assigning the strings to widgets...

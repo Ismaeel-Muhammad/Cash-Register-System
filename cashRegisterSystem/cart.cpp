@@ -1,6 +1,72 @@
-#include "cashRegisterSystem.h"
+﻿#include "cashRegisterSystem.h"
 
 void cashRegisterSystem::on_name_button_clicked(int quantity, QString name, float pricePerEach) {
     float totalPrice = pricePerEach * quantity;
-    QHBoxLayout* layout = new QHBoxLayout(this);
+    QFrame* frame = new QFrame;
+    QHBoxLayout* layout = new QHBoxLayout(frame);
+
+    QLabel* names = new QLabel(name);
+    QLabel* quantities = new QLabel(tr("x%1").arg(quantity));
+    QLabel* pricesPerEach = new QLabel(tr("%1").arg(pricePerEach));
+    QLabel* totPrice = new QLabel(tr("%1").arg(totalPrice));
+    QPushButton* Delete = new QPushButton("\u062D\u0630\u0641");
+    layout->addWidget(names);
+    layout->addWidget(quantities);
+    layout->addWidget(pricesPerEach);
+    layout->addWidget(totPrice);
+    layout->addWidget(Delete);
+    layout->setAlignment(Qt::AlignTop);
+    m_ui->verticalLayout->addWidget(frame);
+    TotalBalanceForOperation += totalPrice;
+    m_ui->price_before->setText(QString::number(TotalBalanceForOperation));
+    m_ui->price_after->setText(QString::number(TotalBalanceForOperation));
+    QObject::connect(
+        Delete, &QPushButton::clicked,
+        this, &cashRegisterSystem::Delete_On_Click);
+    MappingLayout.insert(Delete, frame);
+}
+
+void cashRegisterSystem::Delete_On_Click() {
+    QPushButton* button = qobject_cast<QPushButton*>(sender());
+    QFrame* layout = MappingLayout.take(button);
+
+    while (layout->layout()->count() != 0) {
+        QLayoutItem* item = layout->layout()->takeAt(0);
+        delete item->widget();
+        delete item;
+    }
+    delete layout;
+}
+
+void cashRegisterSystem::on_check_discount_clicked() {
+    sqlite3_stmt* stmt;
+    float price = (m_ui->price_after->text()).toFloat();
+    int rc = sqlite3_open("mydatabase.db", &m_customersDB);
+    if (rc != SQLITE_OK) {
+        QMessageBox::warning(this, "oh no", "Cannot open database");
+        sqlite3_close(m_customersDB);
+    }
+    std::stringstream ss;
+    ss << "select class from Customers where phone_number ='" << m_ui->phone_number->text().toStdString() << "'";
+    QMessageBox mess;
+    QString query = QString::fromStdString(ss.str());
+    rc = sqlite3_prepare_v2(m_customersDB, query.toUtf8().constData(), -1, &stmt, NULL);
+    if (rc != SQLITE_OK) {
+        QMessageBox::warning(this, "oh no", query);
+        sqlite3_finalize(stmt);
+        sqlite3_close(m_customersDB);
+    }
+    while (sqlite3_step(stmt) == SQLITE_ROW) {
+        const char* Class = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 0));
+        size_t len = strlen(Class);
+       
+        if (strcmp(Class, "\u0637\u0627\u0644\u0628") == 0 || strcmp(Class, "\u0639\u0645\u064A\u0644 \u0645\u0647\u0645") == 0)
+        {
+            price = price - price * 0.1;
+        m_ui->price_after->setText(QString::number(price));
+        
+        }
+    }
+    sqlite3_finalize(stmt);
+    sqlite3_close(m_customersDB);
 }
