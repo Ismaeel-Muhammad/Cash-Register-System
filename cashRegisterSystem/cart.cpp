@@ -1,4 +1,6 @@
 ﻿#include "cashRegisterSystem.h"
+#include "database.h"
+using namespace std;
 QVector<QPushButton*> Delete_button;
 
 void cashRegisterSystem::on_name_button_clicked(int quantity, QString name, float pricePerEach) {
@@ -11,6 +13,7 @@ void cashRegisterSystem::on_name_button_clicked(int quantity, QString name, floa
     QLabel* pricesPerEach = new QLabel(tr("%1").arg(pricePerEach));
     QLabel* totPrice = new QLabel(tr("%1").arg(totalPrice));
     float price = totPrice->text().toFloat();
+    myHash.insert(name, quantity);
     Delete_button.push_back(new QPushButton("\u062D\u0630\u0641"));
     layout->addWidget(names);
     layout->addWidget(quantities);
@@ -26,6 +29,12 @@ void cashRegisterSystem::on_name_button_clicked(int quantity, QString name, floa
     connect(Delete_button.back(), &QPushButton::clicked, [this, d = Delete_button.back(), price]() {
         Delete_On_Click(d,price);
     });
+    QObject::connect(m_ui->sell, &QPushButton::clicked, [this, names](){
+        on_sell_clicked(names->text());
+    });
+    QObject::connect(m_ui->retrieve, &QPushButton::clicked, [this, names]() {
+        on_retrieve_clicked(names->text());
+        });
     MappingLayout.insert(Delete_button.back(), frame);
 }
 
@@ -41,6 +50,7 @@ void cashRegisterSystem::Delete_On_Click(QPushButton* del, float totalPrice) {
         }
         delete layout;
 }
+
 
 void cashRegisterSystem::on_check_discount_clicked() {
     sqlite3_stmt* stmt;
@@ -76,6 +86,32 @@ void cashRegisterSystem::on_check_discount_clicked() {
 
 void cashRegisterSystem::on_cancel_order_clicked()
 {
+    DeleteAll();
+}
+
+void cashRegisterSystem::on_sell_clicked(QString name){
+  
+    Database db = Database("mydatabase.db");
+    db.updateCustomerTotalPaid(m_ui->phone_number->text().toStdString(), m_ui->price_after->text().toFloat(),'+');
+    db.updateProductQuantity(name.toStdString(), myHash[name], '-');
+    DeleteAll();
+    QMessageBox mess;
+    mess.setText("\u062a\u0645\u062a \u0627\u0644\u0639\u0645\u0644\u064a\u0629 \u0628\u0646\u062c\u0627\u062d");
+    mess.exec();
+}
+void cashRegisterSystem::on_retrieve_clicked(QString name)
+{
+    Database db = Database("mydatabase.db");
+    db.updateCustomerTotalPaid(m_ui->phone_number->text().toStdString(), m_ui->price_after->text().toFloat(), '-');
+    db.updateProductQuantity(name.toStdString(), myHash[name], '+');
+    DeleteAll();
+    QMessageBox mess;
+    mess.setText("\u062a\u0645\u062a \u0627\u0644\u0639\u0645\u0644\u064a\u0629 \u0628\u0646\u062c\u0627\u062d");
+    mess.exec();
+
+}
+
+void cashRegisterSystem::DeleteAll() {
     QVBoxLayout* layout = m_ui->cartVerticalLayout; // replace with your layout pointer
     QLayoutItem* child;
     while ((child = layout->takeAt(0)) != nullptr) {
@@ -90,22 +126,4 @@ void cashRegisterSystem::on_cancel_order_clicked()
     TotalBalanceForOperation = 0;
     m_ui->price_after->setText(QString::number(TotalBalanceForOperation));
     m_ui->price_before->setText(QString::number(TotalBalanceForOperation));
-}
-
-void cashRegisterSystem::on_sell_clicked()
-{
-    //sqlite3_stmt* stmt;
-    //int rc = sqlite3_open("mydatabase.db", &m_customersDB);
-    //if (rc != SQLITE_OK) {
-    //    QMessageBox::warning(this, "oh no", "Cannot open database");
-    //    sqlite3_close(m_customersDB);
-    //}
-    //std::stringstream ss;
-    ////ss << "UPDATE customers SET total_paid ='" << to_string(total_paid_price) << "WHERE phone_number ='" << m_ui->phone_number->text().toStdString() << "'";
-    //QString query = QString::fromStdString(ss.str());
-}
-
-void cashRegisterSystem::on_retrieve_clicked()
-{
-    QMessageBox::information(this, "nana", "Working");
 }

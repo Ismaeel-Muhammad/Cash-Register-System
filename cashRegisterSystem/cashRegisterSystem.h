@@ -12,6 +12,7 @@
 #include <sstream>
 #include "database.h"
 #include <string>
+#include <QCoreApplication>
 
 using namespace std;
 class cashRegisterSystem : public QMainWindow {
@@ -20,16 +21,17 @@ class cashRegisterSystem : public QMainWindow {
 public:
     cashRegisterSystem(QWidget* parent = nullptr);
     ~cashRegisterSystem();
-
+     signals:
+    void functionName(QString name);
 private:
     Ui::cashRegisterSystem2Class* m_ui;
     bool m_loadedOnce[4];
     sqlite3* m_ProductsDB;
     sqlite3* m_customersDB;
     float TotalBalanceForOperation;
-
+    
     QHash<QPushButton*, QFrame*> MappingLayout;
-
+    QHash<QString, int> myHash;
     void populateProductList(QWidget*, QString);
 
 private slots:
@@ -45,8 +47,9 @@ private slots:
     void Delete_On_Click(QPushButton*, float);
     void on_check_discount_clicked();
     void on_cancel_order_clicked();
-    void on_sell_clicked();
-    void on_retrieve_clicked();
+    void on_sell_clicked(QString);
+    void on_retrieve_clicked(QString);
+    void DeleteAll();
 
 };
 

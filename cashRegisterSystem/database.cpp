@@ -43,20 +43,95 @@ void Database::insertCustomerRows(string name, string phone_number, int total_pa
     }
 }
 
-void Database::updateCustomerTotalPaid(string phone_number, float additional_pay)
+
+void Database::updateCustomerTotalPaid(string phone_number, float additional_pay, char type)
 {
-    const char* gettingTotalPaid = sqlite3_mprintf("SELECT total_paid FROM Customers WHERE phone_number = '%q';", phone_number.c_str());
-    char* errMsg;
-    int rc = sqlite3_exec(m_db, gettingTotalPaid, NULL, NULL, &errMsg);
+    sqlite3_stmt* stmt;
+    const char* gettingTotalPaid = "SELECT total_paid FROM Customers WHERE phone_number = ?";
+    int rc = sqlite3_prepare_v2(m_db, gettingTotalPaid, -1, &stmt, NULL);
     if (rc != SQLITE_OK) {
         QMessageBox msg;
-        msg.setText(errMsg);
+        msg.setText("oh no");
         msg.exec();
+        return;
     }
-    QMessageBox msg;
-    msg.setText(gettingTotalPaid);
-    msg.exec();
-    //const char* updatingTotalPaid = sqlite3_mprintf("UPDATE customers SET total_paid = '%q' WHERE phone_number = '%q';", additional_pay, phone_number.c_str());
+
+    rc = sqlite3_bind_text(stmt, 1, phone_number.c_str(), -1, SQLITE_TRANSIENT);
+    if (rc != SQLITE_OK) {
+        QMessageBox msg;
+        msg.setText(sqlite3_errmsg(m_db));
+        msg.exec();
+        return;
+    }
+
+    float current_total = 0.0f;
+    rc = sqlite3_step(stmt);
+    if (rc == SQLITE_ROW)
+        current_total = static_cast<float>(sqlite3_column_double(stmt, 0));
+    sqlite3_finalize(stmt);
+    float new_total;
+    if(type=='+')
+        new_total = current_total + additional_pay;
+    else if(type=='-')
+         new_total = current_total - additional_pay;
+
+    const char* update_query = "UPDATE Customers SET total_paid = ? WHERE phone_number = ?";
+    sqlite3_prepare_v2(m_db, update_query, -1, &stmt, NULL);
+    sqlite3_bind_double(stmt, 1, new_total);
+    sqlite3_bind_text(stmt, 2, phone_number.c_str(), -1, SQLITE_TRANSIENT);
+
+    rc = sqlite3_step(stmt);
+    if (rc != SQLITE_DONE) {
+        QMessageBox msg;
+        msg.setText(sqlite3_errmsg(m_db));
+        msg.exec();
+        return;
+    }
+    sqlite3_finalize(stmt);
+}
+void Database::updateProductQuantity(string name, int quantity, char type) {
+
+    sqlite3_stmt* stmt;
+    const char* totalQuantity = "SELECT quantity FROM products WHERE name = ?";
+    int rc = sqlite3_prepare_v2(m_db, totalQuantity, -1, &stmt, NULL);
+    if (rc != SQLITE_OK) {
+        QMessageBox msg;
+        msg.setText("oh no");
+        msg.exec();
+        return;
+    }
+
+    rc = sqlite3_bind_text(stmt, 1, name.c_str(), -1, SQLITE_TRANSIENT);
+    if (rc != SQLITE_OK) {
+        QMessageBox msg;
+        msg.setText(sqlite3_errmsg(m_db));
+        msg.exec();
+        return;
+    }
+
+    int currentQuantity = 0;
+    rc = sqlite3_step(stmt);
+    if (rc == SQLITE_ROW)
+        currentQuantity = static_cast<int>(sqlite3_column_double(stmt, 0));
+    sqlite3_finalize(stmt);
+    int new_Quantity;
+    if (type == '+')
+        new_Quantity = currentQuantity + quantity;
+    else if (type == '-')
+        new_Quantity = currentQuantity - quantity;
+
+    const char* update_query = "UPDATE products SET quantity = ? where name = ?";
+    sqlite3_prepare_v2(m_db, update_query, -1, &stmt, NULL);
+    sqlite3_bind_int(stmt, 1, new_Quantity);
+    sqlite3_bind_text(stmt, 2, name.c_str(), -1, SQLITE_TRANSIENT);
+    rc = sqlite3_step(stmt);
+    if (rc != SQLITE_DONE) {
+        QMessageBox msg;
+        msg.setText(sqlite3_errmsg(m_db));
+        msg.exec();
+        return;
+    }
+    sqlite3_finalize(stmt);
 }
 
 void Database::insertProdRows(string name, string price, int quantity, string type)
@@ -86,4 +161,28 @@ int Database::getRowCount(sqlite3* db, const char* tableName) {
 
     sqlite3_free((void*)query);
     return rowCount;
+}
+void Database::DeleteProdRow(string name) {
+    sqlite3_stmt* stmt;
+    const char* delete_query = "DELETE FROM products WHERE name = ?";
+    int rc = sqlite3_prepare_v2(m_db, delete_query, -1, &stmt, NULL);
+    if (rc != SQLITE_OK) {
+        // handle error
+        return;
+    }
+
+    rc = sqlite3_bind_text(stmt, 1, name.c_str(), -1, SQLITE_TRANSIENT);
+    if (rc != SQLITE_OK) {
+        // handle error
+        return;
+    }
+
+    rc = sqlite3_step(stmt);
+    if (rc != SQLITE_DONE) {
+        // handle error
+        return;
+    }
+
+    sqlite3_finalize(stmt);
+
 }

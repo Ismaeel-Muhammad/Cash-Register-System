@@ -8,8 +8,10 @@ int main(int argc, char *argv[])
     cashRegisterSystem w;
     Database* db = new Database("mydatabase.db");
     db->initialize();
-    db->updateCustomerTotalPaid("0",5);
+    Database bs("mydatabase.db");
     w.show();
+   // bs.insertProdRows("chips", "5", 30, "snacks");
+    //bs.DeleteProdRow("chips");
     QFile styleSheetFile("./Integrid.qss");
     styleSheetFile.open(QFile::ReadOnly);
     QString styleSheet = QLatin1String(styleSheetFile.readAll());

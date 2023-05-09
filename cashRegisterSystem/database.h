@@ -12,8 +12,10 @@ public:
     void initialize();
     void insertCustomerRows(string, string, int, string);
     void insertProdRows(string, string, int, string);
-    void updateCustomerTotalPaid(string, float);
-private:
+    void updateCustomerTotalPaid(string, float,char);
+    void updateProductQuantity(string, int, char);
+    void DeleteProdRow(string);
+    private:
     sqlite3* m_db;
     int getRowCount(sqlite3*, const char*);
 };
