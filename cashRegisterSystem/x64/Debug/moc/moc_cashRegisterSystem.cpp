@@ -176,7 +176,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASScashRegisterSystemENDCLASS[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void, 0x80000000 | 14, QMetaType::Float, QMetaType::QString,    2,    2,    2,
-    QMetaType::Void,
+    QMetaType::Bool,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -223,7 +223,7 @@ Q_CONSTINIT const QMetaObject cashRegisterSystem::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<float, std::false_type>,
         QtPrivate::TypeAndForceComplete<QString, std::false_type>,
         // method 'on_check_discount_clicked'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<bool, std::false_type>,
         // method 'on_cancel_order_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_sell_clicked'
@@ -251,7 +251,8 @@ void cashRegisterSystem::qt_static_metacall(QObject *_o, QMetaObject::Call _c, i
         case 8: _t->on_add_new_clicked(); break;
         case 9: _t->on_go_back_clicked(); break;
         case 10: _t->Delete_On_Click((*reinterpret_cast< std::add_pointer_t<QPushButton*>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<float>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[3]))); break;
-        case 11: _t->on_check_discount_clicked(); break;
+        case 11: { bool _r = _t->on_check_discount_clicked();
+            if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = std::move(_r); }  break;
         case 12: _t->on_cancel_order_clicked(); break;
         case 13: _t->on_sell_clicked(); break;
         case 14: _t->on_retrieve_clicked(); break;

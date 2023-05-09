@@ -29,6 +29,8 @@ private:
     sqlite3* m_ProductsDB;
     sqlite3* m_customersDB;
     float TotalBalanceForOperation;
+    float TotalBalanceForOperationDiscounted;
+    bool withDiscount;
     QVector<QPushButton*> Delete_button;
     QHash<QPushButton*, QFrame*> MappingLayout;
     QHash<QString, int> myHash;
@@ -47,7 +49,7 @@ private slots:
     void on_add_new_clicked();
     void on_go_back_clicked();
     void Delete_On_Click(QPushButton*, float, QString);
-    void on_check_discount_clicked();
+    bool on_check_discount_clicked();
     void on_cancel_order_clicked();
     void on_sell_clicked();
     void on_retrieve_clicked();

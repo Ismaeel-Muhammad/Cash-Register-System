@@ -22,6 +22,7 @@ void cashRegisterSystem::on_name_button_clicked(int quantity, QString name, floa
     TotalBalanceForOperation += totalPrice;
     m_ui->price_before->setText(QString::number(TotalBalanceForOperation));
     m_ui->price_after->setText(QString::number(TotalBalanceForOperation));
+
     connect(Delete_button.back(), &QPushButton::clicked, [this, d = Delete_button.back(), price, names]() {
         Delete_On_Click(d,price, names->text());
     });
@@ -34,9 +35,15 @@ void cashRegisterSystem::on_name_button_clicked(int quantity, QString name, floa
 void cashRegisterSystem::Delete_On_Click(QPushButton* del, float totalPrice, QString name) {
     myHash.remove(name);
     QFrame* layout = MappingLayout.take(del);
+    withDiscount = on_check_discount_clicked();
+
     TotalBalanceForOperation -= totalPrice;
-    m_ui->price_after->setText(QString::number(TotalBalanceForOperation));
+    TotalBalanceForOperationDiscounted = 0.9 * TotalBalanceForOperation;
+
+    if (withDiscount == true) m_ui->price_after->setText(QString::number(TotalBalanceForOperationDiscounted));
+    else m_ui->price_after->setText(QString::number(TotalBalanceForOperation));
     m_ui->price_before->setText(QString::number(TotalBalanceForOperation));
+
     while (layout->layout()->count() != 0) {
         QLayoutItem* item = layout->layout()->takeAt(0);
         delete item->widget();
@@ -45,7 +52,7 @@ void cashRegisterSystem::Delete_On_Click(QPushButton* del, float totalPrice, QSt
     delete layout;
 }
 
-void cashRegisterSystem::on_check_discount_clicked() {
+bool cashRegisterSystem::on_check_discount_clicked() {
     sqlite3_stmt* stmt;
     float price = (m_ui->price_after->text()).toFloat();
     int rc = sqlite3_open("mydatabase.db", &m_customersDB);
@@ -69,12 +76,17 @@ void cashRegisterSystem::on_check_discount_clicked() {
        
         if (strcmp(Class, "\u0637\u0627\u0644\u0628") == 0 || strcmp(Class, "\u0639\u0645\u064A\u0644 \u0645\u0647\u0645") == 0)
         {
-            price = price - price * 0.1;
+            price = price * 0.9;
             m_ui->price_after->setText(QString::number(price));
+            m_ui->check_discount->setDisabled(true);
+            sqlite3_finalize(stmt);
+            sqlite3_close(m_customersDB);
+            return true;
         }
     }
     sqlite3_finalize(stmt);
     sqlite3_close(m_customersDB);
+    return false;
 }
 
 void cashRegisterSystem::on_cancel_order_clicked()
@@ -96,7 +108,6 @@ void cashRegisterSystem::payOperation(char type) {
     
     Database db("mydatabase.db");
     db.updateCustomerTotalPaid(m_ui->phone_number->text().toStdString(), m_ui->price_after->text().toFloat(), type);
-
     QHashIterator<QString, int> i(myHash);
     while (i.hasNext()) {
         i.next();
@@ -122,6 +133,8 @@ void cashRegisterSystem::DeleteAll() {
     TotalBalanceForOperation = 0;
     m_ui->price_after->setText(QString::number(TotalBalanceForOperation));
     m_ui->price_before->setText(QString::number(TotalBalanceForOperation));
+    m_ui->check_discount->setDisabled(false);
+    withDiscount = false;
 }
 
 char cashRegisterSystem::updateType(char type) {
