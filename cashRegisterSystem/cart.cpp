@@ -1,7 +1,4 @@
 ﻿#include "cashRegisterSystem.h"
-#include "database.h"
-using namespace std;
-QVector<QPushButton*> Delete_button;
 
 void cashRegisterSystem::on_name_button_clicked(int quantity, QString name, float pricePerEach) {
     float totalPrice = pricePerEach * quantity;
@@ -13,7 +10,6 @@ void cashRegisterSystem::on_name_button_clicked(int quantity, QString name, floa
     QLabel* pricesPerEach = new QLabel(tr("%1").arg(pricePerEach));
     QLabel* totPrice = new QLabel(tr("%1").arg(totalPrice));
     float price = totPrice->text().toFloat();
-    myHash.insert(name, quantity);
     Delete_button.push_back(new QPushButton("\u062D\u0630\u0641"));
     layout->addWidget(names);
     layout->addWidget(quantities);
@@ -26,31 +22,28 @@ void cashRegisterSystem::on_name_button_clicked(int quantity, QString name, floa
     TotalBalanceForOperation += totalPrice;
     m_ui->price_before->setText(QString::number(TotalBalanceForOperation));
     m_ui->price_after->setText(QString::number(TotalBalanceForOperation));
-    connect(Delete_button.back(), &QPushButton::clicked, [this, d = Delete_button.back(), price]() {
-        Delete_On_Click(d,price);
+    connect(Delete_button.back(), &QPushButton::clicked, [this, d = Delete_button.back(), price, names]() {
+        Delete_On_Click(d,price, names->text());
     });
-    QObject::connect(m_ui->sell, &QPushButton::clicked, [this, names](){
-        on_sell_clicked(names->text());
-    });
-    QObject::connect(m_ui->retrieve, &QPushButton::clicked, [this, names]() {
-        on_retrieve_clicked(names->text());
-        });
+    
     MappingLayout.insert(Delete_button.back(), frame);
+    if (myHash.contains(name)) myHash[name] += quantity;
+    else myHash.insert(name, quantity);
 }
 
-void cashRegisterSystem::Delete_On_Click(QPushButton* del, float totalPrice) {
+void cashRegisterSystem::Delete_On_Click(QPushButton* del, float totalPrice, QString name) {
+    myHash.remove(name);
     QFrame* layout = MappingLayout.take(del);
-        TotalBalanceForOperation -= totalPrice;
-        m_ui->price_after->setText(QString::number(TotalBalanceForOperation));
-        m_ui->price_before->setText(QString::number(TotalBalanceForOperation));
-        while (layout->layout()->count() != 0) {
-            QLayoutItem* item = layout->layout()->takeAt(0);
-            delete item->widget();
-            delete item;
-        }
-        delete layout;
+    TotalBalanceForOperation -= totalPrice;
+    m_ui->price_after->setText(QString::number(TotalBalanceForOperation));
+    m_ui->price_before->setText(QString::number(TotalBalanceForOperation));
+    while (layout->layout()->count() != 0) {
+        QLayoutItem* item = layout->layout()->takeAt(0);
+        delete item->widget();
+        delete item;
+    }
+    delete layout;
 }
-
 
 void cashRegisterSystem::on_check_discount_clicked() {
     sqlite3_stmt* stmt;
@@ -89,26 +82,28 @@ void cashRegisterSystem::on_cancel_order_clicked()
     DeleteAll();
 }
 
-void cashRegisterSystem::on_sell_clicked(QString name){
-  
-    Database db = Database("mydatabase.db");
-    db.updateCustomerTotalPaid(m_ui->phone_number->text().toStdString(), m_ui->price_after->text().toFloat(),'+');
-    db.updateProductQuantity(name.toStdString(), myHash[name], '-');
-    DeleteAll();
-    QMessageBox mess;
-    mess.setText("\u062a\u0645\u062a \u0627\u0644\u0639\u0645\u0644\u064a\u0629 \u0628\u0646\u062c\u0627\u062d");
-    mess.exec();
-}
-void cashRegisterSystem::on_retrieve_clicked(QString name)
+void cashRegisterSystem::on_sell_clicked()
 {
-    Database db = Database("mydatabase.db");
-    db.updateCustomerTotalPaid(m_ui->phone_number->text().toStdString(), m_ui->price_after->text().toFloat(), '-');
-    db.updateProductQuantity(name.toStdString(), myHash[name], '+');
-    DeleteAll();
-    QMessageBox mess;
-    mess.setText("\u062a\u0645\u062a \u0627\u0644\u0639\u0645\u0644\u064a\u0629 \u0628\u0646\u062c\u0627\u062d");
-    mess.exec();
+    payOperation('+');
+}
 
+void cashRegisterSystem::on_retrieve_clicked()
+{
+    payOperation('-');
+}
+
+void cashRegisterSystem::payOperation(char type) {
+    
+    Database db("mydatabase.db");
+    db.updateCustomerTotalPaid(m_ui->phone_number->text().toStdString(), m_ui->price_after->text().toFloat(), type);
+
+    QHashIterator<QString, int> i(myHash);
+    while (i.hasNext()) {
+        i.next();
+        db.updateProductQuantity(i.key().toStdString(), i.value(), updateType(type));
+    }
+    DeleteAll();
+    db.~Database();
 }
 
 void cashRegisterSystem::DeleteAll() {
@@ -123,7 +118,12 @@ void cashRegisterSystem::DeleteAll() {
         delete child;
     }
     layout->addSpacerItem(new QSpacerItem(0, 20, QSizePolicy::Minimum, QSizePolicy::Expanding));
+    myHash.clear();
     TotalBalanceForOperation = 0;
     m_ui->price_after->setText(QString::number(TotalBalanceForOperation));
     m_ui->price_before->setText(QString::number(TotalBalanceForOperation));
+}
+
+char cashRegisterSystem::updateType(char type) {
+    return  (type == '-') ? '+' : '-';
 }

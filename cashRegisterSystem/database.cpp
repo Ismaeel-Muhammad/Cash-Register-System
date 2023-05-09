@@ -43,15 +43,15 @@ void Database::insertCustomerRows(string name, string phone_number, int total_pa
     }
 }
 
-
 void Database::updateCustomerTotalPaid(string phone_number, float additional_pay, char type)
 {
     sqlite3_stmt* stmt;
     const char* gettingTotalPaid = "SELECT total_paid FROM Customers WHERE phone_number = ?";
+
     int rc = sqlite3_prepare_v2(m_db, gettingTotalPaid, -1, &stmt, NULL);
     if (rc != SQLITE_OK) {
         QMessageBox msg;
-        msg.setText("oh no");
+        msg.setText("updateCustomerTotalPaid prepare wrong");
         msg.exec();
         return;
     }
@@ -69,7 +69,7 @@ void Database::updateCustomerTotalPaid(string phone_number, float additional_pay
     if (rc == SQLITE_ROW)
         current_total = static_cast<float>(sqlite3_column_double(stmt, 0));
     sqlite3_finalize(stmt);
-    float new_total;
+    float new_total = 0;
     if(type=='+')
         new_total = current_total + additional_pay;
     else if(type=='-')
@@ -89,18 +89,18 @@ void Database::updateCustomerTotalPaid(string phone_number, float additional_pay
     }
     sqlite3_finalize(stmt);
 }
-void Database::updateProductQuantity(string name, int quantity, char type) {
+
+void Database::updateProductQuantity(string name, int additional_quantity, char type) {
 
     sqlite3_stmt* stmt;
     const char* totalQuantity = "SELECT quantity FROM products WHERE name = ?";
     int rc = sqlite3_prepare_v2(m_db, totalQuantity, -1, &stmt, NULL);
     if (rc != SQLITE_OK) {
         QMessageBox msg;
-        msg.setText("oh no");
+        msg.setText("updateProductQuantity prepare wrong");
         msg.exec();
         return;
     }
-
     rc = sqlite3_bind_text(stmt, 1, name.c_str(), -1, SQLITE_TRANSIENT);
     if (rc != SQLITE_OK) {
         QMessageBox msg;
@@ -114,11 +114,11 @@ void Database::updateProductQuantity(string name, int quantity, char type) {
     if (rc == SQLITE_ROW)
         currentQuantity = static_cast<int>(sqlite3_column_double(stmt, 0));
     sqlite3_finalize(stmt);
-    int new_Quantity;
+    int new_Quantity = 0;
     if (type == '+')
-        new_Quantity = currentQuantity + quantity;
+        new_Quantity = currentQuantity + additional_quantity;
     else if (type == '-')
-        new_Quantity = currentQuantity - quantity;
+        new_Quantity = currentQuantity - additional_quantity;
 
     const char* update_query = "UPDATE products SET quantity = ? where name = ?";
     sqlite3_prepare_v2(m_db, update_query, -1, &stmt, NULL);
