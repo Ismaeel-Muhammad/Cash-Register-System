@@ -43,10 +43,6 @@ void cashRegisterSystem::on_name_button_clicked(int quantity, QString name, floa
     scrollLayout->insertItem(0, spacer);
     scrollLayout->insertWidget(1, frame);
 
-    TotalBalanceForOperation += totalPrice;
-    m_ui->price_before->setText(QString::number(TotalBalanceForOperation));
-    m_ui->price_after->setText(QString::number(TotalBalanceForOperation));
-
     connect(Delete_button.back(), &QPushButton::clicked, [this, d = Delete_button.back(), totPrice, names]() {
         Delete_On_Click(d, totPrice->text().toFloat(), names->text());
         });
@@ -155,7 +151,7 @@ void cashRegisterSystem::payOperation(char type) {
 }
 
 void cashRegisterSystem::DeleteAll() {
-    QVBoxLayout* layout = m_ui->cartVerticalLayout; // replace with your layout pointer
+    QLayout* layout = m_ui->cartContents->layout(); // Get the layout of the scroll area widget
     QLayoutItem* child;
     while ((child = layout->takeAt(0)) != nullptr) {
         QWidget* widget = child->widget();
@@ -165,7 +161,7 @@ void cashRegisterSystem::DeleteAll() {
         }
         delete child;
     }
-    layout->addSpacerItem(new QSpacerItem(0, 20, QSizePolicy::Minimum, QSizePolicy::Expanding));
+    layout->addItem(new QSpacerItem(0, 20, QSizePolicy::Minimum, QSizePolicy::Expanding));  // Add a spacer item to the layout
     myHash.clear();
     TotalBalanceForOperation = 0;
     m_ui->price_after->setText(QString::number(TotalBalanceForOperation));
