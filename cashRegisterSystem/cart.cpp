@@ -4,12 +4,19 @@ void cashRegisterSystem::on_name_button_clicked(int quantity, QString name, floa
     float totalPrice = pricePerEach * quantity;
     QFrame* frame = new QFrame;
     QHBoxLayout* layout = new QHBoxLayout(frame);
-
+    frame->setMaximumHeight(50);
     QLabel* names = new QLabel(name);
+    names->setStyleSheet("border: none; font-size:16px; font-weight:bold;");
+
     QLabel* quantities = new QLabel(tr("x%1").arg(quantity));
+    quantities->setStyleSheet("border: none; font-size:16px;");
+
     QLabel* pricesPerEach = new QLabel(tr("%1").arg(pricePerEach));
+    pricesPerEach->setStyleSheet("border: none; font-size:16px;");
+
     QLabel* totPrice = new QLabel(tr("%1").arg(totalPrice));
-    float price = totPrice->text().toFloat();
+    totPrice->setStyleSheet("border: none; font-size:16px;");
+
     Delete_button.push_back(new QPushButton("\u062D\u0630\u0641"));
     layout->addWidget(names);
     layout->addWidget(quantities);
@@ -23,13 +30,43 @@ void cashRegisterSystem::on_name_button_clicked(int quantity, QString name, floa
     m_ui->price_before->setText(QString::number(TotalBalanceForOperation));
     m_ui->price_after->setText(QString::number(TotalBalanceForOperation));
 
-    connect(Delete_button.back(), &QPushButton::clicked, [this, d = Delete_button.back(), price, names]() {
-        Delete_On_Click(d,price, names->text());
-    });
-    
+    QWidget* scrollWidget = m_ui->scrollArea_9->widget();
+    QVBoxLayout* scrollLayout = qobject_cast<QVBoxLayout*>(scrollWidget->layout());
+
+    if (!scrollLayout) {
+        // Create a new layout if one doesn't exist
+        scrollLayout = new QVBoxLayout(scrollWidget);
+        scrollWidget->setLayout(scrollLayout);
+    }
+
+    QSpacerItem* spacer = new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Minimum);
+    scrollLayout->insertItem(0, spacer);
+    scrollLayout->insertWidget(1, frame);
+
+    TotalBalanceForOperation += totalPrice;
+    m_ui->price_before->setText(QString::number(TotalBalanceForOperation));
+    m_ui->price_after->setText(QString::number(TotalBalanceForOperation));
+
+    connect(Delete_button.back(), &QPushButton::clicked, [this, d = Delete_button.back(), totPrice, names]() {
+        Delete_On_Click(d, totPrice->text().toFloat(), names->text());
+        });
+
+    if (i % 2 == 1)
+        frame->setStyleSheet("QFrame{background-color:rgba(184, 184, 184, 255)}");
+
     MappingLayout.insert(Delete_button.back(), frame);
-    if (myHash.contains(name)) myHash[name] += quantity;
-    else myHash.insert(name, quantity);
+
+    if (myHash.contains(name))
+        myHash[name] += quantity;
+    else
+        myHash.insert(name, quantity);
+
+    i++;
+
+    // Add a spacer at the end of the layout to prevent the last item from sticking to the top
+    QSpacerItem* bottomSpacer = new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Expanding);
+    scrollLayout->addItem(bottomSpacer);
+
 }
 
 void cashRegisterSystem::Delete_On_Click(QPushButton* del, float totalPrice, QString name) {

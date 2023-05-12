@@ -11,7 +11,7 @@ cashRegisterSystem::cashRegisterSystem(QWidget* parent)
     std::fill_n(m_loadedOnce, 4, false);
     m_ui->setupUi(this);
     m_ui->password_field->setEchoMode(QLineEdit::Password);
-    
+    i = 0;
     m_ui->class_box->addItem("\u0639\u0645\u064A\u0644 \u0639\u0627\u062F\u064A"); // Úãíá ÚÇÏí
     m_ui->class_box->addItem("\u0639\u0645\u064A\u0644 \u0645\u0647\u0645"); // Úãíá ãåã
     m_ui->class_box->addItem("\u0637\u0627\u0644\u0628"); // ØÇáÈ
@@ -93,12 +93,20 @@ void cashRegisterSystem::populateProductList(QWidget* scrollContents, QString pr
         QVBoxLayout* vboxLayout = new QVBoxLayout(frame);
         nameLabel = new QLabel(QString::fromUtf8(name));
         nameLabel->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
+        nameLabel->setStyleSheet("border: none; font-size:16px; font-weight:bold;");
         layout->setAlignment(Qt::AlignTop);
+        
         //Assigning the strings to widgets...
+       
         add_button.push_back(new QPushButton("Add To Cart!"));
+        //add_button.back()->setStyleSheet("QPushButton { border: none; }");
+
         quantityBox = new QSpinBox();
         QLabel* lab = new QLabel(QString("Price: %1").arg(QString::fromUtf8(price)));
+        lab->setStyleSheet("border: none; font-size:16px;");
         // extracting price from existing label
+        //quantityBox->setStyleSheet("QSpinBox{border:none}");
+
         float price_val = lab->text().split(" ")[1].toFloat();
         //Setting up the lable style sheet
         //Creating horizontal line with desired properties...

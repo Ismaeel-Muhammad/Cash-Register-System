@@ -31,6 +31,7 @@ private:
     float TotalBalanceForOperation;
     float TotalBalanceForOperationDiscounted;
     bool withDiscount;
+    int i;
     QVector<QPushButton*> Delete_button;
     QHash<QPushButton*, QFrame*> MappingLayout;
     QHash<QString, int> myHash;
