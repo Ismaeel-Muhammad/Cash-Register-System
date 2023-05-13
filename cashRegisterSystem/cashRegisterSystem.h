@@ -14,6 +14,8 @@
 #include <string>
 #include <QCoreApplication>
 
+#define SLOT_PRICE -1
+
 using namespace std;
 class cashRegisterSystem : public QMainWindow {
     Q_OBJECT
@@ -34,7 +36,7 @@ private:
     int i;
     QVector<QPushButton*> Delete_button;
     QHash<QPushButton*, QFrame*> MappingLayout;
-    QHash<QString, int> myHash;
+    QHash<QString, QList<QVariant>> myHash;
     void populateProductList(QWidget*, QString);
     void DeleteAll();
     void payOperation(char);
@@ -50,7 +52,7 @@ private slots:
     void on_add_new_clicked();
     void on_go_back_clicked();
     void Delete_On_Click(QPushButton*, float, QString);
-    bool on_check_discount_clicked();
+    float on_check_discount_clicked(float = SLOT_PRICE);
     void on_cancel_order_clicked();
     void on_sell_clicked();
     void on_retrieve_clicked();

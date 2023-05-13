@@ -5,7 +5,7 @@ cashRegisterSystem::cashRegisterSystem(QWidget* parent)
 {
     m_ProductsDB = NULL;
     m_customersDB = NULL;
-    withDiscount = false;
+    withDiscount = true;
     TotalBalanceForOperation = 0;
     TotalBalanceForOperationDiscounted = 0;
     std::fill_n(m_loadedOnce, 4, false);

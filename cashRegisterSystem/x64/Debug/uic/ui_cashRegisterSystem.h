@@ -498,7 +498,7 @@ public:
 
         retranslateUi(cashRegisterSystem2Class);
 
-        formsStackedWidget->setCurrentIndex(2);
+        formsStackedWidget->setCurrentIndex(1);
         ProductsStackedWidget->setCurrentIndex(0);
         item_type_item->setCurrentIndex(-1);
         class_box->setCurrentIndex(-1);

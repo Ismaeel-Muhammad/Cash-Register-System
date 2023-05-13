@@ -136,7 +136,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASScashRegisterSystemENDCLASS[] = {
       11,       // revision
        0,       // classname
        0,    0, // classinfo
-      15,   14, // methods
+      16,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -144,23 +144,24 @@ Q_CONSTINIT static const uint qt_meta_data_CLASScashRegisterSystemENDCLASS[] = {
        1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    1,  104,    2, 0x06,    1 /* Public */,
+       1,    1,  110,    2, 0x06,    1 /* Public */,
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       4,    3,  107,    2, 0x08,    3 /* Private */,
-       5,    0,  114,    2, 0x08,    7 /* Private */,
-       6,    0,  115,    2, 0x08,    8 /* Private */,
-       7,    0,  116,    2, 0x08,    9 /* Private */,
-       8,    0,  117,    2, 0x08,   10 /* Private */,
-       9,    0,  118,    2, 0x08,   11 /* Private */,
-      10,    0,  119,    2, 0x08,   12 /* Private */,
-      11,    0,  120,    2, 0x08,   13 /* Private */,
-      12,    0,  121,    2, 0x08,   14 /* Private */,
-      13,    3,  122,    2, 0x08,   15 /* Private */,
-      15,    0,  129,    2, 0x08,   19 /* Private */,
-      16,    0,  130,    2, 0x08,   20 /* Private */,
-      17,    0,  131,    2, 0x08,   21 /* Private */,
-      18,    0,  132,    2, 0x08,   22 /* Private */,
+       4,    3,  113,    2, 0x08,    3 /* Private */,
+       5,    0,  120,    2, 0x08,    7 /* Private */,
+       6,    0,  121,    2, 0x08,    8 /* Private */,
+       7,    0,  122,    2, 0x08,    9 /* Private */,
+       8,    0,  123,    2, 0x08,   10 /* Private */,
+       9,    0,  124,    2, 0x08,   11 /* Private */,
+      10,    0,  125,    2, 0x08,   12 /* Private */,
+      11,    0,  126,    2, 0x08,   13 /* Private */,
+      12,    0,  127,    2, 0x08,   14 /* Private */,
+      13,    3,  128,    2, 0x08,   15 /* Private */,
+      15,    1,  135,    2, 0x08,   19 /* Private */,
+      15,    0,  138,    2, 0x28,   21 /* Private | MethodCloned */,
+      16,    0,  139,    2, 0x08,   22 /* Private */,
+      17,    0,  140,    2, 0x08,   23 /* Private */,
+      18,    0,  141,    2, 0x08,   24 /* Private */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::QString,    3,
@@ -176,7 +177,8 @@ Q_CONSTINIT static const uint qt_meta_data_CLASScashRegisterSystemENDCLASS[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void, 0x80000000 | 14, QMetaType::Float, QMetaType::QString,    2,    2,    2,
-    QMetaType::Bool,
+    QMetaType::Float, QMetaType::Float,    2,
+    QMetaType::Float,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -223,7 +225,10 @@ Q_CONSTINIT const QMetaObject cashRegisterSystem::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<float, std::false_type>,
         QtPrivate::TypeAndForceComplete<QString, std::false_type>,
         // method 'on_check_discount_clicked'
-        QtPrivate::TypeAndForceComplete<bool, std::false_type>,
+        QtPrivate::TypeAndForceComplete<float, std::false_type>,
+        QtPrivate::TypeAndForceComplete<float, std::false_type>,
+        // method 'on_check_discount_clicked'
+        QtPrivate::TypeAndForceComplete<float, std::false_type>,
         // method 'on_cancel_order_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_sell_clicked'
@@ -251,11 +256,13 @@ void cashRegisterSystem::qt_static_metacall(QObject *_o, QMetaObject::Call _c, i
         case 8: _t->on_add_new_clicked(); break;
         case 9: _t->on_go_back_clicked(); break;
         case 10: _t->Delete_On_Click((*reinterpret_cast< std::add_pointer_t<QPushButton*>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<float>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[3]))); break;
-        case 11: { bool _r = _t->on_check_discount_clicked();
-            if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = std::move(_r); }  break;
-        case 12: _t->on_cancel_order_clicked(); break;
-        case 13: _t->on_sell_clicked(); break;
-        case 14: _t->on_retrieve_clicked(); break;
+        case 11: { float _r = _t->on_check_discount_clicked((*reinterpret_cast< std::add_pointer_t<float>>(_a[1])));
+            if (_a[0]) *reinterpret_cast< float*>(_a[0]) = std::move(_r); }  break;
+        case 12: { float _r = _t->on_check_discount_clicked();
+            if (_a[0]) *reinterpret_cast< float*>(_a[0]) = std::move(_r); }  break;
+        case 13: _t->on_cancel_order_clicked(); break;
+        case 14: _t->on_sell_clicked(); break;
+        case 15: _t->on_retrieve_clicked(); break;
         default: ;
         }
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
@@ -300,13 +307,13 @@ int cashRegisterSystem::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 15)
+        if (_id < 16)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 15;
+        _id -= 16;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 15)
+        if (_id < 16)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 15;
+        _id -= 16;
     }
     return _id;
 }
