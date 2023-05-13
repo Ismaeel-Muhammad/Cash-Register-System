@@ -83,6 +83,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="admin.cpp" />
     <ClCompile Include="cart.cpp" />
     <ClCompile Include="CreatingAccount.cpp" />
     <ClCompile Include="database.cpp" />
