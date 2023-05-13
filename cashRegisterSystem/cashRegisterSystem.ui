@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1296</width>
-    <height>715</height>
+    <height>772</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,11 +20,11 @@
       <x>0</x>
       <y>10</y>
       <width>1251</width>
-      <height>661</height>
+      <height>691</height>
      </rect>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="login">
      <widget class="QLineEdit" name="username_field">
@@ -529,6 +529,509 @@ font-size: 14px;</string>
         <string>check</string>
        </property>
       </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="admin_form">
+     <widget class="QFrame" name="control_frame">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>30</y>
+        <width>1231</width>
+        <height>201</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 1px solid black;</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="Line" name="line">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>80</y>
+         <width>1231</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-top:1px;</string>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_2">
+       <property name="geometry">
+        <rect>
+         <x>1080</x>
+         <y>10</y>
+         <width>131</width>
+         <height>81</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font-size: 16px;
+border:none;</string>
+       </property>
+       <property name="text">
+        <string>اضافة/حذف غرض:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_3">
+       <property name="geometry">
+        <rect>
+         <x>1080</x>
+         <y>110</y>
+         <width>131</width>
+         <height>81</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font-size: 16px;
+border:none;</string>
+       </property>
+       <property name="text">
+        <string>اضافة/حذف كمية:</string>
+       </property>
+      </widget>
+      <widget class="QPlainTextEdit" name="item_name_item">
+       <property name="geometry">
+        <rect>
+         <x>880</x>
+         <y>40</y>
+         <width>151</width>
+         <height>41</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_4">
+       <property name="geometry">
+        <rect>
+         <x>960</x>
+         <y>10</y>
+         <width>71</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: none;</string>
+       </property>
+       <property name="text">
+        <string>اسم الغرض</string>
+       </property>
+      </widget>
+      <widget class="QPlainTextEdit" name="item_price_item">
+       <property name="geometry">
+        <rect>
+         <x>690</x>
+         <y>40</y>
+         <width>151</width>
+         <height>41</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QPlainTextEdit" name="item_quantity_item">
+       <property name="geometry">
+        <rect>
+         <x>500</x>
+         <y>40</y>
+         <width>151</width>
+         <height>41</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="add_item">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>10</y>
+         <width>181</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>اضافة</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="remove_item">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>60</y>
+         <width>181</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>حذف</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_5">
+       <property name="geometry">
+        <rect>
+         <x>770</x>
+         <y>10</y>
+         <width>71</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: none;</string>
+       </property>
+       <property name="text">
+        <string>السعر</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_6">
+       <property name="geometry">
+        <rect>
+         <x>580</x>
+         <y>10</y>
+         <width>71</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: none;</string>
+       </property>
+       <property name="text">
+        <string>الكمية</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_7">
+       <property name="geometry">
+        <rect>
+         <x>390</x>
+         <y>10</y>
+         <width>71</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: none;</string>
+       </property>
+       <property name="text">
+        <string>النوع</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="remove_quantity">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>160</y>
+         <width>181</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>حذف</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="add_quantity">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>110</y>
+         <width>181</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>اضافة</string>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="item_name_quantity">
+       <property name="geometry">
+        <rect>
+         <x>690</x>
+         <y>140</y>
+         <width>341</width>
+         <height>41</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_20">
+       <property name="geometry">
+        <rect>
+         <x>950</x>
+         <y>110</y>
+         <width>71</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: none;</string>
+       </property>
+       <property name="text">
+        <string>اسم الغرض</string>
+       </property>
+      </widget>
+      <widget class="QPlainTextEdit" name="item_quantity_quantity">
+       <property name="geometry">
+        <rect>
+         <x>500</x>
+         <y>140</y>
+         <width>151</width>
+         <height>41</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_21">
+       <property name="geometry">
+        <rect>
+         <x>570</x>
+         <y>110</y>
+         <width>71</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: none;</string>
+       </property>
+       <property name="text">
+        <string>الكمية</string>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="item_type_item">
+       <property name="geometry">
+        <rect>
+         <x>310</x>
+         <y>40</y>
+         <width>151</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="currentIndex">
+        <number>-1</number>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QLabel" name="label_22">
+      <property name="geometry">
+       <rect>
+        <x>1070</x>
+        <y>0</y>
+        <width>161</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font-size: 18px;
+font-weight: bold;</string>
+      </property>
+      <property name="text">
+       <string>التحكم في البضاعة:</string>
+      </property>
+     </widget>
+     <widget class="QFrame" name="total_operations_frame">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>280</y>
+        <width>401</width>
+        <height>341</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 1px solid black;</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QScrollArea" name="scrollArea_7">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>401</width>
+         <height>341</height>
+        </rect>
+       </property>
+       <property name="widgetResizable">
+        <bool>true</bool>
+       </property>
+       <widget class="QWidget" name="total_operations_contents">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>399</width>
+          <height>339</height>
+         </rect>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+     <widget class="QFrame" name="return_operations_frame">
+      <property name="geometry">
+       <rect>
+        <x>420</x>
+        <y>280</y>
+        <width>411</width>
+        <height>341</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 1px solid black;</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QScrollArea" name="scrollArea_6">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>411</width>
+         <height>341</height>
+        </rect>
+       </property>
+       <property name="widgetResizable">
+        <bool>true</bool>
+       </property>
+       <widget class="QWidget" name="return_operations_contents">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>409</width>
+          <height>339</height>
+         </rect>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+     <widget class="QFrame" name="sell_operations_frame">
+      <property name="geometry">
+       <rect>
+        <x>840</x>
+        <y>280</y>
+        <width>401</width>
+        <height>341</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 1px solid black;</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QScrollArea" name="scrollArea_5">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>401</width>
+         <height>341</height>
+        </rect>
+       </property>
+       <property name="widgetResizable">
+        <bool>true</bool>
+       </property>
+       <widget class="QWidget" name="sell_operations_contents">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>399</width>
+          <height>339</height>
+         </rect>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+     <widget class="QLabel" name="label_23">
+      <property name="geometry">
+       <rect>
+        <x>1130</x>
+        <y>240</y>
+        <width>111</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font-size: 18px;
+font-weight: bold;</string>
+      </property>
+      <property name="text">
+       <string>عمليات البيع:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_25">
+      <property name="geometry">
+       <rect>
+        <x>700</x>
+        <y>240</y>
+        <width>131</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font-size: 18px;
+font-weight: bold;</string>
+      </property>
+      <property name="text">
+       <string>عمليات استرجاع:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_24">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>240</y>
+        <width>251</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font-size: 18px;
+font-weight: bold;</string>
+      </property>
+      <property name="text">
+       <string>اجمالي عمليات البيع و الاسترجاع:</string>
+      </property>
+     </widget>
+     <widget class="QTextBrowser" name="day_total_income">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>640</y>
+        <width>261</width>
+        <height>41</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_26">
+      <property name="geometry">
+       <rect>
+        <x>280</x>
+        <y>640</y>
+        <width>101</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font-size: 18px;
+font-weight: bold;</string>
+      </property>
+      <property name="text">
+       <string>اجمالي اليوم</string>
+      </property>
      </widget>
     </widget>
     <widget class="QWidget" name="creating_customer_account">

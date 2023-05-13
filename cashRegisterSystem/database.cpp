@@ -146,6 +146,7 @@ void Database::insertProdRows(string name, string price, int quantity, string ty
         msg.exec();
     }
 }
+
 int Database::getRowCount(sqlite3* db, const char* tableName) {
     int rowCount = 0;
     sqlite3_stmt* stmt;
@@ -162,6 +163,7 @@ int Database::getRowCount(sqlite3* db, const char* tableName) {
     sqlite3_free((void*)query);
     return rowCount;
 }
+
 void Database::DeleteProdRow(string name) {
     sqlite3_stmt* stmt;
     const char* delete_query = "DELETE FROM products WHERE name = ?";
