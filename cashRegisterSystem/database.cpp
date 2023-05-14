@@ -296,3 +296,7 @@ void Database::updateOperation(string name, int quantity, float price, string ty
     }
     sqlite3_finalize(stmt);
 }
+void Database::SelectAllItemsFromTable(string type) {
+   
+
+}

@@ -5,6 +5,7 @@ cashRegisterSystem::cashRegisterSystem(QWidget* parent)
 {
     m_ProductsDB = NULL;
     m_customersDB = NULL;
+    m_OperationsDB = NULL;
     withDiscount = true;
     TotalBalanceForOperation = 0;
     TotalBalanceForOperationDiscounted = 0;
@@ -15,7 +16,10 @@ cashRegisterSystem::cashRegisterSystem(QWidget* parent)
     m_ui->class_box->addItem("\u0639\u0645\u064A\u0644 \u0639\u0627\u062F\u064A"); // Úãíá ÚÇÏí
     m_ui->class_box->addItem("\u0639\u0645\u064A\u0644 \u0645\u0647\u0645"); // Úãíá ãåã
     m_ui->class_box->addItem("\u0637\u0627\u0644\u0628"); // ØÇáÈ
-
+    Show_Sell_window();
+    Show_retrieve_window();
+    Show_total_window();
+    Add_Item_names();
 }
 
 cashRegisterSystem::~cashRegisterSystem()
@@ -105,8 +109,7 @@ void cashRegisterSystem::populateProductList(QWidget* scrollContents, QString pr
         quantityBox = new QSpinBox();
         QLabel* lab = new QLabel(QString("Price: %1").arg(QString::fromUtf8(price)));
         lab->setStyleSheet("border: none; font-size:16px;");
-        // extracting price from existing label
-        //quantityBox->setStyleSheet("QSpinBox{border:none}");
+     
 
         float price_val = lab->text().split(" ")[1].toFloat();
         //Setting up the lable style sheet

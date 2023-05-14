@@ -13,6 +13,7 @@
 #include "database.h"
 #include <string>
 #include <QCoreApplication>
+#include <qtableview.h>
 
 #define SLOT_PRICE -1
 
@@ -25,11 +26,16 @@ public:
     ~cashRegisterSystem();
 public slots:
     void Add_Item_names();
+    void Show_Sell_window();
+    void Show_window(string, QWidget*);
+    void Show_retrieve_window();
+    void Show_total_window();
 
 private:
     Ui::cashRegisterSystem2Class* m_ui;
     bool m_loadedOnce[4];
     sqlite3* m_ProductsDB;
+    sqlite3* m_OperationsDB;
     sqlite3* m_customersDB;
     float TotalBalanceForOperation;
     float TotalBalanceForOperationDiscounted;
@@ -39,7 +45,11 @@ private:
     QVector<QPushButton*> Delete_button;
     QHash<QPushButton*, QFrame*> MappingLayout;
     QHash<QString, QList<QVariant>> myHash;
+    QHash<QString, QList<QVariant>> sellOperation;
+    QHash<QString, QList<QVariant>> retrieveOperation;
+    void InsertInHashOperations(QHash < QString, QList<QVariant>>&, QString name, float price, int Quantity_Sell);
     void populateProductList(QWidget*, QString);
+
     void DeleteAll();
     void payOperation(char);
     char updateType(char);
