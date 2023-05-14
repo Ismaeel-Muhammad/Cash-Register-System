@@ -81,7 +81,7 @@ private slots:
     void on_add_quantity_clicked();
     void on_remove_item_clicked();
     void on_remove_quantity_clicked();
-
+    void on_return_MainForm_clicked();
     void on_customers_clicked();
     void on_backFromCustomers_clicked();
     void on_Search_btn_clicked();

@@ -185,6 +185,9 @@ void cashRegisterSystem::InsertInHashOperations(QHash< QString, QList<QVariant>>
         Operation.insert(name, values);
     }
 }
+void cashRegisterSystem::on_return_MainForm_clicked() {
+    m_ui->formsStackedWidget->setCurrentIndex(1);
+}
 
 void cashRegisterSystem::Add_Item_names() {
     sqlite3* db;
