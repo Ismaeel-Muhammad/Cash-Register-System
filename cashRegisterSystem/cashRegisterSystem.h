@@ -14,6 +14,8 @@
 #include <string>
 #include <QCoreApplication>
 #include <qtableview.h>
+#include <QStandardItemModel>
+#include <qshortcut.h>
 
 #define SLOT_PRICE -1
 
@@ -23,13 +25,7 @@ class cashRegisterSystem : public QMainWindow {
 
 public:
     cashRegisterSystem(QWidget* parent = nullptr);
-    ~cashRegisterSystem();
-public slots:
-    void Add_Item_names();
-    void Show_Sell_window();
-    void Show_window(string, QWidget*);
-    void Show_retrieve_window();
-    void Show_total_window();
+    ~cashRegisterSystem();    
 
 private:
     Ui::cashRegisterSystem2Class* m_ui;
@@ -50,9 +46,22 @@ private:
     void InsertInHashOperations(QHash < QString, QList<QVariant>>&, QString name, float price, int Quantity_Sell);
     void populateProductList(QWidget*, QString);
 
+    string namesearch;
+    string phonesearch;
+    int rank;
+
     void DeleteAll();
     void payOperation(char);
     char updateType(char);
+
+    void search();
+
+    void Add_Item_names();
+    void Show_Sell_window();
+    void Show_window(string, QWidget*);
+    void Show_retrieve_window();
+    void Show_total_window();
+
 private slots:
     void on_name_button_clicked(int, QString, float);
     void on_snacks_clicked();
@@ -63,7 +72,7 @@ private slots:
     void on_AddNewCustomer_clicked();
     void on_add_new_clicked();
     void on_go_back_clicked();
-    void Delete_On_Click(QPushButton*, float, QString);
+    void Delete_On_Click(QPushButton*, float, QString, int);
     float on_check_discount_clicked(float = SLOT_PRICE);
     void on_cancel_order_clicked();
     void on_sell_clicked();
@@ -72,6 +81,12 @@ private slots:
     void on_add_quantity_clicked();
     void on_remove_item_clicked();
     void on_remove_quantity_clicked();
+
+    void on_customers_clicked();
+    void on_backFromCustomers_clicked();
+    void on_Search_btn_clicked();
+
+    
 
 };
 

@@ -62,7 +62,7 @@ void cashRegisterSystem::Show_retrieve_window() {
     Show_window("retrieve", m_ui->return_operations_contents);
 }
 void cashRegisterSystem::Show_total_window() {
-    float TotalPrice;
+    float TotalPrice = 0;
     QVBoxLayout* VLayout = new QVBoxLayout(m_ui->total_operations_contents);
     QHashIterator<QString, QList<QVariant>> i(sellOperation);
     int quantity=0;
@@ -144,31 +144,27 @@ void cashRegisterSystem::Show_window(string type, QWidget* scrollContents) {
 
         QFrame* f = new QFrame();
         QHBoxLayout* hLayout = new QHBoxLayout(f);
-        int id = sqlite3_column_int(stmt, 0);
         string name = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 1));
         int Quantity_Sell = sqlite3_column_int(stmt, 2);
         string price = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 3));
         float p = stof(price);
-        QLabel* ids = new QLabel(QString("%1").arg(id));
         QLabel* names = new QLabel(QString("\u0627\u0644\u0627\u0633\u0645 : %1").arg(QString::fromUtf8(name)));
         QLabel* Quantities = new QLabel(QString("\u0627\u0644\u0643\u0645\u064a\u0629 : %1 ").arg(to_string(Quantity_Sell).c_str()));
-        QLabel* pricesLabel = new QLabel(QString("\u0627\u0644\u0633\u0639\u0631 : %1").arg(QString::number(p*Quantity_Sell)));
-        ids->setStyleSheet("border:none;");
+        QLabel* pricesLabel = new QLabel(QString("\u0627\u0644\u0633\u0639\u0631 : %1").arg(QString::number(p)));
         names->setStyleSheet("border:none;");
         Quantities->setStyleSheet("border:none;");
         pricesLabel->setStyleSheet("border:none;");
         if (i % 2 == 1) f->setStyleSheet("QFrame{background-color:rgba(184, 184, 184, 255)}");
-        hLayout->addWidget(ids);
         hLayout->addWidget(Quantities);
         hLayout->addWidget(pricesLabel);
         hLayout->addWidget(names);
         VLayout->addWidget(f);
         i++;
         if (type == "sell") {
-            InsertInHashOperations(sellOperation, QString::fromUtf8(name), (p*Quantity_Sell), Quantity_Sell);
+            InsertInHashOperations(sellOperation, QString::fromUtf8(name), p, Quantity_Sell);
         }
         else {
-            InsertInHashOperations(retrieveOperation, QString::fromUtf8(name), p * Quantity_Sell, Quantity_Sell);
+            InsertInHashOperations(retrieveOperation, QString::fromUtf8(name), p, Quantity_Sell);
         }
     }
     scrollContents->setLayout(VLayout);

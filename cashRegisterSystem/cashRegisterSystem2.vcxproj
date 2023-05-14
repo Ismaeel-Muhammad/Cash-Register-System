@@ -13,7 +13,7 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{2A951D4E-0F2A-4E19-A262-E25D4916FC87}</ProjectGuid>
     <Keyword>QtVS_v304</Keyword>
-    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">10.0.22621.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">10.0.18362.0</WindowsTargetPlatformVersion>
     <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">10.0.18362.0</WindowsTargetPlatformVersion>
     <QtMsBuild Condition="'$(QtMsBuild)'=='' OR !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
   </PropertyGroup>
@@ -86,6 +86,7 @@
     <ClCompile Include="admin.cpp" />
     <ClCompile Include="cart.cpp" />
     <ClCompile Include="CreatingAccount.cpp" />
+    <ClCompile Include="customersForm.cpp" />
     <ClCompile Include="database.cpp" />
     <ClCompile Include="login.cpp" />
     <ClCompile Include="sqlite\sqlite3.c" />

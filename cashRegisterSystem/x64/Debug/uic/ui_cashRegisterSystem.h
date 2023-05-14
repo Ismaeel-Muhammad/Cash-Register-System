@@ -13,6 +13,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QFrame>
+#include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
@@ -23,6 +24,7 @@
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QStatusBar>
+#include <QtWidgets/QTableView>
 #include <QtWidgets/QTextBrowser>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QVBoxLayout>
@@ -76,6 +78,7 @@ public:
     QLabel *price_before;
     QLabel *price_after;
     QPushButton *check_discount;
+    QPushButton *customers;
     QWidget *admin_form;
     QFrame *control_frame;
     QFrame *line;
@@ -112,7 +115,6 @@ public:
     QLabel *label_24;
     QTextBrowser *day_total_income;
     QLabel *label_26;
-    QPushButton *Return_MainForm;
     QWidget *creating_customer_account;
     QPushButton *add_new;
     QPushButton *go_back;
@@ -122,6 +124,18 @@ public:
     QLabel *phoneLable;
     QLabel *classLable;
     QComboBox *class_box;
+    QWidget *page;
+    QLineEdit *nameSearch;
+    QLineEdit *phoneSearch;
+    QComboBox *ranksearch;
+    QPushButton *Search_btn;
+    QLabel *label_8;
+    QLabel *label_9;
+    QLabel *label_10;
+    QScrollArea *results;
+    QWidget *scrollAreaWidgetContents;
+    QTableView *tableView;
+    QPushButton *backFromCustomers;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -130,12 +144,12 @@ public:
     {
         if (cashRegisterSystem2Class->objectName().isEmpty())
             cashRegisterSystem2Class->setObjectName("cashRegisterSystem2Class");
-        cashRegisterSystem2Class->resize(1296, 772);
+        cashRegisterSystem2Class->resize(1261, 747);
         centralWidget = new QWidget(cashRegisterSystem2Class);
         centralWidget->setObjectName("centralWidget");
         formsStackedWidget = new QStackedWidget(centralWidget);
         formsStackedWidget->setObjectName("formsStackedWidget");
-        formsStackedWidget->setGeometry(QRect(0, 10, 1251, 691));
+        formsStackedWidget->setGeometry(QRect(0, 0, 1251, 691));
         login = new QWidget();
         login->setObjectName("login");
         username_field = new QLineEdit(login);
@@ -237,7 +251,7 @@ public:
         drinks->setStyleSheet(QString::fromUtf8(""));
         AddNewCustomer = new QPushButton(main_form);
         AddNewCustomer->setObjectName("AddNewCustomer");
-        AddNewCustomer->setGeometry(QRect(780, 580, 161, 41));
+        AddNewCustomer->setGeometry(QRect(450, 580, 161, 41));
         frame = new QFrame(main_form);
         frame->setObjectName("frame");
         frame->setGeometry(QRect(50, 80, 361, 561));
@@ -307,6 +321,9 @@ public:
         check_discount = new QPushButton(frame);
         check_discount->setObjectName("check_discount");
         check_discount->setGeometry(QRect(10, 420, 71, 31));
+        customers = new QPushButton(main_form);
+        customers->setObjectName("customers");
+        customers->setGeometry(QRect(1060, 580, 161, 41));
         formsStackedWidget->addWidget(main_form);
         admin_form = new QWidget();
         admin_form->setObjectName("admin_form");
@@ -384,10 +401,6 @@ public:
         label_21->setGeometry(QRect(570, 110, 71, 20));
         label_21->setStyleSheet(QString::fromUtf8("border: none;"));
         item_type_item = new QComboBox(control_frame);
-        item_type_item->addItem(QString());
-        item_type_item->addItem(QString());
-        item_type_item->addItem(QString());
-        item_type_item->addItem(QString());
         item_type_item->setObjectName("item_type_item");
         item_type_item->setGeometry(QRect(310, 40, 151, 41));
         label_22 = new QLabel(admin_form);
@@ -422,7 +435,6 @@ public:
         return_operations_contents = new QWidget();
         return_operations_contents->setObjectName("return_operations_contents");
         return_operations_contents->setGeometry(QRect(0, 0, 409, 339));
-        return_operations_contents->setFocusPolicy(Qt::NoFocus);
         scrollArea_6->setWidget(return_operations_contents);
         sell_operations_frame = new QFrame(admin_form);
         sell_operations_frame->setObjectName("sell_operations_frame");
@@ -456,16 +468,11 @@ public:
         day_total_income = new QTextBrowser(admin_form);
         day_total_income->setObjectName("day_total_income");
         day_total_income->setGeometry(QRect(10, 640, 261, 41));
-        day_total_income->setStyleSheet(QString::fromUtf8("text-size:16px;\n"
-"font-weight:bold;"));
         label_26 = new QLabel(admin_form);
         label_26->setObjectName("label_26");
         label_26->setGeometry(QRect(280, 640, 101, 41));
         label_26->setStyleSheet(QString::fromUtf8("font-size: 18px;\n"
 "font-weight: bold;"));
-        Return_MainForm = new QPushButton(admin_form);
-        Return_MainForm->setObjectName("Return_MainForm");
-        Return_MainForm->setGeometry(QRect(1080, 650, 141, 31));
         formsStackedWidget->addWidget(admin_form);
         creating_customer_account = new QWidget();
         creating_customer_account->setObjectName("creating_customer_account");
@@ -495,10 +502,59 @@ public:
         class_box->setGeometry(QRect(520, 290, 201, 41));
         class_box->setEditable(false);
         formsStackedWidget->addWidget(creating_customer_account);
+        page = new QWidget();
+        page->setObjectName("page");
+        nameSearch = new QLineEdit(page);
+        nameSearch->setObjectName("nameSearch");
+        nameSearch->setGeometry(QRect(10, 70, 231, 31));
+        phoneSearch = new QLineEdit(page);
+        phoneSearch->setObjectName("phoneSearch");
+        phoneSearch->setGeometry(QRect(10, 180, 231, 31));
+        ranksearch = new QComboBox(page);
+        ranksearch->addItem(QString());
+        ranksearch->addItem(QString());
+        ranksearch->addItem(QString());
+        ranksearch->addItem(QString());
+        ranksearch->setObjectName("ranksearch");
+        ranksearch->setGeometry(QRect(10, 290, 231, 22));
+        Search_btn = new QPushButton(page);
+        Search_btn->setObjectName("Search_btn");
+        Search_btn->setGeometry(QRect(40, 410, 171, 31));
+        label_8 = new QLabel(page);
+        label_8->setObjectName("label_8");
+        label_8->setGeometry(QRect(80, 30, 91, 31));
+        label_8->setStyleSheet(QString::fromUtf8("font-weight:bold;\n"
+"font-size:18px;"));
+        label_9 = new QLabel(page);
+        label_9->setObjectName("label_9");
+        label_9->setGeometry(QRect(60, 140, 131, 31));
+        label_9->setStyleSheet(QString::fromUtf8("font-weight:bold;\n"
+"font-size:18px;"));
+        label_10 = new QLabel(page);
+        label_10->setObjectName("label_10");
+        label_10->setGeometry(QRect(80, 250, 81, 31));
+        label_10->setStyleSheet(QString::fromUtf8("font-weight:bold;\n"
+"font-size:18px;"));
+        results = new QScrollArea(page);
+        results->setObjectName("results");
+        results->setGeometry(QRect(270, 40, 981, 651));
+        results->setStyleSheet(QString::fromUtf8("border: 1px solid black;"));
+        results->setWidgetResizable(true);
+        scrollAreaWidgetContents = new QWidget();
+        scrollAreaWidgetContents->setObjectName("scrollAreaWidgetContents");
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 979, 649));
+        tableView = new QTableView(scrollAreaWidgetContents);
+        tableView->setObjectName("tableView");
+        tableView->setGeometry(QRect(0, 0, 981, 651));
+        results->setWidget(scrollAreaWidgetContents);
+        backFromCustomers = new QPushButton(page);
+        backFromCustomers->setObjectName("backFromCustomers");
+        backFromCustomers->setGeometry(QRect(40, 650, 171, 31));
+        formsStackedWidget->addWidget(page);
         cashRegisterSystem2Class->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(cashRegisterSystem2Class);
         menuBar->setObjectName("menuBar");
-        menuBar->setGeometry(QRect(0, 0, 1296, 22));
+        menuBar->setGeometry(QRect(0, 0, 1261, 22));
         cashRegisterSystem2Class->setMenuBar(menuBar);
         mainToolBar = new QToolBar(cashRegisterSystem2Class);
         mainToolBar->setObjectName("mainToolBar");
@@ -509,9 +565,9 @@ public:
 
         retranslateUi(cashRegisterSystem2Class);
 
-        formsStackedWidget->setCurrentIndex(2);
-        ProductsStackedWidget->setCurrentIndex(0);
-        item_type_item->setCurrentIndex(0);
+        formsStackedWidget->setCurrentIndex(1);
+        ProductsStackedWidget->setCurrentIndex(1);
+        item_type_item->setCurrentIndex(-1);
         class_box->setCurrentIndex(-1);
 
 
@@ -539,6 +595,7 @@ public:
         price_before->setText(QCoreApplication::translate("cashRegisterSystem2Class", "0", nullptr));
         price_after->setText(QCoreApplication::translate("cashRegisterSystem2Class", "0", nullptr));
         check_discount->setText(QCoreApplication::translate("cashRegisterSystem2Class", "check", nullptr));
+        customers->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\331\202\330\247\330\246\331\205\330\251 \330\247\331\204\330\271\331\205\331\204\330\247\330\241", nullptr));
         label_2->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\330\266\330\247\331\201\330\251/\330\255\330\260\331\201 \330\272\330\261\330\266:", nullptr));
         label_3->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\330\266\330\247\331\201\330\251/\330\255\330\260\331\201 \331\203\331\205\331\212\330\251:", nullptr));
         label_4->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\330\263\331\205 \330\247\331\204\330\272\330\261\330\266", nullptr));
@@ -551,23 +608,27 @@ public:
         add_quantity->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\330\266\330\247\331\201\330\251", nullptr));
         label_20->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\330\263\331\205 \330\247\331\204\330\272\330\261\330\266", nullptr));
         label_21->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\331\204\331\203\331\205\331\212\330\251", nullptr));
-        item_type_item->setItemText(0, QCoreApplication::translate("cashRegisterSystem2Class", "Drink", nullptr));
-        item_type_item->setItemText(1, QCoreApplication::translate("cashRegisterSystem2Class", "vegetables", nullptr));
-        item_type_item->setItemText(2, QCoreApplication::translate("cashRegisterSystem2Class", "Snacks", nullptr));
-        item_type_item->setItemText(3, QCoreApplication::translate("cashRegisterSystem2Class", "fruit", nullptr));
-
         label_22->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\331\204\330\252\330\255\331\203\331\205 \331\201\331\212 \330\247\331\204\330\250\330\266\330\247\330\271\330\251:", nullptr));
         label_23->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\271\331\205\331\204\331\212\330\247\330\252 \330\247\331\204\330\250\331\212\330\271:", nullptr));
         label_25->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\271\331\205\331\204\331\212\330\247\330\252 \330\247\330\263\330\252\330\261\330\254\330\247\330\271:", nullptr));
         label_24->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\330\254\331\205\330\247\331\204\331\212 \330\271\331\205\331\204\331\212\330\247\330\252 \330\247\331\204\330\250\331\212\330\271 \331\210 \330\247\331\204\330\247\330\263\330\252\330\261\330\254\330\247\330\271:", nullptr));
         label_26->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\330\254\331\205\330\247\331\204\331\212 \330\247\331\204\331\212\331\210\331\205", nullptr));
-        Return_MainForm->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\331\204\330\261\330\254\331\210\330\271 \331\204\331\204\330\265\331\201\330\255\330\251 \330\247\331\204\330\247\330\263\330\247\330\263\331\212\330\251", nullptr));
         add_new->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\330\266\330\247\331\201\330\251", nullptr));
         go_back->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\271\331\210\330\257\330\251", nullptr));
         nameLable->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\330\263\331\205 \330\247\331\204\330\271\331\205\331\212\331\204", nullptr));
         phoneLable->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\261\331\202\331\205 \330\247\331\204\331\205\331\210\330\250\330\247\331\212\331\204", nullptr));
         classLable->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\252\330\265\331\206\331\212\331\201 \330\247\331\204\330\271\331\205\331\212\331\204", nullptr));
         class_box->setCurrentText(QString());
+        ranksearch->setItemText(0, QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\331\204\331\203\331\204", nullptr));
+        ranksearch->setItemText(1, QCoreApplication::translate("cashRegisterSystem2Class", "\330\271\331\205\331\212\331\204 \330\271\330\247\330\257\331\212", nullptr));
+        ranksearch->setItemText(2, QCoreApplication::translate("cashRegisterSystem2Class", "\330\271\331\205\331\212\331\204 \331\205\331\207\331\205", nullptr));
+        ranksearch->setItemText(3, QCoreApplication::translate("cashRegisterSystem2Class", "\330\267\330\247\331\204\330\250", nullptr));
+
+        Search_btn->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\250\330\255\330\253", nullptr));
+        label_8->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\250\330\255\330\253 \330\250\330\247\331\204\330\247\330\263\331\205", nullptr));
+        label_9->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\250\330\255\330\253 \330\250\330\261\331\202\331\205 \330\247\331\204\331\207\330\247\330\252\331\201", nullptr));
+        label_10->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\250\330\255\330\253 \330\250\330\247\331\204\331\201\330\246\330\251", nullptr));
+        backFromCustomers->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\271\331\210\330\257\330\251", nullptr));
     } // retranslateUi
 
 };

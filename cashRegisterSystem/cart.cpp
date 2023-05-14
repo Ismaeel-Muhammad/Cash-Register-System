@@ -43,8 +43,8 @@ void cashRegisterSystem::on_name_button_clicked(int quantity, QString name, floa
     scrollLayout->insertItem(0, spacer);
     scrollLayout->insertWidget(1, frame);
 
-    connect(Delete_button.back(), &QPushButton::clicked, [this, btn = Delete_button.back(), totPrice, names]() {
-        Delete_On_Click(btn, totPrice->text().toFloat(), names->text());
+    connect(Delete_button.back(), &QPushButton::clicked, [this, btn = Delete_button.back(), totalPrice, names, quantity]() {
+        Delete_On_Click(btn, totalPrice, names->text(), quantity);
         });
 
     if (i % 2 == 1) frame->setStyleSheet("QFrame{background-color:rgba(184, 184, 184, 255)}");
@@ -67,11 +67,13 @@ void cashRegisterSystem::on_name_button_clicked(int quantity, QString name, floa
         values << quantity << totalPrice;
         myHash.insert(name, values);
     }
-
 }
 
-void cashRegisterSystem::Delete_On_Click(QPushButton* del, float totalPrice, QString name) {
-    myHash.remove(name);
+void cashRegisterSystem::Delete_On_Click(QPushButton* del, float totalPrice, QString name, int quantity) {
+    QList<QVariant> values = myHash[name];
+    values[0] = values[0].toInt() - quantity;
+    values[1] = values[1].toFloat() - totalPrice;
+    myHash[name] = values;
     QFrame* layout = MappingLayout.take(del);
 
     withDiscount = on_check_discount_clicked();
