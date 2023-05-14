@@ -16,7 +16,6 @@ public:
     void updateProductQuantity(string, int, char);
     void insertOrUpdateOperation(string, int, float, char);
     void DeleteProdRow(string);
-    void SelectAllItemsFromTable(string);
     private:
     sqlite3* m_db;
 

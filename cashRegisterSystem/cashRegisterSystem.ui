@@ -1038,6 +1038,10 @@ font-weight: bold;</string>
         <height>41</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">text-size:16px;
+font-weight:bold;</string>
+      </property>
      </widget>
      <widget class="QLabel" name="label_26">
       <property name="geometry">
@@ -1054,6 +1058,19 @@ font-weight: bold;</string>
       </property>
       <property name="text">
        <string>اجمالي اليوم</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="Return_MainForm">
+      <property name="geometry">
+       <rect>
+        <x>1080</x>
+        <y>650</y>
+        <width>141</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>الرجوع للصفحة الاساسية</string>
       </property>
      </widget>
     </widget>

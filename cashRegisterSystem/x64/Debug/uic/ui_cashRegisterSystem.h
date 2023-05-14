@@ -112,6 +112,7 @@ public:
     QLabel *label_24;
     QTextBrowser *day_total_income;
     QLabel *label_26;
+    QPushButton *Return_MainForm;
     QWidget *creating_customer_account;
     QPushButton *add_new;
     QPushButton *go_back;
@@ -455,11 +456,16 @@ public:
         day_total_income = new QTextBrowser(admin_form);
         day_total_income->setObjectName("day_total_income");
         day_total_income->setGeometry(QRect(10, 640, 261, 41));
+        day_total_income->setStyleSheet(QString::fromUtf8("text-size:16px;\n"
+"font-weight:bold;"));
         label_26 = new QLabel(admin_form);
         label_26->setObjectName("label_26");
         label_26->setGeometry(QRect(280, 640, 101, 41));
         label_26->setStyleSheet(QString::fromUtf8("font-size: 18px;\n"
 "font-weight: bold;"));
+        Return_MainForm = new QPushButton(admin_form);
+        Return_MainForm->setObjectName("Return_MainForm");
+        Return_MainForm->setGeometry(QRect(1080, 650, 141, 31));
         formsStackedWidget->addWidget(admin_form);
         creating_customer_account = new QWidget();
         creating_customer_account->setObjectName("creating_customer_account");
@@ -555,6 +561,7 @@ public:
         label_25->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\271\331\205\331\204\331\212\330\247\330\252 \330\247\330\263\330\252\330\261\330\254\330\247\330\271:", nullptr));
         label_24->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\330\254\331\205\330\247\331\204\331\212 \330\271\331\205\331\204\331\212\330\247\330\252 \330\247\331\204\330\250\331\212\330\271 \331\210 \330\247\331\204\330\247\330\263\330\252\330\261\330\254\330\247\330\271:", nullptr));
         label_26->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\330\254\331\205\330\247\331\204\331\212 \330\247\331\204\331\212\331\210\331\205", nullptr));
+        Return_MainForm->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\331\204\330\261\330\254\331\210\330\271 \331\204\331\204\330\265\331\201\330\255\330\251 \330\247\331\204\330\247\330\263\330\247\330\263\331\212\330\251", nullptr));
         add_new->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\330\266\330\247\331\201\330\251", nullptr));
         go_back->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\271\331\210\330\257\330\251", nullptr));
         nameLable->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\330\263\331\205 \330\247\331\204\330\271\331\205\331\212\331\204", nullptr));
