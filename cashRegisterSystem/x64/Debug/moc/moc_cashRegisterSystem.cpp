@@ -40,9 +40,8 @@ namespace {
 struct qt_meta_stringdata_CLASScashRegisterSystemENDCLASS_t {};
 static constexpr auto qt_meta_stringdata_CLASScashRegisterSystemENDCLASS = QtMocHelpers::stringData(
     "cashRegisterSystem",
-    "functionName",
+    "Add_Item_names",
     "",
-    "name",
     "on_name_button_clicked",
     "on_snacks_clicked",
     "on_drinks_clicked",
@@ -57,59 +56,68 @@ static constexpr auto qt_meta_stringdata_CLASScashRegisterSystemENDCLASS = QtMoc
     "on_check_discount_clicked",
     "on_cancel_order_clicked",
     "on_sell_clicked",
-    "on_retrieve_clicked"
+    "on_retrieve_clicked",
+    "on_add_item_clicked",
+    "on_add_quantity_clicked",
+    "on_remove_item_clicked",
+    "on_remove_quantity_clicked"
 );
 #else  // !QT_MOC_HAS_STRING_DATA
 struct qt_meta_stringdata_CLASScashRegisterSystemENDCLASS_t {
-    uint offsetsAndSizes[38];
+    uint offsetsAndSizes[44];
     char stringdata0[19];
-    char stringdata1[13];
+    char stringdata1[15];
     char stringdata2[1];
-    char stringdata3[5];
-    char stringdata4[23];
+    char stringdata3[23];
+    char stringdata4[18];
     char stringdata5[18];
-    char stringdata6[18];
-    char stringdata7[22];
-    char stringdata8[18];
-    char stringdata9[21];
-    char stringdata10[26];
+    char stringdata6[22];
+    char stringdata7[18];
+    char stringdata8[21];
+    char stringdata9[26];
+    char stringdata10[19];
     char stringdata11[19];
-    char stringdata12[19];
-    char stringdata13[16];
-    char stringdata14[13];
-    char stringdata15[26];
-    char stringdata16[24];
-    char stringdata17[16];
+    char stringdata12[16];
+    char stringdata13[13];
+    char stringdata14[26];
+    char stringdata15[24];
+    char stringdata16[16];
+    char stringdata17[20];
     char stringdata18[20];
+    char stringdata19[24];
+    char stringdata20[23];
+    char stringdata21[27];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_CLASScashRegisterSystemENDCLASS_t::offsetsAndSizes) + ofs), len 
 Q_CONSTINIT static const qt_meta_stringdata_CLASScashRegisterSystemENDCLASS_t qt_meta_stringdata_CLASScashRegisterSystemENDCLASS = {
     {
         QT_MOC_LITERAL(0, 18),  // "cashRegisterSystem"
-        QT_MOC_LITERAL(19, 12),  // "functionName"
-        QT_MOC_LITERAL(32, 0),  // ""
-        QT_MOC_LITERAL(33, 4),  // "name"
-        QT_MOC_LITERAL(38, 22),  // "on_name_button_clicked"
-        QT_MOC_LITERAL(61, 17),  // "on_snacks_clicked"
-        QT_MOC_LITERAL(79, 17),  // "on_drinks_clicked"
-        QT_MOC_LITERAL(97, 21),  // "on_vegetables_clicked"
-        QT_MOC_LITERAL(119, 17),  // "on_fruits_clicked"
-        QT_MOC_LITERAL(137, 20),  // "on_login_btn_clicked"
-        QT_MOC_LITERAL(158, 25),  // "on_AddNewCustomer_clicked"
-        QT_MOC_LITERAL(184, 18),  // "on_add_new_clicked"
-        QT_MOC_LITERAL(203, 18),  // "on_go_back_clicked"
-        QT_MOC_LITERAL(222, 15),  // "Delete_On_Click"
-        QT_MOC_LITERAL(238, 12),  // "QPushButton*"
-        QT_MOC_LITERAL(251, 25),  // "on_check_discount_clicked"
-        QT_MOC_LITERAL(277, 23),  // "on_cancel_order_clicked"
-        QT_MOC_LITERAL(301, 15),  // "on_sell_clicked"
-        QT_MOC_LITERAL(317, 19)   // "on_retrieve_clicked"
+        QT_MOC_LITERAL(19, 14),  // "Add_Item_names"
+        QT_MOC_LITERAL(34, 0),  // ""
+        QT_MOC_LITERAL(35, 22),  // "on_name_button_clicked"
+        QT_MOC_LITERAL(58, 17),  // "on_snacks_clicked"
+        QT_MOC_LITERAL(76, 17),  // "on_drinks_clicked"
+        QT_MOC_LITERAL(94, 21),  // "on_vegetables_clicked"
+        QT_MOC_LITERAL(116, 17),  // "on_fruits_clicked"
+        QT_MOC_LITERAL(134, 20),  // "on_login_btn_clicked"
+        QT_MOC_LITERAL(155, 25),  // "on_AddNewCustomer_clicked"
+        QT_MOC_LITERAL(181, 18),  // "on_add_new_clicked"
+        QT_MOC_LITERAL(200, 18),  // "on_go_back_clicked"
+        QT_MOC_LITERAL(219, 15),  // "Delete_On_Click"
+        QT_MOC_LITERAL(235, 12),  // "QPushButton*"
+        QT_MOC_LITERAL(248, 25),  // "on_check_discount_clicked"
+        QT_MOC_LITERAL(274, 23),  // "on_cancel_order_clicked"
+        QT_MOC_LITERAL(298, 15),  // "on_sell_clicked"
+        QT_MOC_LITERAL(314, 19),  // "on_retrieve_clicked"
+        QT_MOC_LITERAL(334, 19),  // "on_add_item_clicked"
+        QT_MOC_LITERAL(354, 23),  // "on_add_quantity_clicked"
+        QT_MOC_LITERAL(378, 22),  // "on_remove_item_clicked"
+        QT_MOC_LITERAL(401, 26)   // "on_remove_quantity_clicked"
     },
     "cashRegisterSystem",
-    "functionName",
+    "Add_Item_names",
     "",
-    "name",
     "on_name_button_clicked",
     "on_snacks_clicked",
     "on_drinks_clicked",
@@ -124,7 +132,11 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASScashRegisterSystemENDCLASS_t qt
     "on_check_discount_clicked",
     "on_cancel_order_clicked",
     "on_sell_clicked",
-    "on_retrieve_clicked"
+    "on_retrieve_clicked",
+    "on_add_item_clicked",
+    "on_add_quantity_clicked",
+    "on_remove_item_clicked",
+    "on_remove_quantity_clicked"
 };
 #undef QT_MOC_LITERAL
 #endif // !QT_MOC_HAS_STRING_DATA
@@ -136,37 +148,37 @@ Q_CONSTINIT static const uint qt_meta_data_CLASScashRegisterSystemENDCLASS[] = {
       11,       // revision
        0,       // classname
        0,    0, // classinfo
-      16,   14, // methods
+      20,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       1,       // signalCount
-
- // signals: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    1,  110,    2, 0x06,    1 /* Public */,
+       0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       4,    3,  113,    2, 0x08,    3 /* Private */,
-       5,    0,  120,    2, 0x08,    7 /* Private */,
-       6,    0,  121,    2, 0x08,    8 /* Private */,
-       7,    0,  122,    2, 0x08,    9 /* Private */,
-       8,    0,  123,    2, 0x08,   10 /* Private */,
-       9,    0,  124,    2, 0x08,   11 /* Private */,
-      10,    0,  125,    2, 0x08,   12 /* Private */,
-      11,    0,  126,    2, 0x08,   13 /* Private */,
-      12,    0,  127,    2, 0x08,   14 /* Private */,
-      13,    3,  128,    2, 0x08,   15 /* Private */,
-      15,    1,  135,    2, 0x08,   19 /* Private */,
-      15,    0,  138,    2, 0x28,   21 /* Private | MethodCloned */,
-      16,    0,  139,    2, 0x08,   22 /* Private */,
-      17,    0,  140,    2, 0x08,   23 /* Private */,
-      18,    0,  141,    2, 0x08,   24 /* Private */,
-
- // signals: parameters
-    QMetaType::Void, QMetaType::QString,    3,
+       1,    0,  134,    2, 0x0a,    1 /* Public */,
+       3,    3,  135,    2, 0x08,    2 /* Private */,
+       4,    0,  142,    2, 0x08,    6 /* Private */,
+       5,    0,  143,    2, 0x08,    7 /* Private */,
+       6,    0,  144,    2, 0x08,    8 /* Private */,
+       7,    0,  145,    2, 0x08,    9 /* Private */,
+       8,    0,  146,    2, 0x08,   10 /* Private */,
+       9,    0,  147,    2, 0x08,   11 /* Private */,
+      10,    0,  148,    2, 0x08,   12 /* Private */,
+      11,    0,  149,    2, 0x08,   13 /* Private */,
+      12,    3,  150,    2, 0x08,   14 /* Private */,
+      14,    1,  157,    2, 0x08,   18 /* Private */,
+      14,    0,  160,    2, 0x28,   20 /* Private | MethodCloned */,
+      15,    0,  161,    2, 0x08,   21 /* Private */,
+      16,    0,  162,    2, 0x08,   22 /* Private */,
+      17,    0,  163,    2, 0x08,   23 /* Private */,
+      18,    0,  164,    2, 0x08,   24 /* Private */,
+      19,    0,  165,    2, 0x08,   25 /* Private */,
+      20,    0,  166,    2, 0x08,   26 /* Private */,
+      21,    0,  167,    2, 0x08,   27 /* Private */,
 
  // slots: parameters
+    QMetaType::Void,
     QMetaType::Void, QMetaType::Int, QMetaType::QString, QMetaType::Float,    2,    2,    2,
     QMetaType::Void,
     QMetaType::Void,
@@ -176,9 +188,13 @@ Q_CONSTINIT static const uint qt_meta_data_CLASScashRegisterSystemENDCLASS[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 14, QMetaType::Float, QMetaType::QString,    2,    2,    2,
+    QMetaType::Void, 0x80000000 | 13, QMetaType::Float, QMetaType::QString,    2,    2,    2,
     QMetaType::Float, QMetaType::Float,    2,
     QMetaType::Float,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -195,9 +211,8 @@ Q_CONSTINIT const QMetaObject cashRegisterSystem::staticMetaObject = { {
     qt_incomplete_metaTypeArray<qt_meta_stringdata_CLASScashRegisterSystemENDCLASS_t,
         // Q_OBJECT / Q_GADGET
         QtPrivate::TypeAndForceComplete<cashRegisterSystem, std::true_type>,
-        // method 'functionName'
+        // method 'Add_Item_names'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        QtPrivate::TypeAndForceComplete<QString, std::false_type>,
         // method 'on_name_button_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         QtPrivate::TypeAndForceComplete<int, std::false_type>,
@@ -234,6 +249,14 @@ Q_CONSTINIT const QMetaObject cashRegisterSystem::staticMetaObject = { {
         // method 'on_sell_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_retrieve_clicked'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_add_item_clicked'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_add_quantity_clicked'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_remove_item_clicked'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_remove_quantity_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
@@ -245,7 +268,7 @@ void cashRegisterSystem::qt_static_metacall(QObject *_o, QMetaObject::Call _c, i
         auto *_t = static_cast<cashRegisterSystem *>(_o);
         (void)_t;
         switch (_id) {
-        case 0: _t->functionName((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
+        case 0: _t->Add_Item_names(); break;
         case 1: _t->on_name_button_clicked((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<float>>(_a[3]))); break;
         case 2: _t->on_snacks_clicked(); break;
         case 3: _t->on_drinks_clicked(); break;
@@ -263,6 +286,10 @@ void cashRegisterSystem::qt_static_metacall(QObject *_o, QMetaObject::Call _c, i
         case 13: _t->on_cancel_order_clicked(); break;
         case 14: _t->on_sell_clicked(); break;
         case 15: _t->on_retrieve_clicked(); break;
+        case 16: _t->on_add_item_clicked(); break;
+        case 17: _t->on_add_quantity_clicked(); break;
+        case 18: _t->on_remove_item_clicked(); break;
+        case 19: _t->on_remove_quantity_clicked(); break;
         default: ;
         }
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
@@ -275,15 +302,6 @@ void cashRegisterSystem::qt_static_metacall(QObject *_o, QMetaObject::Call _c, i
                 *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType::fromType< QPushButton* >(); break;
             }
             break;
-        }
-    } else if (_c == QMetaObject::IndexOfMethod) {
-        int *result = reinterpret_cast<int *>(_a[0]);
-        {
-            using _t = void (cashRegisterSystem::*)(QString );
-            if (_t _q_method = &cashRegisterSystem::functionName; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
-                *result = 0;
-                return;
-            }
         }
     }
 }
@@ -307,21 +325,14 @@ int cashRegisterSystem::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 16)
+        if (_id < 20)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 16;
+        _id -= 20;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 16)
+        if (_id < 20)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 16;
+        _id -= 20;
     }
     return _id;
-}
-
-// SIGNAL 0
-void cashRegisterSystem::functionName(QString _t1)
-{
-    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
-    QMetaObject::activate(this, &staticMetaObject, 0, _a);
 }
 QT_WARNING_POP

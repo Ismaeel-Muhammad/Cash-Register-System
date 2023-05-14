@@ -15,6 +15,7 @@ cashRegisterSystem::cashRegisterSystem(QWidget* parent)
     m_ui->class_box->addItem("\u0639\u0645\u064A\u0644 \u0639\u0627\u062F\u064A"); // ⁄„Ì· ⁄«œÌ
     m_ui->class_box->addItem("\u0639\u0645\u064A\u0644 \u0645\u0647\u0645"); // ⁄„Ì· „Â„
     m_ui->class_box->addItem("\u0637\u0627\u0644\u0628"); // ÿ«·»
+
 }
 
 cashRegisterSystem::~cashRegisterSystem()

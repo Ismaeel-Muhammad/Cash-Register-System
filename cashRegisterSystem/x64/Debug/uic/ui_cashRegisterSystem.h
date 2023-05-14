@@ -383,6 +383,10 @@ public:
         label_21->setGeometry(QRect(570, 110, 71, 20));
         label_21->setStyleSheet(QString::fromUtf8("border: none;"));
         item_type_item = new QComboBox(control_frame);
+        item_type_item->addItem(QString());
+        item_type_item->addItem(QString());
+        item_type_item->addItem(QString());
+        item_type_item->addItem(QString());
         item_type_item->setObjectName("item_type_item");
         item_type_item->setGeometry(QRect(310, 40, 151, 41));
         label_22 = new QLabel(admin_form);
@@ -417,6 +421,7 @@ public:
         return_operations_contents = new QWidget();
         return_operations_contents->setObjectName("return_operations_contents");
         return_operations_contents->setGeometry(QRect(0, 0, 409, 339));
+        return_operations_contents->setFocusPolicy(Qt::NoFocus);
         scrollArea_6->setWidget(return_operations_contents);
         sell_operations_frame = new QFrame(admin_form);
         sell_operations_frame->setObjectName("sell_operations_frame");
@@ -498,9 +503,9 @@ public:
 
         retranslateUi(cashRegisterSystem2Class);
 
-        formsStackedWidget->setCurrentIndex(1);
+        formsStackedWidget->setCurrentIndex(2);
         ProductsStackedWidget->setCurrentIndex(0);
-        item_type_item->setCurrentIndex(-1);
+        item_type_item->setCurrentIndex(0);
         class_box->setCurrentIndex(-1);
 
 
@@ -540,6 +545,11 @@ public:
         add_quantity->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\330\266\330\247\331\201\330\251", nullptr));
         label_20->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\330\263\331\205 \330\247\331\204\330\272\330\261\330\266", nullptr));
         label_21->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\331\204\331\203\331\205\331\212\330\251", nullptr));
+        item_type_item->setItemText(0, QCoreApplication::translate("cashRegisterSystem2Class", "Drink", nullptr));
+        item_type_item->setItemText(1, QCoreApplication::translate("cashRegisterSystem2Class", "vegetables", nullptr));
+        item_type_item->setItemText(2, QCoreApplication::translate("cashRegisterSystem2Class", "Snacks", nullptr));
+        item_type_item->setItemText(3, QCoreApplication::translate("cashRegisterSystem2Class", "fruit", nullptr));
+
         label_22->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\331\204\330\252\330\255\331\203\331\205 \331\201\331\212 \330\247\331\204\330\250\330\266\330\247\330\271\330\251:", nullptr));
         label_23->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\271\331\205\331\204\331\212\330\247\330\252 \330\247\331\204\330\250\331\212\330\271:", nullptr));
         label_25->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\271\331\205\331\204\331\212\330\247\330\252 \330\247\330\263\330\252\330\261\330\254\330\247\330\271:", nullptr));
