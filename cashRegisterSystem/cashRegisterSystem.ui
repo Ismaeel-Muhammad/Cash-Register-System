@@ -133,7 +133,7 @@ font-size:18px;
        </rect>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="page_3">
        <widget class="QScrollArea" name="scrollArea">
@@ -161,6 +161,17 @@ font-size:18px;
            <height>479</height>
           </rect>
          </property>
+         <widget class="QWidget" name="gridLayoutWidget_4">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>771</width>
+            <height>481</height>
+           </rect>
+          </property>
+          <layout class="QGridLayout" name="gridSnacks"/>
+         </widget>
         </widget>
        </widget>
       </widget>
@@ -190,6 +201,17 @@ font-size:18px;
            <height>479</height>
           </rect>
          </property>
+         <widget class="QWidget" name="gridLayoutWidget_3">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>771</width>
+            <height>481</height>
+           </rect>
+          </property>
+          <layout class="QGridLayout" name="gridDrinks"/>
+         </widget>
         </widget>
        </widget>
       </widget>
@@ -219,6 +241,17 @@ font-size:18px;
            <height>479</height>
           </rect>
          </property>
+         <widget class="QWidget" name="gridLayoutWidget_2">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>771</width>
+            <height>481</height>
+           </rect>
+          </property>
+          <layout class="QGridLayout" name="gridVegetables"/>
+         </widget>
         </widget>
        </widget>
       </widget>
@@ -248,6 +281,17 @@ font-size:18px;
            <height>479</height>
           </rect>
          </property>
+         <widget class="QWidget" name="gridLayoutWidget">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>771</width>
+            <height>481</height>
+           </rect>
+          </property>
+          <layout class="QGridLayout" name="gridFruits"/>
+         </widget>
         </widget>
        </widget>
       </widget>

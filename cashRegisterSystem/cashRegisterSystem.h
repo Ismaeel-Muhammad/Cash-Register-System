@@ -16,6 +16,8 @@
 #include <qtableview.h>
 #include <QStandardItemModel>
 #include <qshortcut.h>
+#include <QScrollBar>
+
 
 #define SLOT_PRICE -1
 
@@ -37,7 +39,6 @@ private:
     float TotalBalanceForOperation;
     float TotalBalanceForOperationDiscounted;
     bool withDiscount;
-    bool start;
     int i;
     string Item_names;
     QVector<QPushButton*> Delete_button;
@@ -46,7 +47,7 @@ private:
     QHash<QString, QList<QVariant>> sellOperation;
     QHash<QString, QList<QVariant>> retrieveOperation;
     void InsertInHashOperations(QHash < QString, QList<QVariant>>&, QString name, float price, int Quantity_Sell);
-    void populateProductList(QWidget*, QString);
+    void populateProductList(QWidget*, QGridLayout*, QString, bool);
 
     string namesearch;
     string phonesearch;
@@ -86,9 +87,7 @@ private slots:
     void on_back_to_main_clicked();
     void on_customers_clicked();
     void on_backFromCustomers_clicked();
-
     void on_Search_btn_clicked();
-
     void on_logout_clicked();
 
 };

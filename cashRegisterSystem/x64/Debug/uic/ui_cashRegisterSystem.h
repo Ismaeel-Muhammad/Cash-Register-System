@@ -13,6 +13,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QFrame>
+#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
@@ -49,15 +50,23 @@ public:
     QWidget *page_3;
     QScrollArea *scrollArea;
     QWidget *scrollAreaSnacksContents;
+    QWidget *gridLayoutWidget_4;
+    QGridLayout *gridSnacks;
     QWidget *page_4;
     QScrollArea *scrollArea_2;
     QWidget *scrollAreaDrinksContents;
+    QWidget *gridLayoutWidget_3;
+    QGridLayout *gridDrinks;
     QWidget *page_5;
     QScrollArea *scrollArea_3;
     QWidget *scrollAreaVegetablesContents;
+    QWidget *gridLayoutWidget_2;
+    QGridLayout *gridVegetables;
     QWidget *page_6;
     QScrollArea *scrollArea_4;
     QWidget *scrollAreaFruitsContents;
+    QWidget *gridLayoutWidget;
+    QGridLayout *gridFruits;
     QPushButton *fruits;
     QPushButton *vegetables;
     QPushButton *drinks;
@@ -79,6 +88,7 @@ public:
     QLabel *price_after;
     QPushButton *check_discount;
     QPushButton *customers;
+    QPushButton *logout;
     QWidget *admin_form;
     QFrame *control_frame;
     QFrame *line;
@@ -115,7 +125,7 @@ public:
     QLabel *label_24;
     QTextBrowser *day_total_income;
     QLabel *label_26;
-    QPushButton *return_MainForm;
+    QPushButton *back_to_main;
     QWidget *creating_customer_account;
     QPushButton *add_new;
     QPushButton *go_back;
@@ -197,6 +207,14 @@ public:
         scrollAreaSnacksContents = new QWidget();
         scrollAreaSnacksContents->setObjectName("scrollAreaSnacksContents");
         scrollAreaSnacksContents->setGeometry(QRect(0, 0, 769, 479));
+        gridLayoutWidget_4 = new QWidget(scrollAreaSnacksContents);
+        gridLayoutWidget_4->setObjectName("gridLayoutWidget_4");
+        gridLayoutWidget_4->setGeometry(QRect(0, 0, 771, 481));
+        gridSnacks = new QGridLayout(gridLayoutWidget_4);
+        gridSnacks->setSpacing(6);
+        gridSnacks->setContentsMargins(11, 11, 11, 11);
+        gridSnacks->setObjectName("gridSnacks");
+        gridSnacks->setContentsMargins(0, 0, 0, 0);
         scrollArea->setWidget(scrollAreaSnacksContents);
         ProductsStackedWidget->addWidget(page_3);
         page_4 = new QWidget();
@@ -210,6 +228,14 @@ public:
         scrollAreaDrinksContents = new QWidget();
         scrollAreaDrinksContents->setObjectName("scrollAreaDrinksContents");
         scrollAreaDrinksContents->setGeometry(QRect(0, 0, 769, 479));
+        gridLayoutWidget_3 = new QWidget(scrollAreaDrinksContents);
+        gridLayoutWidget_3->setObjectName("gridLayoutWidget_3");
+        gridLayoutWidget_3->setGeometry(QRect(0, 0, 771, 481));
+        gridDrinks = new QGridLayout(gridLayoutWidget_3);
+        gridDrinks->setSpacing(6);
+        gridDrinks->setContentsMargins(11, 11, 11, 11);
+        gridDrinks->setObjectName("gridDrinks");
+        gridDrinks->setContentsMargins(0, 0, 0, 0);
         scrollArea_2->setWidget(scrollAreaDrinksContents);
         ProductsStackedWidget->addWidget(page_4);
         page_5 = new QWidget();
@@ -223,6 +249,14 @@ public:
         scrollAreaVegetablesContents = new QWidget();
         scrollAreaVegetablesContents->setObjectName("scrollAreaVegetablesContents");
         scrollAreaVegetablesContents->setGeometry(QRect(0, 0, 769, 479));
+        gridLayoutWidget_2 = new QWidget(scrollAreaVegetablesContents);
+        gridLayoutWidget_2->setObjectName("gridLayoutWidget_2");
+        gridLayoutWidget_2->setGeometry(QRect(0, 0, 771, 481));
+        gridVegetables = new QGridLayout(gridLayoutWidget_2);
+        gridVegetables->setSpacing(6);
+        gridVegetables->setContentsMargins(11, 11, 11, 11);
+        gridVegetables->setObjectName("gridVegetables");
+        gridVegetables->setContentsMargins(0, 0, 0, 0);
         scrollArea_3->setWidget(scrollAreaVegetablesContents);
         ProductsStackedWidget->addWidget(page_5);
         page_6 = new QWidget();
@@ -236,6 +270,14 @@ public:
         scrollAreaFruitsContents = new QWidget();
         scrollAreaFruitsContents->setObjectName("scrollAreaFruitsContents");
         scrollAreaFruitsContents->setGeometry(QRect(0, 0, 769, 479));
+        gridLayoutWidget = new QWidget(scrollAreaFruitsContents);
+        gridLayoutWidget->setObjectName("gridLayoutWidget");
+        gridLayoutWidget->setGeometry(QRect(0, 0, 771, 481));
+        gridFruits = new QGridLayout(gridLayoutWidget);
+        gridFruits->setSpacing(6);
+        gridFruits->setContentsMargins(11, 11, 11, 11);
+        gridFruits->setObjectName("gridFruits");
+        gridFruits->setContentsMargins(0, 0, 0, 0);
         scrollArea_4->setWidget(scrollAreaFruitsContents);
         ProductsStackedWidget->addWidget(page_6);
         fruits = new QPushButton(main_form);
@@ -325,6 +367,9 @@ public:
         customers = new QPushButton(main_form);
         customers->setObjectName("customers");
         customers->setGeometry(QRect(1060, 580, 161, 41));
+        logout = new QPushButton(main_form);
+        logout->setObjectName("logout");
+        logout->setGeometry(QRect(50, 10, 111, 41));
         formsStackedWidget->addWidget(main_form);
         admin_form = new QWidget();
         admin_form->setObjectName("admin_form");
@@ -478,9 +523,9 @@ public:
         label_26->setGeometry(QRect(280, 640, 101, 41));
         label_26->setStyleSheet(QString::fromUtf8("font-size: 18px;\n"
 "font-weight: bold;"));
-        return_MainForm = new QPushButton(admin_form);
-        return_MainForm->setObjectName("return_MainForm");
-        return_MainForm->setGeometry(QRect(1000, 640, 141, 41));
+        back_to_main = new QPushButton(admin_form);
+        back_to_main->setObjectName("back_to_main");
+        back_to_main->setGeometry(QRect(960, 640, 181, 51));
         formsStackedWidget->addWidget(admin_form);
         creating_customer_account = new QWidget();
         creating_customer_account->setObjectName("creating_customer_account");
@@ -573,8 +618,8 @@ public:
 
         retranslateUi(cashRegisterSystem2Class);
 
-        formsStackedWidget->setCurrentIndex(0);
-        ProductsStackedWidget->setCurrentIndex(1);
+        formsStackedWidget->setCurrentIndex(1);
+        ProductsStackedWidget->setCurrentIndex(0);
         item_type_item->setCurrentIndex(0);
         class_box->setCurrentIndex(-1);
 
@@ -604,6 +649,7 @@ public:
         price_after->setText(QCoreApplication::translate("cashRegisterSystem2Class", "0", nullptr));
         check_discount->setText(QCoreApplication::translate("cashRegisterSystem2Class", "check", nullptr));
         customers->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\331\202\330\247\330\246\331\205\330\251 \330\247\331\204\330\271\331\205\331\204\330\247\330\241", nullptr));
+        logout->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\252\330\263\330\254\331\212\331\204 \330\247\331\204\330\256\330\261\331\210\330\254", nullptr));
         label_2->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\330\266\330\247\331\201\330\251/\330\255\330\260\331\201 \330\272\330\261\330\266:", nullptr));
         label_3->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\330\266\330\247\331\201\330\251/\330\255\330\260\331\201 \331\203\331\205\331\212\330\251:", nullptr));
         label_4->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\330\263\331\205 \330\247\331\204\330\272\330\261\330\266", nullptr));
@@ -616,18 +662,17 @@ public:
         add_quantity->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\330\266\330\247\331\201\330\251", nullptr));
         label_20->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\330\263\331\205 \330\247\331\204\330\272\330\261\330\266", nullptr));
         label_21->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\331\204\331\203\331\205\331\212\330\251", nullptr));
-        item_type_item->setItemText(0, QCoreApplication::translate("cashRegisterSystem2Class", "drink", nullptr));
-        item_type_item->setItemText(1, QCoreApplication::translate("cashRegisterSystem2Class", "fruit", nullptr));
-        item_type_item->setItemText(2, QCoreApplication::translate("cashRegisterSystem2Class", "snacks", nullptr));
+        item_type_item->setItemText(0, QCoreApplication::translate("cashRegisterSystem2Class", "snacks", nullptr));
+        item_type_item->setItemText(1, QCoreApplication::translate("cashRegisterSystem2Class", "drink", nullptr));
+        item_type_item->setItemText(2, QCoreApplication::translate("cashRegisterSystem2Class", "fruit", nullptr));
         item_type_item->setItemText(3, QCoreApplication::translate("cashRegisterSystem2Class", "vegetables", nullptr));
 
-        item_type_item->setCurrentText(QCoreApplication::translate("cashRegisterSystem2Class", "drink", nullptr));
         label_22->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\331\204\330\252\330\255\331\203\331\205 \331\201\331\212 \330\247\331\204\330\250\330\266\330\247\330\271\330\251:", nullptr));
         label_23->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\271\331\205\331\204\331\212\330\247\330\252 \330\247\331\204\330\250\331\212\330\271:", nullptr));
         label_25->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\271\331\205\331\204\331\212\330\247\330\252 \330\247\330\263\330\252\330\261\330\254\330\247\330\271:", nullptr));
         label_24->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\330\254\331\205\330\247\331\204\331\212 \330\271\331\205\331\204\331\212\330\247\330\252 \330\247\331\204\330\250\331\212\330\271 \331\210 \330\247\331\204\330\247\330\263\330\252\330\261\330\254\330\247\330\271:", nullptr));
         label_26->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\330\254\331\205\330\247\331\204\331\212 \330\247\331\204\331\212\331\210\331\205", nullptr));
-        return_MainForm->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\331\204\330\261\330\254\331\210\330\271 \331\204\331\204\331\202\330\247\330\246\331\205\330\251 \330\247\331\204\330\247\330\263\330\247\330\263\331\212\330\251", nullptr));
+        back_to_main->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\331\204\330\271\331\210\330\257\330\251 \330\247\331\204\331\211 \330\247\331\204\330\265\331\201\330\255\330\251 \330\247\331\204\330\247\330\263\330\247\330\263\331\212\330\251", nullptr));
         add_new->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\330\266\330\247\331\201\330\251", nullptr));
         go_back->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\271\331\210\330\257\330\251", nullptr));
         nameLable->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\330\263\331\205 \330\247\331\204\330\271\331\205\331\212\331\204", nullptr));

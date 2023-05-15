@@ -93,7 +93,12 @@
     <QtRcc Include="cashRegisterSystem.qrc" />
     <QtUic Include="cashRegisterSystem.ui" />
     <QtMoc Include="cashRegisterSystem.h" />
-    <ClCompile Include="cashRegisterSystem.cpp" />
+    <ClCompile Include="cashRegisterSystem.cpp">
+      <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">input</DynamicSource>
+      <QtMocFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(Filename).moc</QtMocFileName>
+      <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Release|x64'">input</DynamicSource>
+      <QtMocFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(Filename).moc</QtMocFileName>
+    </ClCompile>
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
