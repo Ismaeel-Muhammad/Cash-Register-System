@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1261</width>
-    <height>747</height>
+    <width>1258</width>
+    <height>760</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,11 +20,11 @@
       <x>0</x>
       <y>0</y>
       <width>1251</width>
-      <height>691</height>
+      <height>701</height>
      </rect>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="login">
      <widget class="QLineEdit" name="username_field">
@@ -598,6 +598,19 @@ font-size: 14px;</string>
       </property>
       <property name="text">
        <string>تسجيل الخروج</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="gotoproducts">
+      <property name="geometry">
+       <rect>
+        <x>870</x>
+        <y>580</y>
+        <width>161</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>قائمة السلع</string>
       </property>
      </widget>
     </widget>
@@ -1441,6 +1454,134 @@ font-size:18px;</string>
       </property>
      </widget>
     </widget>
+    <widget class="QWidget" name="page_2">
+     <widget class="QScrollArea" name="porductsForm">
+      <property name="geometry">
+       <rect>
+        <x>9</x>
+        <y>109</y>
+        <width>1241</width>
+        <height>591</height>
+       </rect>
+      </property>
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="scrollAreaWidgetContents_3">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>1239</width>
+         <height>589</height>
+        </rect>
+       </property>
+       <widget class="QTableView" name="prodtable">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>1241</width>
+          <height>591</height>
+         </rect>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+     <widget class="QLineEdit" name="ProdNameSearch">
+      <property name="geometry">
+       <rect>
+        <x>890</x>
+        <y>50</y>
+        <width>201</width>
+        <height>31</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="ProdNameLabel">
+      <property name="geometry">
+       <rect>
+        <x>1090</x>
+        <y>49</y>
+        <width>91</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font-weight:bold;
+font-size:18px;</string>
+      </property>
+      <property name="text">
+       <string>اسم السلعة</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="searchprobuctsBTN">
+      <property name="geometry">
+       <rect>
+        <x>460</x>
+        <y>50</y>
+        <width>81</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+font-weight:bold;
+</string>
+      </property>
+      <property name="text">
+       <string>بحث</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="ProdTypeSearch">
+      <property name="geometry">
+       <rect>
+        <x>570</x>
+        <y>50</y>
+        <width>201</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <item>
+       <property name="text">
+        <string>الكل</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QLabel" name="ProdTypeLabel">
+      <property name="geometry">
+       <rect>
+        <x>780</x>
+        <y>50</y>
+        <width>81</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font-weight:bold;
+font-size:18px;</string>
+      </property>
+      <property name="text">
+       <string>نوع السلعة</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="BackFromProductsBTN">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>50</y>
+        <width>181</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>عودة للصفحة الرئيسية</string>
+      </property>
+     </widget>
+    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
@@ -1448,7 +1589,7 @@ font-size:18px;</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1261</width>
+     <width>1258</width>
      <height>22</height>
     </rect>
    </property>

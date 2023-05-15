@@ -52,12 +52,16 @@ private:
     string namesearch;
     string phonesearch;
     int rank;
-    
+    string productNameSearch;
+    int ProductType;
     void DeleteAll();
     void payOperation(char);
     char updateType(char);
 
     void search();
+    void generateProdtbl();
+    void GenrateTypesForCombo();
+    
 
     void Add_Item_names();
     void Show_Sell_window();
@@ -90,7 +94,9 @@ private slots:
     void on_backFromCustomers_clicked();
     void on_Search_btn_clicked();
     void on_logout_clicked();
-
+    void on_gotoproducts_clicked();
+    void on_searchprobuctsBTN_clicked();
+    void on_BackFromProductsBTN_clicked();
 };
 
 #endif // CASH_REG_SYSTEM_H
