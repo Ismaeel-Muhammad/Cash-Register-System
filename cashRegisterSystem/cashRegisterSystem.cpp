@@ -7,6 +7,7 @@ cashRegisterSystem::cashRegisterSystem(QWidget* parent)
     m_customersDB = NULL;
     m_OperationsDB = NULL;
     withDiscount = true;
+    start = true;
     TotalBalanceForOperation = 0;
     TotalBalanceForOperationDiscounted = 0;
     std::fill_n(m_loadedOnce, 4, false);
@@ -67,6 +68,12 @@ void cashRegisterSystem::on_fruits_clicked() {
 }
 
 void cashRegisterSystem::populateProductList(QWidget* scrollContents, QString productType) {
+    QGridLayout* layout = new QGridLayout(scrollContents);
+    QLayoutItem* item;
+    while ((item = scrollContents->layout()->takeAt(0)) != nullptr) {
+        delete item->widget();
+        delete item;
+    }
     sqlite3_stmt* stmt;
     int rc = sqlite3_open("mydatabase.db", &m_ProductsDB);
     if (rc != SQLITE_OK) {
@@ -76,14 +83,14 @@ void cashRegisterSystem::populateProductList(QWidget* scrollContents, QString pr
     std::stringstream ss;
     ss << "select * from products where type ='" << productType.toStdString() << "'";
     QString query = QString::fromStdString(ss.str());
-    rc = sqlite3_prepare_v2(m_ProductsDB,query.toUtf8().constData(), -1, &stmt, NULL);
+    rc = sqlite3_prepare_v2(m_ProductsDB, query.toUtf8().constData(), -1, &stmt, NULL);
     if (rc != SQLITE_OK) {
         QMessageBox::warning(this, "oh no", query);
         sqlite3_finalize(stmt);
         sqlite3_close(m_ProductsDB);
     }
     //Creating a grid layout...
-    QGridLayout* layout = new QGridLayout(this);
+    //QGridLayout* layout = new QGridLayout(this);
 
     int verticalItems = 0;
     int horizontalItems = 0;
@@ -100,19 +107,19 @@ void cashRegisterSystem::populateProductList(QWidget* scrollContents, QString pr
         QFrame* frame = new QFrame;
         QVBoxLayout* vboxLayout = new QVBoxLayout(frame);
         nameLabel = new QLabel(QString::fromUtf8(name));
-        nameLabel->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
+        nameLabel->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
         nameLabel->setStyleSheet("border: none; font-size:16px; font-weight:bold;");
         layout->setAlignment(Qt::AlignTop);
-        
+
         //Assigning the strings to widgets...
-       
+
         add_button.push_back(new QPushButton("Add To Cart!"));
         //add_button.back()->setStyleSheet("QPushButton { border: none; }");
 
         quantityBox = new QSpinBox();
         QLabel* lab = new QLabel(QString("Price: %1").arg(QString::fromUtf8(price)));
         lab->setStyleSheet("border: none; font-size:16px;");
-     
+
 
         float price_val = lab->text().split(" ")[1].toFloat();
         //Setting up the lable style sheet
@@ -126,13 +133,13 @@ void cashRegisterSystem::populateProductList(QWidget* scrollContents, QString pr
 
         connect(add_button.back(), &QPushButton::clicked, [this, quantityBox, nameLabel, price_val]() {
             on_name_button_clicked(quantityBox->value(), nameLabel->text(), price_val);
-        });
+            });
 
         vboxLayout->addWidget(nameLabel);
         vboxLayout->addWidget(lab);
         vboxLayout->addWidget(quantityBox);
         vboxLayout->addWidget(add_button.back());
-        if (i % 2==1) frame->setStyleSheet("QFrame{background-color:rgba(184, 184, 184, 255)}");
+        if (i % 2 == 1) frame->setStyleSheet("QFrame{background-color:rgba(184, 184, 184, 255)}");
 
         //adding all the widgets to the previously cretaed grid layout...
         layout->addWidget(frame, verticalItems, horizontalItems);
@@ -153,4 +160,9 @@ void cashRegisterSystem::populateProductList(QWidget* scrollContents, QString pr
 void cashRegisterSystem::on_AddNewCustomer_clicked()
 {
     m_ui->formsStackedWidget->setCurrentIndex(3);
+}
+
+void cashRegisterSystem::on_logout_clicked() {
+    m_ui->formsStackedWidget->setCurrentIndex(0);
+
 }

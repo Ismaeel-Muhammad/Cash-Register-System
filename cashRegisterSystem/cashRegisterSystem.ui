@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="login">
      <widget class="QLineEdit" name="username_field">
@@ -543,6 +543,19 @@ font-size: 14px;</string>
        <string>قائمة العملاء</string>
       </property>
      </widget>
+     <widget class="QPushButton" name="logout">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>10</y>
+        <width>111</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>تسجيل الخروج</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="admin_form">
      <widget class="QFrame" name="control_frame">
@@ -820,12 +833,14 @@ border:none;</string>
          <height>41</height>
         </rect>
        </property>
-       <property name="currentText">
-        <string>drink</string>
-       </property>
        <property name="currentIndex">
         <number>0</number>
        </property>
+       <item>
+        <property name="text">
+         <string>snacks</string>
+        </property>
+       </item>
        <item>
         <property name="text">
          <string>drink</string>
@@ -834,11 +849,6 @@ border:none;</string>
        <item>
         <property name="text">
          <string>fruit</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>snacks</string>
         </property>
        </item>
        <item>
@@ -1069,17 +1079,17 @@ font-weight: bold;</string>
        <string>اجمالي اليوم</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="return_MainForm">
+     <widget class="QPushButton" name="back_to_main">
       <property name="geometry">
        <rect>
-        <x>1000</x>
+        <x>960</x>
         <y>640</y>
-        <width>141</width>
-        <height>41</height>
+        <width>181</width>
+        <height>51</height>
        </rect>
       </property>
       <property name="text">
-       <string>الرجوع للقائمة الاساسية</string>
+       <string>العودة الى الصفحة الاساسية</string>
       </property>
      </widget>
     </widget>

@@ -25,7 +25,8 @@ class cashRegisterSystem : public QMainWindow {
 
 public:
     cashRegisterSystem(QWidget* parent = nullptr);
-    ~cashRegisterSystem();    
+    ~cashRegisterSystem();
+
 
 private:
     Ui::cashRegisterSystem2Class* m_ui;
@@ -36,6 +37,7 @@ private:
     float TotalBalanceForOperation;
     float TotalBalanceForOperationDiscounted;
     bool withDiscount;
+    bool start;
     int i;
     string Item_names;
     QVector<QPushButton*> Delete_button;
@@ -81,12 +83,13 @@ private slots:
     void on_add_quantity_clicked();
     void on_remove_item_clicked();
     void on_remove_quantity_clicked();
-    void on_return_MainForm_clicked();
+    void on_back_to_main_clicked();
     void on_customers_clicked();
     void on_backFromCustomers_clicked();
+
     void on_Search_btn_clicked();
 
-    
+    void on_logout_clicked();
 
 };
 

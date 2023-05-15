@@ -15,8 +15,18 @@ void cashRegisterSystem::on_add_item_clicked() {
 	m_ui->item_price_item->clear();
 	m_ui->item_quantity_item->clear();
     m_ui->item_type_item->setCurrentIndex(0);
-
 }
+
+void cashRegisterSystem::on_remove_item_clicked() {
+    Database db("mydatabase.db");
+    string Items_Names = m_ui->item_name_item->toPlainText().toUtf8().constData();
+    db.DeleteProdRow(Items_Names);
+    QMessageBox msg;
+    msg.setText("\u062a\u0645 \u0627\u0644\u062d\u0630\u0641 \u0628\u0646\u062c\u0627\u062d");
+    msg.exec();
+    m_ui->item_name_item->clear();
+}
+
 void cashRegisterSystem::on_add_quantity_clicked() {
     Database db("mydatabase.db");
     string item_name = m_ui->item_name_quantity->currentText().toUtf8().constData();
@@ -29,16 +39,6 @@ void cashRegisterSystem::on_add_quantity_clicked() {
     m_ui->item_quantity_quantity->clear();
     m_ui->item_name_quantity->setCurrentIndex(0);
 
-}
-
-void cashRegisterSystem::on_remove_item_clicked() {
-    Database db("mydatabase.db");
-    string Items_Names = m_ui->item_name_item->toPlainText().toUtf8().constData();
-    db.DeleteProdRow(Items_Names);
-    QMessageBox msg;
-    msg.setText("\u062a\u0645 \u0627\u0644\u062d\u0630\u0641 \u0628\u0646\u062c\u0627\u062d");
-    msg.exec();
-    m_ui->item_name_item->clear();
 }
 
 void cashRegisterSystem::on_remove_quantity_clicked() {
@@ -185,9 +185,6 @@ void cashRegisterSystem::InsertInHashOperations(QHash< QString, QList<QVariant>>
         Operation.insert(name, values);
     }
 }
-void cashRegisterSystem::on_return_MainForm_clicked() {
-    m_ui->formsStackedWidget->setCurrentIndex(1);
-}
 
 void cashRegisterSystem::Add_Item_names() {
     sqlite3* db;
@@ -209,4 +206,8 @@ void cashRegisterSystem::Add_Item_names() {
         }
         sqlite3_close(db);
     }
+}
+
+void cashRegisterSystem::on_back_to_main_clicked() {
+    m_ui->formsStackedWidget->setCurrentIndex(1);
 }
