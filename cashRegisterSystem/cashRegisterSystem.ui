@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="login">
      <widget class="QLineEdit" name="username_field">
@@ -958,6 +958,17 @@ font-weight: bold;</string>
           <height>339</height>
          </rect>
         </property>
+        <widget class="QWidget" name="verticalLayoutWidget_4">
+         <property name="geometry">
+          <rect>
+           <x>-1</x>
+           <y>-1</y>
+           <width>401</width>
+           <height>341</height>
+          </rect>
+         </property>
+         <layout class="QVBoxLayout" name="total_VLayout"/>
+        </widget>
        </widget>
       </widget>
      </widget>
@@ -1000,6 +1011,17 @@ font-weight: bold;</string>
           <height>339</height>
          </rect>
         </property>
+        <widget class="QWidget" name="verticalLayoutWidget_3">
+         <property name="geometry">
+          <rect>
+           <x>-1</x>
+           <y>-1</y>
+           <width>411</width>
+           <height>341</height>
+          </rect>
+         </property>
+         <layout class="QVBoxLayout" name="return_VLayout"/>
+        </widget>
        </widget>
       </widget>
      </widget>
@@ -1042,6 +1064,17 @@ font-weight: bold;</string>
           <height>339</height>
          </rect>
         </property>
+        <widget class="QWidget" name="verticalLayoutWidget_2">
+         <property name="geometry">
+          <rect>
+           <x>-1</x>
+           <y>-1</y>
+           <width>401</width>
+           <height>341</height>
+          </rect>
+         </property>
+         <layout class="QVBoxLayout" name="sell_VLayout"/>
+        </widget>
        </widget>
       </widget>
      </widget>

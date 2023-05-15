@@ -57,15 +57,34 @@ void cashRegisterSystem::on_remove_quantity_clicked() {
 }
 
 void cashRegisterSystem::Show_Sell_window() {
-    Show_window("sell", m_ui->sell_operations_contents);
+    Show_window("sell", m_ui->sell_operations_contents,m_ui->sell_VLayout,m_start[0]);
+    m_start[0] = true;
 }
 
 void cashRegisterSystem::Show_retrieve_window() {
-    Show_window("retrieve", m_ui->return_operations_contents);
+    Show_window("retrieve", m_ui->return_operations_contents,m_ui->return_VLayout, m_start[1]);
+    m_start[1] = true;
+
 }
-void cashRegisterSystem::Show_total_window() {
+void cashRegisterSystem::Update_total() {
+    Show_total_window(m_ui->total_VLayout,m_start[2]);
+    m_start[2] = true;
+}
+void cashRegisterSystem::Show_total_window(QVBoxLayout* VLayout,bool start) {
+    if (start) {
+        QLayout* layout = VLayout->layout();
+        QLayoutItem* child = nullptr;
+        while ((child = layout->takeAt(0)) != nullptr) {
+            QWidget* widget = child->widget();
+            if (widget) {
+                layout->removeWidget(widget);
+                delete widget;
+            }
+            delete child;
+        }
+    }
+
     float TotalPrice = 0;
-    QVBoxLayout* VLayout = new QVBoxLayout(m_ui->total_operations_contents);
     QHashIterator<QString, QList<QVariant>> i(sellOperation);
     int quantity=0;
     float prices=0;
@@ -133,13 +152,25 @@ void cashRegisterSystem::Show_total_window() {
     m_ui->day_total_income->setText(QString::number(TotalPrice));
     m_ui->total_operations_contents->setLayout(VLayout);  
 }
-void cashRegisterSystem::Show_window(string type, QWidget* scrollContents) {
+void cashRegisterSystem::Show_window(string type, QWidget* scrollContents,QVBoxLayout* VLayout,bool start) {
+    if (start) {
+        QLayout* layout = VLayout->layout();
+    
+        QLayoutItem* child = nullptr;
+        while ((child = layout->takeAt(0)) != nullptr) {
+            QWidget* widget = child->widget();
+            if (widget) {
+                layout->removeWidget(widget);
+                delete widget;
+            }
+            delete child;
+        }
+    }
     sqlite3_stmt* stmt;
     int rc = sqlite3_open("mydatabase.db", &m_OperationsDB);
     std::stringstream ss;
     ss << "select * from Operations where type = '"<<type<<"'";
     QString query = QString::fromStdString(ss.str());
-    QVBoxLayout* VLayout = new QVBoxLayout(scrollContents);
     rc = sqlite3_prepare_v2(m_OperationsDB, query.toUtf8(), -1, &stmt, NULL);
     int i = 0;
     while (sqlite3_step(stmt) == SQLITE_ROW) {

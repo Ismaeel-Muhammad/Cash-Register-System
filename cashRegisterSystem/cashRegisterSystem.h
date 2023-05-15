@@ -52,7 +52,7 @@ private:
     string namesearch;
     string phonesearch;
     int rank;
-
+    
     void DeleteAll();
     void payOperation(char);
     char updateType(char);
@@ -61,10 +61,11 @@ private:
 
     void Add_Item_names();
     void Show_Sell_window();
-    void Show_window(string, QWidget*);
+    void Show_window(string, QWidget*, QVBoxLayout*, bool start);
     void Show_retrieve_window();
-    void Show_total_window();
-
+    void Show_total_window(QVBoxLayout*, bool);
+    bool m_start[3];
+    void Update_total();
 private slots:
     void on_name_button_clicked(int, QString, float);
     void on_snacks_clicked();

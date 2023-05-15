@@ -16,12 +16,10 @@ cashRegisterSystem::cashRegisterSystem(QWidget* parent)
     m_ui->class_box->addItem("\u0639\u0645\u064A\u0644 \u0639\u0627\u062F\u064A");
     m_ui->class_box->addItem("\u0639\u0645\u064A\u0644 \u0645\u0647\u0645");
     m_ui->class_box->addItem("\u0637\u0627\u0644\u0628");
-
+    std::fill_n(m_start, 3, false);
     QApplication::setWindowIcon(QIcon("icon.ico"));
 
-    Show_Sell_window();
-    Show_retrieve_window();
-    Show_total_window();
+ 
     Add_Item_names();
 }
 
@@ -31,38 +29,34 @@ cashRegisterSystem::~cashRegisterSystem()
 }
 
 void cashRegisterSystem::on_snacks_clicked() {
-    /*if (!m_loadedOnce[0]) {
-        
-    }*/
-    populateProductList(m_ui->scrollAreaSnacksContents, m_ui->gridSnacks, "snacks", m_loadedOnce[0]);
-    m_loadedOnce[0] = true;
+    if (!m_loadedOnce[0]) {   
+        populateProductList(m_ui->scrollAreaSnacksContents, m_ui->gridSnacks, "snacks", m_loadedOnce[0]);
+        m_loadedOnce[0] = true;
+    }
     m_ui->ProductsStackedWidget->setCurrentIndex(0);
 }
 
 void cashRegisterSystem::on_drinks_clicked() {
-    /*if (!m_loadedOnce[1]) {
-        
-    }*/
-    populateProductList(m_ui->scrollAreaDrinksContents, m_ui->gridDrinks, "drink", m_loadedOnce[1]);
-    m_loadedOnce[1] = true;
+    if (!m_loadedOnce[1]) {  
+        populateProductList(m_ui->scrollAreaDrinksContents, m_ui->gridDrinks, "drink", m_loadedOnce[1]);
+        m_loadedOnce[1] = true;
+    }
     m_ui->ProductsStackedWidget->setCurrentIndex(1);
 }
 
 void cashRegisterSystem::on_vegetables_clicked() {
-    /*if (!m_loadedOnce[2]) {
-        
-    }*/
-    populateProductList(m_ui->scrollAreaVegetablesContents, m_ui->gridVegetables, "vegetables", m_loadedOnce[2]);
-    m_loadedOnce[2] = true;
+    if (!m_loadedOnce[2]) { 
+        populateProductList(m_ui->scrollAreaVegetablesContents, m_ui->gridVegetables, "vegetables", m_loadedOnce[2]);
+        m_loadedOnce[2] = true;
+    }
     m_ui->ProductsStackedWidget->setCurrentIndex(2);
 }
 
 void cashRegisterSystem::on_fruits_clicked() {
-    /*if (!m_loadedOnce[3]) {
-        
-    }*/
-    populateProductList(m_ui->scrollAreaFruitsContents, m_ui->gridFruits, "fruit", m_loadedOnce[3]);
-    m_loadedOnce[3] = true;
+    if (!m_loadedOnce[3]) {    
+        populateProductList(m_ui->scrollAreaFruitsContents, m_ui->gridFruits, "fruit", m_loadedOnce[3]);
+        m_loadedOnce[3] = true;
+    }
     m_ui->ProductsStackedWidget->setCurrentIndex(3);
 }
 

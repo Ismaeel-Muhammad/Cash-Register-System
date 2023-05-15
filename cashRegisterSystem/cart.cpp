@@ -67,6 +67,7 @@ void cashRegisterSystem::on_name_button_clicked(int quantity, QString name, floa
         values << quantity << totalPrice;
         myHash.insert(name, values);
     }
+
 }
 
 void cashRegisterSystem::Delete_On_Click(QPushButton* del, float totalPrice, QString name, int quantity) {
@@ -91,6 +92,7 @@ void cashRegisterSystem::Delete_On_Click(QPushButton* del, float totalPrice, QSt
         delete item;
     }
     delete layout;
+   
 }
 
 float cashRegisterSystem::on_check_discount_clicked(float price) {
@@ -176,13 +178,18 @@ void cashRegisterSystem::payOperation(char type) {
     db.updateCustomerTotalPaid(m_ui->phone_number->text().toStdString(), m_ui->price_after->text().toFloat(), type);
     QHashIterator<QString, QList<QVariant>> i(myHash);
     while (i.hasNext()) {
+     //   QString result = i.key() + " " + i.value().at(0) + " " + i.value().at(1);
         i.next();
         // name, quantity, type(add, subtract)
         db.updateProductQuantity(i.key().toStdString(), i.value().at(0).toInt(), updateType(type));
         // name, quantity, price
         float price = on_check_discount_clicked(i.value().at(1).toFloat());
         db.insertOrUpdateOperation(i.key().toStdString(), i.value().at(0).toInt(), price, type);
+      
     }
+    Show_Sell_window();
+    Show_retrieve_window();
+    Update_total();
     DeleteAll();
     db.~Database();
 }
