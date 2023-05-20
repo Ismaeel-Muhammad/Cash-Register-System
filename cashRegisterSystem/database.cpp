@@ -144,13 +144,13 @@ void Database::updateProductQuantity(string name, int additional_quantity, char 
 
 void Database::insertProdRows(string name, string price, int quantity, string type)
 {
-    int id = getRowCount(m_db, "Products") + 1;
+    int id = getRowCount(m_db, "Products") + 2;
     const char* insertProduct = sqlite3_mprintf("INSERT INTO Products(id, name, price, quantity, type) VALUES(%d, '%q', '%q', %d, '%q');", id, name.c_str(), price.c_str(), quantity, type.c_str());
     char* errMsg;
     int rc = sqlite3_exec(m_db, insertProduct, NULL, NULL, &errMsg);
     if (rc != SQLITE_OK) {
         QMessageBox msg;
-        msg.setText("Error in inserting row into product database");
+        msg.setText(errMsg);
         msg.exec();
     }
 }

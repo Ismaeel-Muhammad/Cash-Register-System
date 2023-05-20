@@ -61,7 +61,7 @@
     <ClCompile Include="cashRegisterSystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PoductsForm.cpp">
+    <ClCompile Include="ProductsForm.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

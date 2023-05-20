@@ -32,6 +32,7 @@ public:
 
 private:
     Ui::cashRegisterSystem2Class* m_ui;
+    bool m_start[3];
     bool m_loadedOnce[4];
     sqlite3* m_ProductsDB;
     sqlite3* m_OperationsDB;
@@ -47,7 +48,7 @@ private:
     QHash<QString, QList<QVariant>> sellOperation;
     QHash<QString, QList<QVariant>> retrieveOperation;
     void InsertInHashOperations(QHash < QString, QList<QVariant>>&, QString name, float price, int Quantity_Sell);
-    void populateProductList(QWidget*, QGridLayout*, QString, bool);
+    void populateProductList(QWidget*, QGridLayout*, QString);
 
     string namesearch;
     string phonesearch;
@@ -68,8 +69,8 @@ private:
     void Show_window(string, QWidget*, QVBoxLayout*, bool start);
     void Show_retrieve_window();
     void Show_total_window(QVBoxLayout*, bool);
-    bool m_start[3];
     void Update_total();
+    void clear_grid_layout(QGridLayout*);
 private slots:
     void on_name_button_clicked(int, QString, float);
     void on_snacks_clicked();

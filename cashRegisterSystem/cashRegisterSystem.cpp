@@ -30,7 +30,7 @@ cashRegisterSystem::~cashRegisterSystem()
 
 void cashRegisterSystem::on_snacks_clicked() {
     if (!m_loadedOnce[0]) {   
-        populateProductList(m_ui->scrollAreaSnacksContents, m_ui->gridSnacks, "snacks", m_loadedOnce[0]);
+        populateProductList(m_ui->scrollAreaSnacksContents, m_ui->gridSnacks, "snacks");
         m_loadedOnce[0] = true;
     }
     m_ui->ProductsStackedWidget->setCurrentIndex(0);
@@ -38,7 +38,7 @@ void cashRegisterSystem::on_snacks_clicked() {
 
 void cashRegisterSystem::on_drinks_clicked() {
     if (!m_loadedOnce[1]) {  
-        populateProductList(m_ui->scrollAreaDrinksContents, m_ui->gridDrinks, "drink", m_loadedOnce[1]);
+        populateProductList(m_ui->scrollAreaDrinksContents, m_ui->gridDrinks, "drink");
         m_loadedOnce[1] = true;
     }
     m_ui->ProductsStackedWidget->setCurrentIndex(1);
@@ -46,7 +46,7 @@ void cashRegisterSystem::on_drinks_clicked() {
 
 void cashRegisterSystem::on_vegetables_clicked() {
     if (!m_loadedOnce[2]) { 
-        populateProductList(m_ui->scrollAreaVegetablesContents, m_ui->gridVegetables, "vegetables", m_loadedOnce[2]);
+        populateProductList(m_ui->scrollAreaVegetablesContents, m_ui->gridVegetables, "vegetables");
         m_loadedOnce[2] = true;
     }
     m_ui->ProductsStackedWidget->setCurrentIndex(2);
@@ -54,30 +54,28 @@ void cashRegisterSystem::on_vegetables_clicked() {
 
 void cashRegisterSystem::on_fruits_clicked() {
     if (!m_loadedOnce[3]) {    
-        populateProductList(m_ui->scrollAreaFruitsContents, m_ui->gridFruits, "fruit", m_loadedOnce[3]);
+        populateProductList(m_ui->scrollAreaFruitsContents, m_ui->gridFruits, "fruit");
         m_loadedOnce[3] = true;
     }
     m_ui->ProductsStackedWidget->setCurrentIndex(3);
 }
 
-void cashRegisterSystem::populateProductList(QWidget* scrollContents, QGridLayout* grid, QString productType, bool start) {
-    if (start) {
-        QLayout* layout = grid->layout();
-        QLayoutItem* child = nullptr;
-        while ((child = layout->takeAt(0)) != nullptr) {
-            QWidget* widget = child->widget();
-            if (widget) {
-                layout->removeWidget(widget);
-                delete widget;
-            }
-            delete child;
+void cashRegisterSystem::clear_grid_layout(QGridLayout* grid) {
+    QLayout* layout = grid->layout();
+    QLayoutItem* child = nullptr;
+    while ((child = layout->takeAt(0)) != nullptr) {
+        QWidget* widget = child->widget();
+        if (widget) {
+            layout->removeWidget(widget);
+            delete widget;
         }
+        delete child;
     }
-    /*// Create two buttons
-    QPushButton* button2 = new QPushButton("Button 2");
+}
 
-    // Set up a new layout for the scroll area's widget
-    grid->addWidget(button2);*/
+void cashRegisterSystem::populateProductList(QWidget* scrollContents, QGridLayout* grid, QString productType) {
+    // Clearing Products
+    clear_grid_layout(grid);
 
     sqlite3_stmt* stmt;
     int rc = sqlite3_open("mydatabase.db", &m_ProductsDB);
