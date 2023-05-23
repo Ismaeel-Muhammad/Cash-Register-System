@@ -17,9 +17,11 @@
 #include <QStandardItemModel>
 #include <qshortcut.h>
 #include <QScrollBar>
-
+#include <iostream>
+#include <algorithm>
 
 #define SLOT_PRICE -1
+#define PHONE_DISCOUNT 0.9f
 
 using namespace std;
 class cashRegisterSystem : public QMainWindow {
@@ -48,15 +50,18 @@ private:
     QHash<QString, QList<QVariant>> sellOperation;
     QHash<QString, QList<QVariant>> retrieveOperation;
     void InsertInHashOperations(QHash < QString, QList<QVariant>>&, QString name, float price, int Quantity_Sell);
-    void populateProductList(QWidget*, QGridLayout*, QString);
+    
+    void populateProductList(QWidget*, QGridLayout*, QString, QVBoxLayout*, QLabel*, QLabel*, QScrollArea*, QPushButton*, QLineEdit*);
 
     string namesearch;
     string phonesearch;
     int rank;
     string productNameSearch;
     int ProductType;
-    void DeleteAll();
-    void payOperation(char);
+    void DeleteAll(QLabel*, QLabel*, QPushButton*, QLineEdit*, QWidget*);
+
+    void payOperation(char, QLabel*, QLabel*, QPushButton*, QLineEdit*, QWidget*);
+
     char updateType(char);
 
     void search();
@@ -72,32 +77,63 @@ private:
     void Update_total();
     void clear_grid_layout(QGridLayout*);
 private slots:
-    void on_name_button_clicked(int, QString, float);
+    void on_name_button_clicked(int, QString, float, QVBoxLayout*, QLabel*, QLabel*, QScrollArea*, QPushButton*, QLineEdit*);
+
     void on_snacks_clicked();
     void on_drinks_clicked();
     void on_vegetables_clicked();
     void on_fruits_clicked();
+
+    void on_snacks_2_clicked();
+    void on_drinks_2_clicked();
+    void on_vegetables_2_clicked();
+    void on_fruits_2_clicked();
+
     void on_login_btn_clicked();
+
     void on_AddNewCustomer_clicked();
+    void on_AddNewCustomer_2_clicked();
+
     void on_add_new_clicked();
     void on_go_back_clicked();
-    void Delete_On_Click(QPushButton*, float, QString, int);
+
+    void Delete_On_Click(QPushButton*, float, QString, int, QLabel*, QLabel*, QPushButton*, QLineEdit*);
+
     float on_check_discount_clicked(float = SLOT_PRICE);
+
+    float on_check_discount_4_clicked(float = SLOT_PRICE);
+
+    float check_discount(QLabel*, QPushButton*, QLineEdit*, float = SLOT_PRICE);
+
     void on_cancel_order_clicked();
     void on_sell_clicked();
     void on_retrieve_clicked();
+
+    void on_cancel_order_4_clicked();
+    void on_sell_4_clicked();
+    void on_retrieve_4_clicked();
+
     void on_add_item_clicked();
     void on_add_quantity_clicked();
     void on_remove_item_clicked();
     void on_remove_quantity_clicked();
     void on_back_to_main_clicked();
+
     void on_customers_clicked();
+    void on_customers_2_clicked();
+
     void on_backFromCustomers_clicked();
     void on_Search_btn_clicked();
     void on_logout_clicked();
+    void on_logout_admin_clicked();
+
     void on_gotoproducts_clicked();
+    void on_gotoproducts_2_clicked();
+
     void on_searchprobuctsBTN_clicked();
     void on_BackFromProductsBTN_clicked();
+
+    void on_go_to_admin_form_clicked();
 };
 
 #endif // CASH_REG_SYSTEM_H

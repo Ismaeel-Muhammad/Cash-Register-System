@@ -12,9 +12,9 @@ Database::~Database() {
 
 void Database::initialize() {
     // Create table
-    const char* createProdTable = "CREATE TABLE IF NOT EXISTS Products (id INTEGER PRIMARY KEY,name TEXT NOT NULL, quantity INTEGER NOT NULL, price TEXT NOT NULL, type TEXT NOT NULL);";
-    const char* createCustomerTable = "CREATE TABLE IF NOT EXISTS Customers (id INTEGER PRIMARY KEY,name TEXT NOT NULL, phone_number TEXT NOT NULL, total_paid INTEGER NOT NULL, class TEXT NOT NULL);";
-    const char* createOperationsTable = "CREATE TABLE IF NOT EXISTS Operations (id INTEGER PRIMARY KEY,name TEXT NOT NULL, quantity INTEGER NOT NULL, price TEXT NOT NULL, type TEXT NOT NULL);";
+    const char* createProdTable = "CREATE TABLE IF NOT EXISTS Products (name TEXT NOT NULL, quantity INTEGER NOT NULL, price TEXT NOT NULL, type TEXT NOT NULL);";
+    const char* createCustomerTable = "CREATE TABLE IF NOT EXISTS Customers (name TEXT NOT NULL, phone_number TEXT NOT NULL, total_paid INTEGER NOT NULL, class TEXT NOT NULL);";
+    const char* createOperationsTable = "CREATE TABLE IF NOT EXISTS Operations (name TEXT NOT NULL, quantity INTEGER NOT NULL, price TEXT NOT NULL, type TEXT NOT NULL, operation_type TEXT NOT NULL);";
 
     char* errMsg;
     int rc = sqlite3_exec(m_db, createProdTable, NULL, NULL, &errMsg);
@@ -40,8 +40,7 @@ void Database::initialize() {
 
 void Database::insertCustomerRows(string name, string phone_number, int total_paid, string Class)
 {
-    int id = getRowCount(m_db, "Customers") + 1;
-    const char* insertProduct = sqlite3_mprintf("INSERT INTO Customers(id, name, phone_number, total_paid, class) VALUES(%d, '%q', '%q', %d, '%q');", id, name.c_str(), phone_number.c_str(), total_paid, Class.c_str());
+    const char* insertProduct = sqlite3_mprintf("INSERT INTO Customers(name, phone_number, total_paid, class) VALUES('%q', '%q', %d, '%q');", name.c_str(), phone_number.c_str(), total_paid, Class.c_str());
     char* errMsg;
     int rc = sqlite3_exec(m_db, insertProduct, NULL, NULL, &errMsg);
     if (rc != SQLITE_OK) {
@@ -144,8 +143,7 @@ void Database::updateProductQuantity(string name, int additional_quantity, char 
 
 void Database::insertProdRows(string name, string price, int quantity, string type)
 {
-    int id = getRowCount(m_db, "Products") + 2;
-    const char* insertProduct = sqlite3_mprintf("INSERT INTO Products(id, name, price, quantity, type) VALUES(%d, '%q', '%q', %d, '%q');", id, name.c_str(), price.c_str(), quantity, type.c_str());
+    const char* insertProduct = sqlite3_mprintf("INSERT INTO Products(name, price, quantity, type) VALUES('%q', '%q', %d, '%q');", name.c_str(), price.c_str(), quantity, type.c_str());
     char* errMsg;
     int rc = sqlite3_exec(m_db, insertProduct, NULL, NULL, &errMsg);
     if (rc != SQLITE_OK) {
@@ -153,23 +151,6 @@ void Database::insertProdRows(string name, string price, int quantity, string ty
         msg.setText(errMsg);
         msg.exec();
     }
-}
-
-int Database::getRowCount(sqlite3* db, const char* tableName) {
-    int rowCount = 0;
-    sqlite3_stmt* stmt;
-
-    const char* query = sqlite3_mprintf("SELECT COUNT(*) FROM %Q;", tableName);
-
-    if (sqlite3_prepare_v2(db, query, -1, &stmt, NULL) == SQLITE_OK) {
-        if (sqlite3_step(stmt) == SQLITE_ROW) {
-            rowCount = sqlite3_column_int(stmt, 0);
-        }
-        sqlite3_finalize(stmt);
-    }
-
-    sqlite3_free((void*)query);
-    return rowCount;
 }
 
 void Database::DeleteProdRow(string name) {
@@ -197,16 +178,82 @@ void Database::DeleteProdRow(string name) {
 
 }
 
-void Database::insertOrUpdateOperation(string name, int quantity, float price, char t)
+void Database::insertOrUpdateOperation(string name, int quantity, float price, string operationType, char t)
 {
     string type = (t == '+') ? "sell" : "retrieve";
     if (isRowExist(name, type)) {
-        updateOperation(name, quantity, price, type);
+        updateOperation(name, quantity, price, operationType, type);
     }
     else {
-        insertOperation(name, quantity, price, type);
+        insertOperation(name, quantity, price, operationType, type);
     }
 
+}
+
+void Database::insertOperation(string name, int quantity, float price, string operationType, string type) {
+    sqlite3_stmt* stmt;
+    if (sqlite3_prepare_v2(m_db, "INSERT INTO operations (name, quantity, price, type, operation_type) VALUES (?, ?, ?, ?, ?)", -1, &stmt, NULL) != SQLITE_OK) {
+        sqlite3_finalize(stmt);
+        return;
+    }
+    if (sqlite3_bind_text(stmt, 1, name.c_str(), -1, SQLITE_TRANSIENT) != SQLITE_OK) {
+        sqlite3_finalize(stmt);
+        return;
+    }
+    if (sqlite3_bind_int(stmt, 2, quantity) != SQLITE_OK) {
+        sqlite3_finalize(stmt);
+        return;
+    }
+    if (sqlite3_bind_double(stmt, 3, price) != SQLITE_OK) {
+        sqlite3_finalize(stmt);
+        return;
+    }
+    if (sqlite3_bind_text(stmt, 4, type.c_str(), -1, SQLITE_TRANSIENT) != SQLITE_OK) {
+        sqlite3_finalize(stmt);
+        return;
+    }
+    if (sqlite3_bind_text(stmt, 5, operationType.c_str(), -1, SQLITE_TRANSIENT) != SQLITE_OK) {
+        sqlite3_finalize(stmt);
+        return;
+    }
+    if (sqlite3_step(stmt) != SQLITE_DONE) {
+        sqlite3_finalize(stmt);
+        return;
+    }
+    sqlite3_finalize(stmt);
+}
+
+void Database::updateOperation(string name, int quantity, float price, string operationType, string type) {
+    sqlite3_stmt* stmt;
+    if (sqlite3_prepare_v2(m_db, "UPDATE operations SET price = price + ?, quantity = quantity + ? WHERE name = ? AND type = ? AND operation_type = ?", -1, &stmt, NULL) != SQLITE_OK) {
+        sqlite3_finalize(stmt);
+        return;
+    }
+    if (sqlite3_bind_double(stmt, 1, price) != SQLITE_OK) {
+        sqlite3_finalize(stmt);
+        return;
+    }
+    if (sqlite3_bind_int(stmt, 2, quantity) != SQLITE_OK) {
+        sqlite3_finalize(stmt);
+        return;
+    }
+    if (sqlite3_bind_text(stmt, 3, name.c_str(), -1, SQLITE_TRANSIENT) != SQLITE_OK) {
+        sqlite3_finalize(stmt);
+        return;
+    }
+    if (sqlite3_bind_text(stmt, 4, type.c_str(), -1, SQLITE_TRANSIENT) != SQLITE_OK) {
+        sqlite3_finalize(stmt);
+        return;
+    }
+    if (sqlite3_bind_text(stmt, 5, operationType.c_str(), -1, SQLITE_TRANSIENT) != SQLITE_OK) {
+        sqlite3_finalize(stmt);
+        return;
+    }
+    if (sqlite3_step(stmt) != SQLITE_DONE) {
+        sqlite3_finalize(stmt);
+        return;
+    }
+    sqlite3_finalize(stmt);
 }
 
 bool Database::isRowExist(string name, string type) {
@@ -232,67 +279,4 @@ bool Database::isRowExist(string name, string type) {
     }
     sqlite3_finalize(stmt);
     return exists;
-}
-
-void Database::insertOperation(string name, int quantity, float price, string type) {
-    int id = getRowCount(m_db, "Operations") + 1;
-    sqlite3_stmt* stmt;
-    if (sqlite3_prepare_v2(m_db, "INSERT INTO operations (id, name, quantity, price, type) VALUES (?, ?, ?, ?, ?)", -1, &stmt, NULL) != SQLITE_OK) {
-        sqlite3_finalize(stmt);
-        return;
-    }
-    if (sqlite3_bind_int(stmt, 1, id) != SQLITE_OK) {
-        sqlite3_finalize(stmt);
-        return;
-    }
-    if (sqlite3_bind_text(stmt, 2, name.c_str(), -1, SQLITE_TRANSIENT) != SQLITE_OK) {
-        sqlite3_finalize(stmt);
-        return;
-    }
-    if (sqlite3_bind_int(stmt, 3, quantity) != SQLITE_OK) {
-        sqlite3_finalize(stmt);
-        return;
-    }
-    if (sqlite3_bind_double(stmt, 4, price) != SQLITE_OK) {
-        sqlite3_finalize(stmt);
-        return;
-    }
-    if (sqlite3_bind_text(stmt, 5, type.c_str(), -1, SQLITE_TRANSIENT) != SQLITE_OK) {
-        sqlite3_finalize(stmt);
-        return;
-    }
-    if (sqlite3_step(stmt) != SQLITE_DONE) {
-        sqlite3_finalize(stmt);
-        return;
-    }
-    sqlite3_finalize(stmt);
-}
-
-void Database::updateOperation(string name, int quantity, float price, string type) {
-    sqlite3_stmt* stmt;
-    if (sqlite3_prepare_v2(m_db, "UPDATE operations SET price = price + ?, quantity = quantity + ? WHERE name = ? AND type = ?", -1, &stmt, NULL) != SQLITE_OK) {
-        sqlite3_finalize(stmt);
-        return;
-    }
-    if (sqlite3_bind_double(stmt, 1, price) != SQLITE_OK) {
-        sqlite3_finalize(stmt);
-        return;
-    }
-    if (sqlite3_bind_int(stmt, 2, quantity) != SQLITE_OK) {
-        sqlite3_finalize(stmt);
-        return;
-    }
-    if (sqlite3_bind_text(stmt, 3, name.c_str(), -1, SQLITE_TRANSIENT) != SQLITE_OK) {
-        sqlite3_finalize(stmt);
-        return;
-    }
-    if (sqlite3_bind_text(stmt, 4, type.c_str(), -1, SQLITE_TRANSIENT) != SQLITE_OK) {
-        sqlite3_finalize(stmt);
-        return;
-    }
-    if (sqlite3_step(stmt) != SQLITE_DONE) {
-        sqlite3_finalize(stmt);
-        return;
-    }
-    sqlite3_finalize(stmt);
 }

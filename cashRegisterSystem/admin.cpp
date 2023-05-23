@@ -66,10 +66,12 @@ void cashRegisterSystem::Show_retrieve_window() {
     m_start[1] = true;
 
 }
+
 void cashRegisterSystem::Update_total() {
     Show_total_window(m_ui->total_VLayout,m_start[2]);
     m_start[2] = true;
 }
+
 void cashRegisterSystem::Show_total_window(QVBoxLayout* VLayout,bool start) {
     if (start) {
         QLayout* layout = VLayout->layout();
@@ -152,6 +154,7 @@ void cashRegisterSystem::Show_total_window(QVBoxLayout* VLayout,bool start) {
     m_ui->day_total_income->setText(QString::number(TotalPrice));
     m_ui->total_operations_contents->setLayout(VLayout);  
 }
+
 void cashRegisterSystem::Show_window(string type, QWidget* scrollContents,QVBoxLayout* VLayout,bool start) {
     if (start) {
         QLayout* layout = VLayout->layout();
@@ -204,6 +207,7 @@ void cashRegisterSystem::Show_window(string type, QWidget* scrollContents,QVBoxL
     sqlite3_finalize(stmt);
     sqlite3_close(m_OperationsDB);
 }
+
 void cashRegisterSystem::InsertInHashOperations(QHash< QString, QList<QVariant>> &Operation,QString name,float price,int Quantity_Sell) {
     QList<QVariant> values;
 

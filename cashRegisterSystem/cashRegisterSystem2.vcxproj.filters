@@ -46,7 +46,7 @@
     <ClCompile Include="login.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="cart.cpp">
+    <ClCompile Include="user_cart.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CreatingAccount.cpp">
@@ -62,6 +62,18 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ProductsForm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="admin_cart.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cart.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cash_user.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cash_admin.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

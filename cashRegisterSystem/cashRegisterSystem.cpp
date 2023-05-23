@@ -28,38 +28,6 @@ cashRegisterSystem::~cashRegisterSystem()
     delete m_ui;
 }
 
-void cashRegisterSystem::on_snacks_clicked() {
-    if (!m_loadedOnce[0]) {   
-        populateProductList(m_ui->scrollAreaSnacksContents, m_ui->gridSnacks, "snacks");
-        m_loadedOnce[0] = true;
-    }
-    m_ui->ProductsStackedWidget->setCurrentIndex(0);
-}
-
-void cashRegisterSystem::on_drinks_clicked() {
-    if (!m_loadedOnce[1]) {  
-        populateProductList(m_ui->scrollAreaDrinksContents, m_ui->gridDrinks, "drink");
-        m_loadedOnce[1] = true;
-    }
-    m_ui->ProductsStackedWidget->setCurrentIndex(1);
-}
-
-void cashRegisterSystem::on_vegetables_clicked() {
-    if (!m_loadedOnce[2]) { 
-        populateProductList(m_ui->scrollAreaVegetablesContents, m_ui->gridVegetables, "vegetables");
-        m_loadedOnce[2] = true;
-    }
-    m_ui->ProductsStackedWidget->setCurrentIndex(2);
-}
-
-void cashRegisterSystem::on_fruits_clicked() {
-    if (!m_loadedOnce[3]) {    
-        populateProductList(m_ui->scrollAreaFruitsContents, m_ui->gridFruits, "fruit");
-        m_loadedOnce[3] = true;
-    }
-    m_ui->ProductsStackedWidget->setCurrentIndex(3);
-}
-
 void cashRegisterSystem::clear_grid_layout(QGridLayout* grid) {
     QLayout* layout = grid->layout();
     QLayoutItem* child = nullptr;
@@ -73,7 +41,11 @@ void cashRegisterSystem::clear_grid_layout(QGridLayout* grid) {
     }
 }
 
-void cashRegisterSystem::populateProductList(QWidget* scrollContents, QGridLayout* grid, QString productType) {
+void cashRegisterSystem::populateProductList(QWidget* scrollContents, QGridLayout* grid, QString productType,
+                                             QVBoxLayout* cartVerticalLayout, QLabel* priceBefore, QLabel* priceAfter,
+                                             QScrollArea* cartScrollArea, QPushButton* checkButton,
+                                             QLineEdit* phoneNumberField)
+{
     // Clearing Products
     clear_grid_layout(grid);
 
@@ -102,11 +74,9 @@ void cashRegisterSystem::populateProductList(QWidget* scrollContents, QGridLayou
     QSpinBox* quantityBox;
     int i = 0;
     while (sqlite3_step(stmt) == SQLITE_ROW) {
-        //int id = sqlite3_column_int(stmt, 0);
-        //const char* type = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 4));
-        int quantity = sqlite3_column_int(stmt, 2);
-        const char* name = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 1));
-        const char* price = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 3));
+        int quantity = sqlite3_column_int(stmt, 1);
+        const char* name = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 0));
+        const char* price = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 2));
         QFrame* frame = new QFrame;
         QVBoxLayout* vboxLayout = new QVBoxLayout(frame);
         nameLabel = new QLabel(QString::fromUtf8(name));
@@ -133,8 +103,10 @@ void cashRegisterSystem::populateProductList(QWidget* scrollContents, QGridLayou
         //Setting up quantityBox proberties
         quantityBox->setObjectName("quantityBox_1");
 
-        connect(add_button.back(), &QPushButton::clicked, [this, quantityBox, nameLabel, price_val]() {
-            on_name_button_clicked(quantityBox->value(), nameLabel->text(), price_val);
+        connect(add_button.back(), &QPushButton::clicked, [this, quantityBox, nameLabel, price_val, cartVerticalLayout, priceBefore,
+                                                            priceAfter, cartScrollArea, checkButton, phoneNumberField]() {
+            on_name_button_clicked(quantityBox->value(), nameLabel->text(), price_val, cartVerticalLayout, priceBefore,
+                                   priceAfter, cartScrollArea, checkButton, phoneNumberField);
             });
 
         vboxLayout->addWidget(nameLabel);
@@ -164,6 +136,43 @@ void cashRegisterSystem::on_AddNewCustomer_clicked()
     m_ui->formsStackedWidget->setCurrentIndex(3);
 }
 
+void cashRegisterSystem::on_AddNewCustomer_2_clicked()
+{
+    m_ui->formsStackedWidget->setCurrentIndex(3);
+}
+
+void cashRegisterSystem::on_gotoproducts_clicked()
+{
+    generateProdtbl();
+    GenrateTypesForCombo();
+    m_ui->formsStackedWidget->setCurrentIndex(5);
+}
+
+void cashRegisterSystem::on_gotoproducts_2_clicked()
+{
+    generateProdtbl();
+    GenrateTypesForCombo();
+    m_ui->formsStackedWidget->setCurrentIndex(5);
+}
+
+void cashRegisterSystem::on_customers_clicked() {
+    search();
+    m_ui->formsStackedWidget->setCurrentIndex(4);
+}
+
+void cashRegisterSystem::on_customers_2_clicked() {
+    search();
+    m_ui->formsStackedWidget->setCurrentIndex(4);
+}
+
 void cashRegisterSystem::on_logout_clicked() {
+    //DeleteAll(m_ui->price_before, m_ui->price_after, m_ui->check_discount, m_ui->phone_number, m_ui->cartContents);
+    std::fill_n(m_loadedOnce, 4, false);
+    m_ui->formsStackedWidget->setCurrentIndex(0);
+}
+
+void cashRegisterSystem::on_logout_admin_clicked() {
+    //DeleteAll(m_ui->price_before_4, m_ui->price_after_4, m_ui->check_discount_4, m_ui->phone_number_4, m_ui->cartContents_4);
+    std::fill_n(m_loadedOnce, 4, false);
     m_ui->formsStackedWidget->setCurrentIndex(0);
 }

@@ -1,8 +1,4 @@
 ﻿#include "cashRegisterSystem.h"
-void cashRegisterSystem::on_customers_clicked() {
-    search();
-    m_ui->formsStackedWidget->setCurrentIndex(4);
-}
 
 void cashRegisterSystem::on_backFromCustomers_clicked() {
     m_ui->formsStackedWidget->setCurrentIndex(1);

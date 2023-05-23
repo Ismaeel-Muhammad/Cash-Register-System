@@ -1,13 +1,5 @@
 ﻿#include "cashRegisterSystem.h"
 
-void cashRegisterSystem::on_gotoproducts_clicked()
-{
-    generateProdtbl();
-    GenrateTypesForCombo();
-	m_ui->formsStackedWidget->setCurrentIndex(5);
-  
-}
-
 void cashRegisterSystem::on_searchprobuctsBTN_clicked()
 {
     m_ui->prodtable->model()->removeRows(0, m_ui->prodtable->model()->rowCount());
