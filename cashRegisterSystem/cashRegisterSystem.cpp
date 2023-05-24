@@ -20,6 +20,11 @@ cashRegisterSystem::cashRegisterSystem(QWidget* parent)
     QApplication::setWindowIcon(QIcon("icon.ico"));
     isAdmin = false;
  
+
+    Show_Sell_window();
+    Show_retrieve_window();
+    Update_total();
+
     Add_Item_names();
 }
 

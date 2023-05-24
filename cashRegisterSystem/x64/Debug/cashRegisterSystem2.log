@@ -1,2 +1,3 @@
-﻿  cart.cpp
-  cashRegisterSystem2.vcxproj -> D:\Cashing system Repo\cash-register-system\cashRegisterSystem\x64\Debug\cashRegisterSystem2.exe
+﻿  database.cpp
+G:\Projects\cash-register-system\cashRegisterSystem\database.cpp(189): warning C4700: uninitialized local variable 'thi' used
+  cashRegisterSystem2.vcxproj -> G:\Projects\cash-register-system\cashRegisterSystem\x64\Debug\cashRegisterSystem2.exe

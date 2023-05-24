@@ -184,9 +184,9 @@ void cashRegisterSystem::Show_window(string type, QWidget* scrollContents,QVBoxL
 
         QFrame* f = new QFrame();
         QHBoxLayout* hLayout = new QHBoxLayout(f);
-        string name = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 1));
-        int Quantity_Sell = sqlite3_column_int(stmt, 2);
-        string price = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 3));
+        string name = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 0));
+        int Quantity_Sell = sqlite3_column_int(stmt, 1);
+        string price = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 2));
         float p = stof(price);
         QLabel* names = new QLabel(QString("\u0627\u0644\u0627\u0633\u0645 : %1").arg(QString::fromUtf8(name)));
         QLabel* Quantities = new QLabel(QString("\u0627\u0644\u0643\u0645\u064a\u0629 : %1 ").arg(to_string(Quantity_Sell).c_str()));
