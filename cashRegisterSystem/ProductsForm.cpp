@@ -8,7 +8,10 @@ void cashRegisterSystem::on_searchprobuctsBTN_clicked()
 
 void cashRegisterSystem::on_BackFromProductsBTN_clicked()
 {
-    m_ui->formsStackedWidget->setCurrentIndex(1);
+    if (isAdmin)
+        m_ui->formsStackedWidget->setCurrentIndex(6);
+    else
+        m_ui->formsStackedWidget->setCurrentIndex(1);
 }
 
 void cashRegisterSystem::generateProdtbl()
@@ -37,12 +40,12 @@ void cashRegisterSystem::generateProdtbl()
         sqlite3_close(m_ProductsDB);
     }
     QStandardItemModel* model = new QStandardItemModel(this);
-    model->setHorizontalHeaderLabels({ "الفئة", "اجمالي المدفوع", "رقم الهاتف", "الاسم" });
+    model->setHorizontalHeaderLabels({ "النوع","السعر", " الكمية", "الاسم" });
     while (sqlite3_step(stmt) == SQLITE_ROW) {
-        const char* name = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 1));
-        const char* price = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 3));
-        int quantity = sqlite3_column_int(stmt, 2);
-        const char* type = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 4));
+        const char* name = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 0));
+        const char* price = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 2));
+        int quantity = sqlite3_column_int(stmt, 1);
+        const char* type = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 3));
 
         QList<QStandardItem*> items;
         items.append(new QStandardItem(QString(type)));

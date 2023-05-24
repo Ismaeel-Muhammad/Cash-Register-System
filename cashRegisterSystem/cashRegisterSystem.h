@@ -43,6 +43,7 @@ private:
     float TotalBalanceForOperationDiscounted;
     bool withDiscount;
     int i;
+    bool isAdmin;
     string Item_names;
     QVector<QPushButton*> Delete_button;
     QHash<QPushButton*, QFrame*> MappingLayout;

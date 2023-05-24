@@ -18,7 +18,7 @@ cashRegisterSystem::cashRegisterSystem(QWidget* parent)
     m_ui->class_box->addItem("\u0637\u0627\u0644\u0628");
     std::fill_n(m_start, 3, false);
     QApplication::setWindowIcon(QIcon("icon.ico"));
-
+    isAdmin = false;
  
     Add_Item_names();
 }

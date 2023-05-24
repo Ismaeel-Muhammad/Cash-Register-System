@@ -30,5 +30,8 @@ void cashRegisterSystem::on_add_new_clicked()
 
 void cashRegisterSystem::on_go_back_clicked()
 {
-    m_ui->formsStackedWidget->setCurrentIndex(1);
+    if (isAdmin)
+        m_ui->formsStackedWidget->setCurrentIndex(6);
+    else
+        m_ui->formsStackedWidget->setCurrentIndex(1);
 }

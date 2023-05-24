@@ -14,7 +14,6 @@ void cashRegisterSystem::payOperation(char type, QLabel* priceBefore, QLabel* pr
         db.updateProductQuantity(i.key().toStdString(), i.value().at(0).toInt(), updateType(type));
         // name, quantity, price
         float price = check_discount(priceAfter, checkButton, phoneNumberField, i.value().at(1).toFloat());
-
         string operation_type = m_ui->order_type_cmb->currentText().toUtf8().constData();
         db.insertOrUpdateOperation(i.key().toStdString(), i.value().at(0).toInt(), price, operation_type, type);
     }
@@ -56,7 +55,7 @@ float cashRegisterSystem::check_discount(QLabel* priceAfter, QPushButton* checkB
         QMessageBox::warning(this, "oh no", "Phone number is empty");
         return 0;
     }
-
+    
     // Open the database
     if (sqlite3_open("mydatabase.db", &m_customersDB) != SQLITE_OK) {
         QMessageBox::warning(this, "oh no", "Cannot open database");
@@ -85,10 +84,11 @@ float cashRegisterSystem::check_discount(QLabel* priceAfter, QPushButton* checkB
     if (sqlite3_step(stmt) == SQLITE_ROW) {
         const char* customerClass = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 0));
 
-        float adminDiscount = 1 - (m_ui->discount_spinbox->value() / 100);
+        float adminDiscount = 1-((float)m_ui->discount_spinbox->value() / 100);
 
         if (QString::fromUtf8(customerClass) == "\u0637\u0627\u0644\u0628" || QString::fromUtf8(customerClass) == "\u0639\u0645\u064A\u0644 \u0645\u0647\u0645") {
-            mxDiscount = max(adminDiscount, PHONE_DISCOUNT);
+            mxDiscount = min(adminDiscount, PHONE_DISCOUNT);
+            QMessageBox::information(this, "xx",QString::number (adminDiscount));
             if (price == SLOT_PRICE) {
                 price = priceAfter->text().toFloat();
                 price *= mxDiscount;

@@ -1,7 +1,10 @@
 ﻿#include "cashRegisterSystem.h"
 
 void cashRegisterSystem::on_backFromCustomers_clicked() {
-    m_ui->formsStackedWidget->setCurrentIndex(1);
+    if (isAdmin)
+        m_ui->formsStackedWidget->setCurrentIndex(6);
+    else
+        m_ui->formsStackedWidget->setCurrentIndex(1);
 }
 
 void cashRegisterSystem::on_Search_btn_clicked()
@@ -23,7 +26,7 @@ void cashRegisterSystem::search()
     }
     string ss = "SELECT * FROM customers WHERE 1=1";
     if (!namesearch.empty()) {
-        ss += " AND name LIKE '%" + namesearch + "%'";
+        ss += "name LIKE '%" + namesearch + "%'";
     }
     if (!phonesearch.empty()) {
         ss += " AND phone_number LIKE '%" + phonesearch + "%'";
@@ -50,10 +53,10 @@ void cashRegisterSystem::search()
     QStandardItemModel* model = new QStandardItemModel(this);
     model->setHorizontalHeaderLabels({ "الفئة", "اجمالي المدفوع", "رقم الهاتف", "الاسم" });
     while (sqlite3_step(stmt) == SQLITE_ROW) {
-        const char* name = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 1));
-        const char* phone_number = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 2));
-        int total_paid = sqlite3_column_int(stmt, 3);
-        const char* customerClass = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 4));
+        const char* name = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 0));
+        const char* phone_number = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 1));
+        int total_paid = sqlite3_column_int(stmt, 2);
+        const char* customerClass = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 3));
 
         QList<QStandardItem*> items;
         items.append(new QStandardItem(QString(customerClass)));
