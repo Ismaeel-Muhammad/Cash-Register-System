@@ -20,6 +20,8 @@ cashRegisterSystem::cashRegisterSystem(QWidget* parent)
     QApplication::setWindowIcon(QIcon("icon.ico"));
     isAdmin = false;
  
+    m_ui->discount_spinbox->setDecimals(0);
+    m_ui->discount_spinbox->setPrefix("% ");
 
     Show_Sell_window();
     Show_retrieve_window();

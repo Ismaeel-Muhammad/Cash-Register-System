@@ -75,7 +75,6 @@ void cashRegisterSystem::search()
 
     sqlite3_finalize(stmt);
     sqlite3_close(m_ProductsDB);
-
     m_ui->tableView->setModel(model);
     m_ui->tableView->horizontalHeader()->setDefaultAlignment(Qt::AlignRight);
     m_ui->tableView->horizontalHeader()->setStretchLastSection(true);

@@ -13,7 +13,7 @@ void cashRegisterSystem::payOperation(char type, QLabel* priceBefore, QLabel* pr
         // name, quantity, type(add, subtract)
         db.updateProductQuantity(i.key().toStdString(), i.value().at(0).toInt(), updateType(type));
         // name, quantity, price
-        float price = check_discount(priceAfter, checkButton, phoneNumberField, i.value().at(1).toFloat());
+        float price = check_discount(priceAfter, priceBefore, checkButton, phoneNumberField, i.value().at(1).toFloat());
         string operation_type = m_ui->order_type_cmb->currentText().toUtf8().constData();
         db.insertOrUpdateOperation(i.key().toStdString(), i.value().at(0).toInt(), price, operation_type, type);
     }
@@ -28,16 +28,18 @@ void cashRegisterSystem::DeleteAll(QLabel* priceBefore, QLabel* priceAfter,
     QPushButton* checkButton, QLineEdit* phoneNumberField,
     QWidget* cartContent) {
     QLayout* layout = cartContent->layout(); // Get the layout of the scroll area widget
-    QLayoutItem* child = nullptr;
-    while ((child = layout->takeAt(0)) != nullptr) {
-        QWidget* widget = child->widget();
-        if (widget) {
-            layout->removeWidget(widget);
-            delete widget;
+    if (layout != nullptr) {
+        QLayoutItem* child = nullptr;
+        while ((child = layout->takeAt(0)) != nullptr) {
+            QWidget* widget = child->widget();
+            if (widget) {
+                layout->removeWidget(widget);
+                delete widget;
+            }
+            delete child;
         }
-        delete child;
+        layout->addItem(new QSpacerItem(0, 20, QSizePolicy::Minimum, QSizePolicy::Expanding));  // Add a spacer item to the layout
     }
-    layout->addItem(new QSpacerItem(0, 20, QSizePolicy::Minimum, QSizePolicy::Expanding));  // Add a spacer item to the layout
     myHash.clear();
     TotalBalanceForOperation = 0;
     m_ui->discount_spinbox->setValue(0);
@@ -49,7 +51,7 @@ void cashRegisterSystem::DeleteAll(QLabel* priceBefore, QLabel* priceAfter,
     withDiscount = false;
 }
 
-float cashRegisterSystem::check_discount(QLabel* priceAfter, QPushButton* checkButton, QLineEdit* phoneNumberField, float price) {
+float cashRegisterSystem::check_discount(QLabel* priceAfter, QLabel* priceBefore, QPushButton* checkButton, QLineEdit* phoneNumberField, float price) {
     const QString phoneNumber = phoneNumberField->text();
     if (phoneNumber.isEmpty()) {
         QMessageBox::warning(this, "oh no", "Phone number is empty");
@@ -84,15 +86,14 @@ float cashRegisterSystem::check_discount(QLabel* priceAfter, QPushButton* checkB
     if (sqlite3_step(stmt) == SQLITE_ROW) {
         const char* customerClass = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 0));
 
-        float adminDiscount = 1-((float)m_ui->discount_spinbox->value() / 100);
+        float adminDiscount = 1-(m_ui->discount_spinbox->value() / 100);
 
         if (QString::fromUtf8(customerClass) == "\u0637\u0627\u0644\u0628" || QString::fromUtf8(customerClass) == "\u0639\u0645\u064A\u0644 \u0645\u0647\u0645") {
             minDiscount = min(adminDiscount, PHONE_DISCOUNT);
             if (price == SLOT_PRICE) {
-                price = priceAfter->text().toFloat();
+                price = priceBefore->text().toFloat();
                 price *= minDiscount;
                 priceAfter->setText(QString::number(price));
-                checkButton->setDisabled(true);
             }
             else {
                 price *= minDiscount;
@@ -124,7 +125,7 @@ void cashRegisterSystem::Delete_On_Click(QPushButton* del, float totalPrice, QSt
     myHash[name] = values;
     QFrame* layout = MappingLayout.take(del);
 
-    float discount = check_discount(priceAfter, checkButton, phoneNumberField);
+    float discount = check_discount(priceAfter, priceBefore, checkButton, phoneNumberField);
     TotalBalanceForOperation -= totalPrice;
     TotalBalanceForOperationDiscounted = discount * TotalBalanceForOperation;
 

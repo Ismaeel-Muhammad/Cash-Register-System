@@ -100,6 +100,7 @@ void cashRegisterSystem::GenrateTypesForCombo()
     rc = sqlite3_prepare_v2(m_ProductsDB, ss.c_str(), -1, &stmt, NULL);
 
     if (rc == SQLITE_OK) {
+        m_ui->ProdTypeSearch->clear();
         // Iterate over the rows and add each type to the combobox
         while (sqlite3_step(stmt) == SQLITE_ROW) {
             const char* type = (const char*)sqlite3_column_text(stmt, 0);
@@ -110,4 +111,5 @@ void cashRegisterSystem::GenrateTypesForCombo()
         // Finalize the statement
         sqlite3_finalize(stmt);
     }
+    sqlite3_close(m_ProductsDB);
 }

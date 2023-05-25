@@ -275,30 +275,30 @@ Q_CONSTINIT static const uint qt_meta_data_CLASScashRegisterSystemENDCLASS[] = {
       22,    0,  324,    2, 0x28,   35 /* Private | MethodCloned */,
       23,    1,  325,    2, 0x08,   36 /* Private */,
       23,    0,  328,    2, 0x28,   38 /* Private | MethodCloned */,
-      24,    4,  329,    2, 0x08,   39 /* Private */,
-      24,    3,  338,    2, 0x28,   44 /* Private | MethodCloned */,
-      25,    0,  345,    2, 0x08,   48 /* Private */,
-      26,    0,  346,    2, 0x08,   49 /* Private */,
-      27,    0,  347,    2, 0x08,   50 /* Private */,
-      28,    0,  348,    2, 0x08,   51 /* Private */,
-      29,    0,  349,    2, 0x08,   52 /* Private */,
-      30,    0,  350,    2, 0x08,   53 /* Private */,
-      31,    0,  351,    2, 0x08,   54 /* Private */,
-      32,    0,  352,    2, 0x08,   55 /* Private */,
-      33,    0,  353,    2, 0x08,   56 /* Private */,
-      34,    0,  354,    2, 0x08,   57 /* Private */,
-      35,    0,  355,    2, 0x08,   58 /* Private */,
-      36,    0,  356,    2, 0x08,   59 /* Private */,
-      37,    0,  357,    2, 0x08,   60 /* Private */,
-      38,    0,  358,    2, 0x08,   61 /* Private */,
-      39,    0,  359,    2, 0x08,   62 /* Private */,
-      40,    0,  360,    2, 0x08,   63 /* Private */,
-      41,    0,  361,    2, 0x08,   64 /* Private */,
-      42,    0,  362,    2, 0x08,   65 /* Private */,
-      43,    0,  363,    2, 0x08,   66 /* Private */,
-      44,    0,  364,    2, 0x08,   67 /* Private */,
-      45,    0,  365,    2, 0x08,   68 /* Private */,
-      46,    0,  366,    2, 0x08,   69 /* Private */,
+      24,    5,  329,    2, 0x08,   39 /* Private */,
+      24,    4,  340,    2, 0x28,   45 /* Private | MethodCloned */,
+      25,    0,  349,    2, 0x08,   50 /* Private */,
+      26,    0,  350,    2, 0x08,   51 /* Private */,
+      27,    0,  351,    2, 0x08,   52 /* Private */,
+      28,    0,  352,    2, 0x08,   53 /* Private */,
+      29,    0,  353,    2, 0x08,   54 /* Private */,
+      30,    0,  354,    2, 0x08,   55 /* Private */,
+      31,    0,  355,    2, 0x08,   56 /* Private */,
+      32,    0,  356,    2, 0x08,   57 /* Private */,
+      33,    0,  357,    2, 0x08,   58 /* Private */,
+      34,    0,  358,    2, 0x08,   59 /* Private */,
+      35,    0,  359,    2, 0x08,   60 /* Private */,
+      36,    0,  360,    2, 0x08,   61 /* Private */,
+      37,    0,  361,    2, 0x08,   62 /* Private */,
+      38,    0,  362,    2, 0x08,   63 /* Private */,
+      39,    0,  363,    2, 0x08,   64 /* Private */,
+      40,    0,  364,    2, 0x08,   65 /* Private */,
+      41,    0,  365,    2, 0x08,   66 /* Private */,
+      42,    0,  366,    2, 0x08,   67 /* Private */,
+      43,    0,  367,    2, 0x08,   68 /* Private */,
+      44,    0,  368,    2, 0x08,   69 /* Private */,
+      45,    0,  369,    2, 0x08,   70 /* Private */,
+      46,    0,  370,    2, 0x08,   71 /* Private */,
 
  // slots: parameters
     QMetaType::Void, QMetaType::Int, QMetaType::QString, QMetaType::Float, 0x80000000 | 3, 0x80000000 | 4, 0x80000000 | 4, 0x80000000 | 5, 0x80000000 | 6, 0x80000000 | 7,    2,    2,    2,    2,    2,    2,    2,    2,    2,
@@ -320,8 +320,8 @@ Q_CONSTINIT static const uint qt_meta_data_CLASScashRegisterSystemENDCLASS[] = {
     QMetaType::Float,
     QMetaType::Float, QMetaType::Float,    2,
     QMetaType::Float,
-    QMetaType::Float, 0x80000000 | 4, 0x80000000 | 6, 0x80000000 | 7, QMetaType::Float,    2,    2,    2,    2,
-    QMetaType::Float, 0x80000000 | 4, 0x80000000 | 6, 0x80000000 | 7,    2,    2,    2,
+    QMetaType::Float, 0x80000000 | 4, 0x80000000 | 4, 0x80000000 | 6, 0x80000000 | 7, QMetaType::Float,    2,    2,    2,    2,    2,
+    QMetaType::Float, 0x80000000 | 4, 0x80000000 | 4, 0x80000000 | 6, 0x80000000 | 7,    2,    2,    2,    2,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -417,11 +417,13 @@ Q_CONSTINIT const QMetaObject cashRegisterSystem::staticMetaObject = { {
         // method 'check_discount'
         QtPrivate::TypeAndForceComplete<float, std::false_type>,
         QtPrivate::TypeAndForceComplete<QLabel *, std::false_type>,
+        QtPrivate::TypeAndForceComplete<QLabel *, std::false_type>,
         QtPrivate::TypeAndForceComplete<QPushButton *, std::false_type>,
         QtPrivate::TypeAndForceComplete<QLineEdit *, std::false_type>,
         QtPrivate::TypeAndForceComplete<float, std::false_type>,
         // method 'check_discount'
         QtPrivate::TypeAndForceComplete<float, std::false_type>,
+        QtPrivate::TypeAndForceComplete<QLabel *, std::false_type>,
         QtPrivate::TypeAndForceComplete<QLabel *, std::false_type>,
         QtPrivate::TypeAndForceComplete<QPushButton *, std::false_type>,
         QtPrivate::TypeAndForceComplete<QLineEdit *, std::false_type>,
@@ -502,9 +504,9 @@ void cashRegisterSystem::qt_static_metacall(QObject *_o, QMetaObject::Call _c, i
             if (_a[0]) *reinterpret_cast< float*>(_a[0]) = std::move(_r); }  break;
         case 18: { float _r = _t->on_check_discount_4_clicked();
             if (_a[0]) *reinterpret_cast< float*>(_a[0]) = std::move(_r); }  break;
-        case 19: { float _r = _t->check_discount((*reinterpret_cast< std::add_pointer_t<QLabel*>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QPushButton*>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<QLineEdit*>>(_a[3])),(*reinterpret_cast< std::add_pointer_t<float>>(_a[4])));
+        case 19: { float _r = _t->check_discount((*reinterpret_cast< std::add_pointer_t<QLabel*>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QLabel*>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<QPushButton*>>(_a[3])),(*reinterpret_cast< std::add_pointer_t<QLineEdit*>>(_a[4])),(*reinterpret_cast< std::add_pointer_t<float>>(_a[5])));
             if (_a[0]) *reinterpret_cast< float*>(_a[0]) = std::move(_r); }  break;
-        case 20: { float _r = _t->check_discount((*reinterpret_cast< std::add_pointer_t<QLabel*>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QPushButton*>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<QLineEdit*>>(_a[3])));
+        case 20: { float _r = _t->check_discount((*reinterpret_cast< std::add_pointer_t<QLabel*>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QLabel*>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<QPushButton*>>(_a[3])),(*reinterpret_cast< std::add_pointer_t<QLineEdit*>>(_a[4])));
             if (_a[0]) *reinterpret_cast< float*>(_a[0]) = std::move(_r); }  break;
         case 21: _t->on_cancel_order_clicked(); break;
         case 22: _t->on_sell_clicked(); break;
@@ -565,22 +567,24 @@ void cashRegisterSystem::qt_static_metacall(QObject *_o, QMetaObject::Call _c, i
         case 19:
             switch (*reinterpret_cast<int*>(_a[1])) {
             default: *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType(); break;
+            case 1:
             case 0:
                 *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType::fromType< QLabel* >(); break;
-            case 2:
+            case 3:
                 *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType::fromType< QLineEdit* >(); break;
-            case 1:
+            case 2:
                 *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType::fromType< QPushButton* >(); break;
             }
             break;
         case 20:
             switch (*reinterpret_cast<int*>(_a[1])) {
             default: *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType(); break;
+            case 1:
             case 0:
                 *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType::fromType< QLabel* >(); break;
-            case 2:
+            case 3:
                 *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType::fromType< QLineEdit* >(); break;
-            case 1:
+            case 2:
                 *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType::fromType< QPushButton* >(); break;
             }
             break;

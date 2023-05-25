@@ -104,7 +104,7 @@ private slots:
 
     float on_check_discount_4_clicked(float = SLOT_PRICE);
 
-    float check_discount(QLabel*, QPushButton*, QLineEdit*, float = SLOT_PRICE);
+    float check_discount(QLabel*, QLabel*, QPushButton*, QLineEdit*, float = SLOT_PRICE);
 
     void on_cancel_order_clicked();
     void on_sell_clicked();

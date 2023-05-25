@@ -1,7 +1,7 @@
 ﻿#include "cashRegisterSystem.h"
 
 float cashRegisterSystem::on_check_discount_clicked(float price) {
-    return check_discount(m_ui->price_after, m_ui->check_discount, m_ui->phone_number, price);
+    return check_discount(m_ui->price_after, m_ui->price_before, m_ui->check_discount, m_ui->phone_number, price);
 }
 
 void cashRegisterSystem::on_cancel_order_clicked()

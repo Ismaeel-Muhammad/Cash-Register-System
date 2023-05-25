@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QComboBox>
+#include <QtWidgets/QDoubleSpinBox>
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHeaderView>
@@ -23,7 +24,6 @@
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QScrollArea>
 #include <QtWidgets/QSpacerItem>
-#include <QtWidgets/QSpinBox>
 #include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTableView>
@@ -188,11 +188,11 @@ public:
     QLabel *price_after_const_4;
     QLabel *price_before_4;
     QLabel *price_after_4;
-    QSpinBox *discount_spinbox;
     QLabel *label_15;
     QLabel *label_16;
     QPushButton *check_discount_4;
     QComboBox *order_type_cmb;
+    QDoubleSpinBox *discount_spinbox;
     QPushButton *logout_admin;
     QStackedWidget *ProductsStackedWidget_2;
     QWidget *page_7;
@@ -834,9 +834,6 @@ public:
 "color: #c92a2a;\n"
 "font-weight: bold;\n"
 "font-size: 14px;"));
-        discount_spinbox = new QSpinBox(frame_2);
-        discount_spinbox->setObjectName("discount_spinbox");
-        discount_spinbox->setGeometry(QRect(10, 420, 71, 31));
         label_15 = new QLabel(frame_2);
         label_15->setObjectName("label_15");
         label_15->setGeometry(QRect(80, 420, 61, 31));
@@ -854,6 +851,9 @@ public:
         order_type_cmb->addItem(QString());
         order_type_cmb->setObjectName("order_type_cmb");
         order_type_cmb->setGeometry(QRect(170, 510, 111, 31));
+        discount_spinbox = new QDoubleSpinBox(frame_2);
+        discount_spinbox->setObjectName("discount_spinbox");
+        discount_spinbox->setGeometry(QRect(10, 420, 71, 31));
         logout_admin = new QPushButton(admin_main_form);
         logout_admin->setObjectName("logout_admin");
         logout_admin->setGeometry(QRect(50, 10, 111, 41));
@@ -962,7 +962,7 @@ public:
 
         retranslateUi(cashRegisterSystem2Class);
 
-        formsStackedWidget->setCurrentIndex(0);
+        formsStackedWidget->setCurrentIndex(6);
         ProductsStackedWidget->setCurrentIndex(1);
         item_type_item->setCurrentIndex(0);
         class_box->setCurrentIndex(-1);
@@ -1063,6 +1063,9 @@ public:
         order_type_cmb->setItemText(1, QCoreApplication::translate("cashRegisterSystem2Class", "\330\267\331\204\330\250 \330\247\331\210\331\206\331\204\330\247\331\212\331\206", nullptr));
         order_type_cmb->setItemText(2, QCoreApplication::translate("cashRegisterSystem2Class", "\330\267\331\204\330\250 \330\254\331\205\331\204\330\251", nullptr));
 
+#if QT_CONFIG(tooltip)
+        discount_spinbox->setToolTip(QString());
+#endif // QT_CONFIG(tooltip)
         logout_admin->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\252\330\263\330\254\331\212\331\204 \330\247\331\204\330\256\330\261\331\210\330\254", nullptr));
         go_to_admin_form->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\265\331\201\330\255\330\251 \330\247\331\204\330\247\330\257\331\205\331\206", nullptr));
     } // retranslateUi
