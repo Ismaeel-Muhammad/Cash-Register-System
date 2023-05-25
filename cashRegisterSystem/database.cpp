@@ -181,12 +181,7 @@ void Database::DeleteProdRow(string name) {
 void Database::insertOrUpdateOperation(string name, int quantity, float price, string operationType, char t)
 {
     string type = (t == '+') ? "sell" : "retrieve";
-    QMessageBox msg;
-    msg.setText(QString::fromUtf8(type));
-    msg.exec();
     if (isRowExist(name, type)) {
-        cashRegisterSystem* thi;
-        QMessageBox::information(thi, "dwk", "dqw");
         updateOperation(name, quantity, price, operationType, type);
     }
     else {
@@ -201,23 +196,23 @@ void Database::insertOperation(string name, int quantity, float price, string op
         sqlite3_finalize(stmt);
         return;
     }
-    if (sqlite3_bind_text(stmt, 0, name.c_str(), -1, SQLITE_TRANSIENT) != SQLITE_OK) {
+    if (sqlite3_bind_text(stmt, 1, name.c_str(), -1, SQLITE_TRANSIENT) != SQLITE_OK) {
         sqlite3_finalize(stmt);
         return;
     }
-    if (sqlite3_bind_int(stmt, 1, quantity) != SQLITE_OK) {
+    if (sqlite3_bind_int(stmt, 2, quantity) != SQLITE_OK) {
         sqlite3_finalize(stmt);
         return;
     }
-    if (sqlite3_bind_double(stmt, 2, price) != SQLITE_OK) {
+    if (sqlite3_bind_double(stmt, 3, price) != SQLITE_OK) {
         sqlite3_finalize(stmt);
         return;
     }
-    if (sqlite3_bind_text(stmt, 3, type.c_str(), -1, SQLITE_TRANSIENT) != SQLITE_OK) {
+    if (sqlite3_bind_text(stmt, 4, type.c_str(), -1, SQLITE_TRANSIENT) != SQLITE_OK) {
         sqlite3_finalize(stmt);
         return;
     }
-    if (sqlite3_bind_text(stmt, 4, operationType.c_str(), -1, SQLITE_TRANSIENT) != SQLITE_OK) {
+    if (sqlite3_bind_text(stmt, 5, operationType.c_str(), -1, SQLITE_TRANSIENT) != SQLITE_OK) {
         sqlite3_finalize(stmt);
         return;
     }
@@ -234,23 +229,23 @@ void Database::updateOperation(string name, int quantity, float price, string op
         sqlite3_finalize(stmt);
         return;
     }
-    if (sqlite3_bind_double(stmt, 0, price) != SQLITE_OK) {
+    if (sqlite3_bind_double(stmt, 1, price) != SQLITE_OK) {
         sqlite3_finalize(stmt);
         return;
     }
-    if (sqlite3_bind_int(stmt, 1, quantity) != SQLITE_OK) {
+    if (sqlite3_bind_int(stmt, 2, quantity) != SQLITE_OK) {
         sqlite3_finalize(stmt);
         return;
     }
-    if (sqlite3_bind_text(stmt, 2, name.c_str(), -1, SQLITE_TRANSIENT) != SQLITE_OK) {
+    if (sqlite3_bind_text(stmt, 3, name.c_str(), -1, SQLITE_TRANSIENT) != SQLITE_OK) {
         sqlite3_finalize(stmt);
         return;
     }
-    if (sqlite3_bind_text(stmt, 3, type.c_str(), -1, SQLITE_TRANSIENT) != SQLITE_OK) {
+    if (sqlite3_bind_text(stmt, 4, type.c_str(), -1, SQLITE_TRANSIENT) != SQLITE_OK) {
         sqlite3_finalize(stmt);
         return;
     }
-    if (sqlite3_bind_text(stmt, 4, operationType.c_str(), -1, SQLITE_TRANSIENT) != SQLITE_OK) {
+    if (sqlite3_bind_text(stmt, 5, operationType.c_str(), -1, SQLITE_TRANSIENT) != SQLITE_OK) {
         sqlite3_finalize(stmt);
         return;
     }
@@ -269,11 +264,11 @@ bool Database::isRowExist(string name, string type) {
         sqlite3_finalize(stmt);
         return false;
     }
-    if (sqlite3_bind_text(stmt, 0, name.c_str(), -1, SQLITE_TRANSIENT) != SQLITE_OK) {
+    if (sqlite3_bind_text(stmt, 1, name.c_str(), -1, SQLITE_TRANSIENT) != SQLITE_OK) {
         sqlite3_finalize(stmt);
         return false;
     }
-    if (sqlite3_bind_text(stmt, 1, type.c_str(), -1, SQLITE_TRANSIENT) != SQLITE_OK) {
+    if (sqlite3_bind_text(stmt, 2, type.c_str(), -1, SQLITE_TRANSIENT) != SQLITE_OK) {
         sqlite3_finalize(stmt);
         return false;
     }

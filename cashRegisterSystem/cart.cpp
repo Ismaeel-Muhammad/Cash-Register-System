@@ -28,7 +28,7 @@ void cashRegisterSystem::DeleteAll(QLabel* priceBefore, QLabel* priceAfter,
     QPushButton* checkButton, QLineEdit* phoneNumberField,
     QWidget* cartContent) {
     QLayout* layout = cartContent->layout(); // Get the layout of the scroll area widget
-    QLayoutItem* child;
+    QLayoutItem* child = nullptr;
     while ((child = layout->takeAt(0)) != nullptr) {
         QWidget* widget = child->widget();
         if (widget) {
@@ -80,23 +80,22 @@ float cashRegisterSystem::check_discount(QLabel* priceAfter, QPushButton* checkB
     }
 
     // Execute the query and process the result
-    float mxDiscount = 0;
+    float minDiscount = 0;
     if (sqlite3_step(stmt) == SQLITE_ROW) {
         const char* customerClass = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 0));
 
         float adminDiscount = 1-((float)m_ui->discount_spinbox->value() / 100);
 
         if (QString::fromUtf8(customerClass) == "\u0637\u0627\u0644\u0628" || QString::fromUtf8(customerClass) == "\u0639\u0645\u064A\u0644 \u0645\u0647\u0645") {
-            mxDiscount = min(adminDiscount, PHONE_DISCOUNT);
-            QMessageBox::information(this, "xx",QString::number (adminDiscount));
+            minDiscount = min(adminDiscount, PHONE_DISCOUNT);
             if (price == SLOT_PRICE) {
                 price = priceAfter->text().toFloat();
-                price *= mxDiscount;
+                price *= minDiscount;
                 priceAfter->setText(QString::number(price));
                 checkButton->setDisabled(true);
             }
             else {
-                price *= mxDiscount;
+                price *= minDiscount;
                 sqlite3_finalize(stmt);
                 sqlite3_close(m_customersDB);
                 return price;
@@ -112,7 +111,7 @@ float cashRegisterSystem::check_discount(QLabel* priceAfter, QPushButton* checkB
     sqlite3_close(m_customersDB);
 
     // Return the result
-    return mxDiscount;
+    return minDiscount;
 }
 
 void cashRegisterSystem::Delete_On_Click(QPushButton* del, float totalPrice, QString name, int quantity,

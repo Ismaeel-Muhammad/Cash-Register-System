@@ -26,7 +26,7 @@ void cashRegisterSystem::search()
     }
     string ss = "SELECT * FROM customers WHERE 1=1";
     if (!namesearch.empty()) {
-        ss += "name LIKE '%" + namesearch + "%'";
+        ss += " AND name LIKE '%" + namesearch + "%'";
     }
     if (!phonesearch.empty()) {
         ss += " AND phone_number LIKE '%" + phonesearch + "%'";
