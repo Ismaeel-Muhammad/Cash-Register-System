@@ -14,4 +14,6 @@ void cashRegisterSystem::on_login_btn_clicked()
         isAdmin = false;
         m_ui->formsStackedWidget->setCurrentIndex(1);
     }
+    m_ui->username_field->setText("");
+    m_ui->password_field->setText("");
 }

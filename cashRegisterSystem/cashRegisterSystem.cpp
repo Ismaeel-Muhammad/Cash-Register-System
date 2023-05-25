@@ -173,13 +173,13 @@ void cashRegisterSystem::on_customers_2_clicked() {
 }
 
 void cashRegisterSystem::on_logout_clicked() {
-    //DeleteAll(m_ui->price_before, m_ui->price_after, m_ui->check_discount, m_ui->phone_number, m_ui->cartContents);
+    DeleteAll(m_ui->price_before, m_ui->price_after, m_ui->check_discount, m_ui->phone_number, m_ui->cartContents);
     std::fill_n(m_loadedOnce, 4, false);
     m_ui->formsStackedWidget->setCurrentIndex(0);
 }
 
 void cashRegisterSystem::on_logout_admin_clicked() {
-    //DeleteAll(m_ui->price_before_4, m_ui->price_after_4, m_ui->check_discount_4, m_ui->phone_number_4, m_ui->cartContents_4);
+    DeleteAll(m_ui->price_before_4, m_ui->price_after_4, m_ui->check_discount_4, m_ui->phone_number_4, m_ui->cartContents_4);
     std::fill_n(m_loadedOnce, 4, false);
     m_ui->formsStackedWidget->setCurrentIndex(0);
 }

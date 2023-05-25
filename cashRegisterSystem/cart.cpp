@@ -14,6 +14,7 @@ void cashRegisterSystem::payOperation(char type, QLabel* priceBefore, QLabel* pr
         db.updateProductQuantity(i.key().toStdString(), i.value().at(0).toInt(), updateType(type));
         // name, quantity, price
         float price = check_discount(priceAfter, priceBefore, checkButton, phoneNumberField, i.value().at(1).toFloat());
+        QMessageBox::information(this, "s", QString::number(price));
         string operation_type = m_ui->order_type_cmb->currentText().toUtf8().constData();
         db.insertOrUpdateOperation(i.key().toStdString(), i.value().at(0).toInt(), price, operation_type, type);
     }
@@ -90,11 +91,13 @@ float cashRegisterSystem::check_discount(QLabel* priceAfter, QLabel* priceBefore
 
         if (QString::fromUtf8(customerClass) == "\u0637\u0627\u0644\u0628" || QString::fromUtf8(customerClass) == "\u0639\u0645\u064A\u0644 \u0645\u0647\u0645") {
             minDiscount = min(adminDiscount, PHONE_DISCOUNT);
+            // if called in on_delete to return the discount value to apply it on price after
             if (price == SLOT_PRICE) {
                 price = priceBefore->text().toFloat();
                 price *= minDiscount;
                 priceAfter->setText(QString::number(price));
             }
+            // if called in onPayment to apply discount on every product's price before inserting it in database
             else {
                 price *= minDiscount;
                 sqlite3_finalize(stmt);
@@ -102,8 +105,19 @@ float cashRegisterSystem::check_discount(QLabel* priceAfter, QLabel* priceBefore
                 return price;
             }
         }
-        else {
-            if (price != SLOT_PRICE) return price *= adminDiscount;
+        else if(QString::fromUtf8(customerClass) == "\u0639\u0645\u064A\u0644 \u0639\u0627\u062F\u064A"){
+            // only works when clicking on onPayment
+            // it does nothing when clicking THIS button (check_discount)
+            price *= adminDiscount;
+
+            // updates price after every time entering this condition
+            float before = priceBefore->text().toFloat();
+            before *= adminDiscount;
+            priceAfter->setText(QString::number(before));
+
+            sqlite3_finalize(stmt);
+            sqlite3_close(m_customersDB);
+            return price;
         }
     }
 
@@ -122,7 +136,10 @@ void cashRegisterSystem::Delete_On_Click(QPushButton* del, float totalPrice, QSt
     QList<QVariant> values = myHash[name];
     values[0] = values[0].toInt() - quantity;
     values[1] = values[1].toFloat() - totalPrice;
-    myHash[name] = values;
+
+    if (values[0] == 0) myHash.remove(name);
+    else myHash[name] = values;
+
     QFrame* layout = MappingLayout.take(del);
 
     float discount = check_discount(priceAfter, priceBefore, checkButton, phoneNumberField);

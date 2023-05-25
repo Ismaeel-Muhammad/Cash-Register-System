@@ -181,7 +181,7 @@ void Database::DeleteProdRow(string name) {
 void Database::insertOrUpdateOperation(string name, int quantity, float price, string operationType, char t)
 {
     string type = (t == '+') ? "sell" : "retrieve";
-    if (isRowExist(name, type)) {
+    if (isRowExist(name, operationType, type)) {
         updateOperation(name, quantity, price, operationType, type);
     }
     else {
@@ -256,9 +256,9 @@ void Database::updateOperation(string name, int quantity, float price, string op
     sqlite3_finalize(stmt);
 }
 
-bool Database::isRowExist(string name, string type) {
+bool Database::isRowExist(string name, string operationType, string type) {
     std::stringstream ss;
-    ss << "SELECT COUNT(*) FROM Operations WHERE name = ? AND type = ?";
+    ss << "SELECT COUNT(*) FROM Operations WHERE name = ? AND operation_type = ? AND type = ?";
     sqlite3_stmt* stmt;
     if (sqlite3_prepare_v2(m_db, ss.str().c_str(), -1, &stmt, NULL) != SQLITE_OK) {
         sqlite3_finalize(stmt);
@@ -268,7 +268,11 @@ bool Database::isRowExist(string name, string type) {
         sqlite3_finalize(stmt);
         return false;
     }
-    if (sqlite3_bind_text(stmt, 2, type.c_str(), -1, SQLITE_TRANSIENT) != SQLITE_OK) {
+    if (sqlite3_bind_text(stmt, 2, operationType.c_str(), -1, SQLITE_TRANSIENT) != SQLITE_OK) {
+        sqlite3_finalize(stmt);
+        return false;
+    }
+    if (sqlite3_bind_text(stmt, 3, type.c_str(), -1, SQLITE_TRANSIENT) != SQLITE_OK) {
         sqlite3_finalize(stmt);
         return false;
     }

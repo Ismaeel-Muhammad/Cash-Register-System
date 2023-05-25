@@ -24,7 +24,6 @@ void cashRegisterSystem::on_add_new_clicked()
         QMessageBox::information(this, "\u0627\u0644\u062D\u0627\u0644\u0629 ", "\u0639\u0645\u0644\u064A\u0629 \u0646\u0627\u062C\u062D\u0629 ");// ÇáÍÇáÉ ÚãáíÉ äÇÌÍÉ
         m_ui->new_customer_name->clear();
         m_ui->new_customer_phone->clear();
-        m_ui->formsStackedWidget->setCurrentIndex(1);
     }
 }
 

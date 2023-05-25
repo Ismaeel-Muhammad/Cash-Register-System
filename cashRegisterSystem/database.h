@@ -21,7 +21,7 @@ public:
 
     void insertOperation(string, int, float, string, string);
     void updateOperation(string, int, float, string, string);
-    bool isRowExist(string, string);
+    bool isRowExist(string, string, string);
 };
 
 #endif /* DATABASE_H */
