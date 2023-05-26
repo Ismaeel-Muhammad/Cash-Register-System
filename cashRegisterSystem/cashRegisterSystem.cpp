@@ -28,6 +28,13 @@ cashRegisterSystem::cashRegisterSystem(QWidget* parent)
     Update_total();
 
     Add_Item_names();
+
+    m_ui->AddNewCustomer->setHidden(true);
+    m_ui->go_back->setHidden(true);
+    m_ui->gotoproducts->setHidden(true);
+    m_ui->customers->setHidden(true);
+    m_ui->logout->setHidden(true);
+    m_ui->go_to_admin_form->setHidden(true);
 }
 
 cashRegisterSystem::~cashRegisterSystem()
@@ -121,7 +128,7 @@ void cashRegisterSystem::populateProductList(QWidget* scrollContents, QGridLayou
         vboxLayout->addWidget(quantityBox);
         vboxLayout->addWidget(add_button.back());
         if (i % 2 == 1) frame->setStyleSheet("QFrame{background-color:rgba(184, 184, 184, 255)}");
-
+        frame->setMaximumSize(149, 156);
         //adding all the widgets to the previously cretaed grid layout...
         grid->addWidget(frame, verticalItems, horizontalItems);
         scrollContents->setLayout(grid);
@@ -143,10 +150,10 @@ void cashRegisterSystem::on_AddNewCustomer_clicked()
     m_ui->formsStackedWidget->setCurrentIndex(3);
 }
 
-void cashRegisterSystem::on_AddNewCustomer_2_clicked()
-{
-    m_ui->formsStackedWidget->setCurrentIndex(3);
-}
+//void cashRegisterSystem::on_AddNewCustomer_2_clicked()
+//{
+//    m_ui->formsStackedWidget->setCurrentIndex(3);
+//}
 
 void cashRegisterSystem::on_gotoproducts_clicked()
 {
@@ -155,31 +162,48 @@ void cashRegisterSystem::on_gotoproducts_clicked()
     m_ui->formsStackedWidget->setCurrentIndex(5);
 }
 
-void cashRegisterSystem::on_gotoproducts_2_clicked()
-{
-    generateProdtbl();
-    GenrateTypesForCombo();
-    m_ui->formsStackedWidget->setCurrentIndex(5);
-}
+//void cashRegisterSystem::on_gotoproducts_2_clicked()
+//{
+//    generateProdtbl();
+//    GenrateTypesForCombo();
+//    m_ui->formsStackedWidget->setCurrentIndex(5);
+//}
 
 void cashRegisterSystem::on_customers_clicked() {
     search();
     m_ui->formsStackedWidget->setCurrentIndex(4);
 }
 
-void cashRegisterSystem::on_customers_2_clicked() {
-    search();
-    m_ui->formsStackedWidget->setCurrentIndex(4);
-}
+//void cashRegisterSystem::on_customers_2_clicked() {
+//    search();
+//    m_ui->formsStackedWidget->setCurrentIndex(4);
+//}
 
 void cashRegisterSystem::on_logout_clicked() {
-    DeleteAll(m_ui->price_before, m_ui->price_after, m_ui->check_discount, m_ui->phone_number, m_ui->cartContents);
-    std::fill_n(m_loadedOnce, 4, false);
-    m_ui->formsStackedWidget->setCurrentIndex(0);
+
+    m_ui->AddNewCustomer->setHidden(true);
+    m_ui->go_back->setHidden(true);
+    m_ui->gotoproducts->setHidden(true);
+    m_ui->customers->setHidden(true);
+    m_ui->logout->setHidden(true);
+    m_ui->go_to_admin_form->setHidden(true);
+
+    if (isAdmin) {
+        DeleteAll(m_ui->price_before_4, m_ui->price_after_4, m_ui->check_discount_4, m_ui->phone_number_4, m_ui->cartContents_4);
+        std::fill_n(m_loadedOnce, 4, false);
+        m_ui->formsStackedWidget->setCurrentIndex(0);
+    }
+    else {
+        DeleteAll(m_ui->price_before, m_ui->price_after, m_ui->check_discount, m_ui->phone_number, m_ui->cartContents);
+        std::fill_n(m_loadedOnce, 4, false);
+        m_ui->formsStackedWidget->setCurrentIndex(0);
+    }
+       
+
 }
 
-void cashRegisterSystem::on_logout_admin_clicked() {
-    DeleteAll(m_ui->price_before_4, m_ui->price_after_4, m_ui->check_discount_4, m_ui->phone_number_4, m_ui->cartContents_4);
-    std::fill_n(m_loadedOnce, 4, false);
-    m_ui->formsStackedWidget->setCurrentIndex(0);
-}
+//void cashRegisterSystem::on_logout_admin_clicked() {
+//    DeleteAll(m_ui->price_before_4, m_ui->price_after_4, m_ui->check_discount_4, m_ui->phone_number_4, m_ui->cartContents_4);
+//    std::fill_n(m_loadedOnce, 4, false);
+//    m_ui->formsStackedWidget->setCurrentIndex(0);
+//}

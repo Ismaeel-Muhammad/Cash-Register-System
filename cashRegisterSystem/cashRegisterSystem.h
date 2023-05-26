@@ -93,7 +93,7 @@ private slots:
     void on_login_btn_clicked();
 
     void on_AddNewCustomer_clicked();
-    void on_AddNewCustomer_2_clicked();
+    //void on_AddNewCustomer_2_clicked();
 
     void on_add_new_clicked();
     void on_go_back_clicked();
@@ -121,15 +121,15 @@ private slots:
     void on_back_to_main_clicked();
 
     void on_customers_clicked();
-    void on_customers_2_clicked();
+    //void on_customers_2_clicked();
 
-    void on_backFromCustomers_clicked();
+   // void on_backFromCustomers_clicked();
     void on_Search_btn_clicked();
     void on_logout_clicked();
-    void on_logout_admin_clicked();
+    //void on_logout_admin_clicked();
 
     void on_gotoproducts_clicked();
-    void on_gotoproducts_2_clicked();
+  //  void on_gotoproducts_2_clicked();
 
     void on_searchprobuctsBTN_clicked();
     void on_BackFromProductsBTN_clicked();
