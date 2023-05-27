@@ -13,6 +13,7 @@ void cashRegisterSystem::payOperation(char type, QLabel* priceBefore, QLabel* pr
         // name, quantity, type(add, subtract)
         db.updateProductQuantity(i.key().toStdString(), i.value().at(0).toInt(), updateType(type));
         // name, quantity, price
+
         float price = check_discount(priceAfter, priceBefore, checkButton, phoneNumberField, i.value().at(1).toFloat());
         QMessageBox::information(this, "s", QString::number(price));
         string operation_type = m_ui->order_type_cmb->currentText().toUtf8().constData();
@@ -55,36 +56,44 @@ void cashRegisterSystem::DeleteAll(QLabel* priceBefore, QLabel* priceAfter,
 float cashRegisterSystem::check_discount(QLabel* priceAfter, QLabel* priceBefore, QPushButton* checkButton, QLineEdit* phoneNumberField, float price) {
     const QString phoneNumber = phoneNumberField->text();
     if (phoneNumber.isEmpty()) {
-        QMessageBox::warning(this, "oh no", "Phone number is empty");
-        return 0;
-    }
-    
-    // Open the database
-    if (sqlite3_open("mydatabase.db", &m_customersDB) != SQLITE_OK) {
-        QMessageBox::warning(this, "oh no", "Cannot open database");
+        QMessageBox msg;
+        msg.setText("Phone number is empty");
+        msg.exec();
         return 0;
     }
 
-    // Prepare the query
-    const QString query = "SELECT class FROM Customers WHERE phone_number = ?";
-    sqlite3_stmt* stmt = nullptr;
-    if (sqlite3_prepare_v2(m_customersDB, query.toUtf8().constData(), -1, &stmt, NULL) != SQLITE_OK) {
-        QMessageBox::warning(this, "oh no", "Cannot prepare query");
-        sqlite3_close(m_customersDB);
-        return 0;
-    }
+    Database* db = new Database("mydatabase.db");
+    QString customerClass = "";
+    // Execute the query and process the result
+    float minDiscount = 0;
+    if (db->checkPhoneNumber(phoneNumber.toStdString(), customerClass)) {
 
-    // Bind the parameter to the phone number
-    if (sqlite3_bind_text(stmt, 1, phoneNumber.toUtf8().constData(), -1, SQLITE_TRANSIENT) != SQLITE_OK) {
-        QMessageBox::warning(this, "oh no", "Cannot bind parameter");
+        float adminDiscount = 1-(m_ui->discount_spinbox->value() / 100);
 
-        return 0;
-    }
-
-    int result = -1;
-    if (sqlite3_step(stmt) == SQLITE_ROW) {
-        // Successful match found in the database
-        result = sqlite3_column_int(stmt, 0);
+        if (customerClass == "\u0637\u0627\u0644\u0628" || customerClass == "\u0639\u0645\u064A\u0644 \u0645\u0647\u0645") {
+            minDiscount = min(adminDiscount, PHONE_DISCOUNT);
+            // if called in on_delete to return the discount value to apply it on price after
+            if (price == SLOT_PRICE) {
+                price = priceBefore->text().toFloat();
+                price *= minDiscount;
+                priceAfter->setText(QString::number(price));
+            }
+            // if called in onPayment to apply discount on every product's price before inserting it in database
+            else {
+                price *= minDiscount;
+                db->~Database();
+                return price;
+            }
+        }
+        else if(customerClass == "\u0639\u0645\u064A\u0644 \u0639\u0627\u062F\u064A"){
+            // updates price after every time entering this condition
+            float before = priceBefore->text().toFloat();
+            before *= adminDiscount;
+            priceAfter->setText(QString::number(before));
+            db->~Database();
+            // returnung adminDiscount when cicking on onpayment
+            return adminDiscount;
+        }
     }
     else {
         // No match found in the database
@@ -98,58 +107,10 @@ float cashRegisterSystem::check_discount(QLabel* priceAfter, QLabel* priceBefore
             m_ui->formsStackedWidget->setCurrentIndex(3);
             m_ui->new_customer_phone->setText(phoneNumber);
         }
-        
     }
 
-    // Finalize the prepared statement and close the database connection
-    sqlite3_finalize(stmt);
-    sqlite3_close(m_customersDB);
-
-    return result;
-
-    // Execute the query and process the result
-    float minDiscount = 0;
-    if (sqlite3_step(stmt) == SQLITE_ROW) {
-        const char* customerClass = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 0));
-
-        float adminDiscount = 1-(m_ui->discount_spinbox->value() / 100);
-
-        if (QString::fromUtf8(customerClass) == "\u0637\u0627\u0644\u0628" || QString::fromUtf8(customerClass) == "\u0639\u0645\u064A\u0644 \u0645\u0647\u0645") {
-            minDiscount = min(adminDiscount, PHONE_DISCOUNT);
-            // if called in on_delete to return the discount value to apply it on price after
-            if (price == SLOT_PRICE) {
-                price = priceBefore->text().toFloat();
-                price *= minDiscount;
-                priceAfter->setText(QString::number(price));
-            }
-            // if called in onPayment to apply discount on every product's price before inserting it in database
-            else {
-                price *= minDiscount;
-                sqlite3_finalize(stmt);
-                sqlite3_close(m_customersDB);
-                return price;
-            }
-        }
-        else if(QString::fromUtf8(customerClass) == "\u0639\u0645\u064A\u0644 \u0639\u0627\u062F\u064A"){
-            // only works when clicking on onPayment
-            // it does nothing when clicking THIS button (check_discount)
-            price *= adminDiscount;
-
-            // updates price after every time entering this condition
-            float before = priceBefore->text().toFloat();
-            before *= adminDiscount;
-            priceAfter->setText(QString::number(before));
-
-            sqlite3_finalize(stmt);
-            sqlite3_close(m_customersDB);
-            return price;
-        }
-    }
-
-    // Finalize the statement and close the database
-    sqlite3_finalize(stmt);
-    sqlite3_close(m_customersDB);
-
+    //close the database
+    db->~Database();
     // Return the result
     return minDiscount;
 }

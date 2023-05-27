@@ -2,7 +2,9 @@
 Database::Database(const char* filename) {
     int rc = sqlite3_open(filename, &m_db);
     if (rc != SQLITE_OK) {
-        // Handle error
+        QMessageBox msg;
+        msg.setText("Cannot open database");
+        msg.exec();
     }
 }
 
@@ -283,4 +285,30 @@ bool Database::isRowExist(string name, string operationType, string type) {
     }
     sqlite3_finalize(stmt);
     return exists;
+}
+
+bool Database::checkPhoneNumber(const string phoneNumber, QString& customerClass) {
+    sqlite3_stmt* stmt;
+    const string query = "SELECT class FROM Customers WHERE phone_number = ?";
+    if (sqlite3_prepare_v2(m_db, query.c_str(), -1, &stmt, NULL) != SQLITE_OK) {
+        QMessageBox msg;
+        msg.setText("Cannot prepare query");
+        msg.exec();
+    }
+
+    if (sqlite3_bind_text(stmt, 1, phoneNumber.c_str(), -1, SQLITE_TRANSIENT) != SQLITE_OK) {
+        QMessageBox msg;
+        msg.setText("Cannot bind parameter");
+        msg.exec();
+    }
+
+    int result = sqlite3_step(stmt);
+
+    if (result == SQLITE_ROW) {
+        customerClass = QString::fromUtf8((const char*)sqlite3_column_text(stmt, 0));
+        sqlite3_finalize(stmt);
+        return true;
+    }
+    sqlite3_finalize(stmt);
+    return false;
 }

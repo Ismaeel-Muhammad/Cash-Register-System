@@ -4,6 +4,7 @@
 #include <QMessageBox>
 #include "./sqlite/sqlite3.h"
 #include <string>
+
 using namespace std;
 class Database {
 public:
@@ -16,6 +17,7 @@ public:
     void updateProductQuantity(string, int, char);
     void insertOrUpdateOperation(string, int, float, string, char);
     void DeleteProdRow(string);
+    bool checkPhoneNumber(const string, QString& );
     private:
     sqlite3* m_db;
 
