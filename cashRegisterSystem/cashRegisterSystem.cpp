@@ -28,6 +28,8 @@ cashRegisterSystem::cashRegisterSystem(QWidget* parent)
     Update_total();
     Add_Item_names();
 
+    connect(m_ui->item_name_price, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &cashRegisterSystem::onPriceComboIndexChanged);
+
     m_ui->centralWidget->setMinimumHeight(707);
     m_ui->centralWidget->setMinimumWidth(1441);
     m_ui->AddNewCustomer->setMinimumWidth(200);

@@ -123,18 +123,22 @@ private slots:
     void on_customers_clicked();
     //void on_customers_2_clicked();
 
-   // void on_backFromCustomers_clicked();
+    //void on_backFromCustomers_clicked();
     void on_Search_btn_clicked();
     void on_logout_clicked();
     //void on_logout_admin_clicked();
 
     void on_gotoproducts_clicked();
-  //  void on_gotoproducts_2_clicked();
+    //void on_gotoproducts_2_clicked();
 
     void on_searchprobuctsBTN_clicked();
     void on_BackFromProductsBTN_clicked();
 
     void on_go_to_admin_form_clicked();
+
+    void on_edit_price_clicked();
+
+    void onPriceComboIndexChanged(int);
 };
 
 #endif // CASH_REG_SYSTEM_H

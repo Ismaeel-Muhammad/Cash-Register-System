@@ -42,9 +42,23 @@ void cashRegisterSystem::on_add_quantity_clicked() {
     msg.setText("\u0639\u0645\u0644\u064A\u0629 \u0646\u0627\u062C\u062D\u0629");
     msg.exec();
 
-    m_ui->item_quantity_quantity->clear();
     m_ui->item_name_quantity->setCurrentIndex(0);
+    m_ui->item_quantity_quantity->clear();
+    db.~Database();
+}
 
+void cashRegisterSystem::on_edit_price_clicked() {
+    Database db("mydatabase.db");
+    string item_name = m_ui->item_name_price->currentText().toUtf8().constData();
+    string item_price = m_ui->item_price_price->toPlainText().toUtf8().constData();
+    db.editProductPrice(item_name, item_price);
+    QMessageBox msg;
+    msg.setText("\u0639\u0645\u0644\u064A\u0629 \u0646\u0627\u062C\u062D\u0629");
+    msg.exec();
+
+    m_ui->item_name_price->setCurrentIndex(0);
+    m_ui->item_price_price->clear();
+    db.~Database();
 }
 
 void cashRegisterSystem::on_remove_quantity_clicked() {
@@ -237,16 +251,25 @@ void cashRegisterSystem::Add_Item_names() {
 
         if (rc == SQLITE_OK) {
             m_ui->item_name_quantity->clear();
+            m_ui->item_name_price->clear();
 
             while (sqlite3_step(stmt) == SQLITE_ROW) {
                 const char* value = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 0));
-
                 m_ui->item_name_quantity->addItem(QString::fromUtf8(value));
+                m_ui->item_name_price->addItem(QString::fromUtf8(value));
             }
             sqlite3_finalize(stmt);
         }
         sqlite3_close(db);
     }
+}
+
+void cashRegisterSystem::onPriceComboIndexChanged(int index) {
+    QString selectedProductName = m_ui->item_name_price->itemText(index);
+    Database db("mydatabase.db");
+    string price = db.selectProductPrice(selectedProductName.toStdString());
+    m_ui->item_price_price->setPlainText(QString::fromUtf8(price));
+    db.~Database();
 }
 
 void cashRegisterSystem::on_back_to_main_clicked() {

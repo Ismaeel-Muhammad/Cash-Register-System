@@ -312,3 +312,46 @@ bool Database::checkPhoneNumber(const string phoneNumber, QString& customerClass
     sqlite3_finalize(stmt);
     return false;
 }
+
+void Database::editProductPrice(string name ,string price) {
+    sqlite3_stmt* stmt;
+    if (sqlite3_prepare_v2(m_db, "UPDATE Products SET price = ? WHERE name = ?", -1, &stmt, NULL) != SQLITE_OK) {
+        sqlite3_finalize(stmt);
+        return;
+    }
+    if (sqlite3_bind_text(stmt, 1, price.c_str(), -1, SQLITE_TRANSIENT) != SQLITE_OK) {
+        sqlite3_finalize(stmt);
+        return;
+    }
+
+    if (sqlite3_bind_text(stmt, 2, name.c_str(), -1, SQLITE_TRANSIENT) != SQLITE_OK) {
+        sqlite3_finalize(stmt);
+        return;
+    }
+    if (sqlite3_step(stmt) != SQLITE_DONE) {
+        sqlite3_finalize(stmt);
+        return;
+    }
+    sqlite3_finalize(stmt);
+}
+
+string Database::selectProductPrice(string name) {
+    sqlite3_stmt* stmt;
+    if (sqlite3_prepare_v2(m_db, "SELECT price FROM Products WHERE name = ?", -1, &stmt, NULL) != SQLITE_OK) {
+        sqlite3_finalize(stmt);
+        return 0;
+    }
+
+    if (sqlite3_bind_text(stmt, 1, name.c_str(), -1, SQLITE_TRANSIENT) != SQLITE_OK) {
+        sqlite3_finalize(stmt);
+        return 0;
+    }
+    if (sqlite3_step(stmt) == SQLITE_ROW) {
+        string price = (const char*)sqlite3_column_text(stmt, 0);
+        sqlite3_finalize(stmt);
+        return price;
+    }
+    sqlite3_finalize(stmt);
+
+    return 0;
+}

@@ -18,6 +18,8 @@ public:
     void insertOrUpdateOperation(string, int, float, string, char);
     void DeleteProdRow(string);
     bool checkPhoneNumber(const string, QString& );
+    void editProductPrice(string, string);
+    string selectProductPrice(string);
     private:
     sqlite3* m_db;
 

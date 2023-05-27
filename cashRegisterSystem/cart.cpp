@@ -87,12 +87,16 @@ float cashRegisterSystem::check_discount(QLabel* priceAfter, QLabel* priceBefore
         }
         else if(customerClass == "\u0639\u0645\u064A\u0644 \u0639\u0627\u062F\u064A"){
             // updates price after every time entering this condition
+            if (price == SLOT_PRICE) price = adminDiscount;
+            else price *= adminDiscount;
+
             float before = priceBefore->text().toFloat();
             before *= adminDiscount;
             priceAfter->setText(QString::number(before));
+            // close database
             db->~Database();
             // returnung adminDiscount when cicking on onpayment
-            return adminDiscount;
+            return price;
         }
     }
     else {
