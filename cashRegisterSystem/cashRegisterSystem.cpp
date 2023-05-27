@@ -19,15 +19,19 @@ cashRegisterSystem::cashRegisterSystem(QWidget* parent)
     std::fill_n(m_start, 3, false);
     QApplication::setWindowIcon(QIcon("icon.ico"));
     isAdmin = false;
- 
+
     m_ui->discount_spinbox->setDecimals(0);
     m_ui->discount_spinbox->setPrefix("% ");
 
     Show_Sell_window();
     Show_retrieve_window();
     Update_total();
-
     Add_Item_names();
+
+    m_ui->centralWidget->setMinimumHeight(707);
+    m_ui->centralWidget->setMinimumWidth(1441);
+    m_ui->AddNewCustomer->setMinimumWidth(200);
+    m_ui->formsStackedWidget->setMinimumWidth(1251);
 
     m_ui->AddNewCustomer->setHidden(true);
     m_ui->go_back->setHidden(true);

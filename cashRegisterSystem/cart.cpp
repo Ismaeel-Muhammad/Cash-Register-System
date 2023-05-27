@@ -77,10 +77,35 @@ float cashRegisterSystem::check_discount(QLabel* priceAfter, QLabel* priceBefore
     // Bind the parameter to the phone number
     if (sqlite3_bind_text(stmt, 1, phoneNumber.toUtf8().constData(), -1, SQLITE_TRANSIENT) != SQLITE_OK) {
         QMessageBox::warning(this, "oh no", "Cannot bind parameter");
-        sqlite3_finalize(stmt);
-        sqlite3_close(m_customersDB);
+
         return 0;
     }
+
+    int result = -1;
+    if (sqlite3_step(stmt) == SQLITE_ROW) {
+        // Successful match found in the database
+        result = sqlite3_column_int(stmt, 0);
+    }
+    else {
+        // No match found in the database
+        QMessageBox msgBox;
+        msgBox.setText("No customer found with this phone number.");
+        msgBox.setIcon(QMessageBox::Warning);
+        msgBox.setStandardButtons(QMessageBox::Close | QMessageBox::Ok);
+        msgBox.setDefaultButton(QMessageBox::Close);
+        int ret = msgBox.exec();
+        if (ret == QMessageBox::Ok) {
+            m_ui->formsStackedWidget->setCurrentIndex(3);
+            m_ui->new_customer_phone->setText(phoneNumber);
+        }
+        
+    }
+
+    // Finalize the prepared statement and close the database connection
+    sqlite3_finalize(stmt);
+    sqlite3_close(m_customersDB);
+
+    return result;
 
     // Execute the query and process the result
     float minDiscount = 0;
