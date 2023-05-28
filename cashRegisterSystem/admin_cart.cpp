@@ -57,4 +57,5 @@ void cashRegisterSystem::on_retrieve_4_clicked()
 
 void cashRegisterSystem::on_go_to_admin_form_clicked() {
     m_ui->formsStackedWidget->setCurrentIndex(2);
+    m_ui->opType->setCurrentIndex(0);
 }

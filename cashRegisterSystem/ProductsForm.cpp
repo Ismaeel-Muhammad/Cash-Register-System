@@ -101,6 +101,8 @@ void cashRegisterSystem::GenrateTypesForCombo()
 
     if (rc == SQLITE_OK) {
         m_ui->ProdTypeSearch->clear();
+        QString all = "الكل";
+        m_ui->ProdTypeSearch->addItem("الكل", QVariant(all));
         // Iterate over the rows and add each type to the combobox
         while (sqlite3_step(stmt) == SQLITE_ROW) {
             const char* type = (const char*)sqlite3_column_text(stmt, 0);

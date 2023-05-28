@@ -90,7 +90,7 @@ void cashRegisterSystem::Update_total() {
     m_start[2] = true;
 }
 
-void cashRegisterSystem::Show_total_window(QVBoxLayout* VLayout,bool start) {
+void cashRegisterSystem::Show_total_window(QVBoxLayout* VLayout,bool start) {  
     if (start) {
         QLayout* layout = VLayout->layout();
         QLayoutItem* child = nullptr;
@@ -191,11 +191,22 @@ void cashRegisterSystem::Show_window(string type, QWidget* scrollContents,QVBoxL
     int rc = sqlite3_open("mydatabase.db", &m_OperationsDB);
     std::stringstream ss;
     ss << "select * from Operations where type = '"<<type<<"'";
+    Optype = m_ui->opType->currentIndex();
+    if (Optype != 0) {
+        if (Optype == 1) {
+            ss.str(ss.str() + " AND operation_type = 'طلب عادي'");
+        }else if (Optype == 2) {
+            ss.str(ss.str() + " AND operation_type = 'طلب اونلاين'");
+        }else if (Optype == 3) {
+            ss.str(ss.str() + " AND operation_type = 'طلب جملة'");
+        }
+    }
     QString query = QString::fromStdString(ss.str());
     rc = sqlite3_prepare_v2(m_OperationsDB, query.toUtf8(), -1, &stmt, NULL);
     int i = 0;
-    while (sqlite3_step(stmt) == SQLITE_ROW) {
 
+
+    while (sqlite3_step(stmt) == SQLITE_ROW) {
         QFrame* f = new QFrame();
         QHBoxLayout* hLayout = new QHBoxLayout(f);
         string name = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 0));
@@ -270,6 +281,14 @@ void cashRegisterSystem::onPriceComboIndexChanged(int index) {
     string price = db.selectProductPrice(selectedProductName.toStdString());
     m_ui->item_price_price->setPlainText(QString::fromUtf8(price));
     db.~Database();
+}
+
+void cashRegisterSystem::on_OPsearch_clicked()
+{
+    m_ui->day_total_income->clear();
+    Show_Sell_window();
+    Show_retrieve_window();
+    Update_total();
 }
 
 void cashRegisterSystem::on_back_to_main_clicked() {

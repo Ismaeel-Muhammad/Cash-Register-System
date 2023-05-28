@@ -25,6 +25,7 @@ void cashRegisterSystem::on_add_new_clicked()
         m_ui->new_customer_name->clear();
         m_ui->new_customer_phone->clear();
     }
+    m_ui->class_box->setCurrentIndex(0);
 }
 
 void cashRegisterSystem::on_go_back_clicked()

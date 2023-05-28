@@ -15,7 +15,7 @@ Database::~Database() {
 void Database::initialize() {
     // Create table
     const char* createProdTable = "CREATE TABLE IF NOT EXISTS Products (name TEXT NOT NULL, quantity INTEGER NOT NULL, price TEXT NOT NULL, type TEXT NOT NULL);";
-    const char* createCustomerTable = "CREATE TABLE IF NOT EXISTS Customers (name TEXT NOT NULL, phone_number TEXT NOT NULL, total_paid INTEGER NOT NULL, class TEXT NOT NULL);";
+    const char* createCustomerTable = "CREATE TABLE IF NOT EXISTS Customers (name TEXT NOT NULL, phone_number TEXT NOT NULL PRIMARY KEY, total_paid INTEGER NOT NULL, class TEXT NOT NULL);";
     const char* createOperationsTable = "CREATE TABLE IF NOT EXISTS Operations (name TEXT NOT NULL, quantity INTEGER NOT NULL, price TEXT NOT NULL, type TEXT NOT NULL, operation_type TEXT NOT NULL);";
 
     char* errMsg;

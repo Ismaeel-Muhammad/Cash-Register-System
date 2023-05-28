@@ -41,7 +41,19 @@ cashRegisterSystem::cashRegisterSystem(QWidget* parent)
     m_ui->customers->setHidden(true);
     m_ui->logout->setHidden(true);
     m_ui->go_to_admin_form->setHidden(true);
+
+    QIntValidator* validator = new QIntValidator(0, 99999999999, parent);
+    m_ui->phoneSearch->setValidator(validator);
+    m_ui->new_customer_phone->setValidator(validator);
+    m_ui->phone_number->setValidator(validator);
+    m_ui->phone_number_4->setValidator(validator);
+    m_ui->formsStackedWidget->setCurrentIndex(0);
+    m_ui->check_discount->setMinimumWidth(60);
+    m_ui->retrieve->setMinimumWidth(50);
+    m_ui->sell->setMinimumWidth(50);
+    m_ui->ProdTypeSearch->setMinimumWidth(200);
 }
+
 
 cashRegisterSystem::~cashRegisterSystem()
 {
@@ -128,6 +140,8 @@ void cashRegisterSystem::populateProductList(QWidget* scrollContents, QGridLayou
             on_name_button_clicked(quantityBox->value(), nameLabel->text(), price_val, cartVerticalLayout, priceBefore,
                                    priceAfter, cartScrollArea, checkButton, phoneNumberField);
             });
+        quantityBox->setMinimum(1);
+        quantityBox->setMaximum(9999999);
 
         vboxLayout->addWidget(nameLabel);
         vboxLayout->addWidget(lab);

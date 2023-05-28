@@ -59,6 +59,7 @@ private:
     int rank;
     string productNameSearch;
     int ProductType;
+    int Optype;
     void DeleteAll(QLabel*, QLabel*, QPushButton*, QLineEdit*, QWidget*);
 
     void payOperation(char, QLabel*, QLabel*, QPushButton*, QLineEdit*, QWidget*);
@@ -251,6 +252,7 @@ private slots:
     void on_edit_price_clicked();
 
     void onPriceComboIndexChanged(int);
+    void on_OPsearch_clicked();
 };
 
 #endif // CASH_REG_SYSTEM_H
