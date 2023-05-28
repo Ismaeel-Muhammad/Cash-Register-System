@@ -145,7 +145,7 @@ QToolButton
 {
 	background-color: transparent;
 	color: #fff;
-	padding: 3px;
+	padding: 1px;
 	margin-left: 1px;
 }
 

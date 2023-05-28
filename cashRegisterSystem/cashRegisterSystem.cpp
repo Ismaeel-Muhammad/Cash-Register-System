@@ -9,7 +9,7 @@ cashRegisterSystem::cashRegisterSystem(QWidget* parent)
     withDiscount = true;
     TotalBalanceForOperation = 0;
     TotalBalanceForOperationDiscounted = 0;
-    std::fill_n(m_loadedOnce, 4, false);
+    std::fill_n(m_loadedOnce, 60, false);
     m_ui->setupUi(this);
     m_ui->password_field->setEchoMode(QLineEdit::Password);
     i = 0;
