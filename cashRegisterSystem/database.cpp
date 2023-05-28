@@ -16,8 +16,7 @@ void Database::initialize() {
     // Create table
     const char* createProdTable = "CREATE TABLE IF NOT EXISTS Products (name TEXT NOT NULL, quantity INTEGER NOT NULL, price TEXT NOT NULL, type TEXT NOT NULL);";
     const char* createCustomerTable = "CREATE TABLE IF NOT EXISTS Customers (name TEXT NOT NULL, phone_number TEXT NOT NULL PRIMARY KEY, total_paid INTEGER NOT NULL, class TEXT NOT NULL);";
-    const char* createOperationsTable = "CREATE TABLE IF NOT EXISTS Operations (name TEXT NOT NULL, quantity INTEGER NOT NULL, price TEXT NOT NULL, type TEXT NOT NULL, operation_type TEXT NOT NULL);";
-
+    const char* createOperationsTable = "CREATE TABLE IF NOT EXISTS Operations (name TEXT NOT NULL, quantity INTEGER NOT NULL, price TEXT NOT NULL, type TEXT NOT NULL, operation_type TEXT NOT NULL, date TEXT NOT NULL);";
     char* errMsg;
     int rc = sqlite3_exec(m_db, createProdTable, NULL, NULL, &errMsg);
     if (rc != SQLITE_OK) {
@@ -183,18 +182,20 @@ void Database::DeleteProdRow(string name) {
 void Database::insertOrUpdateOperation(string name, int quantity, float price, string operationType, char t)
 {
     string type = (t == '+') ? "sell" : "retrieve";
-    if (isRowExist(name, operationType, type)) {
-        updateOperation(name, quantity, price, operationType, type);
+
+    string date = getTodayDate();
+
+    if (isRowExist(name, operationType, type, date)) {
+        updateOperation(name, quantity, price, operationType, type, date);
     }
     else {
-        insertOperation(name, quantity, price, operationType, type);
+        insertOperation(name, quantity, price, operationType, type, date);
     }
-
 }
 
-void Database::insertOperation(string name, int quantity, float price, string operationType, string type) {
+void Database::insertOperation(string name, int quantity, float price, string operationType, string type, string date) {
     sqlite3_stmt* stmt;
-    if (sqlite3_prepare_v2(m_db, "INSERT INTO operations (name, quantity, price, type, operation_type) VALUES (?, ?, ?, ?, ?)", -1, &stmt, NULL) != SQLITE_OK) {
+    if (sqlite3_prepare_v2(m_db, "INSERT INTO operations (name, quantity, price, type, operation_type, date) VALUES (?, ?, ?, ?, ?, ?)", -1, &stmt, NULL) != SQLITE_OK) {
         sqlite3_finalize(stmt);
         return;
     }
@@ -218,6 +219,10 @@ void Database::insertOperation(string name, int quantity, float price, string op
         sqlite3_finalize(stmt);
         return;
     }
+    if (sqlite3_bind_text(stmt, 6, date.c_str(), -1, SQLITE_TRANSIENT) != SQLITE_OK) {
+        sqlite3_finalize(stmt);
+        return;
+    }
     if (sqlite3_step(stmt) != SQLITE_DONE) {
         sqlite3_finalize(stmt);
         return;
@@ -225,9 +230,9 @@ void Database::insertOperation(string name, int quantity, float price, string op
     sqlite3_finalize(stmt);
 }
 
-void Database::updateOperation(string name, int quantity, float price, string operationType, string type) {
+void Database::updateOperation(string name, int quantity, float price, string operationType, string type, string date) {
     sqlite3_stmt* stmt;
-    if (sqlite3_prepare_v2(m_db, "UPDATE operations SET price = price + ?, quantity = quantity + ? WHERE name = ? AND type = ? AND operation_type = ?", -1, &stmt, NULL) != SQLITE_OK) {
+    if (sqlite3_prepare_v2(m_db, "UPDATE operations SET price = price + ?, quantity = quantity + ? WHERE name = ? AND type = ? AND operation_type = ? AND date = ?", -1, &stmt, NULL) != SQLITE_OK) {
         sqlite3_finalize(stmt);
         return;
     }
@@ -251,6 +256,10 @@ void Database::updateOperation(string name, int quantity, float price, string op
         sqlite3_finalize(stmt);
         return;
     }
+    if (sqlite3_bind_text(stmt, 6, date.c_str(), -1, SQLITE_TRANSIENT) != SQLITE_OK) {
+        sqlite3_finalize(stmt);
+        return;
+    }
     if (sqlite3_step(stmt) != SQLITE_DONE) {
         sqlite3_finalize(stmt);
         return;
@@ -258,9 +267,9 @@ void Database::updateOperation(string name, int quantity, float price, string op
     sqlite3_finalize(stmt);
 }
 
-bool Database::isRowExist(string name, string operationType, string type) {
+bool Database::isRowExist(string name, string operationType, string type, string date) {
     std::stringstream ss;
-    ss << "SELECT COUNT(*) FROM Operations WHERE name = ? AND operation_type = ? AND type = ?";
+    ss << "SELECT COUNT(*) FROM Operations WHERE name = ? AND operation_type = ? AND type = ? AND date = ?";
     sqlite3_stmt* stmt;
     if (sqlite3_prepare_v2(m_db, ss.str().c_str(), -1, &stmt, NULL) != SQLITE_OK) {
         sqlite3_finalize(stmt);
@@ -275,6 +284,10 @@ bool Database::isRowExist(string name, string operationType, string type) {
         return false;
     }
     if (sqlite3_bind_text(stmt, 3, type.c_str(), -1, SQLITE_TRANSIENT) != SQLITE_OK) {
+        sqlite3_finalize(stmt);
+        return false;
+    }
+    if (sqlite3_bind_text(stmt, 4, date.c_str(), -1, SQLITE_TRANSIENT) != SQLITE_OK) {
         sqlite3_finalize(stmt);
         return false;
     }
@@ -354,4 +367,22 @@ string Database::selectProductPrice(string name) {
     sqlite3_finalize(stmt);
 
     return 0;
+}
+
+string Database::getTodayDate() {
+    // Get the current system time
+    auto now = std::chrono::system_clock::now();
+
+    // Convert the system time to a time_t value
+    std::time_t current_time = std::chrono::system_clock::to_time_t(now);
+
+    // Convert the time_t value to a struct tm value
+    std::tm time_info;
+    localtime_s(&time_info, &current_time);
+
+    // Format the date as a string in "yyyy-mm-dd" format
+    std::ostringstream oss;
+    oss << std::put_time(&time_info, "%Y/%m/%d");
+    // return date as string
+    return oss.str();
 }

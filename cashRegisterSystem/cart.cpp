@@ -19,9 +19,7 @@ void cashRegisterSystem::payOperation(char type, QLabel* priceBefore, QLabel* pr
         string operation_type = m_ui->order_type_cmb->currentText().toUtf8().constData();
         db.insertOrUpdateOperation(i.key().toStdString(), i.value().at(0).toInt(), price, operation_type, type);
     }
-    Show_Sell_window();
-    Show_retrieve_window();
-    Update_total();
+
     DeleteAll(priceBefore, priceAfter, checkButton, phoneNumberField, cartContent);
     db.~Database();
 }

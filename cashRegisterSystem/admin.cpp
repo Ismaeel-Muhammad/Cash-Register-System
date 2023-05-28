@@ -75,40 +75,30 @@ void cashRegisterSystem::on_remove_quantity_clicked() {
 }
 
 void cashRegisterSystem::Show_Sell_window() {
-    Show_window("sell", m_ui->sell_operations_contents,m_ui->sell_VLayout,m_start[0]);
-    m_start[0] = true;
+    Show_window("sell", m_ui->sell_operations_contents,m_ui->sell_VLayout);
 }
 
 void cashRegisterSystem::Show_retrieve_window() {
-    Show_window("retrieve", m_ui->return_operations_contents,m_ui->return_VLayout, m_start[1]);
-    m_start[1] = true;
+    Show_window("retrieve", m_ui->return_operations_contents,m_ui->return_VLayout);
 
 }
 
 void cashRegisterSystem::Update_total() {
-    Show_total_window(m_ui->total_VLayout,m_start[2]);
-    m_start[2] = true;
+    Show_total_window(m_ui->total_VLayout);
+    sellOperation.clear();
+    retrieveOperation.clear();
 }
 
-void cashRegisterSystem::Show_total_window(QVBoxLayout* VLayout,bool start) {  
-    if (start) {
-        QLayout* layout = VLayout->layout();
-        QLayoutItem* child = nullptr;
-        while ((child = layout->takeAt(0)) != nullptr) {
-            QWidget* widget = child->widget();
-            if (widget) {
-                layout->removeWidget(widget);
-                delete widget;
-            }
-            delete child;
-        }
-    }
+void cashRegisterSystem::Show_total_window(QVBoxLayout* VLayout) {  
+    clear_vertical_layout(VLayout);
 
-    float TotalPrice = 0;
-    QHashIterator<QString, QList<QVariant>> i(sellOperation);
-    int quantity=0;
-    float prices=0;
+    int quantity = 0;
+    float prices = 0;
     int index = 0;
+    float TotalPrice = 0;
+
+    // if exists in (sell and retrieve) OR (sell only)
+    QHashIterator<QList<QString>, QList<QVariant>> i(sellOperation);
     while (i.hasNext()) {
         QFrame* f = new QFrame();
         QHBoxLayout* hLayout = new QHBoxLayout(f);
@@ -122,23 +112,29 @@ void cashRegisterSystem::Show_total_window(QVBoxLayout* VLayout,bool start) {
             quantity = i.value().at(0).toInt();
             prices = i.value().at(1).toFloat();
         }
+
         if (index % 2 == 1) f->setStyleSheet("QFrame{background-color:rgba(184, 184, 184, 255)}");
 
-        QLabel* name =new QLabel("\u0627\u0644\u0627\u0633\u0645 : "+i.key());
+        QLabel* name = new QLabel(i.key().at(0));
+        QLabel* opType = new QLabel(i.key().at(1));
         QLabel* PriceLabel = new QLabel("\u0627\u0644\u0633\u0639\u0631 : " + QString::number(prices));
         QLabel* Quantitylabel = new QLabel("\u0627\u0644\u0643\u0645\u064a\u0629 :"+QString::number(quantity));
         name->setStyleSheet("border:none;");
+        opType->setStyleSheet("border:none;");
         Quantitylabel->setStyleSheet("border:none;");
         PriceLabel->setStyleSheet("border:none;");
         hLayout->addWidget(Quantitylabel);
         hLayout->addWidget(PriceLabel);
+        hLayout->addWidget(opType);
         hLayout->addWidget(name);
         VLayout->addWidget(f);
         TotalPrice += prices;
         index++;
     }
     index = 0;
-    QHashIterator<QString, QList<QVariant>> j(retrieveOperation);
+
+    // if exists in (retrieve only)
+    QHashIterator<QList<QString>, QList<QVariant>> j(retrieveOperation);
     while (j.hasNext())
     {
         QFrame* f = new QFrame();
@@ -149,7 +145,8 @@ void cashRegisterSystem::Show_total_window(QVBoxLayout* VLayout,bool start) {
         {
             quantity = j.value().at(0).toInt();
             prices = j.value().at(1).toFloat();
-            QLabel* name = new QLabel("\u0627\u0644\u0627\u0633\u0645 : " + i.key());
+            QLabel* name = new QLabel(i.key().at(0));
+            QLabel* opType = new QLabel(i.key().at(1));
             QLabel* PriceLabel = new QLabel("\u0627\u0644\u0633\u0639\u0631 :" + QString::number(prices));
             QLabel* Quantitylabel = new QLabel("\u0627\u0644\u0643\u0645\u064a\u0629 :" + QString::number(quantity));
             name->setStyleSheet("border:none;");
@@ -158,14 +155,11 @@ void cashRegisterSystem::Show_total_window(QVBoxLayout* VLayout,bool start) {
             if (index % 2 == 1) f->setStyleSheet("QFrame{background-color:rgba(184, 184, 184, 255)}");
             hLayout->addWidget(Quantitylabel);
             hLayout->addWidget(PriceLabel);
+            hLayout->addWidget(opType);
             hLayout->addWidget(name);
             VLayout->addWidget(f);
-            TotalPrice += prices;
+            TotalPrice -= prices;
             index++;
-        }
-        else
-        {
-            continue;
         }
     }
     m_ui->day_total_income->setStyleSheet("font-size:16px; font-weight:bold");
@@ -173,24 +167,18 @@ void cashRegisterSystem::Show_total_window(QVBoxLayout* VLayout,bool start) {
     m_ui->total_operations_contents->setLayout(VLayout);  
 }
 
-void cashRegisterSystem::Show_window(string type, QWidget* scrollContents,QVBoxLayout* VLayout,bool start) {
-    if (start) {
-        QLayout* layout = VLayout->layout();
-    
-        QLayoutItem* child = nullptr;
-        while ((child = layout->takeAt(0)) != nullptr) {
-            QWidget* widget = child->widget();
-            if (widget) {
-                layout->removeWidget(widget);
-                delete widget;
-            }
-            delete child;
-        }
-    }
+void cashRegisterSystem::Show_window(string type, QWidget* scrollContents,QVBoxLayout* VLayout) {
+    clear_vertical_layout(VLayout);
+
     sqlite3_stmt* stmt;
     int rc = sqlite3_open("mydatabase.db", &m_OperationsDB);
     std::stringstream ss;
     ss << "select * from Operations where type = '"<<type<<"'";
+
+    date = m_ui->date_search->date();
+    string date_str = date.toString("yyyy-MM-dd").toStdString();
+    ss.str(ss.str() + " AND date = '" + date_str + "'");
+
     Optype = m_ui->opType->currentIndex();
     if (Optype != 0) {
         if (Optype == 1) {
@@ -201,35 +189,41 @@ void cashRegisterSystem::Show_window(string type, QWidget* scrollContents,QVBoxL
             ss.str(ss.str() + " AND operation_type = 'طلب جملة'");
         }
     }
+
     QString query = QString::fromStdString(ss.str());
     rc = sqlite3_prepare_v2(m_OperationsDB, query.toUtf8(), -1, &stmt, NULL);
+
     int i = 0;
-
-
     while (sqlite3_step(stmt) == SQLITE_ROW) {
         QFrame* f = new QFrame();
         QHBoxLayout* hLayout = new QHBoxLayout(f);
         string name = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 0));
         int Quantity_Sell = sqlite3_column_int(stmt, 1);
         string price = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 2));
+        string opType = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 4));
         float p = stof(price);
-        QLabel* names = new QLabel(QString("\u0627\u0644\u0627\u0633\u0645 : %1").arg(QString::fromUtf8(name)));
+        QLabel* names = new QLabel(QString("%1").arg(QString::fromUtf8(name)));
+        QLabel* opTypes = new QLabel(QString("%1").arg(QString::fromUtf8(opType)));
         QLabel* Quantities = new QLabel(QString("\u0627\u0644\u0643\u0645\u064a\u0629 : %1 ").arg(to_string(Quantity_Sell).c_str()));
         QLabel* pricesLabel = new QLabel(QString("\u0627\u0644\u0633\u0639\u0631 : %1").arg(QString::number(p)));
         names->setStyleSheet("border:none;");
+        opTypes->setStyleSheet("border:none;");
         Quantities->setStyleSheet("border:none;");
         pricesLabel->setStyleSheet("border:none;");
         if (i % 2 == 1) f->setStyleSheet("QFrame{background-color:rgba(184, 184, 184, 255)}");
         hLayout->addWidget(Quantities);
         hLayout->addWidget(pricesLabel);
+        hLayout->addWidget(opTypes);
         hLayout->addWidget(names);
         VLayout->addWidget(f);
         i++;
+        QList<QString>key;
+        key << QString::fromUtf8(name) << QString::fromUtf8(opType);
         if (type == "sell") {
-            InsertInHashOperations(sellOperation, QString::fromUtf8(name), p, Quantity_Sell);
+            InsertInHashOperations(sellOperation, key, p, Quantity_Sell);
         }
         else {
-            InsertInHashOperations(retrieveOperation, QString::fromUtf8(name), p, Quantity_Sell);
+            InsertInHashOperations(retrieveOperation, key, p, Quantity_Sell);
         }
     }
     scrollContents->setLayout(VLayout);
@@ -237,18 +231,18 @@ void cashRegisterSystem::Show_window(string type, QWidget* scrollContents,QVBoxL
     sqlite3_close(m_OperationsDB);
 }
 
-void cashRegisterSystem::InsertInHashOperations(QHash< QString, QList<QVariant>> &Operation,QString name,float price,int Quantity_Sell) {
+void cashRegisterSystem::InsertInHashOperations(QHash<QList<QString>, QList<QVariant>> &Operation, QList<QString>key,float price,int Quantity_Sell) {
     QList<QVariant> values;
 
-    if (Operation.contains(name)) {
-        values = Operation[name];
+    if (Operation.contains(key)) {
+        values = Operation[key];
         values[0] = values[0].toInt() + Quantity_Sell;
         values[1] = values[1].toFloat() + price;
-        Operation[name] = values;
+        Operation[key] = values;
     }
     else {
         values << Quantity_Sell << price;
-        Operation.insert(name, values);
+        Operation.insert(key, values);
     }
 }
 
@@ -285,7 +279,6 @@ void cashRegisterSystem::onPriceComboIndexChanged(int index) {
 
 void cashRegisterSystem::on_OPsearch_clicked()
 {
-    m_ui->day_total_income->clear();
     Show_Sell_window();
     Show_retrieve_window();
     Update_total();
@@ -297,3 +290,18 @@ void cashRegisterSystem::on_back_to_main_clicked() {
     else
         m_ui->formsStackedWidget->setCurrentIndex(1);
 }
+
+void cashRegisterSystem::clear_vertical_layout(QVBoxLayout* VLayout) {
+    QLayout* layout = VLayout->layout();
+    QLayoutItem* child = nullptr;
+    while ((child = layout->takeAt(0)) != nullptr) {
+        QWidget* widget = child->widget();
+        if (widget) {
+            layout->removeWidget(widget);
+            delete widget;
+        }
+        delete child;
+    }
+
+}
+

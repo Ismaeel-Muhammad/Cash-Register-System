@@ -48,9 +48,9 @@ private:
     QVector<QPushButton*> Delete_button;
     QHash<QPushButton*, QFrame*> MappingLayout;
     QHash<QString, QList<QVariant>> myHash;
-    QHash<QString, QList<QVariant>> sellOperation;
-    QHash<QString, QList<QVariant>> retrieveOperation;
-    void InsertInHashOperations(QHash < QString, QList<QVariant>>&, QString name, float price, int Quantity_Sell);
+    QHash<QList<QString>, QList<QVariant>> sellOperation;
+    QHash<QList<QString>, QList<QVariant>> retrieveOperation;
+    void InsertInHashOperations(QHash<QList<QString>, QList<QVariant>>&, QList<QString>, float, int);
     
     void populateProductList(QWidget*, QGridLayout*, QString, QVBoxLayout*, QLabel*, QLabel*, QScrollArea*, QPushButton*, QLineEdit*);
 
@@ -60,6 +60,7 @@ private:
     string productNameSearch;
     int ProductType;
     int Optype;
+    QDate date;
     void DeleteAll(QLabel*, QLabel*, QPushButton*, QLineEdit*, QWidget*);
 
     void payOperation(char, QLabel*, QLabel*, QPushButton*, QLineEdit*, QWidget*);
@@ -73,11 +74,12 @@ private:
 
     void Add_Item_names();
     void Show_Sell_window();
-    void Show_window(string, QWidget*, QVBoxLayout*, bool start);
+    void Show_window(string, QWidget*, QVBoxLayout*);
     void Show_retrieve_window();
-    void Show_total_window(QVBoxLayout*, bool);
+    void Show_total_window(QVBoxLayout*);
     void Update_total();
     void clear_grid_layout(QGridLayout*);
+    void clear_vertical_layout(QVBoxLayout*);
 private slots:
     void on_name_button_clicked(int, QString, float, QVBoxLayout*, QLabel*, QLabel*, QScrollArea*, QPushButton*, QLineEdit*);
     //user

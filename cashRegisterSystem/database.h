@@ -5,6 +5,10 @@
 #include "./sqlite/sqlite3.h"
 #include <string>
 
+#include <chrono>
+#include <iomanip>
+#include <sstream>
+
 using namespace std;
 class Database {
 public:
@@ -23,9 +27,11 @@ public:
     private:
     sqlite3* m_db;
 
-    void insertOperation(string, int, float, string, string);
-    void updateOperation(string, int, float, string, string);
-    bool isRowExist(string, string, string);
+    void insertOperation(string, int, float, string, string, string);
+    void updateOperation(string, int, float, string, string, string);
+    bool isRowExist(string, string, string, string);
+
+    string getTodayDate();
 };
 
 #endif /* DATABASE_H */

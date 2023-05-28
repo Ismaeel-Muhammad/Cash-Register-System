@@ -23,9 +23,6 @@ cashRegisterSystem::cashRegisterSystem(QWidget* parent)
     m_ui->discount_spinbox->setDecimals(0);
     m_ui->discount_spinbox->setPrefix("% ");
 
-    Show_Sell_window();
-    Show_retrieve_window();
-    Update_total();
     Add_Item_names();
 
     connect(m_ui->item_name_price, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &cashRegisterSystem::onPriceComboIndexChanged);
@@ -48,10 +45,6 @@ cashRegisterSystem::cashRegisterSystem(QWidget* parent)
     m_ui->phone_number->setValidator(validator);
     m_ui->phone_number_4->setValidator(validator);
     m_ui->formsStackedWidget->setCurrentIndex(0);
-    /*m_ui->check_discount->setMinimumWidth(60);
-    m_ui->retrieve->setMinimumWidth(30);
-    m_ui->sell->setMinimumWidth(30);
-    m_ui->ProdTypeSearch->setMinimumWidth(200);*/
 }
 
 
@@ -170,11 +163,6 @@ void cashRegisterSystem::on_AddNewCustomer_clicked()
     m_ui->formsStackedWidget->setCurrentIndex(3);
 }
 
-//void cashRegisterSystem::on_AddNewCustomer_2_clicked()
-//{
-//    m_ui->formsStackedWidget->setCurrentIndex(3);
-//}
-
 void cashRegisterSystem::on_gotoproducts_clicked()
 {
     generateProdtbl();
@@ -182,22 +170,10 @@ void cashRegisterSystem::on_gotoproducts_clicked()
     m_ui->formsStackedWidget->setCurrentIndex(5);
 }
 
-//void cashRegisterSystem::on_gotoproducts_2_clicked()
-//{
-//    generateProdtbl();
-//    GenrateTypesForCombo();
-//    m_ui->formsStackedWidget->setCurrentIndex(5);
-//}
-
 void cashRegisterSystem::on_customers_clicked() {
     search();
     m_ui->formsStackedWidget->setCurrentIndex(4);
 }
-
-//void cashRegisterSystem::on_customers_2_clicked() {
-//    search();
-//    m_ui->formsStackedWidget->setCurrentIndex(4);
-//}
 
 void cashRegisterSystem::on_logout_clicked() {
 
@@ -221,9 +197,3 @@ void cashRegisterSystem::on_logout_clicked() {
        
 
 }
-
-//void cashRegisterSystem::on_logout_admin_clicked() {
-//    DeleteAll(m_ui->price_before_4, m_ui->price_after_4, m_ui->check_discount_4, m_ui->phone_number_4, m_ui->cartContents_4);
-//    std::fill_n(m_loadedOnce, 4, false);
-//    m_ui->formsStackedWidget->setCurrentIndex(0);
-//}
