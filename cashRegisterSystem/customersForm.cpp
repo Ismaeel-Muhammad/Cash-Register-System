@@ -55,7 +55,7 @@ void cashRegisterSystem::search()
     while (sqlite3_step(stmt) == SQLITE_ROW) {
         const char* name = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 0));
         const char* phone_number = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 1));
-        int total_paid = sqlite3_column_int(stmt, 2);
+        float total_paid = sqlite3_column_double(stmt, 2);
         const char* customerClass = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 3));
 
         QList<QStandardItem*> items;

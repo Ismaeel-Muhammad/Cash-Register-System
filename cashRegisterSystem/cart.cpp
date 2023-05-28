@@ -8,18 +8,15 @@ void cashRegisterSystem::payOperation(char type, QLabel* priceBefore, QLabel* pr
     db.updateCustomerTotalPaid(phoneNumberField->text().toStdString(), priceAfter->text().toFloat(), type);
     QHashIterator<QString, QList<QVariant>> i(myHash);
     while (i.hasNext()) {
-        //   QString result = i.key() + " " + i.value().at(0) + " " + i.value().at(1);
         i.next();
         // name, quantity, type(add, subtract)
         db.updateProductQuantity(i.key().toStdString(), i.value().at(0).toInt(), updateType(type));
+        
         // name, quantity, price
-
         float price = check_discount(priceAfter, priceBefore, checkButton, phoneNumberField, i.value().at(1).toFloat());
-        QMessageBox::information(this, "s", QString::number(price));
         string operation_type = m_ui->order_type_cmb->currentText().toUtf8().constData();
         db.insertOrUpdateOperation(i.key().toStdString(), i.value().at(0).toInt(), price, operation_type, type);
     }
-
     DeleteAll(priceBefore, priceAfter, checkButton, phoneNumberField, cartContent);
     db.~Database();
 }

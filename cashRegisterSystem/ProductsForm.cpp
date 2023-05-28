@@ -40,7 +40,7 @@ void cashRegisterSystem::generateProdtbl()
         sqlite3_close(m_ProductsDB);
     }
     QStandardItemModel* model = new QStandardItemModel(this);
-    model->setHorizontalHeaderLabels({ "النوع","السعر", " الكمية", "الاسم" });
+    model->setHorizontalHeaderLabels({ "النوع","الكمية", "السعر", "الاسم" });
     while (sqlite3_step(stmt) == SQLITE_ROW) {
         const char* name = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 0));
         const char* price = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 2));

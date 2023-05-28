@@ -8,13 +8,6 @@ void cashRegisterSystem::on_login_btn_clicked()
         isAdmin = true;
         m_ui->formsStackedWidget->setCurrentIndex(6);
 
-        //m_ui->AddNewCustomer->setDisabled(false);
-        //m_ui->go_back->setDisabled(false);
-        //m_ui->gotoproducts->setDisabled(false);
-        //m_ui->customers->setDisabled(false);
-        //m_ui->logout->setDisabled(false);
-        //m_ui->go_to_admin_form->setDisabled(false);
-
         m_ui->AddNewCustomer->setHidden(false);
         m_ui->go_back->setHidden(false);
         m_ui->gotoproducts->setHidden(false);
@@ -28,11 +21,6 @@ void cashRegisterSystem::on_login_btn_clicked()
         isAdmin = false;
         m_ui->formsStackedWidget->setCurrentIndex(1);
 
-        /*m_ui->AddNewCustomer->setDisabled(false);
-        m_ui->go_back->setDisabled(false);
-        m_ui->gotoproducts->setDisabled(false);
-        m_ui->customers->setDisabled(false);
-        m_ui->logout->setDisabled(false);*/
         m_ui->AddNewCustomer->setHidden(false);
         m_ui->go_back->setHidden(false);
         m_ui->gotoproducts->setHidden(false);

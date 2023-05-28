@@ -382,7 +382,7 @@ string Database::getTodayDate() {
 
     // Format the date as a string in "yyyy-mm-dd" format
     std::ostringstream oss;
-    oss << std::put_time(&time_info, "%Y/%m/%d");
+    oss << std::put_time(&time_info, "%Y-%m-%d");
     // return date as string
     return oss.str();
 }

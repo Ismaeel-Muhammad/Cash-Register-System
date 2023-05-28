@@ -24,6 +24,8 @@ public:
     bool checkPhoneNumber(const string, QString& );
     void editProductPrice(string, string);
     string selectProductPrice(string);
+
+    static string getTodayDate();
     private:
     sqlite3* m_db;
 
@@ -31,7 +33,6 @@ public:
     void updateOperation(string, int, float, string, string, string);
     bool isRowExist(string, string, string, string);
 
-    string getTodayDate();
 };
 
 #endif /* DATABASE_H */

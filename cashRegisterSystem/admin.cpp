@@ -44,6 +44,8 @@ void cashRegisterSystem::on_add_quantity_clicked() {
 
     m_ui->item_name_quantity->setCurrentIndex(0);
     m_ui->item_quantity_quantity->clear();
+
+    std::fill_n(m_loadedOnce, 60, false);
     db.~Database();
 }
 
@@ -58,6 +60,8 @@ void cashRegisterSystem::on_edit_price_clicked() {
 
     m_ui->item_name_price->setCurrentIndex(0);
     m_ui->item_price_price->clear();
+
+    std::fill_n(m_loadedOnce, 60, false);
     db.~Database();
 }
 
@@ -72,6 +76,8 @@ void cashRegisterSystem::on_remove_quantity_clicked() {
 
     m_ui->item_quantity_quantity->clear();
     m_ui->item_name_quantity->setCurrentIndex(0);
+
+    std::fill_n(m_loadedOnce, 60, false);
 }
 
 void cashRegisterSystem::Show_Sell_window() {
@@ -304,4 +310,3 @@ void cashRegisterSystem::clear_vertical_layout(QVBoxLayout* VLayout) {
     }
 
 }
-

@@ -27,7 +27,7 @@
      <item>
       <widget class="QStackedWidget" name="formsStackedWidget">
        <property name="currentIndex">
-        <number>6</number>
+        <number>0</number>
        </property>
        <widget class="QWidget" name="login">
         <widget class="QWidget" name="layoutWidget">
@@ -43,7 +43,11 @@
           <item>
            <layout class="QGridLayout" name="gridLayout_5">
             <item row="0" column="0">
-             <widget class="QLineEdit" name="username_field"/>
+             <widget class="QLineEdit" name="username_field">
+              <property name="styleSheet">
+               <string notr="true">height: 25px;</string>
+              </property>
+             </widget>
             </item>
             <item row="0" column="1">
              <widget class="QLabel" name="username_label">
@@ -59,6 +63,9 @@ font-size:18px;
             </item>
             <item row="1" column="0">
              <widget class="QLineEdit" name="password_field">
+              <property name="styleSheet">
+               <string notr="true">height: 25px;</string>
+              </property>
               <property name="text">
                <string/>
               </property>
@@ -4323,6 +4330,19 @@ font-weight: bold;</string>
             <property name="styleSheet">
              <string notr="true">height: 25px</string>
             </property>
+            <property name="displayFormat">
+             <string>d/M/yyyy</string>
+            </property>
+            <property name="calendarPopup">
+             <bool>true</bool>
+            </property>
+            <property name="date">
+             <date>
+              <year>2002</year>
+              <month>10</month>
+              <day>24</day>
+             </date>
+            </property>
            </widget>
           </item>
           <item>
@@ -4707,7 +4727,7 @@ font-size:18px;</string>
           <rect>
            <x>10</x>
            <y>120</y>
-           <width>311</width>
+           <width>321</width>
            <height>611</height>
           </rect>
          </property>
@@ -4725,7 +4745,7 @@ font-size:18px;</string>
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>311</width>
+            <width>321</width>
             <height>411</height>
            </rect>
           </property>
@@ -4737,7 +4757,7 @@ font-size:18px;</string>
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>309</width>
+             <width>319</width>
              <height>409</height>
             </rect>
            </property>
@@ -4746,7 +4766,7 @@ font-size:18px;</string>
              <rect>
               <x>-1</x>
               <y>-1</y>
-              <width>311</width>
+              <width>321</width>
               <height>411</height>
              </rect>
             </property>
@@ -4773,7 +4793,7 @@ font-size:18px;</string>
            <rect>
             <x>10</x>
             <y>430</y>
-            <width>50</width>
+            <width>61</width>
             <height>31</height>
            </rect>
           </property>
@@ -4784,9 +4804,9 @@ font-size:18px;</string>
          <widget class="QLabel" name="label_15">
           <property name="geometry">
            <rect>
-            <x>60</x>
+            <x>80</x>
             <y>430</y>
-            <width>51</width>
+            <width>41</width>
             <height>31</height>
            </rect>
           </property>
@@ -4800,7 +4820,7 @@ font-size:18px;</string>
          <widget class="QLineEdit" name="phone_number_4">
           <property name="geometry">
            <rect>
-            <x>120</x>
+            <x>130</x>
             <y>430</y>
             <width>111</width>
             <height>31</height>
@@ -4812,7 +4832,7 @@ font-size:18px;</string>
            <rect>
             <x>250</x>
             <y>430</y>
-            <width>59</width>
+            <width>61</width>
             <height>31</height>
            </rect>
           </property>
@@ -4828,7 +4848,7 @@ font-size:18px;</string>
            <rect>
             <x>10</x>
             <y>470</y>
-            <width>31</width>
+            <width>41</width>
             <height>31</height>
            </rect>
           </property>
@@ -4845,9 +4865,9 @@ font-size: 14px;</string>
          <widget class="QLabel" name="price_after_const_4">
           <property name="geometry">
            <rect>
-            <x>40</x>
+            <x>50</x>
             <y>470</y>
-            <width>106</width>
+            <width>111</width>
             <height>31</height>
            </rect>
           </property>
@@ -4864,9 +4884,9 @@ font-size: 14px;</string>
          <widget class="QLabel" name="price_before_4">
           <property name="geometry">
            <rect>
-            <x>160</x>
+            <x>170</x>
             <y>470</y>
-            <width>31</width>
+            <width>41</width>
             <height>31</height>
            </rect>
           </property>
@@ -4883,7 +4903,7 @@ font-size: 14px</string>
            <rect>
             <x>200</x>
             <y>470</y>
-            <width>106</width>
+            <width>111</width>
             <height>31</height>
            </rect>
           </property>
@@ -4900,7 +4920,7 @@ font-size: 14px</string>
            <rect>
             <x>10</x>
             <y>520</y>
-            <width>100</width>
+            <width>101</width>
             <height>31</height>
            </rect>
           </property>
@@ -4911,9 +4931,9 @@ font-size: 14px</string>
          <widget class="QComboBox" name="order_type_cmb">
           <property name="geometry">
            <rect>
-            <x>129</x>
+            <x>139</x>
             <y>520</y>
-            <width>100</width>
+            <width>101</width>
             <height>31</height>
            </rect>
           </property>
@@ -4936,7 +4956,7 @@ font-size: 14px</string>
          <widget class="QLabel" name="label_16">
           <property name="geometry">
            <rect>
-            <x>240</x>
+            <x>250</x>
             <y>520</y>
             <width>61</width>
             <height>31</height>
@@ -4965,9 +4985,9 @@ font-size: 14px</string>
          <widget class="QPushButton" name="retrieve_4">
           <property name="geometry">
            <rect>
-            <x>120</x>
+            <x>110</x>
             <y>570</y>
-            <width>91</width>
+            <width>101</width>
             <height>31</height>
            </rect>
           </property>
@@ -4980,7 +5000,7 @@ font-size: 14px</string>
            <rect>
             <x>209</x>
             <y>570</y>
-            <width>91</width>
+            <width>101</width>
             <height>31</height>
            </rect>
           </property>
@@ -7418,7 +7438,7 @@ font-size: 14px</string>
              <string notr="true"/>
             </property>
             <property name="text">
-             <string>كنفاة صيفي</string>
+             <string>كنفاة صيني</string>
             </property>
            </widget>
           </item>
@@ -7518,7 +7538,7 @@ font-size: 14px</string>
              <string notr="true"/>
             </property>
             <property name="text">
-             <string>مدعات الكروشية و التركو</string>
+             <string>معدات الكروشية و التركو</string>
             </property>
            </widget>
           </item>

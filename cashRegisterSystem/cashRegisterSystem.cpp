@@ -26,6 +26,9 @@ cashRegisterSystem::cashRegisterSystem(QWidget* parent)
     Add_Item_names();
 
     connect(m_ui->item_name_price, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &cashRegisterSystem::onPriceComboIndexChanged);
+    
+    // set the date for the QDateEdit widget
+    m_ui->date_search->setDate(QDate::currentDate());
 
     m_ui->centralWidget->setMinimumHeight(707);
     m_ui->centralWidget->setMinimumWidth(1441);
