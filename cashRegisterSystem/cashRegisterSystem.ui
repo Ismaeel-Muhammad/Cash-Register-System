@@ -25,7 +25,7 @@
         <item>
          <widget class="QStackedWidget" name="formsStackedWidget">
           <property name="currentIndex">
-           <number>5</number>
+           <number>2</number>
           </property>
           <widget class="QWidget" name="login">
            <widget class="QWidget" name="layoutWidget">
@@ -3617,22 +3617,292 @@ border:none;</string>
              </property>
              <item>
               <property name="text">
-               <string>snacks</string>
+               <string>خيوط صوف</string>
               </property>
              </item>
              <item>
               <property name="text">
-               <string>drink</string>
+               <string>خيوط قطن</string>
               </property>
              </item>
              <item>
               <property name="text">
-               <string>fruit</string>
+               <string>خيوط مكرمية</string>
               </property>
              </item>
              <item>
               <property name="text">
-               <string>vegetables</string>
+               <string>خيوط تطريز</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>خيوط كلير</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>خيوط خياطة</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>خيوط خيش</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>خيوط مستوردة</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>كنفاة مصري</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>كنفاة صيفي</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>كنفاة مستوردة</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>خرز</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>عقاد خرز</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>زراير</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>معدات اكسسوار</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>معدات تطريز</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>معدات خياطة</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>معدات مكرمية</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>معدات جلد</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>معدات الكرشية و التركو</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>اكسسوارات</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>ادوات للشعر</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>شربات</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>ريش</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>فرو</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>كورك</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>اطقم جلود</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>جلود</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>اخشاب</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>استيك</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>خيوط اكسسوار</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>شرائط</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>تعليقات</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>منظمات</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>بلجات</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>محافظ</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>اقمشة</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>ديكور</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>اربطة</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>بوكسات</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>مستلزمات ستائر</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>ورد صناعي</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>سلاسل بالمتر</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>بروشات</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>مستلزمات احذية</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>سوست</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>مستلزمات شنط</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>شنط قماش</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>شنط خوص</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>لاصق</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>جيبرات</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>جالونات</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>ابر</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>مستلزمات ماكينة خياطة</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>توك</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>مفارش ايتامين</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>مفارش لاسية</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>عامة</string>
               </property>
              </item>
             </widget>
