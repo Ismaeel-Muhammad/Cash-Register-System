@@ -27,7 +27,7 @@
      <item>
       <widget class="QStackedWidget" name="formsStackedWidget">
        <property name="currentIndex">
-        <number>1</number>
+        <number>6</number>
        </property>
        <widget class="QWidget" name="login">
         <widget class="QWidget" name="layoutWidget">
@@ -2526,54 +2526,6 @@ font-size:18px;</string>
          <property name="frameShadow">
           <enum>QFrame::Raised</enum>
          </property>
-         <widget class="QScrollArea" name="scrollArea_9">
-          <property name="geometry">
-           <rect>
-            <x>0</x>
-            <y>0</y>
-            <width>321</width>
-            <height>441</height>
-           </rect>
-          </property>
-          <property name="widgetResizable">
-           <bool>true</bool>
-          </property>
-          <widget class="QWidget" name="cartContents">
-           <property name="geometry">
-            <rect>
-             <x>0</x>
-             <y>0</y>
-             <width>319</width>
-             <height>439</height>
-            </rect>
-           </property>
-           <widget class="QWidget" name="verticalLayoutWidget">
-            <property name="geometry">
-             <rect>
-              <x>-1</x>
-              <y>-1</y>
-              <width>321</width>
-              <height>441</height>
-             </rect>
-            </property>
-            <layout class="QVBoxLayout" name="cartVerticalLayout">
-             <item>
-              <spacer name="verticalSpacer">
-               <property name="orientation">
-                <enum>Qt::Vertical</enum>
-               </property>
-               <property name="sizeHint" stdset="0">
-                <size>
-                 <width>20</width>
-                 <height>40</height>
-                </size>
-               </property>
-              </spacer>
-             </item>
-            </layout>
-           </widget>
-          </widget>
-         </widget>
          <widget class="QPushButton" name="check_discount">
           <property name="geometry">
            <rect>
@@ -2723,6 +2675,54 @@ font-size: 14px</string>
           <property name="text">
            <string>بيع</string>
           </property>
+         </widget>
+         <widget class="QScrollArea" name="scrollArea_9">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>321</width>
+            <height>441</height>
+           </rect>
+          </property>
+          <property name="widgetResizable">
+           <bool>true</bool>
+          </property>
+          <widget class="QWidget" name="cartContents">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>319</width>
+             <height>439</height>
+            </rect>
+           </property>
+           <widget class="QWidget" name="verticalLayoutWidget">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>0</y>
+              <width>321</width>
+              <height>441</height>
+             </rect>
+            </property>
+            <layout class="QVBoxLayout" name="cartVerticalLayout">
+             <item>
+              <spacer name="verticalSpacer">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>40</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </widget>
+          </widget>
          </widget>
         </widget>
         <widget class="QWidget" name="layoutWidget">

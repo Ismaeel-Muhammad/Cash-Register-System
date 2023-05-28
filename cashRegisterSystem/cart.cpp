@@ -190,9 +190,9 @@ void cashRegisterSystem::on_name_button_clicked(int quantity, QString name, floa
     }
 
     QSpacerItem* spacer = new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Minimum);
-    scrollLayout->insertItem(0, spacer);
-    scrollLayout->insertWidget(1, frame);
-
+    scrollLayout->insertItem(0,spacer);
+    scrollLayout->insertWidget(1,frame);
+    
     connect(Delete_button.back(), &QPushButton::clicked, [this, btn = Delete_button.back(), totalPrice, names, quantity, priceBefore, priceAfter,
         checkButton, phoneNumberField]() {
         Delete_On_Click(btn, totalPrice, names->text(), quantity, priceBefore, priceAfter,
