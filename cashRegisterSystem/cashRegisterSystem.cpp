@@ -48,10 +48,10 @@ cashRegisterSystem::cashRegisterSystem(QWidget* parent)
     m_ui->phone_number->setValidator(validator);
     m_ui->phone_number_4->setValidator(validator);
     m_ui->formsStackedWidget->setCurrentIndex(0);
-    m_ui->check_discount->setMinimumWidth(60);
-    m_ui->retrieve->setMinimumWidth(50);
-    m_ui->sell->setMinimumWidth(50);
-    m_ui->ProdTypeSearch->setMinimumWidth(200);
+    /*m_ui->check_discount->setMinimumWidth(60);
+    m_ui->retrieve->setMinimumWidth(30);
+    m_ui->sell->setMinimumWidth(30);
+    m_ui->ProdTypeSearch->setMinimumWidth(200);*/
 }
 
 
