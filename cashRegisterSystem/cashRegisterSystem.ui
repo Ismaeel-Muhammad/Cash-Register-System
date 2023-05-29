@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1535</width>
-    <height>831</height>
+    <width>1366</width>
+    <height>708</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,15 +19,15 @@
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>1521</width>
-      <height>761</height>
+      <width>1251</width>
+      <height>681</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
       <widget class="QStackedWidget" name="formsStackedWidget">
        <property name="currentIndex">
-        <number>0</number>
+        <number>1</number>
        </property>
        <widget class="QWidget" name="login">
         <widget class="QWidget" name="layoutWidget">
@@ -105,14 +105,14 @@ font-size:18px;</string>
         <widget class="QStackedWidget" name="ProductsStackedWidget">
          <property name="geometry">
           <rect>
-           <x>460</x>
-           <y>280</y>
+           <x>390</x>
+           <y>260</y>
            <width>771</width>
-           <height>471</height>
+           <height>381</height>
           </rect>
          </property>
          <property name="currentIndex">
-          <number>44</number>
+          <number>8</number>
          </property>
          <widget class="QWidget" name="p1">
           <widget class="QScrollArea" name="scrollArea">
@@ -121,7 +121,7 @@ font-size:18px;</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>471</height>
+             <height>381</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -137,7 +137,7 @@ font-size:18px;</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>469</height>
+              <height>379</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_4">
@@ -146,7 +146,7 @@ font-size:18px;</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>381</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks"/>
@@ -161,7 +161,7 @@ font-size:18px;</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>471</height>
+             <height>381</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -177,7 +177,7 @@ font-size:18px;</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>469</height>
+              <height>379</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_3">
@@ -186,7 +186,7 @@ font-size:18px;</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>381</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridDrinks"/>
@@ -201,7 +201,7 @@ font-size:18px;</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>471</height>
+             <height>381</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -217,7 +217,7 @@ font-size:18px;</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>469</height>
+              <height>379</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_2">
@@ -226,7 +226,7 @@ font-size:18px;</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>381</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridVegetables"/>
@@ -241,7 +241,7 @@ font-size:18px;</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>471</height>
+             <height>381</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -257,7 +257,7 @@ font-size:18px;</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>469</height>
+              <height>379</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget">
@@ -266,7 +266,7 @@ font-size:18px;</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>381</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridFruits"/>
@@ -281,7 +281,7 @@ font-size:18px;</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>471</height>
+             <height>381</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -297,7 +297,7 @@ font-size:18px;</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>469</height>
+              <height>379</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_20">
@@ -306,7 +306,7 @@ font-size:18px;</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>471</height>
+               <height>381</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_6"/>
@@ -321,7 +321,7 @@ font-size:18px;</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>471</height>
+             <height>381</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -337,7 +337,7 @@ font-size:18px;</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>469</height>
+              <height>379</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_21">
@@ -346,7 +346,7 @@ font-size:18px;</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>381</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_7"/>
@@ -361,7 +361,7 @@ font-size:18px;</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>471</height>
+             <height>381</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -377,7 +377,7 @@ font-size:18px;</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>469</height>
+              <height>379</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_22">
@@ -386,7 +386,7 @@ font-size:18px;</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>381</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_8"/>
@@ -401,7 +401,7 @@ font-size:18px;</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>471</height>
+             <height>381</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -417,7 +417,7 @@ font-size:18px;</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>469</height>
+              <height>379</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_23">
@@ -426,7 +426,7 @@ font-size:18px;</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>381</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_9"/>
@@ -441,7 +441,7 @@ font-size:18px;</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>471</height>
+             <height>381</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -457,7 +457,7 @@ font-size:18px;</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>469</height>
+              <height>379</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_25">
@@ -466,7 +466,7 @@ font-size:18px;</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>381</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_11"/>
@@ -481,7 +481,7 @@ font-size:18px;</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>471</height>
+             <height>381</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -497,7 +497,7 @@ font-size:18px;</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>469</height>
+              <height>379</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_26">
@@ -506,7 +506,7 @@ font-size:18px;</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>471</height>
+               <height>381</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_12"/>
@@ -521,7 +521,7 @@ font-size:18px;</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>471</height>
+             <height>381</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -537,7 +537,7 @@ font-size:18px;</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>469</height>
+              <height>379</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_27">
@@ -546,7 +546,7 @@ font-size:18px;</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>471</height>
+               <height>381</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_13"/>
@@ -561,7 +561,7 @@ font-size:18px;</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>471</height>
+             <height>381</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -577,7 +577,7 @@ font-size:18px;</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>469</height>
+              <height>379</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_28">
@@ -586,7 +586,7 @@ font-size:18px;</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>381</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_14"/>
@@ -601,7 +601,7 @@ font-size:18px;</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>471</height>
+             <height>381</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -617,7 +617,7 @@ font-size:18px;</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>469</height>
+              <height>379</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_29">
@@ -626,7 +626,7 @@ font-size:18px;</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>471</height>
+               <height>381</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_15"/>
@@ -641,7 +641,7 @@ font-size:18px;</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>471</height>
+             <height>381</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -657,7 +657,7 @@ font-size:18px;</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>469</height>
+              <height>379</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_30">
@@ -666,7 +666,7 @@ font-size:18px;</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>381</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_16"/>
@@ -681,7 +681,7 @@ font-size:18px;</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>471</height>
+             <height>381</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -697,16 +697,16 @@ font-size:18px;</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>469</height>
+              <height>379</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_32">
              <property name="geometry">
               <rect>
-               <x>-10</x>
+               <x>0</x>
                <y>0</y>
-               <width>781</width>
-               <height>481</height>
+               <width>771</width>
+               <height>381</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_18"/>
@@ -721,7 +721,7 @@ font-size:18px;</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>471</height>
+             <height>381</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -737,7 +737,7 @@ font-size:18px;</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>469</height>
+              <height>379</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_33">
@@ -746,7 +746,7 @@ font-size:18px;</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>381</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_19"/>
@@ -761,7 +761,7 @@ font-size:18px;</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>471</height>
+             <height>381</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -777,7 +777,7 @@ font-size:18px;</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>469</height>
+              <height>379</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_34">
@@ -786,7 +786,7 @@ font-size:18px;</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>381</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_20"/>
@@ -801,7 +801,7 @@ font-size:18px;</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>471</height>
+             <height>381</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -817,7 +817,7 @@ font-size:18px;</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>469</height>
+              <height>379</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_36">
@@ -826,7 +826,7 @@ font-size:18px;</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>371</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_22"/>
@@ -841,7 +841,7 @@ font-size:18px;</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>471</height>
+             <height>381</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -857,7 +857,7 @@ font-size:18px;</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>469</height>
+              <height>379</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_37">
@@ -866,7 +866,7 @@ font-size:18px;</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>381</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_23"/>
@@ -881,7 +881,7 @@ font-size:18px;</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>471</height>
+             <height>381</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -897,7 +897,7 @@ font-size:18px;</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>469</height>
+              <height>379</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_38">
@@ -906,7 +906,7 @@ font-size:18px;</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>381</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_24"/>
@@ -921,7 +921,7 @@ font-size:18px;</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>471</height>
+             <height>381</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -937,7 +937,7 @@ font-size:18px;</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>469</height>
+              <height>379</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_39">
@@ -946,7 +946,7 @@ font-size:18px;</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>381</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_25"/>
@@ -961,7 +961,7 @@ font-size:18px;</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>471</height>
+             <height>381</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -977,7 +977,7 @@ font-size:18px;</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>469</height>
+              <height>379</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_40">
@@ -986,7 +986,7 @@ font-size:18px;</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>381</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_26"/>
@@ -1001,7 +1001,7 @@ font-size:18px;</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>471</height>
+             <height>381</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -1017,7 +1017,7 @@ font-size:18px;</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>469</height>
+              <height>379</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_41">
@@ -1026,7 +1026,7 @@ font-size:18px;</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>381</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_27"/>
@@ -1041,7 +1041,7 @@ font-size:18px;</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>471</height>
+             <height>381</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -1057,7 +1057,7 @@ font-size:18px;</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>469</height>
+              <height>379</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_42">
@@ -1066,7 +1066,7 @@ font-size:18px;</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>381</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_28"/>
@@ -1081,7 +1081,7 @@ font-size:18px;</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>471</height>
+             <height>381</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -1097,7 +1097,7 @@ font-size:18px;</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>469</height>
+              <height>379</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_43">
@@ -1106,7 +1106,7 @@ font-size:18px;</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>381</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_29"/>
@@ -1121,7 +1121,7 @@ font-size:18px;</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>471</height>
+             <height>381</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -1137,7 +1137,7 @@ font-size:18px;</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>469</height>
+              <height>379</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_44">
@@ -1146,7 +1146,7 @@ font-size:18px;</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>381</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_30"/>
@@ -1161,7 +1161,7 @@ font-size:18px;</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>471</height>
+             <height>381</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -1177,7 +1177,7 @@ font-size:18px;</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>469</height>
+              <height>379</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_45">
@@ -1186,7 +1186,7 @@ font-size:18px;</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>381</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_31"/>
@@ -1201,7 +1201,7 @@ font-size:18px;</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>471</height>
+             <height>381</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -1217,7 +1217,7 @@ font-size:18px;</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>469</height>
+              <height>379</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_46">
@@ -1226,7 +1226,7 @@ font-size:18px;</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>381</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_32"/>
@@ -1241,7 +1241,7 @@ font-size:18px;</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>471</height>
+             <height>381</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -1257,7 +1257,7 @@ font-size:18px;</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>469</height>
+              <height>379</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_47">
@@ -1266,7 +1266,7 @@ font-size:18px;</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>381</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_33"/>
@@ -1281,7 +1281,7 @@ font-size:18px;</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>471</height>
+             <height>381</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -1297,7 +1297,7 @@ font-size:18px;</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>469</height>
+              <height>379</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_48">
@@ -1306,7 +1306,7 @@ font-size:18px;</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>371</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_34"/>
@@ -1321,7 +1321,7 @@ font-size:18px;</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>471</height>
+             <height>381</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -1337,7 +1337,7 @@ font-size:18px;</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>469</height>
+              <height>379</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_49">
@@ -1346,7 +1346,7 @@ font-size:18px;</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>381</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_35"/>
@@ -1361,7 +1361,7 @@ font-size:18px;</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>471</height>
+             <height>381</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -1377,7 +1377,7 @@ font-size:18px;</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>469</height>
+              <height>379</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_50">
@@ -1386,7 +1386,7 @@ font-size:18px;</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>381</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_36"/>
@@ -1401,7 +1401,7 @@ font-size:18px;</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>471</height>
+             <height>381</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -1417,7 +1417,7 @@ font-size:18px;</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>469</height>
+              <height>379</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_51">
@@ -1426,7 +1426,7 @@ font-size:18px;</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>381</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_37"/>
@@ -1441,7 +1441,7 @@ font-size:18px;</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>471</height>
+             <height>381</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -1457,7 +1457,7 @@ font-size:18px;</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>469</height>
+              <height>379</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_52">
@@ -1466,7 +1466,7 @@ font-size:18px;</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>381</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_38"/>
@@ -1481,7 +1481,7 @@ font-size:18px;</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>471</height>
+             <height>381</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -1497,7 +1497,7 @@ font-size:18px;</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>469</height>
+              <height>379</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_53">
@@ -1506,7 +1506,7 @@ font-size:18px;</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>381</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_39"/>
@@ -1521,7 +1521,7 @@ font-size:18px;</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>471</height>
+             <height>381</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -1537,7 +1537,7 @@ font-size:18px;</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>469</height>
+              <height>379</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_54">
@@ -1546,7 +1546,7 @@ font-size:18px;</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>381</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_40"/>
@@ -1561,7 +1561,7 @@ font-size:18px;</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>471</height>
+             <height>381</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -1577,7 +1577,7 @@ font-size:18px;</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>469</height>
+              <height>379</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_55">
@@ -1586,7 +1586,7 @@ font-size:18px;</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>381</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_41"/>
@@ -1601,7 +1601,7 @@ font-size:18px;</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>471</height>
+             <height>381</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -1617,7 +1617,7 @@ font-size:18px;</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>469</height>
+              <height>379</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_56">
@@ -1626,7 +1626,7 @@ font-size:18px;</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>381</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_42"/>
@@ -1641,7 +1641,7 @@ font-size:18px;</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>471</height>
+             <height>381</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -1657,7 +1657,7 @@ font-size:18px;</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>469</height>
+              <height>379</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_57">
@@ -1666,7 +1666,7 @@ font-size:18px;</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>381</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_43"/>
@@ -1681,7 +1681,7 @@ font-size:18px;</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>471</height>
+             <height>381</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -1697,7 +1697,7 @@ font-size:18px;</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>469</height>
+              <height>379</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_58">
@@ -1706,7 +1706,7 @@ font-size:18px;</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>381</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_44"/>
@@ -1721,7 +1721,7 @@ font-size:18px;</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>471</height>
+             <height>381</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -1737,7 +1737,7 @@ font-size:18px;</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>469</height>
+              <height>379</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_59">
@@ -1746,7 +1746,7 @@ font-size:18px;</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>381</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_45"/>
@@ -1761,7 +1761,7 @@ font-size:18px;</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>471</height>
+             <height>381</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -1777,7 +1777,7 @@ font-size:18px;</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>469</height>
+              <height>379</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_60">
@@ -1786,7 +1786,7 @@ font-size:18px;</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>381</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_46"/>
@@ -1801,7 +1801,7 @@ font-size:18px;</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>471</height>
+             <height>381</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -1817,7 +1817,7 @@ font-size:18px;</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>469</height>
+              <height>379</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_61">
@@ -1826,7 +1826,7 @@ font-size:18px;</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>381</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_47"/>
@@ -1841,7 +1841,7 @@ font-size:18px;</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>471</height>
+             <height>381</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -1857,7 +1857,7 @@ font-size:18px;</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>469</height>
+              <height>379</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_62">
@@ -1866,7 +1866,7 @@ font-size:18px;</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>381</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_48"/>
@@ -1881,7 +1881,7 @@ font-size:18px;</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>471</height>
+             <height>381</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -1897,7 +1897,7 @@ font-size:18px;</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>469</height>
+              <height>379</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_63">
@@ -1906,7 +1906,7 @@ font-size:18px;</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>381</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_49"/>
@@ -1921,7 +1921,7 @@ font-size:18px;</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>471</height>
+             <height>381</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -1937,7 +1937,7 @@ font-size:18px;</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>469</height>
+              <height>379</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_64">
@@ -1946,7 +1946,7 @@ font-size:18px;</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>381</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_50"/>
@@ -1961,7 +1961,7 @@ font-size:18px;</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>471</height>
+             <height>381</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -1977,7 +1977,7 @@ font-size:18px;</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>469</height>
+              <height>379</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_65">
@@ -1986,7 +1986,7 @@ font-size:18px;</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>381</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_51"/>
@@ -2001,7 +2001,7 @@ font-size:18px;</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>471</height>
+             <height>381</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -2017,7 +2017,7 @@ font-size:18px;</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>469</height>
+              <height>379</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_66">
@@ -2026,7 +2026,7 @@ font-size:18px;</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>381</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_52"/>
@@ -2041,7 +2041,7 @@ font-size:18px;</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>471</height>
+             <height>381</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -2057,7 +2057,7 @@ font-size:18px;</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>469</height>
+              <height>379</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_67">
@@ -2066,7 +2066,7 @@ font-size:18px;</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>381</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_53"/>
@@ -2081,7 +2081,7 @@ font-size:18px;</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>471</height>
+             <height>381</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -2097,7 +2097,7 @@ font-size:18px;</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>469</height>
+              <height>379</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_68">
@@ -2106,7 +2106,7 @@ font-size:18px;</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>381</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_54"/>
@@ -2121,7 +2121,7 @@ font-size:18px;</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>471</height>
+             <height>381</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -2137,7 +2137,7 @@ font-size:18px;</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>469</height>
+              <height>379</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_69">
@@ -2146,7 +2146,7 @@ font-size:18px;</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>381</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_55"/>
@@ -2161,7 +2161,7 @@ font-size:18px;</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>471</height>
+             <height>381</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -2177,7 +2177,7 @@ font-size:18px;</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>469</height>
+              <height>379</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_70">
@@ -2186,7 +2186,7 @@ font-size:18px;</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>381</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_56"/>
@@ -2201,7 +2201,7 @@ font-size:18px;</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>471</height>
+             <height>381</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -2217,7 +2217,7 @@ font-size:18px;</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>469</height>
+              <height>379</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_71">
@@ -2226,7 +2226,7 @@ font-size:18px;</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>381</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_57"/>
@@ -2241,7 +2241,7 @@ font-size:18px;</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>471</height>
+             <height>381</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -2257,7 +2257,7 @@ font-size:18px;</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>469</height>
+              <height>379</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_72">
@@ -2266,7 +2266,7 @@ font-size:18px;</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>381</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_58"/>
@@ -2281,7 +2281,7 @@ font-size:18px;</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>471</height>
+             <height>381</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -2297,7 +2297,7 @@ font-size:18px;</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>469</height>
+              <height>379</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_73">
@@ -2306,7 +2306,7 @@ font-size:18px;</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>371</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_59"/>
@@ -2321,7 +2321,7 @@ font-size:18px;</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>471</height>
+             <height>381</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -2337,7 +2337,7 @@ font-size:18px;</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>469</height>
+              <height>379</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_74">
@@ -2346,7 +2346,7 @@ font-size:18px;</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>381</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_60"/>
@@ -2361,7 +2361,7 @@ font-size:18px;</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>471</height>
+             <height>381</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -2377,7 +2377,7 @@ font-size:18px;</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>469</height>
+              <height>379</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_75">
@@ -2386,7 +2386,7 @@ font-size:18px;</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>381</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_61"/>
@@ -2401,7 +2401,7 @@ font-size:18px;</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>471</height>
+             <height>381</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -2417,7 +2417,7 @@ font-size:18px;</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>469</height>
+              <height>379</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_76">
@@ -2426,7 +2426,7 @@ font-size:18px;</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>381</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_62"/>
@@ -2441,7 +2441,7 @@ font-size:18px;</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>471</height>
+             <height>381</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -2457,7 +2457,7 @@ font-size:18px;</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>469</height>
+              <height>379</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_77">
@@ -2466,7 +2466,7 @@ font-size:18px;</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>381</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_63"/>
@@ -2481,7 +2481,7 @@ font-size:18px;</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>471</height>
+             <height>381</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -2497,7 +2497,7 @@ font-size:18px;</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>469</height>
+              <height>379</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_78">
@@ -2506,7 +2506,7 @@ font-size:18px;</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>381</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_64"/>
@@ -2519,9 +2519,9 @@ font-size:18px;</string>
          <property name="geometry">
           <rect>
            <x>10</x>
-           <y>140</y>
-           <width>321</width>
-           <height>611</height>
+           <y>10</y>
+           <width>281</width>
+           <height>591</height>
           </rect>
          </property>
          <property name="styleSheet">
@@ -2549,9 +2549,9 @@ font-size:18px;</string>
          <widget class="QLineEdit" name="phone_number">
           <property name="geometry">
            <rect>
-            <x>120</x>
+            <x>90</x>
             <y>460</y>
-            <width>131</width>
+            <width>121</width>
             <height>31</height>
            </rect>
           </property>
@@ -2559,7 +2559,7 @@ font-size:18px;</string>
          <widget class="QLabel" name="label">
           <property name="geometry">
            <rect>
-            <x>250</x>
+            <x>210</x>
             <y>462</y>
             <width>61</width>
             <height>31</height>
@@ -2594,9 +2594,9 @@ font-size: 14px;</string>
          <widget class="QLabel" name="price_after_const">
           <property name="geometry">
            <rect>
-            <x>40</x>
+            <x>50</x>
             <y>508</y>
-            <width>111</width>
+            <width>91</width>
             <height>31</height>
            </rect>
           </property>
@@ -2604,7 +2604,7 @@ font-size: 14px;</string>
            <string notr="true">border: none;
 color: #c92a2a;
 font-weight: bold;
-font-size: 14px;</string>
+font-size: 12px;</string>
           </property>
           <property name="text">
            <string>السعر بعد الخصم:</string>
@@ -2613,7 +2613,7 @@ font-size: 14px;</string>
          <widget class="QLabel" name="price_before_const">
           <property name="geometry">
            <rect>
-            <x>200</x>
+            <x>160</x>
             <y>510</y>
             <width>111</width>
             <height>31</height>
@@ -2621,7 +2621,7 @@ font-size: 14px;</string>
           </property>
           <property name="styleSheet">
            <string notr="true">border: none;
-font-size: 14px</string>
+font-size: 12px</string>
           </property>
           <property name="text">
            <string>السعر قبل الخصم:</string>
@@ -2630,7 +2630,7 @@ font-size: 14px</string>
          <widget class="QLabel" name="price_before">
           <property name="geometry">
            <rect>
-            <x>160</x>
+            <x>150</x>
             <y>508</y>
             <width>41</width>
             <height>31</height>
@@ -2649,8 +2649,8 @@ font-size: 14px</string>
            <rect>
             <x>10</x>
             <y>550</y>
-            <width>91</width>
-            <height>41</height>
+            <width>61</width>
+            <height>31</height>
            </rect>
           </property>
           <property name="text">
@@ -2660,10 +2660,10 @@ font-size: 14px</string>
          <widget class="QPushButton" name="retrieve">
           <property name="geometry">
            <rect>
-            <x>120</x>
+            <x>110</x>
             <y>550</y>
-            <width>91</width>
-            <height>41</height>
+            <width>71</width>
+            <height>31</height>
            </rect>
           </property>
           <property name="text">
@@ -2673,10 +2673,10 @@ font-size: 14px</string>
          <widget class="QPushButton" name="sell">
           <property name="geometry">
            <rect>
-            <x>210</x>
+            <x>190</x>
             <y>550</y>
-            <width>101</width>
-            <height>41</height>
+            <width>71</width>
+            <height>31</height>
            </rect>
           </property>
           <property name="text">
@@ -2688,7 +2688,7 @@ font-size: 14px</string>
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>321</width>
+            <width>281</width>
             <height>441</height>
            </rect>
           </property>
@@ -2700,7 +2700,7 @@ font-size: 14px</string>
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>319</width>
+             <width>279</width>
              <height>439</height>
             </rect>
            </property>
@@ -2709,7 +2709,7 @@ font-size: 14px</string>
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>321</width>
+              <width>281</width>
               <height>441</height>
              </rect>
             </property>
@@ -2735,10 +2735,10 @@ font-size: 14px</string>
         <widget class="QWidget" name="layoutWidget">
          <property name="geometry">
           <rect>
-           <x>340</x>
-           <y>0</y>
-           <width>1081</width>
-           <height>271</height>
+           <x>300</x>
+           <y>10</y>
+           <width>941</width>
+           <height>251</height>
           </rect>
          </property>
          <layout class="QGridLayout" name="gridLayout_2">
@@ -2748,7 +2748,7 @@ font-size: 14px</string>
              <string notr="true"/>
             </property>
             <property name="text">
-             <string>كنفاة صيفي</string>
+             <string>كنفاة صيني</string>
             </property>
            </widget>
           </item>
@@ -2798,7 +2798,7 @@ font-size: 14px</string>
              <string notr="true"/>
             </property>
             <property name="text">
-             <string>خيوط كلير</string>
+             <string>خيوط كليم</string>
             </property>
            </widget>
           </item>
@@ -2848,7 +2848,7 @@ font-size: 14px</string>
              <string notr="true"/>
             </property>
             <property name="text">
-             <string>مدعات الكروشية و التركو</string>
+             <string>معدات الكروشية و التركو</string>
             </property>
            </widget>
           </item>
@@ -3646,7 +3646,7 @@ border:none;</string>
           </item>
           <item>
            <property name="text">
-            <string>خيوط كلير</string>
+            <string>خيوط كليم</string>
            </property>
           </item>
           <item>
@@ -3671,7 +3671,7 @@ border:none;</string>
           </item>
           <item>
            <property name="text">
-            <string>كنفاة صيفي</string>
+            <string>كنفاة صيني</string>
            </property>
           </item>
           <item>
@@ -4036,8 +4036,8 @@ font-weight: bold;</string>
           <rect>
            <x>10</x>
            <y>370</y>
-           <width>401</width>
-           <height>301</height>
+           <width>341</width>
+           <height>261</height>
           </rect>
          </property>
          <property name="styleSheet">
@@ -4054,8 +4054,8 @@ font-weight: bold;</string>
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>401</width>
-            <height>301</height>
+            <width>341</width>
+            <height>261</height>
            </rect>
           </property>
           <property name="widgetResizable">
@@ -4066,8 +4066,8 @@ font-weight: bold;</string>
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>399</width>
-             <height>299</height>
+             <width>339</width>
+             <height>259</height>
             </rect>
            </property>
            <widget class="QWidget" name="verticalLayoutWidget_4">
@@ -4075,8 +4075,8 @@ font-weight: bold;</string>
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>401</width>
-              <height>301</height>
+              <width>341</width>
+              <height>261</height>
              </rect>
             </property>
             <layout class="QVBoxLayout" name="total_VLayout"/>
@@ -4087,10 +4087,10 @@ font-weight: bold;</string>
         <widget class="QFrame" name="return_operations_frame">
          <property name="geometry">
           <rect>
-           <x>420</x>
+           <x>360</x>
            <y>370</y>
-           <width>411</width>
-           <height>301</height>
+           <width>341</width>
+           <height>261</height>
           </rect>
          </property>
          <property name="styleSheet">
@@ -4107,8 +4107,8 @@ font-weight: bold;</string>
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>411</width>
-            <height>301</height>
+            <width>341</width>
+            <height>261</height>
            </rect>
           </property>
           <property name="widgetResizable">
@@ -4119,8 +4119,8 @@ font-weight: bold;</string>
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>409</width>
-             <height>299</height>
+             <width>339</width>
+             <height>259</height>
             </rect>
            </property>
            <widget class="QWidget" name="verticalLayoutWidget_3">
@@ -4128,8 +4128,8 @@ font-weight: bold;</string>
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>411</width>
-              <height>301</height>
+              <width>341</width>
+              <height>261</height>
              </rect>
             </property>
             <layout class="QVBoxLayout" name="return_VLayout"/>
@@ -4140,10 +4140,10 @@ font-weight: bold;</string>
         <widget class="QFrame" name="sell_operations_frame">
          <property name="geometry">
           <rect>
-           <x>840</x>
+           <x>710</x>
            <y>370</y>
-           <width>401</width>
-           <height>301</height>
+           <width>341</width>
+           <height>261</height>
           </rect>
          </property>
          <property name="styleSheet">
@@ -4160,8 +4160,8 @@ font-weight: bold;</string>
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>401</width>
-            <height>301</height>
+            <width>341</width>
+            <height>261</height>
            </rect>
           </property>
           <property name="widgetResizable">
@@ -4172,8 +4172,8 @@ font-weight: bold;</string>
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>399</width>
-             <height>299</height>
+             <width>339</width>
+             <height>259</height>
             </rect>
            </property>
            <widget class="QWidget" name="verticalLayoutWidget_2">
@@ -4181,8 +4181,8 @@ font-weight: bold;</string>
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>401</width>
-              <height>311</height>
+              <width>341</width>
+              <height>261</height>
              </rect>
             </property>
             <layout class="QVBoxLayout" name="sell_VLayout"/>
@@ -4193,7 +4193,7 @@ font-weight: bold;</string>
         <widget class="QLabel" name="label_23">
          <property name="geometry">
           <rect>
-           <x>1130</x>
+           <x>940</x>
            <y>330</y>
            <width>111</width>
            <height>31</height>
@@ -4210,7 +4210,7 @@ font-weight: bold;</string>
         <widget class="QLabel" name="label_25">
          <property name="geometry">
           <rect>
-           <x>700</x>
+           <x>570</x>
            <y>330</y>
            <width>131</width>
            <height>31</height>
@@ -4227,7 +4227,7 @@ font-weight: bold;</string>
         <widget class="QLabel" name="label_24">
          <property name="geometry">
           <rect>
-           <x>160</x>
+           <x>100</x>
            <y>330</y>
            <width>251</width>
            <height>31</height>
@@ -4245,7 +4245,7 @@ font-weight: bold;</string>
          <property name="geometry">
           <rect>
            <x>10</x>
-           <y>680</y>
+           <y>640</y>
            <width>261</width>
            <height>31</height>
           </rect>
@@ -4255,7 +4255,7 @@ font-weight: bold;</string>
          <property name="geometry">
           <rect>
            <x>270</x>
-           <y>680</y>
+           <y>640</y>
            <width>101</width>
            <height>31</height>
           </rect>
@@ -4271,9 +4271,9 @@ font-weight: bold;</string>
         <widget class="QWidget" name="layoutWidget">
          <property name="geometry">
           <rect>
-           <x>1260</x>
-           <y>430</y>
-           <width>141</width>
+           <x>1070</x>
+           <y>380</y>
+           <width>171</width>
            <height>169</height>
           </rect>
          </property>
@@ -4427,8 +4427,8 @@ font-weight: bold;</string>
         <widget class="QScrollArea" name="results">
          <property name="geometry">
           <rect>
-           <x>270</x>
-           <y>70</y>
+           <x>240</x>
+           <y>30</y>
            <width>981</width>
            <height>631</height>
           </rect>
@@ -4603,8 +4603,8 @@ font-size:18px;</string>
         <widget class="QScrollArea" name="porductsForm">
          <property name="geometry">
           <rect>
-           <x>150</x>
-           <y>70</y>
+           <x>0</x>
+           <y>60</y>
            <width>1241</width>
            <height>591</height>
           </rect>
@@ -4633,92 +4633,85 @@ font-size:18px;</string>
           </widget>
          </widget>
         </widget>
-        <widget class="QWidget" name="layoutWidget">
+        <widget class="QComboBox" name="ProdTypeSearch">
          <property name="geometry">
           <rect>
            <x>600</x>
-           <y>10</y>
-           <width>791</width>
-           <height>61</height>
+           <y>20</y>
+           <width>141</width>
+           <height>31</height>
           </rect>
          </property>
-         <layout class="QHBoxLayout" name="horizontalLayout_11">
-          <item>
-           <widget class="QPushButton" name="searchprobuctsBTN">
-            <property name="styleSheet">
-             <string notr="true">
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <item>
+          <property name="text">
+           <string>الكل</string>
+          </property>
+         </item>
+        </widget>
+        <widget class="QPushButton" name="searchprobuctsBTN">
+         <property name="geometry">
+          <rect>
+           <x>280</x>
+           <y>20</y>
+           <width>131</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">
 font-weight:bold;
 </string>
-            </property>
-            <property name="text">
-             <string>بحث</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <spacer name="horizontalSpacer_14">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item>
-           <widget class="QComboBox" name="ProdTypeSearch">
-            <property name="styleSheet">
-             <string notr="true"/>
-            </property>
-            <item>
-             <property name="text">
-              <string>الكل</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLabel" name="ProdTypeLabel">
-            <property name="styleSheet">
-             <string notr="true">font-weight:bold;
+         </property>
+         <property name="text">
+          <string>بحث</string>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="ProdNameSearch">
+         <property name="geometry">
+          <rect>
+           <x>960</x>
+           <y>20</y>
+           <width>132</width>
+           <height>31</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QLabel" name="ProdTypeLabel">
+         <property name="geometry">
+          <rect>
+           <x>750</x>
+           <y>20</y>
+           <width>82</width>
+           <height>24</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font-weight:bold;
 font-size:18px;</string>
-            </property>
-            <property name="text">
-             <string>نوع السلعة</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <spacer name="horizontalSpacer_13">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item>
-           <widget class="QLineEdit" name="ProdNameSearch"/>
-          </item>
-          <item>
-           <widget class="QLabel" name="ProdNameLabel">
-            <property name="styleSheet">
-             <string notr="true">font-weight:bold;
+         </property>
+         <property name="text">
+          <string>نوع السلعة</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="ProdNameLabel">
+         <property name="geometry">
+          <rect>
+           <x>1110</x>
+           <y>20</y>
+           <width>91</width>
+           <height>24</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font-weight:bold;
 font-size:18px;</string>
-            </property>
-            <property name="text">
-             <string>اسم السلعة</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
+         </property>
+         <property name="text">
+          <string>اسم السلعة</string>
+         </property>
         </widget>
        </widget>
        <widget class="QWidget" name="admin_main_form">
@@ -4726,9 +4719,9 @@ font-size:18px;</string>
          <property name="geometry">
           <rect>
            <x>10</x>
-           <y>120</y>
-           <width>321</width>
-           <height>611</height>
+           <y>20</y>
+           <width>281</width>
+           <height>591</height>
           </rect>
          </property>
          <property name="styleSheet">
@@ -4745,7 +4738,7 @@ font-size:18px;</string>
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>321</width>
+            <width>281</width>
             <height>411</height>
            </rect>
           </property>
@@ -4757,7 +4750,7 @@ font-size:18px;</string>
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>319</width>
+             <width>279</width>
              <height>409</height>
             </rect>
            </property>
@@ -4766,7 +4759,7 @@ font-size:18px;</string>
              <rect>
               <x>-1</x>
               <y>-1</y>
-              <width>321</width>
+              <width>281</width>
               <height>411</height>
              </rect>
             </property>
@@ -4792,8 +4785,8 @@ font-size:18px;</string>
           <property name="geometry">
            <rect>
             <x>10</x>
-            <y>430</y>
-            <width>61</width>
+            <y>420</y>
+            <width>51</width>
             <height>31</height>
            </rect>
           </property>
@@ -4804,8 +4797,8 @@ font-size:18px;</string>
          <widget class="QLabel" name="label_15">
           <property name="geometry">
            <rect>
-            <x>80</x>
-            <y>430</y>
+            <x>60</x>
+            <y>420</y>
             <width>41</width>
             <height>31</height>
            </rect>
@@ -4820,9 +4813,9 @@ font-size:18px;</string>
          <widget class="QLineEdit" name="phone_number_4">
           <property name="geometry">
            <rect>
-            <x>130</x>
-            <y>430</y>
-            <width>111</width>
+            <x>110</x>
+            <y>420</y>
+            <width>91</width>
             <height>31</height>
            </rect>
           </property>
@@ -4830,8 +4823,8 @@ font-size:18px;</string>
          <widget class="QLabel" name="label_13">
           <property name="geometry">
            <rect>
-            <x>250</x>
-            <y>430</y>
+            <x>210</x>
+            <y>420</y>
             <width>61</width>
             <height>31</height>
            </rect>
@@ -4847,7 +4840,7 @@ font-size:18px;</string>
           <property name="geometry">
            <rect>
             <x>10</x>
-            <y>470</y>
+            <y>460</y>
             <width>41</width>
             <height>31</height>
            </rect>
@@ -4865,9 +4858,9 @@ font-size: 14px;</string>
          <widget class="QLabel" name="price_after_const_4">
           <property name="geometry">
            <rect>
-            <x>50</x>
-            <y>470</y>
-            <width>111</width>
+            <x>30</x>
+            <y>460</y>
+            <width>101</width>
             <height>31</height>
            </rect>
           </property>
@@ -4875,7 +4868,7 @@ font-size: 14px;</string>
            <string notr="true">border: none;
 color: #c92a2a;
 font-weight: bold;
-font-size: 14px;</string>
+font-size: 12px;</string>
           </property>
           <property name="text">
            <string>السعر بعد الخصم:</string>
@@ -4884,8 +4877,8 @@ font-size: 14px;</string>
          <widget class="QLabel" name="price_before_4">
           <property name="geometry">
            <rect>
-            <x>170</x>
-            <y>470</y>
+            <x>140</x>
+            <y>460</y>
             <width>41</width>
             <height>31</height>
            </rect>
@@ -4901,15 +4894,15 @@ font-size: 14px</string>
          <widget class="QLabel" name="price_before_const_4">
           <property name="geometry">
            <rect>
-            <x>200</x>
-            <y>470</y>
-            <width>111</width>
+            <x>180</x>
+            <y>460</y>
+            <width>91</width>
             <height>31</height>
            </rect>
           </property>
           <property name="styleSheet">
            <string notr="true">border: none;
-font-size: 14px</string>
+font-size: 12px</string>
           </property>
           <property name="text">
            <string>السعر قبل الخصم:</string>
@@ -4919,8 +4912,8 @@ font-size: 14px</string>
           <property name="geometry">
            <rect>
             <x>10</x>
-            <y>520</y>
-            <width>101</width>
+            <y>500</y>
+            <width>91</width>
             <height>31</height>
            </rect>
           </property>
@@ -4931,9 +4924,9 @@ font-size: 14px</string>
          <widget class="QComboBox" name="order_type_cmb">
           <property name="geometry">
            <rect>
-            <x>139</x>
-            <y>520</y>
-            <width>101</width>
+            <x>110</x>
+            <y>500</y>
+            <width>91</width>
             <height>31</height>
            </rect>
           </property>
@@ -4956,8 +4949,8 @@ font-size: 14px</string>
          <widget class="QLabel" name="label_16">
           <property name="geometry">
            <rect>
-            <x>250</x>
-            <y>520</y>
+            <x>210</x>
+            <y>500</y>
             <width>61</width>
             <height>31</height>
            </rect>
@@ -4973,8 +4966,8 @@ font-size: 14px</string>
           <property name="geometry">
            <rect>
             <x>10</x>
-            <y>570</y>
-            <width>81</width>
+            <y>550</y>
+            <width>71</width>
             <height>31</height>
            </rect>
           </property>
@@ -4986,8 +4979,8 @@ font-size: 14px</string>
           <property name="geometry">
            <rect>
             <x>110</x>
-            <y>570</y>
-            <width>101</width>
+            <y>550</y>
+            <width>71</width>
             <height>31</height>
            </rect>
           </property>
@@ -4998,9 +4991,9 @@ font-size: 14px</string>
          <widget class="QPushButton" name="sell_4">
           <property name="geometry">
            <rect>
-            <x>209</x>
-            <y>570</y>
-            <width>101</width>
+            <x>190</x>
+            <y>550</y>
+            <width>71</width>
             <height>31</height>
            </rect>
           </property>
@@ -5012,14 +5005,14 @@ font-size: 14px</string>
         <widget class="QStackedWidget" name="ProductsStackedWidget_2">
          <property name="geometry">
           <rect>
-           <x>430</x>
-           <y>240</y>
+           <x>380</x>
+           <y>230</y>
            <width>771</width>
-           <height>481</height>
+           <height>401</height>
           </rect>
          </property>
          <property name="currentIndex">
-          <number>3</number>
+          <number>44</number>
          </property>
          <widget class="QWidget" name="page_7">
           <widget class="QScrollArea" name="scrollArea_8">
@@ -5028,7 +5021,7 @@ font-size: 14px</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>481</height>
+             <height>401</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -5044,7 +5037,7 @@ font-size: 14px</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>479</height>
+              <height>399</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_5">
@@ -5053,7 +5046,7 @@ font-size: 14px</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>401</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_2"/>
@@ -5068,7 +5061,7 @@ font-size: 14px</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>481</height>
+             <height>401</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -5084,7 +5077,7 @@ font-size: 14px</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>479</height>
+              <height>399</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_6">
@@ -5093,7 +5086,7 @@ font-size: 14px</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>401</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridDrinks_2"/>
@@ -5108,7 +5101,7 @@ font-size: 14px</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>481</height>
+             <height>401</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -5124,7 +5117,7 @@ font-size: 14px</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>479</height>
+              <height>399</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_7">
@@ -5133,7 +5126,7 @@ font-size: 14px</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>401</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridVegetables_2"/>
@@ -5148,7 +5141,7 @@ font-size: 14px</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>481</height>
+             <height>401</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -5164,7 +5157,7 @@ font-size: 14px</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>479</height>
+              <height>399</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_8">
@@ -5173,7 +5166,7 @@ font-size: 14px</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>401</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridFruits_2"/>
@@ -5188,7 +5181,7 @@ font-size: 14px</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>481</height>
+             <height>401</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -5204,7 +5197,7 @@ font-size: 14px</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>479</height>
+              <height>399</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_79">
@@ -5213,7 +5206,7 @@ font-size: 14px</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>401</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_65"/>
@@ -5228,7 +5221,7 @@ font-size: 14px</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>481</height>
+             <height>401</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -5244,7 +5237,7 @@ font-size: 14px</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>479</height>
+              <height>399</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_80">
@@ -5253,7 +5246,7 @@ font-size: 14px</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>401</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_66"/>
@@ -5268,7 +5261,7 @@ font-size: 14px</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>481</height>
+             <height>401</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -5284,7 +5277,7 @@ font-size: 14px</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>479</height>
+              <height>399</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_81">
@@ -5293,7 +5286,7 @@ font-size: 14px</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>401</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_67"/>
@@ -5308,7 +5301,7 @@ font-size: 14px</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>481</height>
+             <height>431</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -5324,7 +5317,7 @@ font-size: 14px</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>479</height>
+              <height>429</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_82">
@@ -5333,7 +5326,7 @@ font-size: 14px</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>431</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_68"/>
@@ -5348,7 +5341,7 @@ font-size: 14px</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>481</height>
+             <height>401</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -5364,7 +5357,7 @@ font-size: 14px</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>479</height>
+              <height>399</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_83">
@@ -5373,7 +5366,7 @@ font-size: 14px</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>401</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_69"/>
@@ -5388,7 +5381,7 @@ font-size: 14px</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>481</height>
+             <height>401</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -5404,7 +5397,7 @@ font-size: 14px</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>479</height>
+              <height>399</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_84">
@@ -5413,7 +5406,7 @@ font-size: 14px</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>401</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_70"/>
@@ -5428,7 +5421,7 @@ font-size: 14px</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>481</height>
+             <height>401</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -5444,7 +5437,7 @@ font-size: 14px</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>479</height>
+              <height>399</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_85">
@@ -5453,7 +5446,7 @@ font-size: 14px</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>401</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_71"/>
@@ -5468,7 +5461,7 @@ font-size: 14px</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>481</height>
+             <height>401</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -5484,7 +5477,7 @@ font-size: 14px</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>479</height>
+              <height>399</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_86">
@@ -5508,7 +5501,7 @@ font-size: 14px</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>481</height>
+             <height>401</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -5524,7 +5517,7 @@ font-size: 14px</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>479</height>
+              <height>399</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_87">
@@ -5533,7 +5526,7 @@ font-size: 14px</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>401</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_73"/>
@@ -5548,7 +5541,7 @@ font-size: 14px</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>481</height>
+             <height>401</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -5564,7 +5557,7 @@ font-size: 14px</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>479</height>
+              <height>399</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_88">
@@ -5573,7 +5566,7 @@ font-size: 14px</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>401</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_74"/>
@@ -5588,7 +5581,7 @@ font-size: 14px</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>481</height>
+             <height>401</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -5604,16 +5597,16 @@ font-size: 14px</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>479</height>
+              <height>399</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_89">
              <property name="geometry">
               <rect>
-               <x>-10</x>
+               <x>0</x>
                <y>0</y>
-               <width>781</width>
-               <height>481</height>
+               <width>771</width>
+               <height>401</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_75"/>
@@ -5628,7 +5621,7 @@ font-size: 14px</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>481</height>
+             <height>401</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -5644,7 +5637,7 @@ font-size: 14px</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>479</height>
+              <height>399</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_90">
@@ -5653,7 +5646,7 @@ font-size: 14px</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>401</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_76"/>
@@ -5668,7 +5661,7 @@ font-size: 14px</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>481</height>
+             <height>401</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -5684,7 +5677,7 @@ font-size: 14px</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>479</height>
+              <height>399</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_91">
@@ -5693,7 +5686,7 @@ font-size: 14px</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>401</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_77"/>
@@ -5708,7 +5701,7 @@ font-size: 14px</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>481</height>
+             <height>401</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -5724,7 +5717,7 @@ font-size: 14px</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>479</height>
+              <height>399</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_92">
@@ -5733,7 +5726,7 @@ font-size: 14px</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>401</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_78"/>
@@ -5748,7 +5741,7 @@ font-size: 14px</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>481</height>
+             <height>401</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -5764,7 +5757,7 @@ font-size: 14px</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>479</height>
+              <height>399</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_93">
@@ -5773,7 +5766,7 @@ font-size: 14px</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>401</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_79"/>
@@ -5788,7 +5781,7 @@ font-size: 14px</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>481</height>
+             <height>401</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -5804,7 +5797,7 @@ font-size: 14px</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>479</height>
+              <height>399</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_94">
@@ -5813,7 +5806,7 @@ font-size: 14px</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>401</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_80"/>
@@ -5828,7 +5821,7 @@ font-size: 14px</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>481</height>
+             <height>401</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -5844,7 +5837,7 @@ font-size: 14px</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>479</height>
+              <height>399</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_95">
@@ -5853,7 +5846,7 @@ font-size: 14px</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>401</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_81"/>
@@ -5868,7 +5861,7 @@ font-size: 14px</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>481</height>
+             <height>401</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -5884,7 +5877,7 @@ font-size: 14px</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>479</height>
+              <height>399</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_96">
@@ -5893,7 +5886,7 @@ font-size: 14px</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>401</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_82"/>
@@ -5908,7 +5901,7 @@ font-size: 14px</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>481</height>
+             <height>401</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -5924,7 +5917,7 @@ font-size: 14px</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>479</height>
+              <height>399</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_97">
@@ -5933,7 +5926,7 @@ font-size: 14px</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>401</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_83"/>
@@ -5948,7 +5941,7 @@ font-size: 14px</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>481</height>
+             <height>401</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -5964,7 +5957,7 @@ font-size: 14px</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>479</height>
+              <height>399</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_98">
@@ -5973,7 +5966,7 @@ font-size: 14px</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>401</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_84"/>
@@ -5988,7 +5981,7 @@ font-size: 14px</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>481</height>
+             <height>401</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -6004,7 +5997,7 @@ font-size: 14px</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>479</height>
+              <height>399</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_99">
@@ -6013,7 +6006,7 @@ font-size: 14px</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>401</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_85"/>
@@ -6028,7 +6021,7 @@ font-size: 14px</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>481</height>
+             <height>401</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -6044,7 +6037,7 @@ font-size: 14px</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>479</height>
+              <height>399</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_100">
@@ -6053,7 +6046,7 @@ font-size: 14px</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>401</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_86"/>
@@ -6068,7 +6061,7 @@ font-size: 14px</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>481</height>
+             <height>401</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -6084,7 +6077,7 @@ font-size: 14px</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>479</height>
+              <height>399</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_101">
@@ -6093,7 +6086,7 @@ font-size: 14px</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>401</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_87"/>
@@ -6108,7 +6101,7 @@ font-size: 14px</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>481</height>
+             <height>401</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -6124,7 +6117,7 @@ font-size: 14px</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>479</height>
+              <height>399</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_102">
@@ -6133,7 +6126,7 @@ font-size: 14px</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>401</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_88"/>
@@ -6148,7 +6141,7 @@ font-size: 14px</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>481</height>
+             <height>401</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -6164,7 +6157,7 @@ font-size: 14px</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>479</height>
+              <height>399</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_103">
@@ -6173,7 +6166,7 @@ font-size: 14px</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>401</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_89"/>
@@ -6188,7 +6181,7 @@ font-size: 14px</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>481</height>
+             <height>401</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -6204,7 +6197,7 @@ font-size: 14px</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>479</height>
+              <height>399</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_104">
@@ -6213,7 +6206,7 @@ font-size: 14px</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>401</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_90"/>
@@ -6228,7 +6221,7 @@ font-size: 14px</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>481</height>
+             <height>401</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -6244,7 +6237,7 @@ font-size: 14px</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>479</height>
+              <height>399</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_105">
@@ -6253,7 +6246,7 @@ font-size: 14px</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>401</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_91"/>
@@ -6268,7 +6261,7 @@ font-size: 14px</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>481</height>
+             <height>401</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -6284,7 +6277,7 @@ font-size: 14px</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>479</height>
+              <height>399</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_106">
@@ -6293,7 +6286,7 @@ font-size: 14px</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>401</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_92"/>
@@ -6308,7 +6301,7 @@ font-size: 14px</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>481</height>
+             <height>401</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -6324,7 +6317,7 @@ font-size: 14px</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>479</height>
+              <height>399</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_107">
@@ -6333,7 +6326,7 @@ font-size: 14px</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>401</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_93"/>
@@ -6348,7 +6341,7 @@ font-size: 14px</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>481</height>
+             <height>401</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -6364,7 +6357,7 @@ font-size: 14px</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>479</height>
+              <height>399</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_108">
@@ -6373,7 +6366,7 @@ font-size: 14px</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>401</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_94"/>
@@ -6388,7 +6381,7 @@ font-size: 14px</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>481</height>
+             <height>401</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -6404,7 +6397,7 @@ font-size: 14px</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>479</height>
+              <height>399</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_109">
@@ -6413,7 +6406,7 @@ font-size: 14px</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>401</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_95"/>
@@ -6428,7 +6421,7 @@ font-size: 14px</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>481</height>
+             <height>401</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -6444,7 +6437,7 @@ font-size: 14px</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>479</height>
+              <height>399</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_110">
@@ -6453,7 +6446,7 @@ font-size: 14px</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>401</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_96"/>
@@ -6468,7 +6461,7 @@ font-size: 14px</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>481</height>
+             <height>401</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -6484,7 +6477,7 @@ font-size: 14px</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>479</height>
+              <height>399</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_111">
@@ -6493,7 +6486,7 @@ font-size: 14px</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>401</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_97"/>
@@ -6508,7 +6501,7 @@ font-size: 14px</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>481</height>
+             <height>401</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -6524,7 +6517,7 @@ font-size: 14px</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>479</height>
+              <height>399</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_112">
@@ -6533,7 +6526,7 @@ font-size: 14px</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>401</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_98"/>
@@ -6548,7 +6541,7 @@ font-size: 14px</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>481</height>
+             <height>401</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -6564,7 +6557,7 @@ font-size: 14px</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>479</height>
+              <height>399</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_113">
@@ -6573,7 +6566,7 @@ font-size: 14px</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>401</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_99"/>
@@ -6588,7 +6581,7 @@ font-size: 14px</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>481</height>
+             <height>401</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -6604,7 +6597,7 @@ font-size: 14px</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>479</height>
+              <height>399</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_114">
@@ -6613,7 +6606,7 @@ font-size: 14px</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>401</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_100"/>
@@ -6628,7 +6621,7 @@ font-size: 14px</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>481</height>
+             <height>401</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -6644,7 +6637,7 @@ font-size: 14px</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>479</height>
+              <height>399</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_115">
@@ -6653,7 +6646,7 @@ font-size: 14px</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>401</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_101"/>
@@ -6668,7 +6661,7 @@ font-size: 14px</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>481</height>
+             <height>401</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -6684,7 +6677,7 @@ font-size: 14px</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>479</height>
+              <height>399</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_116">
@@ -6693,7 +6686,7 @@ font-size: 14px</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>401</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_102"/>
@@ -6708,7 +6701,7 @@ font-size: 14px</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>481</height>
+             <height>401</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -6724,7 +6717,7 @@ font-size: 14px</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>479</height>
+              <height>399</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_117">
@@ -6733,7 +6726,7 @@ font-size: 14px</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>401</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_103"/>
@@ -6748,7 +6741,7 @@ font-size: 14px</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>481</height>
+             <height>401</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -6764,7 +6757,7 @@ font-size: 14px</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>479</height>
+              <height>399</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_118">
@@ -6773,7 +6766,7 @@ font-size: 14px</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>401</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_104"/>
@@ -6788,7 +6781,7 @@ font-size: 14px</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>481</height>
+             <height>401</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -6804,7 +6797,7 @@ font-size: 14px</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>479</height>
+              <height>399</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_119">
@@ -6813,7 +6806,7 @@ font-size: 14px</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>401</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_105"/>
@@ -6828,7 +6821,7 @@ font-size: 14px</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>481</height>
+             <height>401</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -6844,7 +6837,7 @@ font-size: 14px</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>479</height>
+              <height>399</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_120">
@@ -6853,7 +6846,7 @@ font-size: 14px</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>401</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_106"/>
@@ -6868,7 +6861,7 @@ font-size: 14px</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>481</height>
+             <height>401</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -6884,7 +6877,7 @@ font-size: 14px</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>479</height>
+              <height>399</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_121">
@@ -6893,7 +6886,7 @@ font-size: 14px</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>401</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_107"/>
@@ -6908,7 +6901,7 @@ font-size: 14px</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>481</height>
+             <height>401</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -6924,7 +6917,7 @@ font-size: 14px</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>479</height>
+              <height>399</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_122">
@@ -6933,7 +6926,7 @@ font-size: 14px</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>401</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_108"/>
@@ -6948,7 +6941,7 @@ font-size: 14px</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>481</height>
+             <height>401</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -6964,7 +6957,7 @@ font-size: 14px</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>479</height>
+              <height>399</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_123">
@@ -6973,7 +6966,7 @@ font-size: 14px</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>401</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_109"/>
@@ -6988,7 +6981,7 @@ font-size: 14px</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>481</height>
+             <height>401</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -7004,7 +6997,7 @@ font-size: 14px</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>479</height>
+              <height>399</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_124">
@@ -7013,7 +7006,7 @@ font-size: 14px</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>401</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_110"/>
@@ -7028,7 +7021,7 @@ font-size: 14px</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>481</height>
+             <height>401</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -7044,7 +7037,7 @@ font-size: 14px</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>479</height>
+              <height>399</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_125">
@@ -7053,7 +7046,7 @@ font-size: 14px</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>401</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_111"/>
@@ -7068,7 +7061,7 @@ font-size: 14px</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>481</height>
+             <height>401</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -7084,7 +7077,7 @@ font-size: 14px</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>479</height>
+              <height>399</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_126">
@@ -7093,7 +7086,7 @@ font-size: 14px</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>401</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_112"/>
@@ -7108,7 +7101,7 @@ font-size: 14px</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>481</height>
+             <height>401</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -7124,7 +7117,7 @@ font-size: 14px</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>479</height>
+              <height>399</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_127">
@@ -7133,7 +7126,7 @@ font-size: 14px</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>401</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_113"/>
@@ -7148,7 +7141,7 @@ font-size: 14px</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>481</height>
+             <height>401</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -7164,7 +7157,7 @@ font-size: 14px</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>479</height>
+              <height>399</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_128">
@@ -7173,7 +7166,7 @@ font-size: 14px</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>401</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_114"/>
@@ -7188,7 +7181,7 @@ font-size: 14px</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>481</height>
+             <height>401</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -7204,7 +7197,7 @@ font-size: 14px</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>479</height>
+              <height>399</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_129">
@@ -7213,7 +7206,7 @@ font-size: 14px</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>401</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_115"/>
@@ -7228,7 +7221,7 @@ font-size: 14px</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>481</height>
+             <height>401</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -7244,7 +7237,7 @@ font-size: 14px</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>479</height>
+              <height>399</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_130">
@@ -7253,7 +7246,7 @@ font-size: 14px</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>401</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_116"/>
@@ -7268,7 +7261,7 @@ font-size: 14px</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>481</height>
+             <height>401</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -7284,7 +7277,7 @@ font-size: 14px</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>479</height>
+              <height>399</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_131">
@@ -7293,7 +7286,7 @@ font-size: 14px</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>401</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_117"/>
@@ -7308,7 +7301,7 @@ font-size: 14px</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>481</height>
+             <height>401</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -7324,7 +7317,7 @@ font-size: 14px</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>479</height>
+              <height>399</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_132">
@@ -7333,7 +7326,7 @@ font-size: 14px</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>401</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_118"/>
@@ -7348,7 +7341,7 @@ font-size: 14px</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>481</height>
+             <height>401</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -7364,7 +7357,7 @@ font-size: 14px</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>479</height>
+              <height>399</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_133">
@@ -7373,7 +7366,7 @@ font-size: 14px</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>401</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_119"/>
@@ -7388,7 +7381,7 @@ font-size: 14px</string>
              <x>0</x>
              <y>0</y>
              <width>771</width>
-             <height>481</height>
+             <height>401</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -7404,7 +7397,7 @@ font-size: 14px</string>
               <x>0</x>
               <y>0</y>
               <width>769</width>
-              <height>479</height>
+              <height>399</height>
              </rect>
             </property>
             <widget class="QWidget" name="gridLayoutWidget_134">
@@ -7413,7 +7406,7 @@ font-size: 14px</string>
                <x>0</x>
                <y>0</y>
                <width>771</width>
-               <height>481</height>
+               <height>401</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridSnacks_120"/>
@@ -7425,9 +7418,9 @@ font-size: 14px</string>
         <widget class="QWidget" name="layoutWidget_2">
          <property name="geometry">
           <rect>
-           <x>340</x>
+           <x>300</x>
            <y>10</y>
-           <width>1081</width>
+           <width>941</width>
            <height>221</height>
           </rect>
          </property>
@@ -7488,7 +7481,7 @@ font-size: 14px</string>
              <string notr="true"/>
             </property>
             <property name="text">
-             <string>خيوط كلير</string>
+             <string>خيوط كليم</string>
             </property>
            </widget>
           </item>
@@ -8037,20 +8030,52 @@ font-size: 14px</string>
        </widget>
       </widget>
      </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>1260</x>
+      <y>0</y>
+      <width>101</width>
+      <height>641</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_2" stretch="0,0,0,0,0">
+     <property name="sizeConstraint">
+      <enum>QLayout::SetDefaultConstraint</enum>
+     </property>
      <item>
-      <layout class="QVBoxLayout" name="verticalLayout_2" stretch="0,0,0,0,0">
-       <property name="sizeConstraint">
-        <enum>QLayout::SetDefaultConstraint</enum>
+      <widget class="QPushButton" name="go_to_admin_form">
+       <property name="text">
+        <string>صفحة الأدمن</string>
        </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="verticalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout">
        <item>
-        <widget class="QPushButton" name="go_to_admin_form">
+        <widget class="QPushButton" name="go_back">
          <property name="text">
-          <string>صفحة الأدمن</string>
+          <string>الصفحة الرئيسية</string>
          </property>
         </widget>
        </item>
        <item>
-        <spacer name="verticalSpacer_2">
+        <spacer name="verticalSpacer_5">
          <property name="orientation">
           <enum>Qt::Vertical</enum>
          </property>
@@ -8063,97 +8088,73 @@ font-size: 14px</string>
         </spacer>
        </item>
        <item>
-        <layout class="QVBoxLayout" name="verticalLayout">
-         <item>
-          <widget class="QPushButton" name="go_back">
-           <property name="text">
-            <string>الصفحة الرئيسية</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <spacer name="verticalSpacer_5">
-           <property name="orientation">
-            <enum>Qt::Vertical</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>20</width>
-             <height>40</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item>
-          <widget class="QPushButton" name="gotoproducts">
-           <property name="text">
-            <string>قائمة السلع</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <spacer name="verticalSpacer_6">
-           <property name="orientation">
-            <enum>Qt::Vertical</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>20</width>
-             <height>40</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item>
-          <widget class="QPushButton" name="customers">
-           <property name="text">
-            <string>قائمة العملاء</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <spacer name="verticalSpacer_7">
-           <property name="orientation">
-            <enum>Qt::Vertical</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>20</width>
-             <height>40</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item>
-          <widget class="QPushButton" name="AddNewCustomer">
-           <property name="text">
-            <string>إضافة عميل</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <spacer name="verticalSpacer_3">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>40</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item>
-        <widget class="QPushButton" name="logout">
+        <widget class="QPushButton" name="gotoproducts">
          <property name="text">
-          <string>تسجيل الخروج</string>
+          <string>قائمة السلع</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_6">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="customers">
+         <property name="text">
+          <string>قائمة العملاء</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_7">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="AddNewCustomer">
+         <property name="text">
+          <string>إضافة عميل</string>
          </property>
         </widget>
        </item>
       </layout>
+     </item>
+     <item>
+      <spacer name="verticalSpacer_3">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="logout">
+       <property name="text">
+        <string>تسجيل الخروج</string>
+       </property>
+      </widget>
      </item>
     </layout>
    </widget>
@@ -8163,7 +8164,7 @@ font-size: 14px</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1535</width>
+     <width>1366</width>
      <height>22</height>
     </rect>
    </property>

@@ -99,10 +99,10 @@ void cashRegisterSystem::populateProductList(QWidget* scrollContents, QGridLayou
     int horizontalItems = 0;
     QLabel* nameLabel;
     QVector<QPushButton*> add_button;
-    QSpinBox* quantityBox;
+    QDoubleSpinBox* quantityBox;
     int i = 0;
     while (sqlite3_step(stmt) == SQLITE_ROW) {
-        int quantity = sqlite3_column_int(stmt, 1);
+        double quantity = sqlite3_column_double(stmt, 1);
         const char* name = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 0));
         const char* price = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 2));
         QFrame* frame = new QFrame;
@@ -117,7 +117,7 @@ void cashRegisterSystem::populateProductList(QWidget* scrollContents, QGridLayou
         add_button.push_back(new QPushButton("Add To Cart!"));
         //add_button.back()->setStyleSheet("QPushButton { border: none; }");
 
-        quantityBox = new QSpinBox();
+        quantityBox = new QDoubleSpinBox();
         QLabel* lab = new QLabel(QString("Price: %1").arg(QString::fromUtf8(price)));
         lab->setStyleSheet("border: none; font-size:16px;");
 
@@ -126,7 +126,7 @@ void cashRegisterSystem::populateProductList(QWidget* scrollContents, QGridLayou
         //Creating horizontal line with desired properties...
         //Setting up the pushbutton with the on-hover changes...
         add_button.back()->setObjectName("btnName_1");
-        quantityBox->setValue(1);
+        quantityBox->setValue(1.00f);
         lab->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
         //Setting up quantityBox proberties
         quantityBox->setObjectName("quantityBox_1");

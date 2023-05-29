@@ -35,7 +35,7 @@ void cashRegisterSystem::on_cat_4_clicked() {
 
 void cashRegisterSystem::on_cat_5_clicked() {
 	if (!m_loadedOnce[4]) {
-		populateProductList(m_ui->scrollAreaSnacksContents_6, m_ui->gridSnacks_6, "خيوط كلير", m_ui->cartVerticalLayout, m_ui->price_before, m_ui->price_after, m_ui->scrollArea_9, m_ui->check_discount, m_ui->phone_number);
+		populateProductList(m_ui->scrollAreaSnacksContents_6, m_ui->gridSnacks_6, "خيوط كليم", m_ui->cartVerticalLayout, m_ui->price_before, m_ui->price_after, m_ui->scrollArea_9, m_ui->check_discount, m_ui->phone_number);
 		m_loadedOnce[4] = true;
 	}
 	m_ui->ProductsStackedWidget->setCurrentIndex(4);
@@ -75,7 +75,7 @@ void cashRegisterSystem::on_cat_9_clicked() {
 
 void cashRegisterSystem::on_cat_10_clicked() {
 	if (!m_loadedOnce[9]) {
-		populateProductList(m_ui->scrollAreaSnacksContents_12, m_ui->gridSnacks_12, "كنفاة صيفي", m_ui->cartVerticalLayout, m_ui->price_before, m_ui->price_after, m_ui->scrollArea_9, m_ui->check_discount, m_ui->phone_number);
+		populateProductList(m_ui->scrollAreaSnacksContents_12, m_ui->gridSnacks_12, "كنفاة صيني", m_ui->cartVerticalLayout, m_ui->price_before, m_ui->price_after, m_ui->scrollArea_9, m_ui->check_discount, m_ui->phone_number);
 		m_loadedOnce[9] = true;
 	}
 	m_ui->ProductsStackedWidget->setCurrentIndex(9);
@@ -155,7 +155,7 @@ void cashRegisterSystem::on_cat_19_clicked() {
 
 void cashRegisterSystem::on_cat_20_clicked() {
 	if (!m_loadedOnce[19]) {
-		populateProductList(m_ui->scrollAreaSnacksContents_24, m_ui->gridSnacks_24, "مدعات الكروشية و التركو", m_ui->cartVerticalLayout, m_ui->price_before, m_ui->price_after, m_ui->scrollArea_9, m_ui->check_discount, m_ui->phone_number);
+		populateProductList(m_ui->scrollAreaSnacksContents_24, m_ui->gridSnacks_24, "معدات الكروشية و التركو", m_ui->cartVerticalLayout, m_ui->price_before, m_ui->price_after, m_ui->scrollArea_9, m_ui->check_discount, m_ui->phone_number);
 		m_loadedOnce[19] = true;
 	}
 	m_ui->ProductsStackedWidget->setCurrentIndex(19);

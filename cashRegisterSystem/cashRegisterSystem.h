@@ -81,7 +81,7 @@ private:
     void clear_grid_layout(QGridLayout*);
     void clear_vertical_layout(QVBoxLayout*);
 private slots:
-    void on_name_button_clicked(int, QString, float, QVBoxLayout*, QLabel*, QLabel*, QScrollArea*, QPushButton*, QLineEdit*);
+    void on_name_button_clicked(double, QString, float, QVBoxLayout*, QLabel*, QLabel*, QScrollArea*, QPushButton*, QLineEdit*);
     //user
     void on_cat_1_clicked();
     void on_cat_2_clicked();

@@ -143,7 +143,7 @@ void cashRegisterSystem::Delete_On_Click(QPushButton* del, float totalPrice, QSt
 
 }
 
-void cashRegisterSystem::on_name_button_clicked(int quantity, QString name, float pricePerEach,
+void cashRegisterSystem::on_name_button_clicked(double quantity, QString name, float pricePerEach,
     QVBoxLayout* cartVerticalLayout, QLabel* priceBefore, QLabel* priceAfter,
     QScrollArea* cartScrollArea, QPushButton* checkButton, QLineEdit* phoneNumberField)
 {

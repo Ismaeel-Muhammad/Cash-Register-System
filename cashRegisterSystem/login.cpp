@@ -3,7 +3,7 @@ void cashRegisterSystem::on_login_btn_clicked()
 {
     QString name = cashRegisterSystem::m_ui->username_field->text();
     QString password = m_ui->password_field->text();
-    if (name == "admin" && password == "admin") {
+    if (name == "admin" && password == "752510") {
         QMessageBox::information(this, "Login", "Welcome Admin!");
         isAdmin = true;
         m_ui->formsStackedWidget->setCurrentIndex(6);
@@ -15,7 +15,7 @@ void cashRegisterSystem::on_login_btn_clicked()
         m_ui->logout->setHidden(false);
         m_ui->go_to_admin_form->setHidden(false);
     }
-    else if (name == "user" && password == "user")
+    else if (name == "user" && password == "55555")
     {
         QMessageBox::information(this, "Login", "Welcome USER!");
         isAdmin = false;

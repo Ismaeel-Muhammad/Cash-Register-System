@@ -35,7 +35,7 @@ void cashRegisterSystem::on_cat_1_4_clicked() {
 
 void cashRegisterSystem::on_cat_1_5_clicked() {
 	if (!m_loadedOnce[4]) {
-		populateProductList(m_ui->scrollAreaSnacksContents_65, m_ui->gridSnacks_65, "خيوط كلير", m_ui->cartVerticalLayout_4, m_ui->price_before_4, m_ui->price_after_4, m_ui->scrollArea_12, m_ui->check_discount_4, m_ui->phone_number_4);
+		populateProductList(m_ui->scrollAreaSnacksContents_65, m_ui->gridSnacks_65, "خيوط كليم", m_ui->cartVerticalLayout_4, m_ui->price_before_4, m_ui->price_after_4, m_ui->scrollArea_12, m_ui->check_discount_4, m_ui->phone_number_4);
 		m_loadedOnce[4] = true;
 	}
 	m_ui->ProductsStackedWidget_2->setCurrentIndex(4);
@@ -75,7 +75,7 @@ void cashRegisterSystem::on_cat_1_9_clicked() {
 
 void cashRegisterSystem::on_cat_1_10_clicked() {
 	if (!m_loadedOnce[9]) {
-		populateProductList(m_ui->scrollAreaSnacksContents_70, m_ui->gridSnacks_70, "كنفاة صيفي", m_ui->cartVerticalLayout_4, m_ui->price_before_4, m_ui->price_after_4, m_ui->scrollArea_12, m_ui->check_discount_4, m_ui->phone_number_4);
+		populateProductList(m_ui->scrollAreaSnacksContents_70, m_ui->gridSnacks_70, "كنفاة صيني", m_ui->cartVerticalLayout_4, m_ui->price_before_4, m_ui->price_after_4, m_ui->scrollArea_12, m_ui->check_discount_4, m_ui->phone_number_4);
 		m_loadedOnce[9] = true;
 	}
 	m_ui->ProductsStackedWidget_2->setCurrentIndex(9);
@@ -155,7 +155,7 @@ void cashRegisterSystem::on_cat_1_19_clicked() {
 
 void cashRegisterSystem::on_cat_1_20_clicked() {
 	if (!m_loadedOnce[19]) {
-		populateProductList(m_ui->scrollAreaSnacksContents_80, m_ui->gridSnacks_80, "مدعات الكروشية و التركو", m_ui->cartVerticalLayout_4, m_ui->price_before_4, m_ui->price_after_4, m_ui->scrollArea_12, m_ui->check_discount_4, m_ui->phone_number_4);
+		populateProductList(m_ui->scrollAreaSnacksContents_80, m_ui->gridSnacks_80, "معدات الكروشية و التركو", m_ui->cartVerticalLayout_4, m_ui->price_before_4, m_ui->price_after_4, m_ui->scrollArea_12, m_ui->check_discount_4, m_ui->phone_number_4);
 		m_loadedOnce[19] = true;
 	}
 	m_ui->ProductsStackedWidget_2->setCurrentIndex(19);

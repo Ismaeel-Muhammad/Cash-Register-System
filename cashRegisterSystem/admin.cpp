@@ -9,6 +9,7 @@ void cashRegisterSystem::on_add_item_clicked() {
 	string type = m_ui->item_type_item->currentText().toUtf8().constData();
 	db.insertProdRows(Items_Names, Items_Prices, Quantity, type);
     m_ui->item_name_quantity->addItem(QString::fromUtf8(Items_Names));
+    m_ui->item_name_price->addItem(QString::fromUtf8(Items_Names));
 	QMessageBox msg;
 	msg.setText("\u0639\u0645\u0644\u064A\u0629 \u0646\u0627\u062C\u062D\u0629");
 	msg.exec();
@@ -24,8 +25,12 @@ void cashRegisterSystem::on_remove_item_clicked() {
     string Items_Names = m_ui->item_name_item->toPlainText().toUtf8().constData();
     db.DeleteProdRow(Items_Names);
     int index = m_ui->item_name_quantity->findText(QString::fromUtf8(Items_Names)); // find the index of the item
-    if (index != -1) 
+    int index2 = m_ui->item_name_price->findText(QString::fromUtf8(Items_Names)); // find the index of the item
+    if (index != -1 && index2 != -1)
+    {
         m_ui->item_name_quantity->removeItem(index); // remove the item by index
+        m_ui->item_name_price->removeItem(index2); // remove the item by index
+    }
     QMessageBox msg;
     msg.setText("\u062a\u0645 \u0627\u0644\u062d\u0630\u0641 \u0628\u0646\u062c\u0627\u062d");
     msg.exec();
