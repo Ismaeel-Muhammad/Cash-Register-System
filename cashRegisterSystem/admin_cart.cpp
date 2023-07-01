@@ -1,21 +1,21 @@
 #include "cashRegisterSystem.h"
 
-float cashRegisterSystem::on_check_discount_4_clicked(float price) {
-    return check_discount(m_ui->price_after_4, m_ui->price_before_4, m_ui->check_discount_4,m_ui->phone_number_4,price);
+float cashRegisterSystem::on_admin_check_discount_clicked(float price) {
+    return check_discount(m_ui->admin_price_after, m_ui->admin_price_before, m_ui->admin_check_discount,m_ui->admin_phone_number,price);
 }
 
-void cashRegisterSystem::on_cancel_order_4_clicked()
+void cashRegisterSystem::on_admin_cancel_order_clicked()
 {
-    DeleteAll(m_ui->price_before_4, m_ui->price_after_4, m_ui->check_discount_4, m_ui->phone_number_4, m_ui->cartContents_4);
+    DeleteAll(m_ui->admin_price_before, m_ui->admin_price_after, m_ui->admin_check_discount, m_ui->admin_phone_number, m_ui->admin_cart_contents);
 }
 
-void cashRegisterSystem::on_sell_4_clicked()
+void cashRegisterSystem::on_admin_sell_clicked()
 {
-    const QString phoneNumber = m_ui->phone_number_4->text();
+    const QString phoneNumber = m_ui->admin_phone_number->text();
     Database* db = new Database("mydatabase.db");
     QString customerClass = "";
     if (db->checkPhoneNumber(phoneNumber.toStdString(), customerClass)) {
-        payOperation('+', m_ui->price_before_4, m_ui->price_after_4, m_ui->check_discount_4, m_ui->phone_number_4, m_ui->cartContents_4);
+        payOperation('+', m_ui->admin_price_before, m_ui->admin_price_after, m_ui->admin_check_discount, m_ui->admin_phone_number, m_ui->admin_cart_contents);
     }
     else {
         // No match found in the database
@@ -32,13 +32,13 @@ void cashRegisterSystem::on_sell_4_clicked()
     }
 }
 
-void cashRegisterSystem::on_retrieve_4_clicked()
+void cashRegisterSystem::on_admin_retrieve_clicked()
 {
-    const QString phoneNumber = m_ui->phone_number_4->text();
+    const QString phoneNumber = m_ui->admin_phone_number->text();
     Database* db = new Database("mydatabase.db");
     QString customerClass = "";
     if (db->checkPhoneNumber(phoneNumber.toStdString(), customerClass)) {
-        payOperation('-', m_ui->price_before_4, m_ui->price_after_4, m_ui->check_discount_4, m_ui->phone_number_4, m_ui->cartContents_4);
+        payOperation('-', m_ui->admin_price_before, m_ui->admin_price_after, m_ui->admin_check_discount, m_ui->admin_phone_number, m_ui->admin_cart_contents);
     }
     else {
         // No match found in the database
@@ -53,9 +53,4 @@ void cashRegisterSystem::on_retrieve_4_clicked()
             m_ui->new_customer_phone->setText(phoneNumber);
         }
     }
-}
-
-void cashRegisterSystem::on_go_to_admin_form_clicked() {
-    m_ui->formsStackedWidget->setCurrentIndex(2);
-    m_ui->opType->setCurrentIndex(0);
 }

@@ -1,21 +1,21 @@
 ﻿#include "cashRegisterSystem.h"
 
-float cashRegisterSystem::on_check_discount_clicked(float price) {
-    return check_discount(m_ui->price_after, m_ui->price_before, m_ui->check_discount, m_ui->phone_number, price);
+float cashRegisterSystem::on_user_check_discount_clicked(float price) {
+    return check_discount(m_ui->user_price_after, m_ui->user_price_before, m_ui->user_check_discount, m_ui->user_phone_number, price);
 }
 
-void cashRegisterSystem::on_cancel_order_clicked()
+void cashRegisterSystem::on_user_cancel_order_clicked()
 {
-    DeleteAll(m_ui->price_before, m_ui->price_after, m_ui->check_discount, m_ui->phone_number, m_ui->cartContents);
+    DeleteAll(m_ui->user_price_before, m_ui->user_price_after, m_ui->user_check_discount, m_ui->user_phone_number, m_ui->user_cart_contents);
 }
 
-void cashRegisterSystem::on_sell_clicked()
+void cashRegisterSystem::on_user_sell_clicked()
 {
-    const QString phoneNumber = m_ui->phone_number->text();
+    const QString phoneNumber = m_ui->user_phone_number->text();
     Database* db = new Database("mydatabase.db");
     QString customerClass = "";
     if (db->checkPhoneNumber(phoneNumber.toStdString(), customerClass)) {
-        payOperation('+', m_ui->price_before, m_ui->price_after, m_ui->check_discount, m_ui->phone_number, m_ui->cartContents);
+        payOperation('+', m_ui->user_price_before, m_ui->user_price_after, m_ui->user_check_discount, m_ui->user_phone_number, m_ui->user_cart_contents);
     }
     else {
         // No match found in the database
@@ -32,13 +32,13 @@ void cashRegisterSystem::on_sell_clicked()
     }
 }
 
-void cashRegisterSystem::on_retrieve_clicked()
+void cashRegisterSystem::on_user_retrieve_clicked()
 {
-    const QString phoneNumber = m_ui->phone_number->text();
+    const QString phoneNumber = m_ui->user_phone_number->text();
     Database* db = new Database("mydatabase.db");
     QString customerClass = "";
     if (db->checkPhoneNumber(phoneNumber.toStdString(), customerClass)) {
-        payOperation('-', m_ui->price_before, m_ui->price_after, m_ui->check_discount, m_ui->phone_number, m_ui->cartContents);
+        payOperation('-', m_ui->user_price_before, m_ui->user_price_after, m_ui->user_check_discount, m_ui->user_phone_number, m_ui->user_cart_contents);
     }
     else {
         // No match found in the database

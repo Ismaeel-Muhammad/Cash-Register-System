@@ -70,10 +70,7 @@
     <ClCompile Include="cart.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="cash_user.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="cash_admin.cpp">
+    <ClCompile Include="navigationBar.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

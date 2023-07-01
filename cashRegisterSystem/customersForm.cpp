@@ -1,12 +1,5 @@
 ﻿#include "cashRegisterSystem.h"
 
-//void cashRegisterSystem::on_backFromCustomers_clicked() {
-//    if (isAdmin)
-//        m_ui->formsStackedWidget->setCurrentIndex(6);
-//    else
-//        m_ui->formsStackedWidget->setCurrentIndex(1);
-//}
-
 void cashRegisterSystem::on_Search_btn_clicked()
 {
     m_ui->tableView->model()->removeRows(0, m_ui->tableView->model()->rowCount());

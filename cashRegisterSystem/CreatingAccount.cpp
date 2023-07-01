@@ -27,11 +27,3 @@ void cashRegisterSystem::on_add_new_clicked()
     }
     m_ui->class_box->setCurrentIndex(0);
 }
-
-void cashRegisterSystem::on_go_back_clicked()
-{
-    if (isAdmin)
-        m_ui->formsStackedWidget->setCurrentIndex(6);
-    else
-        m_ui->formsStackedWidget->setCurrentIndex(1);
-}

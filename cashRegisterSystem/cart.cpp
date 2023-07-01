@@ -14,7 +14,7 @@ void cashRegisterSystem::payOperation(char type, QLabel* priceBefore, QLabel* pr
         
         // name, quantity, price
         float price = check_discount(priceAfter, priceBefore, checkButton, phoneNumberField, i.value().at(1).toFloat());
-        string operation_type = m_ui->order_type_cmb->currentText().toUtf8().constData();
+        string operation_type = m_ui->admin_order_type_cmb->currentText().toUtf8().constData();
         db.insertOrUpdateOperation(i.key().toStdString(), i.value().at(0).toInt(), price, operation_type, type);
     }
     DeleteAll(priceBefore, priceAfter, checkButton, phoneNumberField, cartContent);
@@ -24,6 +24,7 @@ void cashRegisterSystem::payOperation(char type, QLabel* priceBefore, QLabel* pr
 void cashRegisterSystem::DeleteAll(QLabel* priceBefore, QLabel* priceAfter,
     QPushButton* checkButton, QLineEdit* phoneNumberField,
     QWidget* cartContent) {
+
     QLayout* layout = cartContent->layout(); // Get the layout of the scroll area widget
     if (layout != nullptr) {
         QLayoutItem* child = nullptr;
@@ -35,7 +36,6 @@ void cashRegisterSystem::DeleteAll(QLabel* priceBefore, QLabel* priceAfter,
             }
             delete child;
         }
-        layout->addItem(new QSpacerItem(0, 20, QSizePolicy::Minimum, QSizePolicy::Expanding));  // Add a spacer item to the layout
     }
     myHash.clear();
     TotalBalanceForOperation = 0;
@@ -44,7 +44,7 @@ void cashRegisterSystem::DeleteAll(QLabel* priceBefore, QLabel* priceAfter,
     priceAfter->setText(QString::number(TotalBalanceForOperation));
     priceBefore->setText(QString::number(TotalBalanceForOperation));
     checkButton->setDisabled(false);
-    m_ui->order_type_cmb->setCurrentIndex(0);
+    m_ui->admin_order_type_cmb->setCurrentIndex(0);
     withDiscount = false;
 }
 
@@ -187,16 +187,17 @@ void cashRegisterSystem::on_name_button_clicked(double quantity, QString name, f
     }
 
     QSpacerItem* spacer = new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Minimum);
-    scrollLayout->insertItem(0,spacer);
-    scrollLayout->insertWidget(1,frame);
-    
+    scrollLayout->insertItem(0, spacer);
+    scrollLayout->insertWidget(1, frame);
+
     connect(Delete_button.back(), &QPushButton::clicked, [this, btn = Delete_button.back(), totalPrice, names, quantity, priceBefore, priceAfter,
         checkButton, phoneNumberField]() {
         Delete_On_Click(btn, totalPrice, names->text(), quantity, priceBefore, priceAfter,
             checkButton, phoneNumberField);
     });
 
-    if (i % 2 == 1) frame->setStyleSheet("QFrame{background-color:rgba(184, 184, 184, 255)}");
+    if (i % 2 == 1) frame->setStyleSheet("QFrame{background-color:rgba(185, 185, 190, 255)}");
+    if (i % 2 == 0) frame->setStyleSheet("QFrame{background-color:rgba(220, 220, 225, 255)}");
 
     i++;
 
