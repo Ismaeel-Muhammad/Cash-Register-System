@@ -41,39 +41,7 @@ cashRegisterSystem::cashRegisterSystem(QWidget* parent)
     m_ui->admin_phone_number->setValidator(validator);
     m_ui->user_phone_number->setValidator(validator);
     m_ui->formsStackedWidget->setCurrentIndex(0);
-}
 
-void cashRegisterSystem::onPageChanged(int index) {
-    if (index == 6) {
-        //clearProducts(m_ui->admin_products_scroll_area_content);
-
-        m_ui->admin_categories_list->setLayoutDirection(Qt::RightToLeft);
-        showCategoriesList(m_ui->admin_categories_list, m_ui->admin_products_scroll_area);
-        showAllProducts(m_ui->admin_productsVerticalLayout,m_ui->admin_cartVerticalLayout,m_ui->admin_price_before,m_ui->admin_price_after,m_ui->admin_cartScrollArea,m_ui->admin_check_discount,m_ui->admin_phone_number);
-    }
-    else if (index == 1) {
-        clearProducts(m_ui->user_products_scroll_area_content);
-
-        m_ui->user_categories_list->setLayoutDirection(Qt::RightToLeft);
-        showCategoriesList(m_ui->user_categories_list, m_ui->user_products_scroll_area);
-        showAllProducts(m_ui->user_productsVerticalLayout, m_ui->user_cartVerticalLayout, m_ui->user_price_before, m_ui->user_price_after, m_ui->user_cartScrollArea, m_ui->user_check_discount, m_ui->user_phone_number);
-        
-    }
-}
-
-void cashRegisterSystem::clearProducts(QWidget* scrollAreaContent) {
-    QLayout* layout = scrollAreaContent->layout(); // Get the layout of the widget
-    if (layout != nullptr) {
-        QLayoutItem* child = nullptr;
-        while ((child = layout->takeAt(0)) != nullptr) {
-            QWidget* widget = child->widget();
-            if (widget) {
-                layout->removeWidget(widget);
-                delete widget;
-            }
-            delete child;
-        }
-    }
 }
 
 cashRegisterSystem::~cashRegisterSystem()
@@ -81,27 +49,25 @@ cashRegisterSystem::~cashRegisterSystem()
     delete m_ui;
 }
 
-void cashRegisterSystem::clear_grid_layout(QGridLayout* grid) {
-    QLayout* layout = grid->layout();
-    QLayoutItem* child = nullptr;
-    while ((child = layout->takeAt(0)) != nullptr) {
-        QWidget* widget = child->widget();
-        if (widget) {
-            layout->removeWidget(widget);
-            delete widget;
-        }
-        delete child;
+
+void cashRegisterSystem::onPageChanged(int index) {
+    if (index == 6) {
+        m_ui->admin_categories_list->setLayoutDirection(Qt::RightToLeft);
+        showCategoriesList(m_ui->admin_categories_list, m_ui->admin_products_scroll_area);
+        showAllProducts(m_ui->admin_products_scroll_area,m_ui->admin_products_scroll_area_content, m_ui->admin_productsVerticalLayout,m_ui->admin_cartVerticalLayout,m_ui->admin_price_before,m_ui->admin_price_after,m_ui->admin_cartScrollArea,m_ui->admin_check_discount,m_ui->admin_phone_number);
+    }
+    else if (index == 1) {
+        m_ui->user_categories_list->setLayoutDirection(Qt::RightToLeft);
+        showCategoriesList(m_ui->user_categories_list, m_ui->user_products_scroll_area);
+        showAllProducts(m_ui->user_products_scroll_area ,m_ui->user_products_scroll_area_content, m_ui->user_productsVerticalLayout, m_ui->user_cartVerticalLayout, m_ui->user_price_before, m_ui->user_price_after, m_ui->user_cartScrollArea, m_ui->user_check_discount, m_ui->user_phone_number);
     }
 }
 
-void cashRegisterSystem::populateProductList(QVBoxLayout* productsVerticalLayout, QLabel* productType,
+void cashRegisterSystem::populateProductList(QScrollArea* ProductsScrollArea ,QWidget* ProductsScrollContents, QVBoxLayout* productsVerticalLayout, QLabel* productType,
     QVBoxLayout* cartVerticalLayout, QLabel* priceBefore, QLabel* priceAfter,
     QScrollArea* cartScrollArea, QPushButton* checkButton,
     QLineEdit* phoneNumberField)
 {
-    //adding products label
-    productsVerticalLayout->addWidget(productType);
-
     //preparing for adding products grid layout
     sqlite3_stmt* stmt;
     int rc = sqlite3_open("mydatabase.db", &m_ProductsDB);
@@ -126,7 +92,7 @@ void cashRegisterSystem::populateProductList(QVBoxLayout* productsVerticalLayout
     QVector<QPushButton*> add_button;
     QDoubleSpinBox* quantityBox;
     int i = 0;
-    QGridLayout* grid = new QGridLayout(this);
+    QGridLayout* grid = new QGridLayout();
     grid->setAlignment(Qt::AlignRight);
     while (sqlite3_step(stmt) == SQLITE_ROW) {
         double quantity = sqlite3_column_double(stmt, 1);
@@ -180,40 +146,67 @@ void cashRegisterSystem::populateProductList(QVBoxLayout* productsVerticalLayout
         }
         i++;
     }
+    productsVerticalLayout->addWidget(productType);
     productsVerticalLayout->addLayout(grid);
+
+    ProductsScrollArea->setWidget(ProductsScrollContents);
 
     sqlite3_finalize(stmt);
     sqlite3_close(m_ProductsDB);
 }
 
-QLabel* cashRegisterSystem::makeLabel(QString content) {
-    QLabel* label = new QLabel(content, this);
-    label->setStyleSheet("font-size:20px;");
-    return label;
+void cashRegisterSystem::showAllProducts(QScrollArea* productsScrollArea,QWidget* productsScrollContent, QVBoxLayout* productsVerticalLayout, QVBoxLayout* cartVerticalLayout, QLabel* priceBefore, QLabel* priceAfter, QScrollArea* cartScrollArea, QPushButton* checkDiscount, QLineEdit* phoneNumber) {
+    clearProducts(productsVerticalLayout);
+    for (auto category : categories)
+        populateProductList(productsScrollArea, productsScrollContent,productsVerticalLayout, category, cartVerticalLayout, priceBefore, priceAfter, cartScrollArea, checkDiscount, phoneNumber);
 }
 
-void cashRegisterSystem::showAllProducts(QVBoxLayout* productsVerticalLayout, QVBoxLayout* cartVerticalLayout, QLabel* priceBefore, QLabel* priceAfter, QScrollArea* cartScrollArea, QPushButton* checkDiscount, QLineEdit* phoneNumber) {
-    for (auto category : categories)
-        populateProductList(productsVerticalLayout, category, cartVerticalLayout, priceBefore, priceAfter, cartScrollArea, checkDiscount, phoneNumber);
+void cashRegisterSystem::clearProducts(QVBoxLayout* productsContent) {
+    QLayout* layout = productsContent->layout(); // Get the layout of the widget
+    if (layout != nullptr) {
+        QMessageBox::warning(this, "ss", "Clearing products from layout");
+        QLayoutItem* child = nullptr;
+        while ((child = layout->takeAt(0)) != nullptr) {
+            QWidget* widget = child->widget();
+            if (widget) {
+                //QMessageBox::warning(this, "ss", "Removing widget:");
+                layout->removeWidget(widget);
+                delete widget;
+            }
+            delete child;
+        }
+    }
+    else {
+        QMessageBox::warning(this, "ss", "No layout found in scrollAreaContent");
+    }
 }
 
 void cashRegisterSystem::showCategoriesList(QListWidget* categoriesList, QScrollArea* productsScrollArea) {
-    QFile file("categories.txt");
-    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
-        return;
-    QTextStream in(&file);
-    while (!in.atEnd()) {
-        QString line = in.readLine();
-        categoriesList->addItem(line);
+    if (categories.isEmpty()) {
+        QFile file("categories.txt");
+        if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+            return;
+        QTextStream in(&file);
+        while (!in.atEnd()) {
+            QString line = in.readLine();
+            categoriesList->addItem(line);
 
-        categories.append(makeLabel(line));
+            categories.append(makeLabel(line));
+        }
+        connect(categoriesList, &QListWidget::currentRowChanged, [=](int row) {
+            itemClickedHandler(row, productsScrollArea);
+            });
     }
-    connect(categoriesList, &QListWidget::currentRowChanged, [=](int row) {
-        itemClickedHandler(row, productsScrollArea);
-        });
 }
 
 void cashRegisterSystem::itemClickedHandler(int row, QScrollArea* productsScrollArea) {
     int yMargin = productsScrollArea->height() - categories[row]->height();
     productsScrollArea->ensureWidgetVisible(categories[row], 0, yMargin);
+}
+
+
+QLabel* cashRegisterSystem::makeLabel(QString content) {
+    QLabel* label = new QLabel(content, this);
+    label->setStyleSheet("font-size:20px;");
+    return label;
 }

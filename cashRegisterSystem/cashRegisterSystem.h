@@ -79,18 +79,16 @@ private:
     void Show_retrieve_window();
     void Show_total_window(QVBoxLayout*);
     void Update_total();
-    void clear_grid_layout(QGridLayout*);
     void clear_vertical_layout(QVBoxLayout*);
 
 
     void showCategoriesList(QListWidget*, QScrollArea*);
-    void showAllProducts(QVBoxLayout*, QVBoxLayout*, QLabel*, QLabel*, QScrollArea*, QPushButton*, QLineEdit*);
+    void showAllProducts(QScrollArea*, QWidget*, QVBoxLayout*, QVBoxLayout*, QLabel*, QLabel*, QScrollArea*, QPushButton*, QLineEdit*);
     QLabel* makeLabel(QString);
 
-    void populateProductList(QVBoxLayout*, QLabel*, QVBoxLayout*, QLabel*, QLabel*, QScrollArea*, QPushButton*, QLineEdit*);
+    void populateProductList(QScrollArea*, QWidget*, QVBoxLayout*, QLabel*, QVBoxLayout*, QLabel*, QLabel*, QScrollArea*, QPushButton*, QLineEdit*);
 
-    void clearProducts(QWidget*);
-
+    void clearProducts(QVBoxLayout*);
 private slots:
 
     void onPageChanged(int index);
