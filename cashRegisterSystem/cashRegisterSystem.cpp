@@ -156,7 +156,7 @@ void cashRegisterSystem::populateProductList(QScrollArea* ProductsScrollArea ,QW
 }
 
 void cashRegisterSystem::showAllProducts(QScrollArea* productsScrollArea,QWidget* productsScrollContent, QVBoxLayout* productsVerticalLayout, QVBoxLayout* cartVerticalLayout, QLabel* priceBefore, QLabel* priceAfter, QScrollArea* cartScrollArea, QPushButton* checkDiscount, QLineEdit* phoneNumber) {
-    clearProducts(productsVerticalLayout);
+    if(!productsVerticalLayout->isEmpty()) clearProducts(productsVerticalLayout);
     for (auto category : categories)
         populateProductList(productsScrollArea, productsScrollContent,productsVerticalLayout, category, cartVerticalLayout, priceBefore, priceAfter, cartScrollArea, checkDiscount, phoneNumber);
 }
@@ -165,19 +165,30 @@ void cashRegisterSystem::clearProducts(QVBoxLayout* productsContent) {
     QLayout* layout = productsContent->layout(); // Get the layout of the widget
     if (layout != nullptr) {
         QMessageBox::warning(this, "ss", "Clearing products from layout");
+
+        // Remove and delete the items within the layout
         QLayoutItem* child = nullptr;
         while ((child = layout->takeAt(0)) != nullptr) {
             QWidget* widget = child->widget();
             if (widget) {
-                //QMessageBox::warning(this, "ss", "Removing widget:");
                 layout->removeWidget(widget);
-                delete widget;
+                widget->deleteLater(); // Use deleteLater() to defer deletion until after the event loop
             }
             delete child;
         }
     }
     else {
         QMessageBox::warning(this, "ss", "No layout found in scrollAreaContent");
+    }
+
+    // Retrieve the parent widget and remove the layout
+    QWidget* parentWidget = productsContent->parentWidget();
+    if (parentWidget != nullptr) {
+        QMessageBox::warning(this, "ss", "Removing widget:");
+
+        parentWidget->setLayout(nullptr);
+        delete parentWidget;
+        QMessageBox::warning(this, "ss", "Removed widget:");
     }
 }
 

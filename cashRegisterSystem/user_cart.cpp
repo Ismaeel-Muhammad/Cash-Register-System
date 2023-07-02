@@ -6,7 +6,9 @@ float cashRegisterSystem::on_user_check_discount_clicked(float price) {
 
 void cashRegisterSystem::on_user_cancel_order_clicked()
 {
-    clearProducts(m_ui->user_productsVerticalLayout);
+    if (!m_ui->user_productsVerticalLayout->isEmpty()) {
+        clearProducts(m_ui->user_productsVerticalLayout);
+    }
     DeleteAll(m_ui->user_price_before, m_ui->user_price_after, m_ui->user_check_discount, m_ui->user_phone_number, m_ui->user_cart_contents);
 }
 

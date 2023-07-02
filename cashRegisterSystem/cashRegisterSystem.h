@@ -89,6 +89,7 @@ private:
     void populateProductList(QScrollArea*, QWidget*, QVBoxLayout*, QLabel*, QVBoxLayout*, QLabel*, QLabel*, QScrollArea*, QPushButton*, QLineEdit*);
 
     void clearProducts(QVBoxLayout*);
+    //void clearLayout(QLayout*);
 private slots:
 
     void onPageChanged(int index);
