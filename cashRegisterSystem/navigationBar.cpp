@@ -32,12 +32,10 @@ void cashRegisterSystem::on_logout_clicked() {
 
     if (isAdmin) {
         DeleteAll(m_ui->admin_price_before, m_ui->admin_price_after, m_ui->admin_check_discount, m_ui->admin_phone_number, m_ui->admin_cart_contents);
-        std::fill_n(m_loadedOnce, 4, false);
         m_ui->formsStackedWidget->setCurrentIndex(0);
     }
     else {
         DeleteAll(m_ui->user_price_before, m_ui->user_price_after, m_ui->user_check_discount, m_ui->user_phone_number, m_ui->user_cart_contents);
-        std::fill_n(m_loadedOnce, 4, false);
         m_ui->formsStackedWidget->setCurrentIndex(0);
     }
 }

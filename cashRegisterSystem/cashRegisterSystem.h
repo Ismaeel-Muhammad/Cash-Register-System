@@ -35,8 +35,6 @@ public:
 
 private:
     Ui::cashRegisterSystem2Class* m_ui;
-    bool m_start[3];
-    bool m_loadedOnce[60];
     sqlite3* m_ProductsDB;
     sqlite3* m_OperationsDB;
     sqlite3* m_customersDB;
@@ -60,7 +58,9 @@ private:
     int ProductType;
     int Optype;
     QDate date;
-    QList<QLabel*> categories;
+
+    QList<QLabel*> const_categories;
+    QList<QLabel*> clone_categories;
 
     void DeleteAll(QLabel*, QLabel*, QPushButton*, QLineEdit*, QWidget*);
 
@@ -81,12 +81,12 @@ private:
     void Update_total();
     void clear_vertical_layout(QVBoxLayout*);
 
-
     void showCategoriesList(QListWidget*, QScrollArea*);
-    void showAllProducts(QScrollArea*, QWidget*, QVBoxLayout*, QVBoxLayout*, QLabel*, QLabel*, QScrollArea*, QPushButton*, QLineEdit*);
-    QLabel* makeLabel(QString);
+    void showAllProducts(QVBoxLayout*, QVBoxLayout*, QLabel*, QLabel*, QScrollArea*, QPushButton*, QLineEdit*);
+    QLabel* makeLabel(const QString&);
+    void makeQListCopy(QList<QLabel*>&);
 
-    void populateProductList(QScrollArea*, QWidget*, QVBoxLayout*, QLabel*, QVBoxLayout*, QLabel*, QLabel*, QScrollArea*, QPushButton*, QLineEdit*);
+    void populateProductList(QVBoxLayout*, QLabel*, QVBoxLayout*, QLabel*, QLabel*, QScrollArea*, QPushButton*, QLineEdit*);
 
     void clearProducts(QVBoxLayout*);
     //void clearLayout(QLayout*);
