@@ -176,21 +176,28 @@ void cashRegisterSystem::clearProducts(QVBoxLayout* productsContent) {
 }
 
 void cashRegisterSystem::showCategoriesList(QListWidget* categoriesList, QScrollArea* productsScrollArea) {
-    if (const_categories.isEmpty()) {
-        QFile file("categories.txt");
-        if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
-            return;
-        QTextStream in(&file);
-        while (!in.atEnd()) {
-            const QString line = in.readLine();
-            categoriesList->addItem(line);
+    if (categoriesList->count() == 0) {
+        if (const_categories.isEmpty()) {
+            QFile file("categories.txt");
+            if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+                return;
+            QTextStream in(&file);
+            while (!in.atEnd()) {
+                const QString line = in.readLine();
+                categoriesList->addItem(line);
 
-            const_categories.append(makeLabel(line));
+                const_categories.append(makeLabel(line));
+            }
         }
-        connect(categoriesList, &QListWidget::currentRowChanged, [=](int row) {
-            itemClickedHandler(row, productsScrollArea);
-            });
+        else {
+            for (auto category : const_categories) {
+                categoriesList->addItem(category->text());
+            }
+        }
     }
+    connect(categoriesList, &QListWidget::currentRowChanged, [=](int row) {
+        itemClickedHandler(row, productsScrollArea);
+        });
     clone_categories.clear();
     makeQListCopy(clone_categories);
 }
