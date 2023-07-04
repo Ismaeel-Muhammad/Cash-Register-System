@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1366</width>
-    <height>768</height>
+    <width>1460</width>
+    <height>917</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -121,79 +121,291 @@
     <item row="1" column="0">
      <widget class="QStackedWidget" name="formsStackedWidget">
       <property name="currentIndex">
-       <number>6</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="login">
-       <widget class="QWidget" name="layoutWidget">
-        <property name="geometry">
-         <rect>
-          <x>630</x>
-          <y>290</y>
-          <width>301</width>
-          <height>161</height>
-         </rect>
-        </property>
-        <layout class="QVBoxLayout" name="verticalLayout_5">
-         <item>
-          <layout class="QGridLayout" name="gridLayout_5">
-           <item row="0" column="0">
-            <widget class="QLineEdit" name="username_field">
-             <property name="styleSheet">
-              <string notr="true">height: 25px;</string>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="1">
-            <widget class="QLabel" name="username_label">
-             <property name="styleSheet">
-              <string notr="true">font-weight:bold;
+       <property name="maximumSize">
+        <size>
+         <width>1366</width>
+         <height>768</height>
+        </size>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <widget class="QFrame" name="Login_frame">
+          <property name="styleSheet">
+           <string notr="true">#login_btn{
+border-radius:5px;
 font-size:18px;
+background:qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #c8ab97, stop: 1 #e2d4c9);
+color:#313131;
+font-weight:bold;
+margin:5px;
+}
+#Login_frame{
+background-image: url(:/cashRegisterSystem2/Background.jpg);   
+ border-radius: 10px;
+}
+#username_field,#password_field{
+border-bottom: 2px solid  #c8ab97;
+border-radius:1px;
+color:#958071;
+font-size:16px;
+font-weight:bold;
+margin:0px 5px;
+background:transparent;
+}
+QLabel {
+font-size:18px;
+font-weight:bold;
+background-color:black;
+border-radius:0;
+border:none;
+background:transparent;
+margin-right:5px;
+background-image: url(:/logo/logo/username.jpg);
+width:16px;
+height:16px;
+}
+QGridLayout{
+border-radius:2px;
+}
+#gridFrame{
+background-color:rgba(185,191,193,0.5);
+border-radius:50%;
+}
 </string>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_5">
+           <item row="2" column="3">
+            <spacer name="horizontalSpacer_3">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
              </property>
-             <property name="text">
-              <string>اسم المستخدم</string>
+             <property name="sizeType">
+              <enum>QSizePolicy::Fixed</enum>
              </property>
-            </widget>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>670</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
            </item>
-           <item row="1" column="0">
-            <widget class="QLineEdit" name="password_field">
-             <property name="styleSheet">
-              <string notr="true">height: 25px;</string>
+           <item row="0" column="2">
+            <spacer name="verticalSpacer">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
              </property>
-             <property name="text">
-              <string/>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
              </property>
-             <property name="echoMode">
-              <enum>QLineEdit::Normal</enum>
-             </property>
-            </widget>
+            </spacer>
            </item>
-           <item row="1" column="1">
-            <widget class="QLabel" name="passwod_label">
+           <item row="3" column="2">
+            <spacer name="verticalSpacer_2">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item row="2" column="0">
+            <spacer name="horizontalSpacer_2">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item row="2" column="2" alignment="Qt::AlignTop">
+            <widget class="QFrame" name="gridFrame">
+             <property name="minimumSize">
+              <size>
+               <width>400</width>
+               <height>200</height>
+              </size>
+             </property>
              <property name="styleSheet">
-              <string notr="true">font-weight:bold;
-font-size:18px;</string>
+              <string notr="true"/>
              </property>
-             <property name="text">
-              <string>الرقم السري</string>
+             <property name="frameShape">
+              <enum>QFrame::StyledPanel</enum>
              </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_11">
+              <item row="1" column="2">
+               <spacer name="horizontalSpacer_4">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item row="0" column="1">
+               <spacer name="verticalSpacer_4">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item row="2" column="1">
+               <spacer name="verticalSpacer_3">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item row="1" column="1">
+               <layout class="QGridLayout" name="gridLayout_8">
+                <item row="3" column="0" colspan="2">
+                 <widget class="QPushButton" name="login_btn">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string>دخول</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QLineEdit" name="username_field">
+                  <property name="minimumSize">
+                   <size>
+                    <width>196</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>300</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="1">
+                 <widget class="QLabel" name="label_13">
+                  <property name="minimumSize">
+                   <size>
+                    <width>130</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>500</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string>الرقم السري</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="0">
+                 <widget class="QLineEdit" name="password_field">
+                  <property name="minimumSize">
+                   <size>
+                    <width>196</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>300</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="1">
+                 <widget class="QLabel" name="label">
+                  <property name="minimumSize">
+                   <size>
+                    <width>16</width>
+                    <height>16</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>16</width>
+                    <height>16</height>
+                   </size>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">text-align:center;</string>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item row="1" column="0">
+               <spacer name="horizontalSpacer_5">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
             </widget>
            </item>
           </layout>
-         </item>
-         <item>
-          <widget class="QPushButton" name="login_btn">
-           <property name="styleSheet">
-            <string notr="true">font-weight:bold;
-font-size:18px;</string>
-           </property>
-           <property name="text">
-            <string>دخول</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </widget>
+         </widget>
+        </item>
+       </layout>
       </widget>
       <widget class="QWidget" name="user_main_form">
        <layout class="QGridLayout" name="gridLayout_9">
@@ -265,8 +477,8 @@ font-size:18px;</string>
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>676</width>
-                   <height>579</height>
+                   <width>261</width>
+                   <height>20</height>
                   </rect>
                  </property>
                  <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -344,8 +556,8 @@ font-size:18px;</string>
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>278</width>
-                   <height>483</height>
+                   <width>261</width>
+                   <height>16</height>
                   </rect>
                  </property>
                  <property name="minimumSize">
@@ -2035,7 +2247,7 @@ font-size:18px;</string>
                    <x>0</x>
                    <y>0</y>
                    <width>278</width>
-                   <height>456</height>
+                   <height>455</height>
                   </rect>
                  </property>
                  <property name="minimumSize">
@@ -2173,7 +2385,7 @@ font-size: 12px</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1366</width>
+     <width>1460</width>
      <height>22</height>
     </rect>
    </property>
