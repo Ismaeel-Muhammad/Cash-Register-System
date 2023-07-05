@@ -3,6 +3,9 @@
 cashRegisterSystem::cashRegisterSystem(QWidget* parent)
     : QMainWindow(parent), m_ui(new Ui::cashRegisterSystem2Class)
 {
+    m_AdminProductIsUpdated = true;
+    m_UserProductIsUpdated = true;
+
     m_ProductsDB = NULL;
     m_customersDB = NULL;
     m_OperationsDB = NULL;
@@ -49,14 +52,20 @@ cashRegisterSystem::~cashRegisterSystem()
 
 void cashRegisterSystem::onPageChanged(int index) {
     if (index == 5) {
-        m_ui->admin_categories_list->setLayoutDirection(Qt::RightToLeft);
-        showCategoriesList(m_ui->admin_categories_list, m_ui->admin_products_scroll_area);
-        showAllProducts(m_ui->admin_productsVerticalLayout,m_ui->admin_cartVerticalLayout,m_ui->admin_price_before,m_ui->admin_price_after,m_ui->admin_cartScrollArea,m_ui->admin_check_discount,m_ui->admin_phone_number);
+        if (m_AdminProductIsUpdated) {
+            m_ui->admin_categories_list->setLayoutDirection(Qt::RightToLeft);
+            showCategoriesList(m_ui->admin_categories_list, m_ui->admin_products_scroll_area);
+            showAllProducts(m_ui->admin_productsVerticalLayout,m_ui->admin_cartVerticalLayout,m_ui->admin_price_before,m_ui->admin_price_after,m_ui->admin_cartScrollArea,m_ui->admin_check_discount,m_ui->admin_phone_number);
+            m_AdminProductIsUpdated = false;
+        }
     }
     else if (index == 1) {
-        m_ui->user_categories_list->setLayoutDirection(Qt::RightToLeft);
-        showCategoriesList(m_ui->user_categories_list, m_ui->user_products_scroll_area);
-        showAllProducts(m_ui->user_productsVerticalLayout, m_ui->user_cartVerticalLayout, m_ui->user_price_before, m_ui->user_price_after, m_ui->user_cartScrollArea, m_ui->user_check_discount, m_ui->user_phone_number);
+        if (m_UserProductIsUpdated) {
+            m_ui->user_categories_list->setLayoutDirection(Qt::RightToLeft);
+            showCategoriesList(m_ui->user_categories_list, m_ui->user_products_scroll_area);
+            showAllProducts(m_ui->user_productsVerticalLayout, m_ui->user_cartVerticalLayout, m_ui->user_price_before, m_ui->user_price_after, m_ui->user_cartScrollArea, m_ui->user_check_discount, m_ui->user_phone_number);
+            m_UserProductIsUpdated = false;
+        }
     }
 }
 

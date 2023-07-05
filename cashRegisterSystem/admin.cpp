@@ -17,6 +17,11 @@ void cashRegisterSystem::on_add_item_clicked() {
 	m_ui->item_price_item->clear();
 	m_ui->item_quantity_item->clear();
     m_ui->item_type_item->setCurrentIndex(0);
+
+    db.~Database();
+
+    m_AdminProductIsUpdated = true;
+    m_UserProductIsUpdated = true;
 }
 
 void cashRegisterSystem::on_remove_item_clicked() {
@@ -34,6 +39,11 @@ void cashRegisterSystem::on_remove_item_clicked() {
     msg.setText("\u062a\u0645 \u0627\u0644\u062d\u0630\u0641 \u0628\u0646\u062c\u0627\u062d");
     msg.exec();
     m_ui->item_name_item->clear();
+
+    db.~Database();
+
+    m_AdminProductIsUpdated = true;
+    m_UserProductIsUpdated = true;
 }
 
 void cashRegisterSystem::on_add_quantity_clicked() {
@@ -49,6 +59,9 @@ void cashRegisterSystem::on_add_quantity_clicked() {
     m_ui->item_quantity_quantity->clear();
 
     db.~Database();
+
+    m_AdminProductIsUpdated = true;
+    m_UserProductIsUpdated = true;
 }
 
 void cashRegisterSystem::on_edit_price_clicked() {
@@ -64,6 +77,9 @@ void cashRegisterSystem::on_edit_price_clicked() {
     m_ui->item_price_price->clear();
 
     db.~Database();
+
+    m_AdminProductIsUpdated = true;
+    m_UserProductIsUpdated = true;
 }
 
 void cashRegisterSystem::on_remove_quantity_clicked() {
@@ -78,6 +94,8 @@ void cashRegisterSystem::on_remove_quantity_clicked() {
     m_ui->item_quantity_quantity->clear();
     m_ui->item_name_quantity->setCurrentIndex(0);
 
+    m_AdminProductIsUpdated = true;
+    m_UserProductIsUpdated = true;
 }
 
 void cashRegisterSystem::Show_Sell_window() {
@@ -86,7 +104,6 @@ void cashRegisterSystem::Show_Sell_window() {
 
 void cashRegisterSystem::Show_retrieve_window() {
     Show_window("retrieve", m_ui->return_operations_contents,m_ui->return_VLayout);
-
 }
 
 void cashRegisterSystem::Update_total() {

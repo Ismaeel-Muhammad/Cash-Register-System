@@ -35,6 +35,10 @@ public:
 
 private:
     Ui::cashRegisterSystem2Class* m_ui;
+
+    bool m_AdminProductIsUpdated;
+    bool m_UserProductIsUpdated;
+
     sqlite3* m_ProductsDB;
     sqlite3* m_OperationsDB;
     sqlite3* m_customersDB;
@@ -89,7 +93,6 @@ private:
     void populateProductList(QVBoxLayout*, QLabel*, QVBoxLayout*, QLabel*, QLabel*, QScrollArea*, QPushButton*, QLineEdit*);
 
     void clearProducts(QVBoxLayout*);
-    //void clearLayout(QLayout*);
 private slots:
 
     void onPageChanged(int index);
