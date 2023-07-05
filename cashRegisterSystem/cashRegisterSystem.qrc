@@ -1,5 +1,12 @@
 <RCC>
   <qresource prefix="cashRegisterSystem2">
-    <file>Background.jpg</file>
+    <file>icons/padlock.png</file>
+    <file>media/arrow-down.png</file>
+    <file>icons/profile.png</file>
+    <file>media/arrow-up.png</file>
+    <file>icons/Background.jpg</file>
+    <file>icons/buying-on-smartphone.png</file>
+    <file>icons/coupon.png</file>
+    <file>icons/empty-cart.png</file>
   </qresource>
 </RCC>
