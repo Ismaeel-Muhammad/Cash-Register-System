@@ -3,27 +3,21 @@
 void cashRegisterSystem::on_main_menu_clicked()
 {
     if (isAdmin)
-        m_ui->formsStackedWidget->setCurrentIndex(6);
+        m_ui->formsStackedWidget->setCurrentIndex(5);
     else
         m_ui->formsStackedWidget->setCurrentIndex(1);
 }
 
-
-void cashRegisterSystem::on_add_customers_menu_clicked()
-{
-    m_ui->formsStackedWidget->setCurrentIndex(3);
-}
-
 void cashRegisterSystem::on_product_menu_clicked()
 {
-    generateProdtbl();
+    generateProductsTable();
     GenrateTypesForCombo();
-    m_ui->formsStackedWidget->setCurrentIndex(5);
+    m_ui->formsStackedWidget->setCurrentIndex(4);
 }
 
 void cashRegisterSystem::on_customers_menu_clicked() {
     search();
-    m_ui->formsStackedWidget->setCurrentIndex(4);
+    m_ui->formsStackedWidget->setCurrentIndex(3);
 }
 
 void cashRegisterSystem::on_logout_clicked() {

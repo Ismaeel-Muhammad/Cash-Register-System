@@ -47,9 +47,8 @@ cashRegisterSystem::~cashRegisterSystem()
     delete m_ui;
 }
 
-
 void cashRegisterSystem::onPageChanged(int index) {
-    if (index == 6) {
+    if (index == 5) {
         m_ui->admin_categories_list->setLayoutDirection(Qt::RightToLeft);
         showCategoriesList(m_ui->admin_categories_list, m_ui->admin_products_scroll_area);
         showAllProducts(m_ui->admin_productsVerticalLayout,m_ui->admin_cartVerticalLayout,m_ui->admin_price_before,m_ui->admin_price_after,m_ui->admin_cartScrollArea,m_ui->admin_check_discount,m_ui->admin_phone_number);

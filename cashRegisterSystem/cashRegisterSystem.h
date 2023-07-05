@@ -69,7 +69,7 @@ private:
     char updateType(char);
 
     void search();
-    void generateProdtbl();
+    void generateProductsTable();
     void GenrateTypesForCombo();
     
 
@@ -131,7 +131,6 @@ private slots:
     void on_product_menu_clicked();
     void on_customers_menu_clicked();
     void on_main_menu_clicked();
-    void on_add_customers_menu_clicked();
 
     void on_searchprobuctsBTN_clicked();
     void on_BackFromProductsBTN_clicked();

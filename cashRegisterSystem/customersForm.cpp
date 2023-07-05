@@ -68,23 +68,10 @@ void cashRegisterSystem::search()
 
     sqlite3_finalize(stmt);
     sqlite3_close(m_ProductsDB);
+
     m_ui->tableView->setModel(model);
     m_ui->tableView->horizontalHeader()->setDefaultAlignment(Qt::AlignRight);
     m_ui->tableView->horizontalHeader()->setStretchLastSection(true);
-    m_ui->tableView->verticalHeader()->setStretchLastSection(true);
-    int row_count = model->rowCount();
-    for (int i = 0; i < row_count; ++i) {
-        m_ui->tableView->setRowHeight(i, 35);
-    }
 
-    int size = 35 * row_count + m_ui->tableView->horizontalHeader()->height() + 2;
-    if (size > 651) {
-        m_ui->tableView->setGeometry(0, 0, 981, 651);
-    }
-    else {
-        m_ui->tableView->setGeometry(0, 0, 981, size);
-    }
-    
-    m_ui->tableView->setSizeAdjustPolicy(QAbstractScrollArea::AdjustToContentsOnFirstShow);
-
+    m_ui->tableView->verticalHeader()->setDefaultSectionSize(35);
 }

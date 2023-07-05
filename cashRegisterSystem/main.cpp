@@ -10,10 +10,5 @@ int main(int argc, char* argv[])
     db->initialize();
     w.show();
 
-    //QFile styleSheetFile("./Integrid.qss");
-    //styleSheetFile.open(QFile::ReadOnly);
-    //QString styleSheet = QLatin1String(styleSheetFile.readAll());
-    //w.setStyleSheet(styleSheet);
-
     return a.exec();
 }

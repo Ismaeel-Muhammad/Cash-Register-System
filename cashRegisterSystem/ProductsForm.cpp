@@ -3,18 +3,18 @@
 void cashRegisterSystem::on_searchprobuctsBTN_clicked()
 {
     m_ui->prodtable->model()->removeRows(0, m_ui->prodtable->model()->rowCount());
-    generateProdtbl();
+    generateProductsTable();
 }
 
 void cashRegisterSystem::on_BackFromProductsBTN_clicked()
 {
     if (isAdmin)
-        m_ui->formsStackedWidget->setCurrentIndex(6);
+        m_ui->formsStackedWidget->setCurrentIndex(5);
     else
         m_ui->formsStackedWidget->setCurrentIndex(1);
 }
 
-void cashRegisterSystem::generateProdtbl()
+void cashRegisterSystem::generateProductsTable()
 {
     productNameSearch = m_ui->ProdNameSearch->text().toStdString();
     ProductType = m_ui->ProdTypeSearch->currentIndex();
@@ -53,12 +53,11 @@ void cashRegisterSystem::generateProdtbl()
         items.append(new QStandardItem(QString(price)));
         items.append(new QStandardItem(QString(name)));
 
-        for (int i = 0; i < items.count(); ++i) {
+        for (int i = 0; i < items.count(); i++) {
             // Set the Qt::ItemIsEditable flag to false for each item
             items.at(i)->setFlags(items.at(i)->flags() & ~Qt::ItemIsEditable);
             items.at(i)->setTextAlignment(Qt::AlignRight | Qt::AlignVCenter);
         }
-
         model->appendRow(items);
     }
 
@@ -66,24 +65,11 @@ void cashRegisterSystem::generateProdtbl()
     sqlite3_close(m_ProductsDB);
 
     m_ui->prodtable->setModel(model);
+
     m_ui->prodtable->horizontalHeader()->setDefaultAlignment(Qt::AlignRight);
     m_ui->prodtable->horizontalHeader()->setStretchLastSection(true);
-    m_ui->prodtable->verticalHeader()->setStretchLastSection(true);
-    int row_count = model->rowCount();
-    for (int i = 0; i < row_count; ++i) {
-        m_ui->prodtable->setRowHeight(i, 35);
-    }
 
-    int size = 35 * row_count + m_ui->prodtable->horizontalHeader()->height() + 2;
-    if (size > 591) {
-        m_ui->prodtable->setGeometry(0, 0, 1241, 591);
-    }
-    else {
-        m_ui->prodtable->setGeometry(0, 0, 1241, size);
-    }
-
-    m_ui->prodtable->setSizeAdjustPolicy(QAbstractScrollArea::AdjustToContentsOnFirstShow);
-
+    m_ui->prodtable->verticalHeader()->setDefaultSectionSize(35);
 }
 
 void cashRegisterSystem::GenrateTypesForCombo()

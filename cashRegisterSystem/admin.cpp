@@ -292,7 +292,7 @@ void cashRegisterSystem::on_OPsearch_clicked()
 
 void cashRegisterSystem::on_back_to_main_clicked() {
     if (isAdmin)
-        m_ui->formsStackedWidget->setCurrentIndex(6);
+        m_ui->formsStackedWidget->setCurrentIndex(5);
     else
         m_ui->formsStackedWidget->setCurrentIndex(1);
 }
@@ -308,5 +308,4 @@ void cashRegisterSystem::clear_vertical_layout(QVBoxLayout* VLayout) {
         }
         delete child;
     }
-
 }
