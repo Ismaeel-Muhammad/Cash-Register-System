@@ -171,6 +171,7 @@ void cashRegisterSystem::on_name_button_clicked(double quantity, QString name, f
     layout->addWidget(Delete_button.back());
     layout->setAlignment(Qt::AlignTop);
     Delete_button.back()->setObjectName("btnName_1");
+    Delete_button.back()->setCursor(Qt::PointingHandCursor);
     cartVerticalLayout->addWidget(frame);
     TotalBalanceForOperation += totalPrice;
 
@@ -195,9 +196,13 @@ void cashRegisterSystem::on_name_button_clicked(double quantity, QString name, f
         Delete_On_Click(btn, totalPrice, names->text(), quantity, priceBefore, priceAfter,
             checkButton, phoneNumberField);
     });
-
-    if (i % 2 == 1) frame->setStyleSheet("QFrame{background-color:rgba(185, 185, 190, 255)}");
-    if (i % 2 == 0) frame->setStyleSheet("QFrame{background-color:rgba(220, 220, 225, 255)}");
+    frame->setObjectName("CartFrame");
+    if (i % 2 == 1) { 
+        frame->setStyleSheet("#CartFrame{background-color:rgba(200,200,200,1); border-radius:2px; padding:2px;} QPushButton{font-size:14px;background-color:rgba(200,171,151,0.5);color:#323638;border-radius:10px;font-weight:bold;padding:2px;} QPushButton::hover{background-color: rgba(185, 191, 193, 1);}");
+    }
+    if (i % 2 == 0) {
+        frame->setStyleSheet("#CartFrame{background-color:rgba(200,171,151,0.5); border-radius:2px; padding:2px;} QPushButton{font-size:14px;background-color:rgba(185, 191, 193, 1);color:#323638;border-radius:10px;font-weight:bold;padding:2px;} QPushButton::hover{background-color: rgba(200,171,151,0.5);}");
+    }
 
     i++;
 

@@ -43,26 +43,36 @@ class Ui_cashRegisterSystem2Class
 {
 public:
     QWidget *centralWidget;
-    QGridLayout *gridLayout_10;
+    QVBoxLayout *verticalLayout_4;
     QFrame *nav_frame;
     QHBoxLayout *horizontalLayout;
     QPushButton *main_menu;
     QPushButton *product_menu;
     QPushButton *customers_menu;
-    QPushButton *add_customers_menu;
     QPushButton *go_to_admin_form;
     QSpacerItem *horizontalSpacer;
     QPushButton *logout;
     QStackedWidget *formsStackedWidget;
     QWidget *login;
-    QWidget *layoutWidget;
-    QVBoxLayout *verticalLayout_5;
+    QVBoxLayout *verticalLayout_3;
+    QFrame *Login_frame;
     QGridLayout *gridLayout_5;
-    QLineEdit *username_field;
-    QLabel *username_label;
-    QLineEdit *password_field;
-    QLabel *passwod_label;
+    QSpacerItem *horizontalSpacer_3;
+    QSpacerItem *verticalSpacer;
+    QSpacerItem *verticalSpacer_2;
+    QSpacerItem *horizontalSpacer_2;
+    QFrame *gridFrame;
+    QGridLayout *gridLayout_11;
+    QSpacerItem *horizontalSpacer_4;
+    QSpacerItem *verticalSpacer_4;
+    QSpacerItem *verticalSpacer_3;
+    QGridLayout *gridLayout_8;
     QPushButton *login_btn;
+    QLineEdit *username_field;
+    QLineEdit *password_field;
+    QPushButton *username_label;
+    QPushButton *passwordlabel;
+    QSpacerItem *horizontalSpacer_5;
     QWidget *user_main_form;
     QGridLayout *gridLayout_9;
     QFrame *user_main_frame;
@@ -83,7 +93,7 @@ public:
     QLineEdit *user_phone_number;
     QScrollArea *user_cartScrollArea;
     QWidget *user_cart_contents;
-    QWidget *layoutWidget1;
+    QVBoxLayout *verticalLayout_5;
     QVBoxLayout *user_cartVerticalLayout;
     QHBoxLayout *user_horizontalLayout_4;
     QPushButton *user_check_discount;
@@ -96,99 +106,120 @@ public:
     QPushButton *user_retrieve;
     QPushButton *user_sell;
     QWidget *admin_form;
+    QGridLayout *gridLayout_39;
+    QFrame *frame;
+    QGridLayout *gridLayout_51;
     QFrame *control_frame;
-    QFrame *line;
-    QLabel *label_2;
-    QLabel *label_3;
-    QPlainTextEdit *item_name_item;
+    QGridLayout *gridLayout_40;
+    QGridLayout *gridLayout_42;
+    QLabel *label_7;
     QLabel *label_4;
+    QSpacerItem *horizontalSpacer_20;
+    QLabel *label_2;
+    QComboBox *item_type_item;
+    QLabel *label_5;
+    QPushButton *add_item;
+    QLabel *label_6;
+    QPushButton *remove_item;
+    QPlainTextEdit *item_name_item;
     QPlainTextEdit *item_price_item;
     QPlainTextEdit *item_quantity_item;
-    QPushButton *add_item;
-    QPushButton *remove_item;
-    QLabel *label_5;
-    QLabel *label_6;
-    QLabel *label_7;
+    QGridLayout *gridLayout_43;
+    QLabel *label_12;
+    QLabel *label_28;
+    QPushButton *edit_price;
+    QLabel *label_27;
+    QSpacerItem *horizontalSpacer_21;
+    QComboBox *item_name_price;
+    QPlainTextEdit *item_price_price;
+    QGridLayout *gridLayout_41;
+    QLabel *label_20;
+    QComboBox *item_name_quantity;
+    QLabel *label_21;
     QPushButton *remove_quantity;
     QPushButton *add_quantity;
-    QComboBox *item_name_quantity;
-    QLabel *label_20;
+    QSpacerItem *horizontalSpacer_19;
+    QLabel *label_3;
     QPlainTextEdit *item_quantity_quantity;
-    QLabel *label_21;
-    QComboBox *item_type_item;
+    QFrame *line;
     QFrame *line_2;
-    QLabel *label_12;
-    QPushButton *edit_price;
-    QComboBox *item_name_price;
-    QLabel *label_27;
-    QPlainTextEdit *item_price_price;
-    QLabel *label_28;
-    QLabel *label_22;
-    QFrame *total_operations_frame;
-    QScrollArea *scrollArea_7;
-    QWidget *total_operations_contents;
-    QWidget *verticalLayoutWidget_4;
-    QVBoxLayout *total_VLayout;
+    QFrame *frame_4;
+    QGridLayout *gridLayout_44;
+    QLabel *label_25;
+    QLabel *label_23;
     QFrame *return_operations_frame;
+    QGridLayout *gridLayout_47;
     QScrollArea *scrollArea_6;
     QWidget *return_operations_contents;
-    QWidget *verticalLayoutWidget_3;
+    QGridLayout *gridLayout_48;
     QVBoxLayout *return_VLayout;
     QFrame *sell_operations_frame;
+    QGridLayout *gridLayout_45;
     QScrollArea *scrollArea_5;
     QWidget *sell_operations_contents;
-    QWidget *verticalLayoutWidget_2;
+    QGridLayout *gridLayout_46;
     QVBoxLayout *sell_VLayout;
-    QLabel *label_23;
-    QLabel *label_25;
     QLabel *label_24;
+    QHBoxLayout *horizontalLayout_14;
     QTextBrowser *day_total_income;
     QLabel *label_26;
-    QWidget *layoutWidget2;
+    QSpacerItem *horizontalSpacer_22;
+    QFrame *total_operations_frame;
+    QGridLayout *gridLayout_49;
+    QScrollArea *scrollArea_7;
+    QWidget *total_operations_contents;
+    QGridLayout *gridLayout_50;
+    QVBoxLayout *total_VLayout;
     QVBoxLayout *verticalLayout_9;
+    QSpacerItem *verticalSpacer_5;
     QLabel *label_14;
     QComboBox *opType;
     QLabel *label_11;
     QDateEdit *date_search;
     QPushButton *OPsearch;
-    QWidget *creating_customer_account;
-    QWidget *layoutWidget3;
-    QVBoxLayout *verticalLayout_6;
-    QGridLayout *gridLayout_6;
-    QLineEdit *new_customer_name;
-    QLabel *nameLable;
-    QLineEdit *new_customer_phone;
-    QLabel *phoneLable;
+    QSpacerItem *verticalSpacer_6;
+    QWidget *customers_form;
+    QGridLayout *gridLayout_33;
+    QFrame *customers_frame;
+    QGridLayout *gridLayout_32;
+    QFrame *frame_2;
+    QGridLayout *gridLayout_29;
+    QHBoxLayout *horizontalLayout_12;
+    QPushButton *Search_btn;
+    QSpacerItem *horizontalSpacer_14;
+    QComboBox *ranksearch;
+    QLabel *label_33;
+    QLineEdit *phoneSearch;
+    QLabel *label_34;
+    QLineEdit *nameSearch;
+    QLabel *label_35;
+    QFrame *add_customer_frame;
+    QGridLayout *gridLayout_31;
+    QHBoxLayout *horizontalLayout_13;
+    QPushButton *add_new;
+    QSpacerItem *horizontalSpacer_15;
     QComboBox *class_box;
     QLabel *classLable;
-    QPushButton *add_new;
-    QWidget *customers_form;
-    QScrollArea *results;
-    QWidget *scrollAreaWidgetContents;
+    QLineEdit *new_customer_phone;
+    QLabel *phoneLable;
+    QLineEdit *new_customer_name;
+    QLabel *nameLable;
     QTableView *tableView;
-    QWidget *layoutWidget4;
-    QVBoxLayout *verticalLayout_8;
-    QVBoxLayout *verticalLayout_7;
-    QLabel *label_8;
-    QLineEdit *nameSearch;
-    QSpacerItem *verticalSpacer_8;
-    QLabel *label_9;
-    QLineEdit *phoneSearch;
-    QSpacerItem *verticalSpacer_9;
-    QLabel *label_10;
-    QComboBox *ranksearch;
-    QSpacerItem *verticalSpacer_10;
-    QSpacerItem *verticalSpacer_11;
-    QPushButton *Search_btn;
     QWidget *products_form;
-    QScrollArea *porductsForm;
-    QWidget *scrollAreaWidgetContents_3;
-    QTableView *prodtable;
+    QGridLayout *gridLayout_37;
+    QFrame *search_products_frame;
+    QGridLayout *gridLayout_38;
+    QFrame *frame_3;
+    QGridLayout *gridLayout_35;
+    QGridLayout *gridLayout_36;
+    QSpacerItem *horizontalSpacer_17;
+    QLabel *ProdNameLabel;
+    QLineEdit *ProdNameSearch;
     QComboBox *ProdTypeSearch;
     QPushButton *searchprobuctsBTN;
-    QLineEdit *ProdNameSearch;
     QLabel *ProdTypeLabel;
-    QLabel *ProdNameLabel;
+    QSpacerItem *horizontalSpacer_18;
+    QTableView *prodtable;
     QWidget *admin_main_form;
     QGridLayout *gridLayout_17;
     QFrame *admin_main_frame;
@@ -212,7 +243,7 @@ public:
     QLineEdit *admin_phone_number;
     QScrollArea *admin_cartScrollArea;
     QWidget *admin_cart_contents;
-    QWidget *layoutWidget5;
+    QVBoxLayout *verticalLayout_6;
     QVBoxLayout *admin_cartVerticalLayout;
     QHBoxLayout *horizontalLayout_6;
     QPushButton *admin_check_discount;
@@ -232,15 +263,38 @@ public:
     {
         if (cashRegisterSystem2Class->objectName().isEmpty())
             cashRegisterSystem2Class->setObjectName("cashRegisterSystem2Class");
-        cashRegisterSystem2Class->resize(1366, 768);
+        cashRegisterSystem2Class->resize(1366, 851);
+        QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(cashRegisterSystem2Class->sizePolicy().hasHeightForWidth());
+        cashRegisterSystem2Class->setSizePolicy(sizePolicy);
+        cashRegisterSystem2Class->setMaximumSize(QSize(16777215, 16777215));
         centralWidget = new QWidget(cashRegisterSystem2Class);
         centralWidget->setObjectName("centralWidget");
-        gridLayout_10 = new QGridLayout(centralWidget);
-        gridLayout_10->setSpacing(6);
-        gridLayout_10->setContentsMargins(11, 11, 11, 11);
-        gridLayout_10->setObjectName("gridLayout_10");
+        centralWidget->setStyleSheet(QString::fromUtf8("#centralWidget{background-color:rgba(185,191,193,0.3);\n"
+"}\n"
+""));
+        verticalLayout_4 = new QVBoxLayout(centralWidget);
+        verticalLayout_4->setSpacing(6);
+        verticalLayout_4->setContentsMargins(11, 11, 11, 11);
+        verticalLayout_4->setObjectName("verticalLayout_4");
         nav_frame = new QFrame(centralWidget);
         nav_frame->setObjectName("nav_frame");
+        nav_frame->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"border:none;\n"
+"font-size:15px;\n"
+"font-weight:bold;\n"
+"color:rgb(97, 90, 84);\n"
+"}\n"
+"QPushButton::hover{\n"
+"color:black;\n"
+"border-bottom:1px  solid black;\n"
+"}\n"
+"QFrame{\n"
+"border-radius:3px;\n"
+"background-color: rgba(248, 170, 112,0.7);\n"
+"}"));
         nav_frame->setFrameShape(QFrame::StyledPanel);
         nav_frame->setFrameShadow(QFrame::Raised);
         horizontalLayout = new QHBoxLayout(nav_frame);
@@ -249,31 +303,29 @@ public:
         horizontalLayout->setObjectName("horizontalLayout");
         main_menu = new QPushButton(nav_frame);
         main_menu->setObjectName("main_menu");
-        main_menu->setMinimumSize(QSize(120, 30));
+        main_menu->setMinimumSize(QSize(110, 30));
+        main_menu->setCursor(QCursor(Qt::PointingHandCursor));
 
         horizontalLayout->addWidget(main_menu);
 
         product_menu = new QPushButton(nav_frame);
         product_menu->setObjectName("product_menu");
-        product_menu->setMinimumSize(QSize(120, 30));
+        product_menu->setMinimumSize(QSize(110, 30));
+        product_menu->setCursor(QCursor(Qt::PointingHandCursor));
 
         horizontalLayout->addWidget(product_menu);
 
         customers_menu = new QPushButton(nav_frame);
         customers_menu->setObjectName("customers_menu");
-        customers_menu->setMinimumSize(QSize(120, 30));
+        customers_menu->setMinimumSize(QSize(110, 30));
+        customers_menu->setCursor(QCursor(Qt::PointingHandCursor));
 
         horizontalLayout->addWidget(customers_menu);
 
-        add_customers_menu = new QPushButton(nav_frame);
-        add_customers_menu->setObjectName("add_customers_menu");
-        add_customers_menu->setMinimumSize(QSize(120, 30));
-
-        horizontalLayout->addWidget(add_customers_menu);
-
         go_to_admin_form = new QPushButton(nav_frame);
         go_to_admin_form->setObjectName("go_to_admin_form");
-        go_to_admin_form->setMinimumSize(QSize(120, 30));
+        go_to_admin_form->setMinimumSize(QSize(110, 30));
+        go_to_admin_form->setCursor(QCursor(Qt::PointingHandCursor));
 
         horizontalLayout->addWidget(go_to_admin_form);
 
@@ -283,75 +335,256 @@ public:
 
         logout = new QPushButton(nav_frame);
         logout->setObjectName("logout");
-        logout->setMinimumSize(QSize(120, 30));
+        logout->setMinimumSize(QSize(110, 30));
+        logout->setCursor(QCursor(Qt::PointingHandCursor));
 
         horizontalLayout->addWidget(logout);
 
 
-        gridLayout_10->addWidget(nav_frame, 0, 0, 1, 1);
+        verticalLayout_4->addWidget(nav_frame);
 
         formsStackedWidget = new QStackedWidget(centralWidget);
         formsStackedWidget->setObjectName("formsStackedWidget");
+        formsStackedWidget->setCursor(QCursor(Qt::ArrowCursor));
+        formsStackedWidget->setStyleSheet(QString::fromUtf8(""));
         login = new QWidget();
         login->setObjectName("login");
-        layoutWidget = new QWidget(login);
-        layoutWidget->setObjectName("layoutWidget");
-        layoutWidget->setGeometry(QRect(630, 290, 301, 161));
-        verticalLayout_5 = new QVBoxLayout(layoutWidget);
-        verticalLayout_5->setSpacing(6);
-        verticalLayout_5->setContentsMargins(11, 11, 11, 11);
-        verticalLayout_5->setObjectName("verticalLayout_5");
-        verticalLayout_5->setContentsMargins(0, 0, 0, 0);
-        gridLayout_5 = new QGridLayout();
-        gridLayout_5->setSpacing(6);
-        gridLayout_5->setObjectName("gridLayout_5");
-        username_field = new QLineEdit(layoutWidget);
-        username_field->setObjectName("username_field");
-        username_field->setStyleSheet(QString::fromUtf8("height: 25px;"));
-
-        gridLayout_5->addWidget(username_field, 0, 0, 1, 1);
-
-        username_label = new QLabel(layoutWidget);
-        username_label->setObjectName("username_label");
-        username_label->setStyleSheet(QString::fromUtf8("font-weight:bold;\n"
+        login->setMaximumSize(QSize(1366, 768));
+        verticalLayout_3 = new QVBoxLayout(login);
+        verticalLayout_3->setSpacing(6);
+        verticalLayout_3->setContentsMargins(11, 11, 11, 11);
+        verticalLayout_3->setObjectName("verticalLayout_3");
+        Login_frame = new QFrame(login);
+        Login_frame->setObjectName("Login_frame");
+        Login_frame->setCursor(QCursor(Qt::ArrowCursor));
+        Login_frame->setStyleSheet(QString::fromUtf8("#login_btn{\n"
+"border-radius:5px;\n"
 "font-size:18px;\n"
+"background:qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #c8ab97, stop: 1 #e2d4c9);\n"
+"color:#313131;\n"
+"font-weight:bold;\n"
+"margin:5px;\n"
+"}\n"
+"#login_btn::hover{\n"
+"background-color:#e2d4c9;\n"
+"}\n"
+"#Login_frame{\n"
+"background-image: url(:/cashRegisterSystem2/icons/Background.jpg);   \n"
+" border-radius: 10px;\n"
+"}\n"
+"#username_field,#password_field{\n"
+"border-bottom: 2px solid  #c8ab97;\n"
+"border-radius:1px;\n"
+"color:#958071;\n"
+"font-size:16px;\n"
+"font-weight:bold;\n"
+"margin:0px 5px;\n"
+"background:transparent;\n"
+"}\n"
+"QLabel {\n"
+"font-size:18px;\n"
+"font-weight:bold;\n"
+"background-color:black;\n"
+"border-radius:0;\n"
+"border:none;\n"
+"background:transparent;\n"
+"margin-right:5px;\n"
+"background-image: url(:/logo/logo/username.jpg);\n"
+"width:16px;\n"
+"height:16px;\n"
+"}\n"
+"QGridLayout{\n"
+"border-radius:2px;\n"
+"}\n"
+"#gridFrame{\n"
+"background-color:rgba(185,191,193,0.5);\n"
+"b"
+                        "order-radius:50%;\n"
+"}\n"
 ""));
+        Login_frame->setFrameShape(QFrame::StyledPanel);
+        Login_frame->setFrameShadow(QFrame::Raised);
+        gridLayout_5 = new QGridLayout(Login_frame);
+        gridLayout_5->setSpacing(6);
+        gridLayout_5->setContentsMargins(11, 11, 11, 11);
+        gridLayout_5->setObjectName("gridLayout_5");
+        horizontalSpacer_3 = new QSpacerItem(670, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
 
-        gridLayout_5->addWidget(username_label, 0, 1, 1, 1);
+        gridLayout_5->addItem(horizontalSpacer_3, 2, 3, 1, 1);
 
-        password_field = new QLineEdit(layoutWidget);
-        password_field->setObjectName("password_field");
-        password_field->setStyleSheet(QString::fromUtf8("height: 25px;"));
-        password_field->setEchoMode(QLineEdit::Normal);
+        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
-        gridLayout_5->addWidget(password_field, 1, 0, 1, 1);
+        gridLayout_5->addItem(verticalSpacer, 0, 2, 1, 1);
 
-        passwod_label = new QLabel(layoutWidget);
-        passwod_label->setObjectName("passwod_label");
-        passwod_label->setStyleSheet(QString::fromUtf8("font-weight:bold;\n"
-"font-size:18px;"));
+        verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
-        gridLayout_5->addWidget(passwod_label, 1, 1, 1, 1);
+        gridLayout_5->addItem(verticalSpacer_2, 3, 2, 1, 1);
 
+        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        verticalLayout_5->addLayout(gridLayout_5);
+        gridLayout_5->addItem(horizontalSpacer_2, 2, 0, 1, 1);
 
-        login_btn = new QPushButton(layoutWidget);
+        gridFrame = new QFrame(Login_frame);
+        gridFrame->setObjectName("gridFrame");
+        gridFrame->setMinimumSize(QSize(400, 200));
+        gridFrame->setStyleSheet(QString::fromUtf8(""));
+        gridFrame->setFrameShape(QFrame::StyledPanel);
+        gridFrame->setFrameShadow(QFrame::Raised);
+        gridLayout_11 = new QGridLayout(gridFrame);
+        gridLayout_11->setSpacing(6);
+        gridLayout_11->setContentsMargins(11, 11, 11, 11);
+        gridLayout_11->setObjectName("gridLayout_11");
+        horizontalSpacer_4 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout_11->addItem(horizontalSpacer_4, 1, 2, 1, 1);
+
+        verticalSpacer_4 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout_11->addItem(verticalSpacer_4, 0, 1, 1, 1);
+
+        verticalSpacer_3 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout_11->addItem(verticalSpacer_3, 2, 1, 1, 1);
+
+        gridLayout_8 = new QGridLayout();
+        gridLayout_8->setSpacing(6);
+        gridLayout_8->setObjectName("gridLayout_8");
+        login_btn = new QPushButton(gridFrame);
         login_btn->setObjectName("login_btn");
-        login_btn->setStyleSheet(QString::fromUtf8("font-weight:bold;\n"
-"font-size:18px;"));
+        login_btn->setMinimumSize(QSize(0, 40));
+        login_btn->setCursor(QCursor(Qt::PointingHandCursor));
 
-        verticalLayout_5->addWidget(login_btn);
+        gridLayout_8->addWidget(login_btn, 3, 0, 1, 2);
+
+        username_field = new QLineEdit(gridFrame);
+        username_field->setObjectName("username_field");
+        username_field->setMinimumSize(QSize(196, 40));
+        username_field->setMaximumSize(QSize(300, 16777215));
+
+        gridLayout_8->addWidget(username_field, 1, 0, 1, 1);
+
+        password_field = new QLineEdit(gridFrame);
+        password_field->setObjectName("password_field");
+        password_field->setMinimumSize(QSize(196, 40));
+        password_field->setMaximumSize(QSize(300, 16777215));
+
+        gridLayout_8->addWidget(password_field, 2, 0, 1, 1);
+
+        username_label = new QPushButton(gridFrame);
+        username_label->setObjectName("username_label");
+        username_label->setMaximumSize(QSize(32, 16777215));
+        username_label->setStyleSheet(QString::fromUtf8("background:transparent;"));
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/cashRegisterSystem2/icons/user (1).png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon.addFile(QString::fromUtf8(":/cashRegisterSystem2/icons/profile.png"), QSize(), QIcon::Normal, QIcon::On);
+        username_label->setIcon(icon);
+        username_label->setIconSize(QSize(40, 40));
+
+        gridLayout_8->addWidget(username_label, 1, 1, 1, 1, Qt::AlignHCenter|Qt::AlignVCenter);
+
+        passwordlabel = new QPushButton(gridFrame);
+        passwordlabel->setObjectName("passwordlabel");
+        passwordlabel->setStyleSheet(QString::fromUtf8("border:none;\n"
+"background:transparent;"));
+        QIcon icon1;
+        icon1.addFile(QString::fromUtf8(":/cashRegisterSystem2/icons/padlock.png"), QSize(), QIcon::Normal, QIcon::Off);
+        passwordlabel->setIcon(icon1);
+        passwordlabel->setIconSize(QSize(40, 40));
+
+        gridLayout_8->addWidget(passwordlabel, 2, 1, 1, 1);
+
+
+        gridLayout_11->addLayout(gridLayout_8, 1, 1, 1, 1);
+
+        horizontalSpacer_5 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout_11->addItem(horizontalSpacer_5, 1, 0, 1, 1);
+
+
+        gridLayout_5->addWidget(gridFrame, 2, 2, 1, 1, Qt::AlignTop);
+
+
+        verticalLayout_3->addWidget(Login_frame);
 
         formsStackedWidget->addWidget(login);
         user_main_form = new QWidget();
         user_main_form->setObjectName("user_main_form");
+        user_main_form->setStyleSheet(QString::fromUtf8(""));
         gridLayout_9 = new QGridLayout(user_main_form);
         gridLayout_9->setSpacing(6);
         gridLayout_9->setContentsMargins(11, 11, 11, 11);
         gridLayout_9->setObjectName("gridLayout_9");
         user_main_frame = new QFrame(user_main_form);
         user_main_frame->setObjectName("user_main_frame");
+        user_main_frame->setStyleSheet(QString::fromUtf8("QListWidget{\n"
+"border: 2px solid rgba(200,171,151,0.5);\n"
+"background-color:rgba(240,240,240,0.7);\n"
+"border-radius:10px;\n"
+"}\n"
+"QScrollArea{\n"
+"border:2px solid  #e2d4c9;\n"
+"border-radius:5px;\n"
+"background-color:rgba(245,250,245,0.5);\n"
+"}\n"
+"#user_phone_number_label{\n"
+"border:none;\n"
+"}\n"
+"QLineEdit{\n"
+"background:transparent;\n"
+"border-radius:2px;\n"
+"border-bottom:2px solid rgba(200,171,151,0.5);\n"
+"letter-spacing: 2px;\n"
+"color:rgba(120, 91, 71, 1);\n"
+"font-weight:bold;\n"
+"\n"
+"}\n"
+"#user_check_discount{\n"
+"padding:2px;\n"
+"border:1px solid rgba(120, 91, 71, 1);\n"
+"border-radius:5px;\n"
+"}\n"
+"#user_check_discount::hover{\n"
+"background-color: rgba(200,171,151,0.5);\n"
+"border:none;\n"
+"\n"
+"}\n"
+"#user_sell{\n"
+"font-size:14px;\n"
+"background-color:rgba(185,191,193,1);\n"
+"color:#323638;\n"
+"border-radius:10px;\n"
+"font-weight:bold;\n"
+"margin-left:5px;\n"
+"padding:2px;\n"
+"}\n"
+"#user_retrieve{\n"
+"font-size:14px;\n"
+"background-color:rgba(185,191,193,1);\n"
+"color:#323638;\n"
+""
+                        "border-radius:10px;\n"
+"font-weight:bold;\n"
+"padding:2px;\n"
+"}\n"
+"#user_retrieve::hover{\n"
+"background-color: rgba(200,171,151,0.5);\n"
+"}\n"
+"#user_sell::hover{\n"
+"background-color: rgba(200,171,151,0.5);\n"
+"}\n"
+"#user_cancel_order{\n"
+"padding:2px;\n"
+"margin-right:5px;\n"
+"border:none;\n"
+"border:1px solid rgba(120, 91, 71, 1);\n"
+"border-radius:5px;\n"
+"\n"
+"}\n"
+"#user_cancel_order::hover{\n"
+"background-color: rgba(200,171,151,0.5);\n"
+"border:none;\n"
+"}"));
         user_main_frame->setFrameShape(QFrame::StyledPanel);
         user_main_frame->setFrameShadow(QFrame::Raised);
         gridLayout = new QGridLayout(user_main_frame);
@@ -360,7 +593,7 @@ public:
         gridLayout->setObjectName("gridLayout");
         user_categories_list_frame = new QFrame(user_main_frame);
         user_categories_list_frame->setObjectName("user_categories_list_frame");
-        user_categories_list_frame->setMaximumSize(QSize(300, 16777215));
+        user_categories_list_frame->setMaximumSize(QSize(250, 16777215));
         user_categories_list_frame->setStyleSheet(QString::fromUtf8(""));
         user_categories_list_frame->setFrameShape(QFrame::StyledPanel);
         user_categories_list_frame->setFrameShadow(QFrame::Raised);
@@ -393,7 +626,7 @@ public:
         user_products_scroll_area->setWidgetResizable(true);
         user_products_scroll_area_content = new QWidget();
         user_products_scroll_area_content->setObjectName("user_products_scroll_area_content");
-        user_products_scroll_area_content->setGeometry(QRect(0, 0, 676, 579));
+        user_products_scroll_area_content->setGeometry(QRect(0, 0, 674, 662));
         verticalLayout_2 = new QVBoxLayout(user_products_scroll_area_content);
         verticalLayout_2->setSpacing(6);
         verticalLayout_2->setContentsMargins(11, 11, 11, 11);
@@ -413,7 +646,7 @@ public:
 
         user_cart_frame = new QFrame(user_main_frame);
         user_cart_frame->setObjectName("user_cart_frame");
-        user_cart_frame->setMinimumSize(QSize(300, 0));
+        user_cart_frame->setMinimumSize(QSize(350, 0));
         user_cart_frame->setMaximumSize(QSize(300, 16777215));
         user_cart_frame->setFrameShape(QFrame::StyledPanel);
         user_cart_frame->setFrameShadow(QFrame::Raised);
@@ -427,9 +660,10 @@ public:
         user_phone_number_label = new QPushButton(user_cart_frame);
         user_phone_number_label->setObjectName("user_phone_number_label");
         user_phone_number_label->setMaximumSize(QSize(35, 16777215));
-        QIcon icon;
-        icon.addFile(QString::fromUtf8("icon.ico"), QSize(), QIcon::Normal, QIcon::Off);
-        user_phone_number_label->setIcon(icon);
+        QIcon icon2;
+        icon2.addFile(QString::fromUtf8("icons/buying-on-smartphone.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon2.addFile(QString::fromUtf8(":/cashRegisterSystem2/Background.jpg"), QSize(), QIcon::Normal, QIcon::On);
+        user_phone_number_label->setIcon(icon2);
 
         user_gridLayout_7->addWidget(user_phone_number_label, 0, 2, 1, 1);
 
@@ -448,16 +682,18 @@ public:
         user_cartScrollArea->setWidgetResizable(true);
         user_cart_contents = new QWidget();
         user_cart_contents->setObjectName("user_cart_contents");
-        user_cart_contents->setGeometry(QRect(0, 0, 278, 483));
+        user_cart_contents->setGeometry(QRect(0, 0, 326, 573));
         user_cart_contents->setMinimumSize(QSize(0, 0));
-        layoutWidget1 = new QWidget(user_cart_contents);
-        layoutWidget1->setObjectName("layoutWidget1");
-        layoutWidget1->setGeometry(QRect(9, 9, 261, 471));
-        user_cartVerticalLayout = new QVBoxLayout(layoutWidget1);
+        verticalLayout_5 = new QVBoxLayout(user_cart_contents);
+        verticalLayout_5->setSpacing(6);
+        verticalLayout_5->setContentsMargins(11, 11, 11, 11);
+        verticalLayout_5->setObjectName("verticalLayout_5");
+        user_cartVerticalLayout = new QVBoxLayout();
         user_cartVerticalLayout->setSpacing(6);
-        user_cartVerticalLayout->setContentsMargins(11, 11, 11, 11);
         user_cartVerticalLayout->setObjectName("user_cartVerticalLayout");
-        user_cartVerticalLayout->setContentsMargins(0, 0, 0, 0);
+
+        verticalLayout_5->addLayout(user_cartVerticalLayout);
+
         user_cartScrollArea->setWidget(user_cart_contents);
 
         gridLayout_2->addWidget(user_cartScrollArea, 0, 0, 1, 2);
@@ -467,14 +703,17 @@ public:
         user_horizontalLayout_4->setObjectName("user_horizontalLayout_4");
         user_check_discount = new QPushButton(user_cart_frame);
         user_check_discount->setObjectName("user_check_discount");
-        user_check_discount->setIcon(icon);
+        user_check_discount->setCursor(QCursor(Qt::PointingHandCursor));
+        QIcon icon3;
+        icon3.addFile(QString::fromUtf8("icons/coupon.png"), QSize(), QIcon::Normal, QIcon::Off);
+        user_check_discount->setIcon(icon3);
 
         user_horizontalLayout_4->addWidget(user_check_discount);
 
         user_price_after = new QLabel(user_cart_frame);
         user_price_after->setObjectName("user_price_after");
         user_price_after->setStyleSheet(QString::fromUtf8("border: none;\n"
-"color: #c92a2a;\n"
+"color:rgba(120, 91, 71, 1);\n"
 "font-weight: bold;\n"
 "font-size: 14px;"));
 
@@ -483,23 +722,29 @@ public:
         user_price_after_const = new QLabel(user_cart_frame);
         user_price_after_const->setObjectName("user_price_after_const");
         user_price_after_const->setStyleSheet(QString::fromUtf8("border: none;\n"
-"color: #c92a2a;\n"
 "font-weight: bold;\n"
-"font-size: 12px;"));
+"font-size: 14px;\n"
+"color:rgba(120, 91, 71, 1)\n"
+"\n"
+"\n"
+"\n"
+"\n"
+""));
 
         user_horizontalLayout_4->addWidget(user_price_after_const);
 
         user_price_before = new QLabel(user_cart_frame);
         user_price_before->setObjectName("user_price_before");
         user_price_before->setStyleSheet(QString::fromUtf8("border: none;\n"
-"font-size: 14px"));
+"font-size: 14px;"));
 
         user_horizontalLayout_4->addWidget(user_price_before);
 
         user_price_before_const = new QLabel(user_cart_frame);
         user_price_before_const->setObjectName("user_price_before_const");
         user_price_before_const->setStyleSheet(QString::fromUtf8("border: none;\n"
-"font-size: 12px"));
+"font-size: 14px;\n"
+""));
 
         user_horizontalLayout_4->addWidget(user_price_before_const);
 
@@ -512,17 +757,23 @@ public:
         user_cancel_order = new QPushButton(user_cart_frame);
         user_cancel_order->setObjectName("user_cancel_order");
         user_cancel_order->setMaximumSize(QSize(30, 16777215));
-        user_cancel_order->setIcon(icon);
+        user_cancel_order->setCursor(QCursor(Qt::PointingHandCursor));
+        QIcon icon4;
+        icon4.addFile(QString::fromUtf8("icons/empty-cart.png"), QSize(), QIcon::Normal, QIcon::Off);
+        user_cancel_order->setIcon(icon4);
 
         user_horizontalLayout_5->addWidget(user_cancel_order);
 
         user_retrieve = new QPushButton(user_cart_frame);
         user_retrieve->setObjectName("user_retrieve");
+        user_retrieve->setCursor(QCursor(Qt::PointingHandCursor));
 
         user_horizontalLayout_5->addWidget(user_retrieve);
 
         user_sell = new QPushButton(user_cart_frame);
         user_sell->setObjectName("user_sell");
+        user_sell->setCursor(QCursor(Qt::PointingHandCursor));
+        user_sell->setStyleSheet(QString::fromUtf8(""));
 
         user_horizontalLayout_5->addWidget(user_sell);
 
@@ -538,79 +789,150 @@ public:
         formsStackedWidget->addWidget(user_main_form);
         admin_form = new QWidget();
         admin_form->setObjectName("admin_form");
-        control_frame = new QFrame(admin_form);
+        gridLayout_39 = new QGridLayout(admin_form);
+        gridLayout_39->setSpacing(6);
+        gridLayout_39->setContentsMargins(11, 11, 11, 11);
+        gridLayout_39->setObjectName("gridLayout_39");
+        frame = new QFrame(admin_form);
+        frame->setObjectName("frame");
+        frame->setStyleSheet(QString::fromUtf8("#control_frame{\n"
+"background-color:qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #d9c4b6, stop: 1 #faf7f5);\n"
+"border:none;\n"
+"border-radius: 5px;\n"
+"}\n"
+"#opType{\n"
+"padding:2px;\n"
+"border:none;\n"
+"border:1px solid rgba(120, 91, 71, 1);\n"
+"border-radius:5px;\n"
+"\n"
+"}\n"
+"#opType::hover{\n"
+"background-color: rgba(200,171,151,0.5);\n"
+"border:none;\n"
+"}\n"
+"#OPsearch{\n"
+"font-size:14px;\n"
+"background-color:rgba(185,191,193,1);\n"
+"color:#323638;\n"
+"border-radius:10px;\n"
+"font-weight:bold;\n"
+"padding:2px;\n"
+"}\n"
+"#OPsearch::hover{\n"
+"background-color: rgba(200,171,151,0.5);\n"
+"}\n"
+"QComboBox::down-arrow{\n"
+"image:url(:/cashRegisterSystem2/media/arrow-down.png);\n"
+"color:rgba(120, 91, 71, 1);\n"
+"border-radius:5px;\n"
+"}\n"
+"#date_search::down-arrow{\n"
+"image:url(:/cashRegisterSystem2/media/arrow-down.png);\n"
+"}\n"
+"#date_search::hover{\n"
+"background-color: rgba(200,171,151,0.5);\n"
+"}\n"
+"#date_search{\n"
+"padding:2px;\n"
+"border:none;\n"
+""
+                        "border:1px solid rgba(120, 91, 71, 1);\n"
+"border-radius:5px;\n"
+"}\n"
+"QPushButton{\n"
+"font-size:14px;\n"
+"background-color:rgba(185,191,193,1);\n"
+"color:#323638;\n"
+"border-radius:10px;\n"
+"font-weight:bold;\n"
+"padding:2px;\n"
+"}\n"
+"QPushButton::hover{\n"
+"background-color: rgba(200,171,151,0.5);\n"
+"}\n"
+"#day_total_income{\n"
+"border:2px solid  #e2d4c9;\n"
+"border-radius:5px;\n"
+"background-color:rgba(245,250,245,0.5);\n"
+"}\n"
+"QPlainTextEdit{\n"
+"background:transparent;\n"
+"border:none;\n"
+"border-bottom:1px solid #474a4c ;\n"
+"font-size:15px;\n"
+"color:#474a4c;\n"
+"}\n"
+"QComboBox::down-arrow{\n"
+"image:url(:/cashRegisterSystem2/media/arrow-down.png);\n"
+"color:rgba(120, 91, 71, 1);\n"
+"border-radius:5px;\n"
+"}\n"
+"QComboBox::down-arrow::hover{\n"
+"border-radius:5px;\n"
+"}\n"
+"QComboBox::hover{\n"
+"background-color: rgba(200,171,151,0.5);\n"
+"border:none;\n"
+"}\n"
+"QComboBox{\n"
+"background:transparent;\n"
+"border:1px solid rgba(120, 91, 71, 1);\n"
+"border-radius:5px;\n"
+"padding:2px;\n"
+"}\n"
+"\n"
+""));
+        frame->setFrameShape(QFrame::StyledPanel);
+        frame->setFrameShadow(QFrame::Raised);
+        gridLayout_51 = new QGridLayout(frame);
+        gridLayout_51->setSpacing(6);
+        gridLayout_51->setContentsMargins(11, 11, 11, 11);
+        gridLayout_51->setObjectName("gridLayout_51");
+        control_frame = new QFrame(frame);
         control_frame->setObjectName("control_frame");
-        control_frame->setGeometry(QRect(10, 30, 1231, 291));
-        control_frame->setStyleSheet(QString::fromUtf8("border: 1px solid black;"));
+        control_frame->setMinimumSize(QSize(0, 230));
+        control_frame->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"border:1px solid black;\n"
+"}\n"
+"QLabel{\n"
+"font-size:14px;\n"
+"font-weight:bold;\n"
+"}"));
         control_frame->setFrameShape(QFrame::StyledPanel);
         control_frame->setFrameShadow(QFrame::Raised);
-        line = new QFrame(control_frame);
-        line->setObjectName("line");
-        line->setGeometry(QRect(0, 80, 1231, 20));
-        line->setStyleSheet(QString::fromUtf8("border-top:1px;"));
-        line->setFrameShape(QFrame::HLine);
-        line->setFrameShadow(QFrame::Sunken);
-        label_2 = new QLabel(control_frame);
-        label_2->setObjectName("label_2");
-        label_2->setGeometry(QRect(1080, 10, 131, 81));
-        label_2->setStyleSheet(QString::fromUtf8("font-size: 16px;\n"
-"border:none;"));
-        label_3 = new QLabel(control_frame);
-        label_3->setObjectName("label_3");
-        label_3->setGeometry(QRect(1080, 110, 131, 81));
-        label_3->setStyleSheet(QString::fromUtf8("font-size: 16px;\n"
-"border:none;"));
-        item_name_item = new QPlainTextEdit(control_frame);
-        item_name_item->setObjectName("item_name_item");
-        item_name_item->setGeometry(QRect(880, 40, 151, 41));
-        label_4 = new QLabel(control_frame);
-        label_4->setObjectName("label_4");
-        label_4->setGeometry(QRect(960, 10, 71, 20));
-        label_4->setStyleSheet(QString::fromUtf8("border: none;"));
-        item_price_item = new QPlainTextEdit(control_frame);
-        item_price_item->setObjectName("item_price_item");
-        item_price_item->setGeometry(QRect(690, 40, 151, 41));
-        item_quantity_item = new QPlainTextEdit(control_frame);
-        item_quantity_item->setObjectName("item_quantity_item");
-        item_quantity_item->setGeometry(QRect(500, 40, 151, 41));
-        add_item = new QPushButton(control_frame);
-        add_item->setObjectName("add_item");
-        add_item->setGeometry(QRect(30, 10, 181, 31));
-        remove_item = new QPushButton(control_frame);
-        remove_item->setObjectName("remove_item");
-        remove_item->setGeometry(QRect(30, 60, 181, 31));
-        label_5 = new QLabel(control_frame);
-        label_5->setObjectName("label_5");
-        label_5->setGeometry(QRect(770, 10, 71, 20));
-        label_5->setStyleSheet(QString::fromUtf8("border: none;"));
-        label_6 = new QLabel(control_frame);
-        label_6->setObjectName("label_6");
-        label_6->setGeometry(QRect(580, 10, 71, 20));
-        label_6->setStyleSheet(QString::fromUtf8("border: none;"));
+        gridLayout_40 = new QGridLayout(control_frame);
+        gridLayout_40->setSpacing(6);
+        gridLayout_40->setContentsMargins(11, 11, 11, 11);
+        gridLayout_40->setObjectName("gridLayout_40");
+        gridLayout_42 = new QGridLayout();
+        gridLayout_42->setSpacing(6);
+        gridLayout_42->setObjectName("gridLayout_42");
         label_7 = new QLabel(control_frame);
         label_7->setObjectName("label_7");
-        label_7->setGeometry(QRect(390, 10, 71, 20));
         label_7->setStyleSheet(QString::fromUtf8("border: none;"));
-        remove_quantity = new QPushButton(control_frame);
-        remove_quantity->setObjectName("remove_quantity");
-        remove_quantity->setGeometry(QRect(30, 160, 181, 31));
-        add_quantity = new QPushButton(control_frame);
-        add_quantity->setObjectName("add_quantity");
-        add_quantity->setGeometry(QRect(30, 110, 181, 31));
-        item_name_quantity = new QComboBox(control_frame);
-        item_name_quantity->setObjectName("item_name_quantity");
-        item_name_quantity->setGeometry(QRect(690, 140, 341, 41));
-        label_20 = new QLabel(control_frame);
-        label_20->setObjectName("label_20");
-        label_20->setGeometry(QRect(950, 110, 71, 20));
-        label_20->setStyleSheet(QString::fromUtf8("border: none;"));
-        item_quantity_quantity = new QPlainTextEdit(control_frame);
-        item_quantity_quantity->setObjectName("item_quantity_quantity");
-        item_quantity_quantity->setGeometry(QRect(500, 140, 151, 41));
-        label_21 = new QLabel(control_frame);
-        label_21->setObjectName("label_21");
-        label_21->setGeometry(QRect(570, 110, 71, 20));
-        label_21->setStyleSheet(QString::fromUtf8("border: none;"));
+
+        gridLayout_42->addWidget(label_7, 0, 2, 1, 1);
+
+        label_4 = new QLabel(control_frame);
+        label_4->setObjectName("label_4");
+        label_4->setStyleSheet(QString::fromUtf8("border: none;"));
+
+        gridLayout_42->addWidget(label_4, 0, 6, 1, 1);
+
+        horizontalSpacer_20 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout_42->addItem(horizontalSpacer_20, 2, 1, 1, 1);
+
+        label_2 = new QLabel(control_frame);
+        label_2->setObjectName("label_2");
+        label_2->setMaximumSize(QSize(16777215, 30));
+        label_2->setStyleSheet(QString::fromUtf8("font-size: 16px;\n"
+"border:none;"));
+
+        gridLayout_42->addWidget(label_2, 2, 7, 1, 1);
+
         item_type_item = new QComboBox(control_frame);
         item_type_item->addItem(QString());
         item_type_item->addItem(QString());
@@ -671,144 +993,390 @@ public:
         item_type_item->addItem(QString());
         item_type_item->addItem(QString());
         item_type_item->setObjectName("item_type_item");
-        item_type_item->setGeometry(QRect(310, 40, 151, 41));
-        line_2 = new QFrame(control_frame);
-        line_2->setObjectName("line_2");
-        line_2->setGeometry(QRect(0, 190, 1231, 20));
-        line_2->setStyleSheet(QString::fromUtf8("border-top:1px;"));
-        line_2->setFrameShape(QFrame::HLine);
-        line_2->setFrameShadow(QFrame::Sunken);
+        item_type_item->setMinimumSize(QSize(0, 30));
+
+        gridLayout_42->addWidget(item_type_item, 2, 2, 1, 1);
+
+        label_5 = new QLabel(control_frame);
+        label_5->setObjectName("label_5");
+        label_5->setStyleSheet(QString::fromUtf8("border: none;"));
+
+        gridLayout_42->addWidget(label_5, 0, 4, 1, 1);
+
+        add_item = new QPushButton(control_frame);
+        add_item->setObjectName("add_item");
+        add_item->setMinimumSize(QSize(100, 0));
+        add_item->setMaximumSize(QSize(16777215, 30));
+        add_item->setCursor(QCursor(Qt::PointingHandCursor));
+
+        gridLayout_42->addWidget(add_item, 0, 0, 1, 1);
+
+        label_6 = new QLabel(control_frame);
+        label_6->setObjectName("label_6");
+        label_6->setStyleSheet(QString::fromUtf8("border: none;"));
+
+        gridLayout_42->addWidget(label_6, 0, 3, 1, 1);
+
+        remove_item = new QPushButton(control_frame);
+        remove_item->setObjectName("remove_item");
+        remove_item->setMaximumSize(QSize(16777215, 30));
+        remove_item->setCursor(QCursor(Qt::PointingHandCursor));
+
+        gridLayout_42->addWidget(remove_item, 2, 0, 1, 1);
+
+        item_name_item = new QPlainTextEdit(control_frame);
+        item_name_item->setObjectName("item_name_item");
+        item_name_item->setMaximumSize(QSize(16777215, 30));
+
+        gridLayout_42->addWidget(item_name_item, 2, 6, 1, 1);
+
+        item_price_item = new QPlainTextEdit(control_frame);
+        item_price_item->setObjectName("item_price_item");
+        item_price_item->setMaximumSize(QSize(16777215, 30));
+
+        gridLayout_42->addWidget(item_price_item, 2, 4, 1, 1);
+
+        item_quantity_item = new QPlainTextEdit(control_frame);
+        item_quantity_item->setObjectName("item_quantity_item");
+        item_quantity_item->setMaximumSize(QSize(16777215, 30));
+
+        gridLayout_42->addWidget(item_quantity_item, 2, 3, 1, 1);
+
+
+        gridLayout_40->addLayout(gridLayout_42, 0, 1, 1, 1);
+
+        gridLayout_43 = new QGridLayout();
+        gridLayout_43->setSpacing(6);
+        gridLayout_43->setObjectName("gridLayout_43");
         label_12 = new QLabel(control_frame);
         label_12->setObjectName("label_12");
-        label_12->setGeometry(QRect(1090, 210, 121, 81));
+        label_12->setMinimumSize(QSize(116, 0));
+        label_12->setMaximumSize(QSize(16777215, 30));
         label_12->setStyleSheet(QString::fromUtf8("font-size: 16px;\n"
 "border:none;"));
-        edit_price = new QPushButton(control_frame);
-        edit_price->setObjectName("edit_price");
-        edit_price->setGeometry(QRect(30, 230, 181, 31));
-        item_name_price = new QComboBox(control_frame);
-        item_name_price->setObjectName("item_name_price");
-        item_name_price->setGeometry(QRect(690, 240, 341, 41));
-        label_27 = new QLabel(control_frame);
-        label_27->setObjectName("label_27");
-        label_27->setGeometry(QRect(960, 210, 71, 20));
-        label_27->setStyleSheet(QString::fromUtf8("border: none;"));
-        item_price_price = new QPlainTextEdit(control_frame);
-        item_price_price->setObjectName("item_price_price");
-        item_price_price->setGeometry(QRect(500, 240, 151, 41));
+
+        gridLayout_43->addWidget(label_12, 2, 6, 1, 1);
+
         label_28 = new QLabel(control_frame);
         label_28->setObjectName("label_28");
-        label_28->setGeometry(QRect(580, 210, 71, 20));
+        label_28->setMinimumSize(QSize(0, 30));
+        label_28->setMaximumSize(QSize(16777215, 20));
         label_28->setStyleSheet(QString::fromUtf8("border: none;"));
-        label_22 = new QLabel(admin_form);
-        label_22->setObjectName("label_22");
-        label_22->setGeometry(QRect(1070, 0, 161, 20));
-        label_22->setStyleSheet(QString::fromUtf8("font-size: 18px;\n"
-"font-weight: bold;"));
-        total_operations_frame = new QFrame(admin_form);
-        total_operations_frame->setObjectName("total_operations_frame");
-        total_operations_frame->setGeometry(QRect(10, 370, 341, 261));
-        total_operations_frame->setStyleSheet(QString::fromUtf8("border: 1px solid black;"));
-        total_operations_frame->setFrameShape(QFrame::StyledPanel);
-        total_operations_frame->setFrameShadow(QFrame::Raised);
-        scrollArea_7 = new QScrollArea(total_operations_frame);
-        scrollArea_7->setObjectName("scrollArea_7");
-        scrollArea_7->setGeometry(QRect(0, 0, 341, 261));
-        scrollArea_7->setWidgetResizable(true);
-        total_operations_contents = new QWidget();
-        total_operations_contents->setObjectName("total_operations_contents");
-        total_operations_contents->setGeometry(QRect(0, 0, 339, 259));
-        verticalLayoutWidget_4 = new QWidget(total_operations_contents);
-        verticalLayoutWidget_4->setObjectName("verticalLayoutWidget_4");
-        verticalLayoutWidget_4->setGeometry(QRect(0, 0, 341, 261));
-        total_VLayout = new QVBoxLayout(verticalLayoutWidget_4);
-        total_VLayout->setSpacing(6);
-        total_VLayout->setContentsMargins(11, 11, 11, 11);
-        total_VLayout->setObjectName("total_VLayout");
-        total_VLayout->setContentsMargins(0, 0, 0, 0);
-        scrollArea_7->setWidget(total_operations_contents);
-        return_operations_frame = new QFrame(admin_form);
+
+        gridLayout_43->addWidget(label_28, 1, 3, 1, 1);
+
+        edit_price = new QPushButton(control_frame);
+        edit_price->setObjectName("edit_price");
+        edit_price->setMinimumSize(QSize(100, 0));
+        edit_price->setMaximumSize(QSize(16777215, 30));
+        edit_price->setCursor(QCursor(Qt::PointingHandCursor));
+
+        gridLayout_43->addWidget(edit_price, 2, 0, 1, 1);
+
+        label_27 = new QLabel(control_frame);
+        label_27->setObjectName("label_27");
+        label_27->setMinimumSize(QSize(0, 30));
+        label_27->setMaximumSize(QSize(16777215, 200));
+        label_27->setStyleSheet(QString::fromUtf8("border: none;"));
+
+        gridLayout_43->addWidget(label_27, 1, 5, 1, 1);
+
+        horizontalSpacer_21 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout_43->addItem(horizontalSpacer_21, 2, 1, 1, 1);
+
+        item_name_price = new QComboBox(control_frame);
+        item_name_price->setObjectName("item_name_price");
+        item_name_price->setMinimumSize(QSize(200, 0));
+        item_name_price->setMaximumSize(QSize(16777215, 30));
+
+        gridLayout_43->addWidget(item_name_price, 2, 5, 1, 1);
+
+        item_price_price = new QPlainTextEdit(control_frame);
+        item_price_price->setObjectName("item_price_price");
+        item_price_price->setMaximumSize(QSize(200, 30));
+
+        gridLayout_43->addWidget(item_price_price, 2, 3, 1, 1);
+
+
+        gridLayout_40->addLayout(gridLayout_43, 4, 1, 1, 1);
+
+        gridLayout_41 = new QGridLayout();
+        gridLayout_41->setSpacing(6);
+        gridLayout_41->setObjectName("gridLayout_41");
+        label_20 = new QLabel(control_frame);
+        label_20->setObjectName("label_20");
+        label_20->setStyleSheet(QString::fromUtf8("border: none;"));
+
+        gridLayout_41->addWidget(label_20, 0, 3, 1, 1);
+
+        item_name_quantity = new QComboBox(control_frame);
+        item_name_quantity->setObjectName("item_name_quantity");
+        item_name_quantity->setMinimumSize(QSize(200, 30));
+        item_name_quantity->setMaximumSize(QSize(1000, 16777215));
+
+        gridLayout_41->addWidget(item_name_quantity, 2, 3, 1, 1);
+
+        label_21 = new QLabel(control_frame);
+        label_21->setObjectName("label_21");
+        label_21->setStyleSheet(QString::fromUtf8("border: none;"));
+
+        gridLayout_41->addWidget(label_21, 0, 2, 1, 1);
+
+        remove_quantity = new QPushButton(control_frame);
+        remove_quantity->setObjectName("remove_quantity");
+        remove_quantity->setMaximumSize(QSize(16777215, 30));
+        remove_quantity->setCursor(QCursor(Qt::PointingHandCursor));
+
+        gridLayout_41->addWidget(remove_quantity, 2, 0, 1, 1);
+
+        add_quantity = new QPushButton(control_frame);
+        add_quantity->setObjectName("add_quantity");
+        add_quantity->setMinimumSize(QSize(100, 0));
+        add_quantity->setMaximumSize(QSize(16777215, 30));
+        add_quantity->setCursor(QCursor(Qt::PointingHandCursor));
+
+        gridLayout_41->addWidget(add_quantity, 0, 0, 1, 1);
+
+        horizontalSpacer_19 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout_41->addItem(horizontalSpacer_19, 2, 1, 1, 1);
+
+        label_3 = new QLabel(control_frame);
+        label_3->setObjectName("label_3");
+        label_3->setStyleSheet(QString::fromUtf8("font-size: 16px;\n"
+"border:none;"));
+
+        gridLayout_41->addWidget(label_3, 2, 4, 1, 1);
+
+        item_quantity_quantity = new QPlainTextEdit(control_frame);
+        item_quantity_quantity->setObjectName("item_quantity_quantity");
+        item_quantity_quantity->setMaximumSize(QSize(200, 30));
+
+        gridLayout_41->addWidget(item_quantity_quantity, 2, 2, 1, 1);
+
+
+        gridLayout_40->addLayout(gridLayout_41, 2, 1, 1, 1);
+
+        line = new QFrame(control_frame);
+        line->setObjectName("line");
+        line->setMinimumSize(QSize(1, 1));
+        line->setMaximumSize(QSize(16777215, 1));
+        line->setFrameShadow(QFrame::Plain);
+        line->setLineWidth(5);
+        line->setFrameShape(QFrame::HLine);
+
+        gridLayout_40->addWidget(line, 1, 1, 1, 1);
+
+        line_2 = new QFrame(control_frame);
+        line_2->setObjectName("line_2");
+        line_2->setMinimumSize(QSize(0, 1));
+        line_2->setMaximumSize(QSize(16777215, 1));
+        line_2->setStyleSheet(QString::fromUtf8("background-color:black;"));
+        line_2->setFrameShape(QFrame::HLine);
+        line_2->setFrameShadow(QFrame::Sunken);
+
+        gridLayout_40->addWidget(line_2, 3, 1, 1, 1);
+
+
+        gridLayout_51->addWidget(control_frame, 0, 0, 1, 2);
+
+        frame_4 = new QFrame(frame);
+        frame_4->setObjectName("frame_4");
+        frame_4->setMinimumSize(QSize(0, 450));
+        frame_4->setFrameShape(QFrame::StyledPanel);
+        frame_4->setFrameShadow(QFrame::Raised);
+        gridLayout_44 = new QGridLayout(frame_4);
+        gridLayout_44->setSpacing(6);
+        gridLayout_44->setContentsMargins(11, 11, 11, 11);
+        gridLayout_44->setObjectName("gridLayout_44");
+        label_25 = new QLabel(frame_4);
+        label_25->setObjectName("label_25");
+        label_25->setStyleSheet(QString::fromUtf8("font-size: 18px;\n"
+"font-weight: bold;\n"
+"margin-right:5px;\n"
+"color:rgba(120, 91, 71, 1)\n"
+""));
+
+        gridLayout_44->addWidget(label_25, 0, 1, 1, 1);
+
+        label_23 = new QLabel(frame_4);
+        label_23->setObjectName("label_23");
+        label_23->setStyleSheet(QString::fromUtf8("font-size: 18px;\n"
+"font-weight: bold;\n"
+"margin-right:5px;\n"
+"color:rgba(120, 91, 71, 1)\n"
+""));
+
+        gridLayout_44->addWidget(label_23, 0, 2, 1, 1);
+
+        return_operations_frame = new QFrame(frame_4);
         return_operations_frame->setObjectName("return_operations_frame");
-        return_operations_frame->setGeometry(QRect(360, 370, 341, 261));
-        return_operations_frame->setStyleSheet(QString::fromUtf8("border: 1px solid black;"));
+        return_operations_frame->setStyleSheet(QString::fromUtf8("#scrollArea_6{\n"
+"border:2px solid  #e2d4c9;\n"
+"border-radius:5px;\n"
+"background-color:rgba(245,250,245,0.5);\n"
+"}\n"
+""));
         return_operations_frame->setFrameShape(QFrame::StyledPanel);
         return_operations_frame->setFrameShadow(QFrame::Raised);
+        gridLayout_47 = new QGridLayout(return_operations_frame);
+        gridLayout_47->setSpacing(6);
+        gridLayout_47->setContentsMargins(11, 11, 11, 11);
+        gridLayout_47->setObjectName("gridLayout_47");
         scrollArea_6 = new QScrollArea(return_operations_frame);
         scrollArea_6->setObjectName("scrollArea_6");
-        scrollArea_6->setGeometry(QRect(0, 0, 341, 261));
         scrollArea_6->setWidgetResizable(true);
         return_operations_contents = new QWidget();
         return_operations_contents->setObjectName("return_operations_contents");
-        return_operations_contents->setGeometry(QRect(0, 0, 339, 259));
-        verticalLayoutWidget_3 = new QWidget(return_operations_contents);
-        verticalLayoutWidget_3->setObjectName("verticalLayoutWidget_3");
-        verticalLayoutWidget_3->setGeometry(QRect(0, 0, 341, 261));
-        return_VLayout = new QVBoxLayout(verticalLayoutWidget_3);
+        return_operations_contents->setGeometry(QRect(0, 0, 370, 173));
+        gridLayout_48 = new QGridLayout(return_operations_contents);
+        gridLayout_48->setSpacing(6);
+        gridLayout_48->setContentsMargins(11, 11, 11, 11);
+        gridLayout_48->setObjectName("gridLayout_48");
+        return_VLayout = new QVBoxLayout();
         return_VLayout->setSpacing(6);
-        return_VLayout->setContentsMargins(11, 11, 11, 11);
         return_VLayout->setObjectName("return_VLayout");
-        return_VLayout->setContentsMargins(0, 0, 0, 0);
+
+        gridLayout_48->addLayout(return_VLayout, 0, 0, 1, 1);
+
         scrollArea_6->setWidget(return_operations_contents);
-        sell_operations_frame = new QFrame(admin_form);
+
+        gridLayout_47->addWidget(scrollArea_6, 0, 0, 1, 1);
+
+
+        gridLayout_44->addWidget(return_operations_frame, 1, 1, 1, 1);
+
+        sell_operations_frame = new QFrame(frame_4);
         sell_operations_frame->setObjectName("sell_operations_frame");
-        sell_operations_frame->setGeometry(QRect(710, 370, 341, 261));
-        sell_operations_frame->setStyleSheet(QString::fromUtf8("border: 1px solid black;"));
+        sell_operations_frame->setStyleSheet(QString::fromUtf8("#scrollArea_5{\n"
+"border:2px solid  #e2d4c9;\n"
+"border-radius:5px;\n"
+"background-color:rgba(245,250,245,0.5);\n"
+"}\n"
+""));
         sell_operations_frame->setFrameShape(QFrame::StyledPanel);
         sell_operations_frame->setFrameShadow(QFrame::Raised);
+        gridLayout_45 = new QGridLayout(sell_operations_frame);
+        gridLayout_45->setSpacing(6);
+        gridLayout_45->setContentsMargins(11, 11, 11, 11);
+        gridLayout_45->setObjectName("gridLayout_45");
         scrollArea_5 = new QScrollArea(sell_operations_frame);
         scrollArea_5->setObjectName("scrollArea_5");
-        scrollArea_5->setGeometry(QRect(0, 0, 341, 261));
         scrollArea_5->setWidgetResizable(true);
         sell_operations_contents = new QWidget();
         sell_operations_contents->setObjectName("sell_operations_contents");
-        sell_operations_contents->setGeometry(QRect(0, 0, 339, 259));
-        verticalLayoutWidget_2 = new QWidget(sell_operations_contents);
-        verticalLayoutWidget_2->setObjectName("verticalLayoutWidget_2");
-        verticalLayoutWidget_2->setGeometry(QRect(0, 0, 341, 261));
-        sell_VLayout = new QVBoxLayout(verticalLayoutWidget_2);
+        sell_operations_contents->setGeometry(QRect(0, 0, 370, 173));
+        gridLayout_46 = new QGridLayout(sell_operations_contents);
+        gridLayout_46->setSpacing(6);
+        gridLayout_46->setContentsMargins(11, 11, 11, 11);
+        gridLayout_46->setObjectName("gridLayout_46");
+        sell_VLayout = new QVBoxLayout();
         sell_VLayout->setSpacing(6);
-        sell_VLayout->setContentsMargins(11, 11, 11, 11);
         sell_VLayout->setObjectName("sell_VLayout");
-        sell_VLayout->setContentsMargins(0, 0, 0, 0);
+
+        gridLayout_46->addLayout(sell_VLayout, 0, 0, 1, 1);
+
         scrollArea_5->setWidget(sell_operations_contents);
-        label_23 = new QLabel(admin_form);
-        label_23->setObjectName("label_23");
-        label_23->setGeometry(QRect(940, 330, 111, 31));
-        label_23->setStyleSheet(QString::fromUtf8("font-size: 18px;\n"
-"font-weight: bold;"));
-        label_25 = new QLabel(admin_form);
-        label_25->setObjectName("label_25");
-        label_25->setGeometry(QRect(570, 330, 131, 31));
-        label_25->setStyleSheet(QString::fromUtf8("font-size: 18px;\n"
-"font-weight: bold;"));
-        label_24 = new QLabel(admin_form);
+
+        gridLayout_45->addWidget(scrollArea_5, 0, 0, 1, 1);
+
+
+        gridLayout_44->addWidget(sell_operations_frame, 1, 2, 1, 1);
+
+        label_24 = new QLabel(frame_4);
         label_24->setObjectName("label_24");
-        label_24->setGeometry(QRect(100, 330, 251, 31));
         label_24->setStyleSheet(QString::fromUtf8("font-size: 18px;\n"
-"font-weight: bold;"));
-        day_total_income = new QTextBrowser(admin_form);
+"font-weight: bold;\n"
+"margin-right:5px;\n"
+"color:rgba(120, 91, 71, 1)\n"
+""));
+
+        gridLayout_44->addWidget(label_24, 0, 0, 1, 1);
+
+        horizontalLayout_14 = new QHBoxLayout();
+        horizontalLayout_14->setSpacing(6);
+        horizontalLayout_14->setObjectName("horizontalLayout_14");
+        day_total_income = new QTextBrowser(frame_4);
         day_total_income->setObjectName("day_total_income");
-        day_total_income->setGeometry(QRect(10, 640, 261, 31));
-        label_26 = new QLabel(admin_form);
+        day_total_income->setMinimumSize(QSize(160, 20));
+        day_total_income->setMaximumSize(QSize(100, 40));
+        day_total_income->setStyleSheet(QString::fromUtf8(""));
+
+        horizontalLayout_14->addWidget(day_total_income);
+
+        label_26 = new QLabel(frame_4);
         label_26->setObjectName("label_26");
-        label_26->setGeometry(QRect(270, 640, 101, 31));
+        label_26->setMinimumSize(QSize(120, 0));
+        label_26->setMaximumSize(QSize(120, 40));
         label_26->setStyleSheet(QString::fromUtf8("font-size: 18px;\n"
-"font-weight: bold;"));
-        layoutWidget2 = new QWidget(admin_form);
-        layoutWidget2->setObjectName("layoutWidget2");
-        layoutWidget2->setGeometry(QRect(1070, 380, 171, 169));
-        verticalLayout_9 = new QVBoxLayout(layoutWidget2);
+"font-weight: bold;\n"
+"color:rgba(120, 91, 71, 1)\n"
+""));
+
+        horizontalLayout_14->addWidget(label_26);
+
+        horizontalSpacer_22 = new QSpacerItem(40, 10, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_14->addItem(horizontalSpacer_22);
+
+
+        gridLayout_44->addLayout(horizontalLayout_14, 3, 0, 1, 3);
+
+        total_operations_frame = new QFrame(frame_4);
+        total_operations_frame->setObjectName("total_operations_frame");
+        total_operations_frame->setStyleSheet(QString::fromUtf8("#scrollArea_7{\n"
+"border:2px solid  #e2d4c9;\n"
+"border-radius:5px;\n"
+"background-color:rgba(245,250,245,0.5);\n"
+"}\n"
+""));
+        total_operations_frame->setFrameShape(QFrame::StyledPanel);
+        total_operations_frame->setFrameShadow(QFrame::Raised);
+        gridLayout_49 = new QGridLayout(total_operations_frame);
+        gridLayout_49->setSpacing(6);
+        gridLayout_49->setContentsMargins(11, 11, 11, 11);
+        gridLayout_49->setObjectName("gridLayout_49");
+        scrollArea_7 = new QScrollArea(total_operations_frame);
+        scrollArea_7->setObjectName("scrollArea_7");
+        scrollArea_7->setWidgetResizable(true);
+        total_operations_contents = new QWidget();
+        total_operations_contents->setObjectName("total_operations_contents");
+        total_operations_contents->setGeometry(QRect(0, 0, 370, 173));
+        gridLayout_50 = new QGridLayout(total_operations_contents);
+        gridLayout_50->setSpacing(6);
+        gridLayout_50->setContentsMargins(11, 11, 11, 11);
+        gridLayout_50->setObjectName("gridLayout_50");
+        total_VLayout = new QVBoxLayout();
+        total_VLayout->setSpacing(6);
+        total_VLayout->setObjectName("total_VLayout");
+
+        gridLayout_50->addLayout(total_VLayout, 0, 0, 1, 1);
+
+        scrollArea_7->setWidget(total_operations_contents);
+
+        gridLayout_49->addWidget(scrollArea_7, 0, 0, 1, 1);
+
+
+        gridLayout_44->addWidget(total_operations_frame, 1, 0, 1, 1);
+
+
+        gridLayout_51->addWidget(frame_4, 1, 0, 1, 1);
+
+        verticalLayout_9 = new QVBoxLayout();
         verticalLayout_9->setSpacing(6);
-        verticalLayout_9->setContentsMargins(11, 11, 11, 11);
         verticalLayout_9->setObjectName("verticalLayout_9");
-        verticalLayout_9->setContentsMargins(0, 0, 0, 0);
-        label_14 = new QLabel(layoutWidget2);
+        verticalSpacer_5 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        verticalLayout_9->addItem(verticalSpacer_5);
+
+        label_14 = new QLabel(frame);
         label_14->setObjectName("label_14");
         label_14->setStyleSheet(QString::fromUtf8("margin: 3px"));
 
         verticalLayout_9->addWidget(label_14);
 
-        opType = new QComboBox(layoutWidget2);
+        opType = new QComboBox(frame);
         opType->addItem(QString());
         opType->addItem(QString());
         opType->addItem(QString());
@@ -818,13 +1386,13 @@ public:
 
         verticalLayout_9->addWidget(opType);
 
-        label_11 = new QLabel(layoutWidget2);
+        label_11 = new QLabel(frame);
         label_11->setObjectName("label_11");
         label_11->setStyleSheet(QString::fromUtf8("margin: 3px"));
 
         verticalLayout_9->addWidget(label_11);
 
-        date_search = new QDateEdit(layoutWidget2);
+        date_search = new QDateEdit(frame);
         date_search->setObjectName("date_search");
         date_search->setStyleSheet(QString::fromUtf8("height: 25px"));
         date_search->setCalendarPopup(true);
@@ -832,193 +1400,379 @@ public:
 
         verticalLayout_9->addWidget(date_search);
 
-        OPsearch = new QPushButton(layoutWidget2);
+        OPsearch = new QPushButton(frame);
         OPsearch->setObjectName("OPsearch");
+        OPsearch->setCursor(QCursor(Qt::PointingHandCursor));
         OPsearch->setStyleSheet(QString::fromUtf8("height: 30px;"));
 
         verticalLayout_9->addWidget(OPsearch);
 
+        verticalSpacer_6 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        verticalLayout_9->addItem(verticalSpacer_6);
+
+
+        gridLayout_51->addLayout(verticalLayout_9, 1, 1, 1, 1);
+
+
+        gridLayout_39->addWidget(frame, 0, 0, 1, 1);
+
         formsStackedWidget->addWidget(admin_form);
-        creating_customer_account = new QWidget();
-        creating_customer_account->setObjectName("creating_customer_account");
-        layoutWidget3 = new QWidget(creating_customer_account);
-        layoutWidget3->setObjectName("layoutWidget3");
-        layoutWidget3->setGeometry(QRect(520, 140, 401, 261));
-        verticalLayout_6 = new QVBoxLayout(layoutWidget3);
-        verticalLayout_6->setSpacing(6);
-        verticalLayout_6->setContentsMargins(11, 11, 11, 11);
-        verticalLayout_6->setObjectName("verticalLayout_6");
-        verticalLayout_6->setContentsMargins(0, 0, 0, 0);
-        gridLayout_6 = new QGridLayout();
-        gridLayout_6->setSpacing(6);
-        gridLayout_6->setObjectName("gridLayout_6");
-        new_customer_name = new QLineEdit(layoutWidget3);
-        new_customer_name->setObjectName("new_customer_name");
-
-        gridLayout_6->addWidget(new_customer_name, 0, 0, 1, 1);
-
-        nameLable = new QLabel(layoutWidget3);
-        nameLable->setObjectName("nameLable");
-
-        gridLayout_6->addWidget(nameLable, 0, 1, 1, 1);
-
-        new_customer_phone = new QLineEdit(layoutWidget3);
-        new_customer_phone->setObjectName("new_customer_phone");
-
-        gridLayout_6->addWidget(new_customer_phone, 1, 0, 1, 1);
-
-        phoneLable = new QLabel(layoutWidget3);
-        phoneLable->setObjectName("phoneLable");
-
-        gridLayout_6->addWidget(phoneLable, 1, 1, 1, 1);
-
-        class_box = new QComboBox(layoutWidget3);
-        class_box->setObjectName("class_box");
-        class_box->setEditable(false);
-
-        gridLayout_6->addWidget(class_box, 2, 0, 1, 1);
-
-        classLable = new QLabel(layoutWidget3);
-        classLable->setObjectName("classLable");
-
-        gridLayout_6->addWidget(classLable, 2, 1, 1, 1);
-
-
-        verticalLayout_6->addLayout(gridLayout_6);
-
-        add_new = new QPushButton(layoutWidget3);
-        add_new->setObjectName("add_new");
-
-        verticalLayout_6->addWidget(add_new);
-
-        formsStackedWidget->addWidget(creating_customer_account);
         customers_form = new QWidget();
         customers_form->setObjectName("customers_form");
-        results = new QScrollArea(customers_form);
-        results->setObjectName("results");
-        results->setGeometry(QRect(240, 30, 981, 631));
-        results->setStyleSheet(QString::fromUtf8("border: 1px solid black;"));
-        results->setWidgetResizable(true);
-        scrollAreaWidgetContents = new QWidget();
-        scrollAreaWidgetContents->setObjectName("scrollAreaWidgetContents");
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 979, 629));
-        tableView = new QTableView(scrollAreaWidgetContents);
-        tableView->setObjectName("tableView");
-        tableView->setGeometry(QRect(0, 0, 981, 631));
-        results->setWidget(scrollAreaWidgetContents);
-        layoutWidget4 = new QWidget(customers_form);
-        layoutWidget4->setObjectName("layoutWidget4");
-        layoutWidget4->setGeometry(QRect(20, 80, 201, 431));
-        verticalLayout_8 = new QVBoxLayout(layoutWidget4);
-        verticalLayout_8->setSpacing(6);
-        verticalLayout_8->setContentsMargins(11, 11, 11, 11);
-        verticalLayout_8->setObjectName("verticalLayout_8");
-        verticalLayout_8->setContentsMargins(0, 0, 0, 0);
-        verticalLayout_7 = new QVBoxLayout();
-        verticalLayout_7->setSpacing(6);
-        verticalLayout_7->setObjectName("verticalLayout_7");
-        label_8 = new QLabel(layoutWidget4);
-        label_8->setObjectName("label_8");
-        label_8->setStyleSheet(QString::fromUtf8("font-weight:bold;\n"
-"font-size:18px;"));
+        gridLayout_33 = new QGridLayout(customers_form);
+        gridLayout_33->setSpacing(6);
+        gridLayout_33->setContentsMargins(11, 11, 11, 11);
+        gridLayout_33->setObjectName("gridLayout_33");
+        customers_frame = new QFrame(customers_form);
+        customers_frame->setObjectName("customers_frame");
+        customers_frame->setStyleSheet(QString::fromUtf8("QLabel{\n"
+"font-size:16px;\n"
+"font-weight:bold;\n"
+"padding:2px;\n"
+"}\n"
+"QPushButton{\n"
+"font-size:15px;\n"
+"background-color:rgba(185,191,193,1);\n"
+"color:#323638;\n"
+"border-radius:10px;\n"
+"font-weight:bold;\n"
+"margin-left:5px;\n"
+"padding:10px;\n"
+"}\n"
+"QPushButton::hover{\n"
+"background-color: rgba(200,171,151,0.5);\n"
+"}\n"
+"#add_customer_frame{\n"
+"border:1px solid black;\n"
+"border-radius:10px;\n"
+"background-color: rgba(200,171,151,0.5);\n"
+"padding:10px 0px;\n"
+"}\n"
+"QLineEdit{\n"
+"background:transparent;\n"
+"border:none;\n"
+"border-bottom:1px solid #323638 ;\n"
+"font-size:15px;\n"
+"color:#323638;\n"
+"}\n"
+"QComboBox{\n"
+"padding:2px;\n"
+"border-radius:2px;\n"
+"font-size:15px;\n"
+"}\n"
+"\n"
+"#tableView{\n"
+"border-radius:10px;\n"
+"border: 2px solid rgba(200,171,151,0.5);\n"
+"background-color:rgba(245,250,245,0.5);\n"
+"}\n"
+"QComboBox::down-arrow{\n"
+"image:url(:/cashRegisterSystem2/media/arrow-down.png);\n"
+"color:rgba(120, 91, 71, 1);\n"
+"border-radius:5px;\n"
+"}\n"
+"QComboBox::down-arrow::"
+                        "hover{\n"
+"border-radius:5px;\n"
+"}\n"
+"QComboBox::hover{\n"
+"background-color: rgba(200,171,151,0.5);\n"
+"border:none;\n"
+"}\n"
+"QComboBox{\n"
+"background:transparent;\n"
+"border:1px solid rgba(120, 91, 71, 1);\n"
+"border-radius:5px;\n"
+"padding:2px;\n"
+"}\n"
+"\n"
+""));
+        customers_frame->setFrameShape(QFrame::StyledPanel);
+        customers_frame->setFrameShadow(QFrame::Raised);
+        gridLayout_32 = new QGridLayout(customers_frame);
+        gridLayout_32->setSpacing(6);
+        gridLayout_32->setContentsMargins(11, 11, 11, 11);
+        gridLayout_32->setObjectName("gridLayout_32");
+        frame_2 = new QFrame(customers_frame);
+        frame_2->setObjectName("frame_2");
+        frame_2->setFrameShape(QFrame::StyledPanel);
+        frame_2->setFrameShadow(QFrame::Raised);
+        gridLayout_29 = new QGridLayout(frame_2);
+        gridLayout_29->setSpacing(6);
+        gridLayout_29->setContentsMargins(11, 11, 11, 11);
+        gridLayout_29->setObjectName("gridLayout_29");
+        horizontalLayout_12 = new QHBoxLayout();
+        horizontalLayout_12->setSpacing(6);
+        horizontalLayout_12->setObjectName("horizontalLayout_12");
+        Search_btn = new QPushButton(frame_2);
+        Search_btn->setObjectName("Search_btn");
+        Search_btn->setMinimumSize(QSize(200, 0));
+        Search_btn->setCursor(QCursor(Qt::PointingHandCursor));
 
-        verticalLayout_7->addWidget(label_8);
+        horizontalLayout_12->addWidget(Search_btn);
 
-        nameSearch = new QLineEdit(layoutWidget4);
-        nameSearch->setObjectName("nameSearch");
+        horizontalSpacer_14 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        verticalLayout_7->addWidget(nameSearch);
+        horizontalLayout_12->addItem(horizontalSpacer_14);
 
-        verticalSpacer_8 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        verticalLayout_7->addItem(verticalSpacer_8);
-
-        label_9 = new QLabel(layoutWidget4);
-        label_9->setObjectName("label_9");
-        label_9->setStyleSheet(QString::fromUtf8("font-weight:bold;\n"
-"font-size:18px;"));
-
-        verticalLayout_7->addWidget(label_9);
-
-        phoneSearch = new QLineEdit(layoutWidget4);
-        phoneSearch->setObjectName("phoneSearch");
-
-        verticalLayout_7->addWidget(phoneSearch);
-
-        verticalSpacer_9 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        verticalLayout_7->addItem(verticalSpacer_9);
-
-        label_10 = new QLabel(layoutWidget4);
-        label_10->setObjectName("label_10");
-        label_10->setStyleSheet(QString::fromUtf8("font-weight:bold;\n"
-"font-size:18px;"));
-
-        verticalLayout_7->addWidget(label_10);
-
-        ranksearch = new QComboBox(layoutWidget4);
+        ranksearch = new QComboBox(frame_2);
         ranksearch->addItem(QString());
         ranksearch->addItem(QString());
         ranksearch->addItem(QString());
         ranksearch->addItem(QString());
         ranksearch->setObjectName("ranksearch");
+        ranksearch->setMinimumSize(QSize(200, 0));
 
-        verticalLayout_7->addWidget(ranksearch);
+        horizontalLayout_12->addWidget(ranksearch);
 
-        verticalSpacer_10 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+        label_33 = new QLabel(frame_2);
+        label_33->setObjectName("label_33");
+        label_33->setStyleSheet(QString::fromUtf8("font-weight:bold;\n"
+"font-size:18px;"));
 
-        verticalLayout_7->addItem(verticalSpacer_10);
+        horizontalLayout_12->addWidget(label_33);
+
+        phoneSearch = new QLineEdit(frame_2);
+        phoneSearch->setObjectName("phoneSearch");
+        phoneSearch->setMaximumSize(QSize(150, 16777215));
+
+        horizontalLayout_12->addWidget(phoneSearch);
+
+        label_34 = new QLabel(frame_2);
+        label_34->setObjectName("label_34");
+        label_34->setStyleSheet(QString::fromUtf8("font-weight:bold;\n"
+"font-size:18px;"));
+
+        horizontalLayout_12->addWidget(label_34);
+
+        nameSearch = new QLineEdit(frame_2);
+        nameSearch->setObjectName("nameSearch");
+        nameSearch->setMaximumSize(QSize(150, 16777215));
+
+        horizontalLayout_12->addWidget(nameSearch);
+
+        label_35 = new QLabel(frame_2);
+        label_35->setObjectName("label_35");
+        label_35->setMinimumSize(QSize(0, 50));
+        label_35->setStyleSheet(QString::fromUtf8("font-weight:bold;\n"
+"font-size:18px;"));
+
+        horizontalLayout_12->addWidget(label_35);
 
 
-        verticalLayout_8->addLayout(verticalLayout_7);
+        gridLayout_29->addLayout(horizontalLayout_12, 0, 0, 1, 1);
 
-        verticalSpacer_11 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
-        verticalLayout_8->addItem(verticalSpacer_11);
+        gridLayout_32->addWidget(frame_2, 1, 0, 1, 1);
 
-        Search_btn = new QPushButton(layoutWidget4);
-        Search_btn->setObjectName("Search_btn");
+        add_customer_frame = new QFrame(customers_frame);
+        add_customer_frame->setObjectName("add_customer_frame");
+        add_customer_frame->setFrameShape(QFrame::StyledPanel);
+        add_customer_frame->setFrameShadow(QFrame::Raised);
+        gridLayout_31 = new QGridLayout(add_customer_frame);
+        gridLayout_31->setSpacing(6);
+        gridLayout_31->setContentsMargins(11, 11, 11, 11);
+        gridLayout_31->setObjectName("gridLayout_31");
+        horizontalLayout_13 = new QHBoxLayout();
+        horizontalLayout_13->setSpacing(6);
+        horizontalLayout_13->setObjectName("horizontalLayout_13");
+        add_new = new QPushButton(add_customer_frame);
+        add_new->setObjectName("add_new");
+        add_new->setMinimumSize(QSize(200, 0));
+        add_new->setCursor(QCursor(Qt::PointingHandCursor));
 
-        verticalLayout_8->addWidget(Search_btn);
+        horizontalLayout_13->addWidget(add_new);
+
+        horizontalSpacer_15 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_13->addItem(horizontalSpacer_15);
+
+        class_box = new QComboBox(add_customer_frame);
+        class_box->setObjectName("class_box");
+        class_box->setMinimumSize(QSize(200, 0));
+        class_box->setMaximumSize(QSize(16777215, 16777215));
+        class_box->setEditable(false);
+
+        horizontalLayout_13->addWidget(class_box);
+
+        classLable = new QLabel(add_customer_frame);
+        classLable->setObjectName("classLable");
+        classLable->setStyleSheet(QString::fromUtf8(""));
+
+        horizontalLayout_13->addWidget(classLable);
+
+        new_customer_phone = new QLineEdit(add_customer_frame);
+        new_customer_phone->setObjectName("new_customer_phone");
+
+        horizontalLayout_13->addWidget(new_customer_phone);
+
+        phoneLable = new QLabel(add_customer_frame);
+        phoneLable->setObjectName("phoneLable");
+
+        horizontalLayout_13->addWidget(phoneLable);
+
+        new_customer_name = new QLineEdit(add_customer_frame);
+        new_customer_name->setObjectName("new_customer_name");
+
+        horizontalLayout_13->addWidget(new_customer_name);
+
+        nameLable = new QLabel(add_customer_frame);
+        nameLable->setObjectName("nameLable");
+        nameLable->setMinimumSize(QSize(0, 50));
+
+        horizontalLayout_13->addWidget(nameLable);
+
+
+        gridLayout_31->addLayout(horizontalLayout_13, 0, 0, 1, 1);
+
+
+        gridLayout_32->addWidget(add_customer_frame, 0, 0, 1, 1);
+
+        tableView = new QTableView(customers_frame);
+        tableView->setObjectName("tableView");
+
+        gridLayout_32->addWidget(tableView, 2, 0, 1, 1);
+
+
+        gridLayout_33->addWidget(customers_frame, 0, 0, 1, 1);
 
         formsStackedWidget->addWidget(customers_form);
         products_form = new QWidget();
         products_form->setObjectName("products_form");
-        porductsForm = new QScrollArea(products_form);
-        porductsForm->setObjectName("porductsForm");
-        porductsForm->setGeometry(QRect(0, 60, 1241, 591));
-        porductsForm->setWidgetResizable(true);
-        scrollAreaWidgetContents_3 = new QWidget();
-        scrollAreaWidgetContents_3->setObjectName("scrollAreaWidgetContents_3");
-        scrollAreaWidgetContents_3->setGeometry(QRect(0, 0, 1239, 589));
-        prodtable = new QTableView(scrollAreaWidgetContents_3);
-        prodtable->setObjectName("prodtable");
-        prodtable->setGeometry(QRect(0, 0, 1241, 591));
-        porductsForm->setWidget(scrollAreaWidgetContents_3);
-        ProdTypeSearch = new QComboBox(products_form);
-        ProdTypeSearch->addItem(QString());
-        ProdTypeSearch->setObjectName("ProdTypeSearch");
-        ProdTypeSearch->setGeometry(QRect(600, 20, 141, 31));
-        ProdTypeSearch->setStyleSheet(QString::fromUtf8(""));
-        searchprobuctsBTN = new QPushButton(products_form);
-        searchprobuctsBTN->setObjectName("searchprobuctsBTN");
-        searchprobuctsBTN->setGeometry(QRect(280, 20, 131, 31));
-        searchprobuctsBTN->setStyleSheet(QString::fromUtf8("\n"
-"font-weight:bold;\n"
-""));
-        ProdNameSearch = new QLineEdit(products_form);
-        ProdNameSearch->setObjectName("ProdNameSearch");
-        ProdNameSearch->setGeometry(QRect(960, 20, 132, 31));
-        ProdTypeLabel = new QLabel(products_form);
-        ProdTypeLabel->setObjectName("ProdTypeLabel");
-        ProdTypeLabel->setGeometry(QRect(750, 20, 82, 24));
-        ProdTypeLabel->setStyleSheet(QString::fromUtf8("font-weight:bold;\n"
-"font-size:18px;"));
-        ProdNameLabel = new QLabel(products_form);
+        gridLayout_37 = new QGridLayout(products_form);
+        gridLayout_37->setSpacing(6);
+        gridLayout_37->setContentsMargins(11, 11, 11, 11);
+        gridLayout_37->setObjectName("gridLayout_37");
+        search_products_frame = new QFrame(products_form);
+        search_products_frame->setObjectName("search_products_frame");
+        search_products_frame->setStyleSheet(QString::fromUtf8("QLabel{\n"
+"padding:5px;\n"
+"}\n"
+"QComboBox::down-arrow{\n"
+"image:url(:/cashRegisterSystem2/media/arrow-down.png);\n"
+"color:rgba(120, 91, 71, 1);\n"
+"border-radius:5px;\n"
+"}\n"
+"QComboBox::down-arrow::hover{\n"
+"border-radius:5px;\n"
+"}\n"
+"QComboBox::hover{\n"
+"background-color: rgba(200,171,151,0.5);\n"
+"border:none;\n"
+"}\n"
+"QComboBox{\n"
+"background:transparent;\n"
+"border:1px solid rgba(120, 91, 71, 1);\n"
+"border-radius:5px;\n"
+"padding:2px;\n"
+"}\n"
+"\n"
+"QLineEdit{\n"
+"background:transparent;\n"
+"border:none;\n"
+"border-bottom:1px solid #323638 ;\n"
+"font-size:15px;\n"
+"color:#323638;\n"
+"}\n"
+"#frame_3{\n"
+"border:1px solid black;\n"
+"border-radius:10px;\n"
+"background-color: rgba(200,171,151,0.5);\n"
+"padding:10px 0px;\n"
+"}\n"
+"#prodtable{\n"
+"border-radius:10px;\n"
+"border: 2px solid rgba(200,171,151,0.5);\n"
+"background-color:rgba(245,250,245,0.5);\n"
+"}"));
+        search_products_frame->setFrameShape(QFrame::StyledPanel);
+        search_products_frame->setFrameShadow(QFrame::Raised);
+        gridLayout_38 = new QGridLayout(search_products_frame);
+        gridLayout_38->setSpacing(6);
+        gridLayout_38->setContentsMargins(11, 11, 11, 11);
+        gridLayout_38->setObjectName("gridLayout_38");
+        frame_3 = new QFrame(search_products_frame);
+        frame_3->setObjectName("frame_3");
+        frame_3->setFrameShape(QFrame::StyledPanel);
+        frame_3->setFrameShadow(QFrame::Raised);
+        gridLayout_35 = new QGridLayout(frame_3);
+        gridLayout_35->setSpacing(6);
+        gridLayout_35->setContentsMargins(11, 11, 11, 11);
+        gridLayout_35->setObjectName("gridLayout_35");
+        gridLayout_36 = new QGridLayout();
+        gridLayout_36->setSpacing(6);
+        gridLayout_36->setObjectName("gridLayout_36");
+        horizontalSpacer_17 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout_36->addItem(horizontalSpacer_17, 0, 1, 1, 1);
+
+        ProdNameLabel = new QLabel(frame_3);
         ProdNameLabel->setObjectName("ProdNameLabel");
-        ProdNameLabel->setGeometry(QRect(1110, 20, 91, 24));
+        ProdNameLabel->setMinimumSize(QSize(0, 50));
         ProdNameLabel->setStyleSheet(QString::fromUtf8("font-weight:bold;\n"
 "font-size:18px;"));
+
+        gridLayout_36->addWidget(ProdNameLabel, 0, 6, 1, 1);
+
+        ProdNameSearch = new QLineEdit(frame_3);
+        ProdNameSearch->setObjectName("ProdNameSearch");
+        ProdNameSearch->setMaximumSize(QSize(300, 16777215));
+
+        gridLayout_36->addWidget(ProdNameSearch, 0, 5, 1, 1);
+
+        ProdTypeSearch = new QComboBox(frame_3);
+        ProdTypeSearch->addItem(QString());
+        ProdTypeSearch->setObjectName("ProdTypeSearch");
+        ProdTypeSearch->setMinimumSize(QSize(200, 0));
+        ProdTypeSearch->setStyleSheet(QString::fromUtf8(""));
+
+        gridLayout_36->addWidget(ProdTypeSearch, 0, 2, 1, 1);
+
+        searchprobuctsBTN = new QPushButton(frame_3);
+        searchprobuctsBTN->setObjectName("searchprobuctsBTN");
+        searchprobuctsBTN->setMinimumSize(QSize(200, 0));
+        searchprobuctsBTN->setCursor(QCursor(Qt::PointingHandCursor));
+        searchprobuctsBTN->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"font-size:15px;\n"
+"background-color:rgba(185,191,193,1);\n"
+"color:#323638;\n"
+"border-radius:10px;\n"
+"font-weight:bold;\n"
+"margin-left:5px;\n"
+"padding:10px;\n"
+"}\n"
+"QPushButton::hover{\n"
+"background-color: rgba(200,171,151,0.5);\n"
+"}"));
+
+        gridLayout_36->addWidget(searchprobuctsBTN, 0, 0, 1, 1);
+
+        ProdTypeLabel = new QLabel(frame_3);
+        ProdTypeLabel->setObjectName("ProdTypeLabel");
+        ProdTypeLabel->setStyleSheet(QString::fromUtf8("font-weight:bold;\n"
+"font-size:18px;"));
+
+        gridLayout_36->addWidget(ProdTypeLabel, 0, 3, 1, 1);
+
+        horizontalSpacer_18 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout_36->addItem(horizontalSpacer_18, 0, 4, 1, 1);
+
+
+        gridLayout_35->addLayout(gridLayout_36, 0, 0, 1, 1);
+
+
+        gridLayout_38->addWidget(frame_3, 0, 0, 1, 1);
+
+        prodtable = new QTableView(search_products_frame);
+        prodtable->setObjectName("prodtable");
+
+        gridLayout_38->addWidget(prodtable, 1, 0, 1, 1);
+
+
+        gridLayout_37->addWidget(search_products_frame, 0, 0, 1, 1);
+
         formsStackedWidget->addWidget(products_form);
         admin_main_form = new QWidget();
         admin_main_form->setObjectName("admin_main_form");
@@ -1028,6 +1782,109 @@ public:
         gridLayout_17->setObjectName("gridLayout_17");
         admin_main_frame = new QFrame(admin_main_form);
         admin_main_frame->setObjectName("admin_main_frame");
+        admin_main_frame->setStyleSheet(QString::fromUtf8("QListWidget{\n"
+"border: 2px solid rgba(200,171,151,0.5);\n"
+"background-color:rgba(240,240,240,0.7);\n"
+"border-radius:10px;\n"
+"}\n"
+"QScrollArea{\n"
+"border:2px solid  #e2d4c9;\n"
+"border-radius:5px;\n"
+"background-color:rgba(245,250,245,0.5);\n"
+"}\n"
+"#admin_phone_number_label{\n"
+"border:none;\n"
+"}\n"
+"QLineEdit{\n"
+"background:transparent;\n"
+"border-radius:2px;\n"
+"border-bottom:2px solid rgba(200,171,151,0.5);\n"
+"letter-spacing: 2px;\n"
+"color:rgba(120, 91, 71, 1);\n"
+"font-weight:bold;\n"
+"\n"
+"}\n"
+"#admin_check_discount{\n"
+"padding:2px;\n"
+"border:1px solid rgba(120, 91, 71, 1);\n"
+"border-radius:5px;\n"
+"}\n"
+"#admin_check_discount::hover{\n"
+"background-color: rgba(200,171,151,0.5);\n"
+"border:none;\n"
+"\n"
+"}\n"
+"#admin_sell{\n"
+"font-size:14px;\n"
+"background-color:rgba(185,191,193,1);\n"
+"color:#323638;\n"
+"border-radius:10px;\n"
+"font-weight:bold;\n"
+"margin-left:5px;\n"
+"padding:2px;\n"
+"}\n"
+"#admin_retrieve{\n"
+"font-size:14px;\n"
+"background-color:rgba(185,191,193,1);\n"
+"color:#323638"
+                        ";\n"
+"border-radius:10px;\n"
+"font-weight:bold;\n"
+"padding:2px;\n"
+"}\n"
+"#admin_retrieve::hover{\n"
+"background-color: rgba(200,171,151,0.5);\n"
+"}\n"
+"#admin_sell::hover{\n"
+"background-color: rgba(200,171,151,0.5);\n"
+"}\n"
+"#admin_cancel_order{\n"
+"padding:2px;\n"
+"border:none;\n"
+"border:1px solid rgba(120, 91, 71, 1);\n"
+"border-radius:5px;\n"
+"\n"
+"}\n"
+"#admin_cancel_order::hover{\n"
+"background-color: rgba(200,171,151,0.5);\n"
+"border:none;\n"
+"}\n"
+"#discount_spinbox{\n"
+"border:1px solid  rgba(120, 91, 71, 1) ;\n"
+"border-radius:5px;\n"
+"background:transparent;\n"
+"}\n"
+"#discount_spinbox::hover{\n"
+"background-color: rgba(200,171,151,0.5);\n"
+"border:none;\n"
+"}\n"
+"#discount_spinbox::down-arrow{\n"
+"image:url(:/cashRegisterSystem2/media/arrow-down.png);\n"
+"}\n"
+"#discount_spinbox::up-arrow{\n"
+"image:url(:/cashRegisterSystem2/media/arrow-up.png);\n"
+"}\n"
+"\n"
+"QComboBox::down-arrow{\n"
+"image:url(:/cashRegisterSystem2/media/arrow-down.png);\n"
+"color:rgba(120, 91, 71, 1);\n"
+"border-radius:5px;"
+                        "\n"
+"}\n"
+"QComboBox::down-arrow::hover{\n"
+"border-radius:5px;\n"
+"}\n"
+"QComboBox::hover{\n"
+"background-color: rgba(200,171,151,0.5);\n"
+"border:none;\n"
+"}\n"
+"QComboBox{\n"
+"background:transparent;\n"
+"border:1px solid rgba(120, 91, 71, 1);\n"
+"border-radius:5px;\n"
+"padding:2px;\n"
+"}\n"
+""));
         admin_main_frame->setFrameShape(QFrame::StyledPanel);
         admin_main_frame->setFrameShadow(QFrame::Raised);
         gridLayout_3 = new QGridLayout(admin_main_frame);
@@ -1036,7 +1893,7 @@ public:
         gridLayout_3->setObjectName("gridLayout_3");
         admin_categories_list_frame = new QFrame(admin_main_frame);
         admin_categories_list_frame->setObjectName("admin_categories_list_frame");
-        admin_categories_list_frame->setMaximumSize(QSize(300, 16777215));
+        admin_categories_list_frame->setMaximumSize(QSize(250, 16777215));
         admin_categories_list_frame->setStyleSheet(QString::fromUtf8(""));
         admin_categories_list_frame->setFrameShape(QFrame::StyledPanel);
         admin_categories_list_frame->setFrameShadow(QFrame::Raised);
@@ -1069,7 +1926,7 @@ public:
         admin_products_scroll_area->setWidgetResizable(true);
         admin_products_scroll_area_content = new QWidget();
         admin_products_scroll_area_content->setObjectName("admin_products_scroll_area_content");
-        admin_products_scroll_area_content->setGeometry(QRect(0, 0, 676, 579));
+        admin_products_scroll_area_content->setGeometry(QRect(0, 0, 674, 662));
         verticalLayout = new QVBoxLayout(admin_products_scroll_area_content);
         verticalLayout->setSpacing(6);
         verticalLayout->setContentsMargins(11, 11, 11, 11);
@@ -1089,8 +1946,8 @@ public:
 
         admin_cart_frame = new QFrame(admin_main_frame);
         admin_cart_frame->setObjectName("admin_cart_frame");
-        admin_cart_frame->setMinimumSize(QSize(300, 0));
-        admin_cart_frame->setMaximumSize(QSize(300, 16777215));
+        admin_cart_frame->setMinimumSize(QSize(350, 0));
+        admin_cart_frame->setMaximumSize(QSize(16777215, 16777215));
         admin_cart_frame->setFrameShape(QFrame::StyledPanel);
         admin_cart_frame->setFrameShadow(QFrame::Raised);
         gridLayout_15 = new QGridLayout(admin_cart_frame);
@@ -1101,15 +1958,21 @@ public:
         gridLayout_16->setSpacing(6);
         gridLayout_16->setObjectName("gridLayout_16");
         admin_order_type_cmb = new QComboBox(admin_cart_frame);
+        admin_order_type_cmb->addItem(QString());
+        admin_order_type_cmb->addItem(QString());
+        admin_order_type_cmb->addItem(QString());
         admin_order_type_cmb->setObjectName("admin_order_type_cmb");
         admin_order_type_cmb->setMinimumSize(QSize(130, 0));
+        admin_order_type_cmb->setCursor(QCursor(Qt::PointingHandCursor));
 
         gridLayout_16->addWidget(admin_order_type_cmb, 1, 2, 1, 2);
 
         admin_phone_number_label = new QPushButton(admin_cart_frame);
         admin_phone_number_label->setObjectName("admin_phone_number_label");
         admin_phone_number_label->setMaximumSize(QSize(35, 16777215));
-        admin_phone_number_label->setIcon(icon);
+        QIcon icon5;
+        icon5.addFile(QString::fromUtf8(":/cashRegisterSystem2/icons/buying-on-smartphone.png"), QSize(), QIcon::Normal, QIcon::Off);
+        admin_phone_number_label->setIcon(icon5);
 
         gridLayout_16->addWidget(admin_phone_number_label, 0, 3, 1, 1);
 
@@ -1123,6 +1986,7 @@ public:
         discount_spinbox->setObjectName("discount_spinbox");
         discount_spinbox->setMinimumSize(QSize(80, 0));
         discount_spinbox->setMaximumSize(QSize(100, 16777215));
+        discount_spinbox->setCursor(QCursor(Qt::PointingHandCursor));
 
         gridLayout_16->addWidget(discount_spinbox, 1, 0, 1, 1);
 
@@ -1141,16 +2005,18 @@ public:
         admin_cartScrollArea->setWidgetResizable(true);
         admin_cart_contents = new QWidget();
         admin_cart_contents->setObjectName("admin_cart_contents");
-        admin_cart_contents->setGeometry(QRect(0, 0, 278, 456));
+        admin_cart_contents->setGeometry(QRect(0, 0, 326, 543));
         admin_cart_contents->setMinimumSize(QSize(0, 0));
-        layoutWidget5 = new QWidget(admin_cart_contents);
-        layoutWidget5->setObjectName("layoutWidget5");
-        layoutWidget5->setGeometry(QRect(10, 10, 261, 441));
-        admin_cartVerticalLayout = new QVBoxLayout(layoutWidget5);
+        verticalLayout_6 = new QVBoxLayout(admin_cart_contents);
+        verticalLayout_6->setSpacing(6);
+        verticalLayout_6->setContentsMargins(11, 11, 11, 11);
+        verticalLayout_6->setObjectName("verticalLayout_6");
+        admin_cartVerticalLayout = new QVBoxLayout();
         admin_cartVerticalLayout->setSpacing(6);
-        admin_cartVerticalLayout->setContentsMargins(11, 11, 11, 11);
         admin_cartVerticalLayout->setObjectName("admin_cartVerticalLayout");
-        admin_cartVerticalLayout->setContentsMargins(0, 0, 0, 0);
+
+        verticalLayout_6->addLayout(admin_cartVerticalLayout);
+
         admin_cartScrollArea->setWidget(admin_cart_contents);
 
         gridLayout_15->addWidget(admin_cartScrollArea, 0, 0, 1, 2);
@@ -1160,39 +2026,52 @@ public:
         horizontalLayout_6->setObjectName("horizontalLayout_6");
         admin_check_discount = new QPushButton(admin_cart_frame);
         admin_check_discount->setObjectName("admin_check_discount");
-        admin_check_discount->setIcon(icon);
+        admin_check_discount->setCursor(QCursor(Qt::PointingHandCursor));
+        QIcon icon6;
+        icon6.addFile(QString::fromUtf8(":/cashRegisterSystem2/icons/coupon.png"), QSize(), QIcon::Normal, QIcon::Off);
+        admin_check_discount->setIcon(icon6);
 
         horizontalLayout_6->addWidget(admin_check_discount);
 
         admin_price_after = new QLabel(admin_cart_frame);
         admin_price_after->setObjectName("admin_price_after");
         admin_price_after->setStyleSheet(QString::fromUtf8("border: none;\n"
-"color: #c92a2a;\n"
 "font-weight: bold;\n"
-"font-size: 14px;"));
+"font-size: 13px;\n"
+"color:rgba(120, 91, 71, 1)\n"
+"\n"
+"\n"
+"\n"
+"\n"
+""));
 
         horizontalLayout_6->addWidget(admin_price_after);
 
         admin_price_after_const = new QLabel(admin_cart_frame);
         admin_price_after_const->setObjectName("admin_price_after_const");
         admin_price_after_const->setStyleSheet(QString::fromUtf8("border: none;\n"
-"color: #c92a2a;\n"
 "font-weight: bold;\n"
-"font-size: 12px;"));
+"font-size: 13px;\n"
+"color:rgba(120, 91, 71, 1)\n"
+"\n"
+"\n"
+"\n"
+"\n"
+""));
 
         horizontalLayout_6->addWidget(admin_price_after_const);
 
         admin_price_before = new QLabel(admin_cart_frame);
         admin_price_before->setObjectName("admin_price_before");
         admin_price_before->setStyleSheet(QString::fromUtf8("border: none;\n"
-"font-size: 14px"));
+"font-size: 13px"));
 
         horizontalLayout_6->addWidget(admin_price_before);
 
         admin_price_before_const = new QLabel(admin_cart_frame);
         admin_price_before_const->setObjectName("admin_price_before_const");
         admin_price_before_const->setStyleSheet(QString::fromUtf8("border: none;\n"
-"font-size: 12px"));
+"font-size: 13px"));
 
         horizontalLayout_6->addWidget(admin_price_before_const);
 
@@ -1205,17 +2084,22 @@ public:
         admin_cancel_order = new QPushButton(admin_cart_frame);
         admin_cancel_order->setObjectName("admin_cancel_order");
         admin_cancel_order->setMaximumSize(QSize(30, 16777215));
-        admin_cancel_order->setIcon(icon);
+        admin_cancel_order->setCursor(QCursor(Qt::PointingHandCursor));
+        QIcon icon7;
+        icon7.addFile(QString::fromUtf8(":/cashRegisterSystem2/icons/empty-cart.png"), QSize(), QIcon::Normal, QIcon::Off);
+        admin_cancel_order->setIcon(icon7);
 
         horizontalLayout_7->addWidget(admin_cancel_order);
 
         admin_retrieve = new QPushButton(admin_cart_frame);
         admin_retrieve->setObjectName("admin_retrieve");
+        admin_retrieve->setCursor(QCursor(Qt::PointingHandCursor));
 
         horizontalLayout_7->addWidget(admin_retrieve);
 
         admin_sell = new QPushButton(admin_cart_frame);
         admin_sell->setObjectName("admin_sell");
+        admin_sell->setCursor(QCursor(Qt::PointingHandCursor));
 
         horizontalLayout_7->addWidget(admin_sell);
 
@@ -1230,7 +2114,7 @@ public:
 
         formsStackedWidget->addWidget(admin_main_form);
 
-        gridLayout_10->addWidget(formsStackedWidget, 1, 0, 1, 1);
+        verticalLayout_4->addWidget(formsStackedWidget);
 
         cashRegisterSystem2Class->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(cashRegisterSystem2Class);
@@ -1246,7 +2130,7 @@ public:
 
         retranslateUi(cashRegisterSystem2Class);
 
-        formsStackedWidget->setCurrentIndex(6);
+        formsStackedWidget->setCurrentIndex(3);
         item_type_item->setCurrentIndex(0);
         class_box->setCurrentIndex(-1);
 
@@ -1260,13 +2144,11 @@ public:
         main_menu->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\331\204\331\202\330\247\330\246\331\205\330\251 \330\247\331\204\330\261\330\246\331\212\330\263\331\212\330\251", nullptr));
         product_menu->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\331\202\330\247\330\246\331\205\330\251 \330\247\331\204\330\263\331\204\330\271", nullptr));
         customers_menu->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\331\202\330\247\330\246\331\205\330\251 \330\247\331\204\330\271\331\205\331\204\330\247\330\241", nullptr));
-        add_customers_menu->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\330\266\330\247\331\201\330\251 \330\271\331\205\331\212\331\204", nullptr));
         go_to_admin_form->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\265\331\201\330\255\330\251 \330\247\331\204\330\247\330\257\331\205\331\206", nullptr));
         logout->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\252\330\263\330\254\331\212\331\204 \330\256\330\261\331\210\330\254", nullptr));
-        username_label->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\330\263\331\205 \330\247\331\204\331\205\330\263\330\252\330\256\330\257\331\205", nullptr));
-        password_field->setText(QString());
-        passwod_label->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\331\204\330\261\331\202\331\205 \330\247\331\204\330\263\330\261\331\212", nullptr));
         login_btn->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\257\330\256\331\210\331\204", nullptr));
+        username_label->setText(QString());
+        passwordlabel->setText(QString());
         user_phone_number_label->setText(QString());
         user_check_discount->setText(QString());
         user_price_after->setText(QCoreApplication::translate("cashRegisterSystem2Class", "0", nullptr));
@@ -1276,18 +2158,9 @@ public:
         user_cancel_order->setText(QString());
         user_retrieve->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\330\263\330\252\330\261\330\254\330\247\330\271", nullptr));
         user_sell->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\250\331\212\330\271", nullptr));
-        label_2->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\330\266\330\247\331\201\330\251/\330\255\330\260\331\201 \330\272\330\261\330\266:", nullptr));
-        label_3->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\330\266\330\247\331\201\330\251/\330\255\330\260\331\201 \331\203\331\205\331\212\330\251:", nullptr));
-        label_4->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\330\263\331\205 \330\247\331\204\330\272\330\261\330\266", nullptr));
-        add_item->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\330\266\330\247\331\201\330\251", nullptr));
-        remove_item->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\255\330\260\331\201", nullptr));
-        label_5->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\331\204\330\263\330\271\330\261", nullptr));
-        label_6->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\331\204\331\203\331\205\331\212\330\251", nullptr));
         label_7->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\331\204\331\206\331\210\330\271", nullptr));
-        remove_quantity->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\255\330\260\331\201", nullptr));
-        add_quantity->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\330\266\330\247\331\201\330\251", nullptr));
-        label_20->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\330\263\331\205 \330\247\331\204\330\272\330\261\330\266", nullptr));
-        label_21->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\331\204\331\203\331\205\331\212\330\251", nullptr));
+        label_4->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\330\263\331\205 \330\247\331\204\330\272\330\261\330\266", nullptr));
+        label_2->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\330\266\330\247\331\201\330\251/\330\255\330\260\331\201 \330\272\330\261\330\266:", nullptr));
         item_type_item->setItemText(0, QCoreApplication::translate("cashRegisterSystem2Class", "\330\256\331\212\331\210\330\267 \330\265\331\210\331\201", nullptr));
         item_type_item->setItemText(1, QCoreApplication::translate("cashRegisterSystem2Class", "\330\256\331\212\331\210\330\267 \331\202\330\267\331\206", nullptr));
         item_type_item->setItemText(2, QCoreApplication::translate("cashRegisterSystem2Class", "\330\256\331\212\331\210\330\267 \331\205\331\203\330\261\331\205\331\212\330\251", nullptr));
@@ -1347,13 +2220,21 @@ public:
         item_type_item->setItemText(56, QCoreApplication::translate("cashRegisterSystem2Class", "\331\205\331\201\330\247\330\261\330\264 \331\204\330\247\330\263\331\212\330\251", nullptr));
         item_type_item->setItemText(57, QCoreApplication::translate("cashRegisterSystem2Class", "\330\271\330\247\331\205\330\251", nullptr));
 
+        label_5->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\331\204\330\263\330\271\330\261", nullptr));
+        add_item->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\330\266\330\247\331\201\330\251", nullptr));
+        label_6->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\331\204\331\203\331\205\331\212\330\251", nullptr));
+        remove_item->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\255\330\260\331\201", nullptr));
         label_12->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\252\330\271\330\257\331\212\331\204 \330\247\331\204\330\263\330\271\330\261:", nullptr));
+        label_28->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\331\204\330\263\330\271\330\261", nullptr));
         edit_price->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\252\330\271\330\257\331\212\331\204", nullptr));
         label_27->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\330\263\331\205 \330\247\331\204\330\272\330\261\330\266", nullptr));
-        label_28->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\331\204\330\263\330\271\330\261", nullptr));
-        label_22->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\331\204\330\252\330\255\331\203\331\205 \331\201\331\212 \330\247\331\204\330\250\330\266\330\247\330\271\330\251:", nullptr));
-        label_23->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\271\331\205\331\204\331\212\330\247\330\252 \330\247\331\204\330\250\331\212\330\271:", nullptr));
+        label_20->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\330\263\331\205 \330\247\331\204\330\272\330\261\330\266", nullptr));
+        label_21->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\331\204\331\203\331\205\331\212\330\251", nullptr));
+        remove_quantity->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\255\330\260\331\201", nullptr));
+        add_quantity->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\330\266\330\247\331\201\330\251", nullptr));
+        label_3->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\330\266\330\247\331\201\330\251/\330\255\330\260\331\201 \331\203\331\205\331\212\330\251:", nullptr));
         label_25->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\271\331\205\331\204\331\212\330\247\330\252 \330\247\330\263\330\252\330\261\330\254\330\247\330\271:", nullptr));
+        label_23->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\271\331\205\331\204\331\212\330\247\330\252 \330\247\331\204\330\250\331\212\330\271:", nullptr));
         label_24->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\330\254\331\205\330\247\331\204\331\212 \330\271\331\205\331\204\331\212\330\247\330\252 \330\247\331\204\330\250\331\212\330\271 \331\210 \330\247\331\204\330\247\330\263\330\252\330\261\330\254\330\247\330\271:", nullptr));
         label_26->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\330\254\331\205\330\247\331\204\331\212 \330\247\331\204\331\212\331\210\331\205", nullptr));
         label_14->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\331\206\331\210\330\271 \330\247\331\204\330\267\331\204\330\250:", nullptr));
@@ -1365,25 +2246,29 @@ public:
         label_11->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\330\256\330\252\330\261 \330\247\331\204\330\252\330\247\330\261\331\212\330\256:", nullptr));
         date_search->setDisplayFormat(QCoreApplication::translate("cashRegisterSystem2Class", "d/M/yyyy", nullptr));
         OPsearch->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\250\330\255\330\253", nullptr));
-        nameLable->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\330\263\331\205 \330\247\331\204\330\271\331\205\331\212\331\204", nullptr));
-        phoneLable->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\261\331\202\331\205 \330\247\331\204\331\205\331\210\330\250\330\247\331\212\331\204", nullptr));
-        class_box->setCurrentText(QString());
-        classLable->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\252\330\265\331\206\331\212\331\201 \330\247\331\204\330\271\331\205\331\212\331\204", nullptr));
-        add_new->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\245\330\266\330\247\331\201\330\251", nullptr));
-        label_8->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\250\330\255\330\253 \330\250\330\247\331\204\330\247\330\263\331\205", nullptr));
-        label_9->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\250\330\255\330\253 \330\250\330\261\331\202\331\205 \330\247\331\204\331\207\330\247\330\252\331\201", nullptr));
-        label_10->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\250\330\255\330\253 \330\250\330\247\331\204\331\201\330\246\330\251", nullptr));
+        Search_btn->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\250\330\255\330\253", nullptr));
         ranksearch->setItemText(0, QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\331\204\331\203\331\204", nullptr));
         ranksearch->setItemText(1, QCoreApplication::translate("cashRegisterSystem2Class", "\330\271\331\205\331\212\331\204 \330\271\330\247\330\257\331\212", nullptr));
         ranksearch->setItemText(2, QCoreApplication::translate("cashRegisterSystem2Class", "\330\271\331\205\331\212\331\204 \331\205\331\207\331\205", nullptr));
         ranksearch->setItemText(3, QCoreApplication::translate("cashRegisterSystem2Class", "\330\267\330\247\331\204\330\250", nullptr));
 
-        Search_btn->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\250\330\255\330\253", nullptr));
+        label_33->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\250\330\255\330\253 \330\250\330\247\331\204\331\201\330\246\330\251", nullptr));
+        label_34->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\250\330\255\330\253 \330\250\330\261\331\202\331\205 \330\247\331\204\331\207\330\247\330\252\331\201", nullptr));
+        label_35->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\250\330\255\330\253 \330\250\330\247\331\204\330\247\330\263\331\205", nullptr));
+        add_new->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\245\330\266\330\247\331\201\330\251", nullptr));
+        class_box->setCurrentText(QString());
+        classLable->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\252\330\265\331\206\331\212\331\201 \330\247\331\204\330\271\331\205\331\212\331\204", nullptr));
+        phoneLable->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\261\331\202\331\205 \330\247\331\204\331\205\331\210\330\250\330\247\331\212\331\204", nullptr));
+        nameLable->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\330\263\331\205 \330\247\331\204\330\271\331\205\331\212\331\204", nullptr));
+        ProdNameLabel->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\330\263\331\205 \330\247\331\204\330\263\331\204\330\271\330\251", nullptr));
         ProdTypeSearch->setItemText(0, QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\331\204\331\203\331\204", nullptr));
 
         searchprobuctsBTN->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\250\330\255\330\253", nullptr));
         ProdTypeLabel->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\331\206\331\210\330\271 \330\247\331\204\330\263\331\204\330\271\330\251", nullptr));
-        ProdNameLabel->setText(QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\330\263\331\205 \330\247\331\204\330\263\331\204\330\271\330\251", nullptr));
+        admin_order_type_cmb->setItemText(0, QCoreApplication::translate("cashRegisterSystem2Class", "\330\271\330\247\330\257\331\212", nullptr));
+        admin_order_type_cmb->setItemText(1, QCoreApplication::translate("cashRegisterSystem2Class", "\330\247\331\210\331\206\331\204\330\247\331\212\331\206", nullptr));
+        admin_order_type_cmb->setItemText(2, QCoreApplication::translate("cashRegisterSystem2Class", "\330\254\331\205\331\204\330\251", nullptr));
+
         admin_order_type_cmb->setPlaceholderText(QCoreApplication::translate("cashRegisterSystem2Class", "\331\206\331\210\330\271 \330\247\331\204\330\267\331\204\330\250", nullptr));
         admin_phone_number_label->setText(QString());
         admin_discount_label->setText(QCoreApplication::translate("cashRegisterSystem2Class", "     \330\247\331\204\330\256\330\265\331\205:", nullptr));

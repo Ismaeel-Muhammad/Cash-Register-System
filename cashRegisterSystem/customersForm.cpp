@@ -61,8 +61,7 @@ void cashRegisterSystem::search()
             // Set the Qt::ItemIsEditable flag to false for each item
             items.at(i)->setFlags(items.at(i)->flags() & ~Qt::ItemIsEditable);
             items.at(i)->setTextAlignment(Qt::AlignRight | Qt::AlignVCenter);
-        }
-
+        }   
         model->appendRow(items);
     }
 
@@ -72,6 +71,5 @@ void cashRegisterSystem::search()
     m_ui->tableView->setModel(model);
     m_ui->tableView->horizontalHeader()->setDefaultAlignment(Qt::AlignRight);
     m_ui->tableView->horizontalHeader()->setStretchLastSection(true);
-
     m_ui->tableView->verticalHeader()->setDefaultSectionSize(35);
 }

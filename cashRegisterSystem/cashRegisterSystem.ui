@@ -491,6 +491,7 @@ border-radius:2px;
 border-bottom:2px solid rgba(200,171,151,0.5);
 letter-spacing: 2px;
 color:rgba(120, 91, 71, 1);
+font-size:14px;
 font-weight:bold;
 
 }
@@ -505,21 +506,20 @@ border:none;
 
 }
 #user_sell{
-font-size:14px;
+font-size:16px;
 background-color:rgba(185,191,193,1);
 color:#323638;
 border-radius:10px;
 font-weight:bold;
-margin-left:5px;
-padding:2px;
+padding:5px;
 }
 #user_retrieve{
-font-size:14px;
+font-size:16px;
 background-color:rgba(185,191,193,1);
 color:#323638;
 border-radius:10px;
 font-weight:bold;
-padding:2px;
+padding:5px;
 }
 #user_retrieve::hover{
 background-color: rgba(200,171,151,0.5);
@@ -529,7 +529,6 @@ background-color: rgba(200,171,151,0.5);
 }
 #user_cancel_order{
 padding:2px;
-margin-right:5px;
 border:none;
 border:1px solid rgba(120, 91, 71, 1);
 border-radius:5px;
@@ -538,7 +537,20 @@ border-radius:5px;
 #user_cancel_order::hover{
 background-color: rgba(200,171,151,0.5);
 border:none;
-}</string>
+}
+QListWidget::item { 
+margin:5px;
+padding:5px;
+ }
+QListWidget::item::hover{
+background-color:rgba(200,171,151,0.5);
+border-radius:5px;
+}
+QListWidget::item:selected{
+background-color:rgba(200,171,151,1);
+color:black;
+}
+</string>
           </property>
           <property name="frameShape">
            <enum>QFrame::StyledPanel</enum>
@@ -663,7 +675,14 @@ border:none;
                  </widget>
                 </item>
                 <item row="0" column="0" colspan="2">
-                 <widget class="QLineEdit" name="user_phone_number"/>
+                 <widget class="QLineEdit" name="user_phone_number">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>30</height>
+                   </size>
+                  </property>
+                 </widget>
                 </item>
                </layout>
               </item>
@@ -673,6 +692,12 @@ border:none;
                  <size>
                   <width>280</width>
                   <height>0</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>550</height>
                  </size>
                 </property>
                 <property name="styleSheet">
@@ -687,7 +712,7 @@ border:none;
                    <x>0</x>
                    <y>0</y>
                    <width>326</width>
-                   <height>573</height>
+                   <height>544</height>
                   </rect>
                  </property>
                  <property name="minimumSize">
@@ -708,6 +733,12 @@ border:none;
                <layout class="QHBoxLayout" name="user_horizontalLayout_4">
                 <item>
                  <widget class="QPushButton" name="user_check_discount">
+                  <property name="minimumSize">
+                   <size>
+                    <width>32</width>
+                    <height>32</height>
+                   </size>
+                  </property>
                   <property name="cursor">
                    <cursorShape>PointingHandCursor</cursorShape>
                   </property>
@@ -738,7 +769,7 @@ font-size: 14px;</string>
                   <property name="styleSheet">
                    <string notr="true">border: none;
 font-weight: bold;
-font-size: 14px;
+font-size: 16px;
 color:rgba(120, 91, 71, 1)
 
 
@@ -766,7 +797,7 @@ font-size: 14px;</string>
                  <widget class="QLabel" name="user_price_before_const">
                   <property name="styleSheet">
                    <string notr="true">border: none;
-font-size: 14px;
+font-size: 16px;
 </string>
                   </property>
                   <property name="text">
@@ -780,6 +811,12 @@ font-size: 14px;
                <layout class="QHBoxLayout" name="user_horizontalLayout_5">
                 <item>
                  <widget class="QPushButton" name="user_cancel_order">
+                  <property name="minimumSize">
+                   <size>
+                    <width>32</width>
+                    <height>32</height>
+                   </size>
+                  </property>
                   <property name="maximumSize">
                    <size>
                     <width>30</width>
@@ -1765,7 +1802,7 @@ background-color:rgba(245,250,245,0.5);
                      <rect>
                       <x>0</x>
                       <y>0</y>
-                      <width>370</width>
+                      <width>371</width>
                       <height>173</height>
                      </rect>
                     </property>
@@ -1807,7 +1844,7 @@ background-color:rgba(245,250,245,0.5);
                      <rect>
                       <x>0</x>
                       <y>0</y>
-                      <width>370</width>
+                      <width>371</width>
                       <height>173</height>
                      </rect>
                     </property>
@@ -1924,7 +1961,7 @@ background-color:rgba(245,250,245,0.5);
                      <rect>
                       <x>0</x>
                       <y>0</y>
-                      <width>370</width>
+                      <width>371</width>
                       <height>173</height>
                      </rect>
                     </property>
@@ -2372,7 +2409,11 @@ font-size:18px;</string>
             </widget>
            </item>
            <item row="2" column="0">
-            <widget class="QTableView" name="tableView"/>
+            <widget class="QTableView" name="tableView">
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
+            </widget>
            </item>
           </layout>
          </widget>
@@ -2593,6 +2634,7 @@ border-bottom:2px solid rgba(200,171,151,0.5);
 letter-spacing: 2px;
 color:rgba(120, 91, 71, 1);
 font-weight:bold;
+margin-bottom:5px;
 
 }
 #admin_check_discount{
@@ -2606,21 +2648,21 @@ border:none;
 
 }
 #admin_sell{
-font-size:14px;
+font-size:16px;
 background-color:rgba(185,191,193,1);
 color:#323638;
 border-radius:10px;
 font-weight:bold;
 margin-left:5px;
-padding:2px;
+padding:5px;
 }
 #admin_retrieve{
-font-size:14px;
+font-size:16px;
 background-color:rgba(185,191,193,1);
 color:#323638;
 border-radius:10px;
 font-weight:bold;
-padding:2px;
+padding:5px;
 }
 #admin_retrieve::hover{
 background-color: rgba(200,171,151,0.5);
@@ -2673,6 +2715,19 @@ border:1px solid rgba(120, 91, 71, 1);
 border-radius:5px;
 padding:2px;
 }
+QListWidget::item { 
+margin:5px;
+padding:5px;
+ }
+QListWidget::item::hover{
+background-color:rgba(200,171,151,0.5);
+border-radius:5px;
+}
+QListWidget::item:selected{
+background-color:rgba(200,171,151,1);
+color:black;
+border:none;
+}
 </string>
           </property>
           <property name="frameShape">
@@ -2682,37 +2737,6 @@ padding:2px;
            <enum>QFrame::Raised</enum>
           </property>
           <layout class="QGridLayout" name="gridLayout_3">
-           <item row="0" column="2">
-            <widget class="QFrame" name="admin_categories_list_frame">
-             <property name="maximumSize">
-              <size>
-               <width>250</width>
-               <height>16777215</height>
-              </size>
-             </property>
-             <property name="styleSheet">
-              <string notr="true"/>
-             </property>
-             <property name="frameShape">
-              <enum>QFrame::StyledPanel</enum>
-             </property>
-             <property name="frameShadow">
-              <enum>QFrame::Raised</enum>
-             </property>
-             <layout class="QGridLayout" name="gridLayout_12">
-              <item row="0" column="0">
-               <widget class="QListWidget" name="admin_categories_list">
-                <property name="layoutDirection">
-                 <enum>Qt::LeftToRight</enum>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">font-size: 16px;</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </widget>
-           </item>
            <item row="0" column="1">
             <widget class="QFrame" name="admin_products_frame">
              <property name="minimumSize">
@@ -2741,8 +2765,8 @@ padding:2px;
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>674</width>
-                   <height>662</height>
+                   <width>96</width>
+                   <height>26</height>
                   </rect>
                  </property>
                  <layout class="QVBoxLayout" name="verticalLayout">
@@ -2784,7 +2808,7 @@ padding:2px;
                   <property name="minimumSize">
                    <size>
                     <width>130</width>
-                    <height>0</height>
+                    <height>30</height>
                    </size>
                   </property>
                   <property name="cursor">
@@ -2835,6 +2859,15 @@ padding:2px;
                     <height>0</height>
                    </size>
                   </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>80</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">font-size:15px;</string>
+                  </property>
                   <property name="text">
                    <string>     الخصم:</string>
                   </property>
@@ -2845,7 +2878,7 @@ padding:2px;
                   <property name="minimumSize">
                    <size>
                     <width>80</width>
-                    <height>0</height>
+                    <height>30</height>
                    </size>
                   </property>
                   <property name="maximumSize">
@@ -2860,7 +2893,14 @@ padding:2px;
                  </widget>
                 </item>
                 <item row="0" column="0" colspan="3">
-                 <widget class="QLineEdit" name="admin_phone_number"/>
+                 <widget class="QLineEdit" name="admin_phone_number">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>30</height>
+                   </size>
+                  </property>
+                 </widget>
                 </item>
                </layout>
               </item>
@@ -2870,6 +2910,12 @@ padding:2px;
                  <size>
                   <width>280</width>
                   <height>0</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>500</height>
                  </size>
                 </property>
                 <property name="styleSheet">
@@ -2883,8 +2929,8 @@ padding:2px;
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>326</width>
-                   <height>543</height>
+                   <width>276</width>
+                   <height>26</height>
                   </rect>
                  </property>
                  <property name="minimumSize">
@@ -2905,6 +2951,12 @@ padding:2px;
                <layout class="QHBoxLayout" name="horizontalLayout_6">
                 <item>
                  <widget class="QPushButton" name="admin_check_discount">
+                  <property name="minimumSize">
+                   <size>
+                    <width>32</width>
+                    <height>32</height>
+                   </size>
+                  </property>
                   <property name="cursor">
                    <cursorShape>PointingHandCursor</cursorShape>
                   </property>
@@ -2940,7 +2992,7 @@ color:rgba(120, 91, 71, 1)
                   <property name="styleSheet">
                    <string notr="true">border: none;
 font-weight: bold;
-font-size: 13px;
+font-size: 15px;
 color:rgba(120, 91, 71, 1)
 
 
@@ -2968,7 +3020,7 @@ font-size: 13px</string>
                  <widget class="QLabel" name="admin_price_before_const">
                   <property name="styleSheet">
                    <string notr="true">border: none;
-font-size: 13px</string>
+font-size: 15px</string>
                   </property>
                   <property name="text">
                    <string>السعر قبل الخصم:</string>
@@ -2981,6 +3033,12 @@ font-size: 13px</string>
                <layout class="QHBoxLayout" name="horizontalLayout_7">
                 <item>
                  <widget class="QPushButton" name="admin_cancel_order">
+                  <property name="minimumSize">
+                   <size>
+                    <width>32</width>
+                    <height>32</height>
+                   </size>
+                  </property>
                   <property name="maximumSize">
                    <size>
                     <width>30</width>
@@ -3020,6 +3078,37 @@ font-size: 13px</string>
                  </widget>
                 </item>
                </layout>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item row="0" column="2">
+            <widget class="QFrame" name="admin_categories_list_frame">
+             <property name="maximumSize">
+              <size>
+               <width>250</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::StyledPanel</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_12">
+              <item row="0" column="0">
+               <widget class="QListWidget" name="admin_categories_list">
+                <property name="layoutDirection">
+                 <enum>Qt::LeftToRight</enum>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">font-size: 16px;</string>
+                </property>
+               </widget>
               </item>
              </layout>
             </widget>

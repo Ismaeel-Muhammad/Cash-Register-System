@@ -1,4 +1,4 @@
-#include "cashRegisterSystem.h"
+﻿#include "cashRegisterSystem.h"
 
 cashRegisterSystem::cashRegisterSystem(QWidget* parent)
     : QMainWindow(parent), m_ui(new Ui::cashRegisterSystem2Class)
@@ -110,15 +110,30 @@ void cashRegisterSystem::populateProductList(QVBoxLayout* productsVerticalLayout
         nameLabel = new QLabel(QString::fromUtf8(name));
         nameLabel->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
         nameLabel->setStyleSheet("border: none; font-size:16px; font-weight:bold;");
+        nameLabel->setAlignment(Qt::AlignRight);
 
         //Assigning the strings to widgets...
-        add_button.push_back(new QPushButton("Add To Cart!"));
-
+        QPushButton* temp = new QPushButton("!اضافة للسلة");
+        temp->setStyleSheet("QPushButton{font-size:12px; background-color:rgba(185, 191, 193, 1); padding:2px; color:#323638; border-radius:10px;font-weight:bold; padding:2px;} QPushButton::hover{background-color: rgba(200,171,151,0.5);}");
+        temp->setCursor(Qt::PointingHandCursor);
+        
+        add_button.push_back(temp);
+        
         quantityBox = new QDoubleSpinBox();
-        QLabel* lab = new QLabel(QString("Price: %1").arg(QString::fromUtf8(price)));
+        QLabel* lab = new QLabel(QString("السعر: %1").arg(QString::fromUtf8(price)));
         lab->setStyleSheet("border: none; font-size:16px;");
 
         float price_val = lab->text().split(" ")[1].toFloat();
+        quantityBox->setStyleSheet("QDoubleSpinBox{"
+            "border:1px solid rgba(120, 91, 71, 1);"
+        "border-radius:5px;"
+    "background:transparent;}"
+    "QDoubleSpinBox::hover{"
+    "background-color: rgba(185, 191, 193, 1);"
+    "border:none;}"
+      "  QDoubleSpinBox::down-arrow{"
+        "image:url(:/cashRegisterSystem2/media/arrow-down.png);}"
+        "QDoubleSpinBox::up-arrow{image:url(:/cashRegisterSystem2/media/arrow-up.png);}");
         //Setting up the lable style sheet
         //Creating horizontal line with desired properties...
         //Setting up the pushbutton with the on-hover changes...
@@ -140,8 +155,22 @@ void cashRegisterSystem::populateProductList(QVBoxLayout* productsVerticalLayout
         vboxLayout->addWidget(lab);
         vboxLayout->addWidget(quantityBox);
         vboxLayout->addWidget(add_button.back());
-        frame->setStyleSheet("border: 1px solid black;");
-        if (i % 2 == 1) frame->setStyleSheet("QFrame{background-color:rgba(184, 184, 184, 255); border: 1px solid black;}");
+        frame->setObjectName("cartItem");
+        frame->setStyleSheet("#cartItem{background-color:rgba(200,171,151,0.5); border-radius:5px; margin:5px;}");
+        if (i % 2 == 1) {
+            frame->setStyleSheet("#cartItem{background-color:rgba(200,200,200,1); border-radius:5px; margin:5px;}");
+            temp->setStyleSheet("QPushButton{font-size:12px; background-color:rgba(200, 171, 151, 0.5); padding:2px; color:#323638; border-radius:10px;font-weight:bold; padding:2px;} QPushButton::hover{background-color: rgba(185, 191, 193, 1);}");
+             quantityBox->setStyleSheet("QDoubleSpinBox{"
+            "border:1px solid rgba(120, 91, 71, 1);"
+            "border-radius:5px;"
+            "background:transparent;}"
+            "QDoubleSpinBox::hover{"
+            "background-color: rgba(200,171,151,0.5);"
+            "border:none;}"
+            "QDoubleSpinBox::down-arrow{"
+            "image:url(:/cashRegisterSystem2/media/arrow-down.png);}"
+            "QDoubleSpinBox::up-arrow{image:url(:/cashRegisterSystem2/media/arrow-up.png);}");
+        };
         frame->setMaximumSize(149, 156);
         //adding all the widgets to the previously cretaed grid layout...
         grid->addWidget(frame, verticalItems, horizontalItems);
@@ -153,6 +182,7 @@ void cashRegisterSystem::populateProductList(QVBoxLayout* productsVerticalLayout
         }
         i++;
     }
+    productType->setStyleSheet("QLabel{padding:5px; margin-right:10px; font-size:18px; color:#323638; font-weight:bold;}");
     productsVerticalLayout->addWidget(productType);
     productsVerticalLayout->addWidget(GridFrame);
 

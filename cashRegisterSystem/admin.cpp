@@ -135,9 +135,9 @@ void cashRegisterSystem::Show_total_window(QVBoxLayout* VLayout) {
             quantity = i.value().at(0).toInt();
             prices = i.value().at(1).toFloat();
         }
-
-        if (index % 2 == 1) f->setStyleSheet("QFrame{background-color:rgba(184, 184, 184, 255)}");
-
+        f->setObjectName("TotalFrame");
+        if (index % 2 == 1) f->setStyleSheet("#TotalFrame{background-color:rgba(200,171,151,0.5); border-radius:5px; margin:5px;} QLabel{font-weight:bold; font-size:16px;}");
+        if (index % 2 == 0) f->setStyleSheet("#TotalFrame{background-color:rgba(200,200,200,1); border-radius:5px; margin:5px;}QLabel{ font-weight:bold; font-size:16px; }");
         QLabel* name = new QLabel(i.key().at(0));
         QLabel* opType = new QLabel(i.key().at(1));
         QLabel* PriceLabel = new QLabel("\u0627\u0644\u0633\u0639\u0631 : " + QString::number(prices));
@@ -229,11 +229,14 @@ void cashRegisterSystem::Show_window(string type, QWidget* scrollContents,QVBoxL
         QLabel* opTypes = new QLabel(QString("%1").arg(QString::fromUtf8(opType)));
         QLabel* Quantities = new QLabel(QString("\u0627\u0644\u0643\u0645\u064a\u0629 : %1 ").arg(to_string(Quantity_Sell).c_str()));
         QLabel* pricesLabel = new QLabel(QString("\u0627\u0644\u0633\u0639\u0631 : %1").arg(QString::number(p)));
-        names->setStyleSheet("border:none;");
+        f->setObjectName("OpFrame");
+   /*     names->setStyleSheet("border:none;");
         opTypes->setStyleSheet("border:none;");
         Quantities->setStyleSheet("border:none;");
-        pricesLabel->setStyleSheet("border:none;");
-        if (i % 2 == 1) f->setStyleSheet("QFrame{background-color:rgba(184, 184, 184, 255)}");
+        pricesLabel->setStyleSheet("border:none;");*/
+        if (i % 2 == 1) f->setStyleSheet("#OpFrame{background-color:rgba(200,171,151,0.5); border-radius:5px; margin:5px;} QLabel{font-weight:bold; font-size:16px; }");
+        if (i % 2 == 0) f->setStyleSheet("#OpFrame{background-color:rgba(200,200,200,1); border-radius:5px; margin:5px;}QLabel{ font-weight:bold; font-size:16px; }");
+
         hLayout->addWidget(Quantities);
         hLayout->addWidget(pricesLabel);
         hLayout->addWidget(opTypes);
