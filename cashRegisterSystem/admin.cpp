@@ -26,10 +26,10 @@ void cashRegisterSystem::on_add_item_clicked() {
 
 void cashRegisterSystem::on_remove_item_clicked() {
     Database db("mydatabase.db");
-    string Items_Names = m_ui->item_name_item->toPlainText().toUtf8().constData();
-    db.DeleteProdRow(Items_Names);
-    int index = m_ui->item_name_quantity->findText(QString::fromUtf8(Items_Names)); // find the index of the item
-    int index2 = m_ui->item_name_price->findText(QString::fromUtf8(Items_Names)); // find the index of the item
+    QString Items_Names = m_ui->item_name_item->toPlainText();
+    db.DeleteProdRow(Items_Names.toUtf8().constData());
+    int index = m_ui->item_name_quantity->findText(Items_Names); // find the index of the item
+    int index2 = m_ui->item_name_price->findText(Items_Names); // find the index of the item
     if (index != -1 && index2 != -1)
     {
         m_ui->item_name_quantity->removeItem(index); // remove the item by index
@@ -44,6 +44,106 @@ void cashRegisterSystem::on_remove_item_clicked() {
 
     m_AdminProductIsUpdated = true;
     m_UserProductIsUpdated = true;
+}
+
+void cashRegisterSystem::on_add_category_clicked() {
+    const QString categoryName = m_ui->category_name->text();
+
+    // Open the "categories.txt" file in append mode
+    QFile file("categories.txt");
+    if (!file.open(QIODevice::Append | QIODevice::Text))
+        return;
+
+    // Create a QTextStream object to write to the file
+    QTextStream out(&file);
+
+    // Append the category name to the file followed by a new line character
+    out << categoryName << "\n";
+
+    // Close the file
+    file.close();
+
+    // Clear the categories lists
+    m_ui->admin_categories_list->clear();
+    m_ui->user_categories_list->clear();
+
+    // Set the flags for updated product lists
+    m_AdminProductIsUpdated = true;
+    m_UserProductIsUpdated = true;
+
+    // Clear the input field for category name
+    m_ui->category_name->clear();
+
+    // Update categories combo box to edit its items
+    m_ui->item_type_item->addItem(categoryName);
+
+    // Clear const_catigories
+    const_categories.clear();
+}
+
+void cashRegisterSystem::on_remove_category_clicked() {
+    const QString categoryName = m_ui->category_name->text();
+
+    // Open the file for reading and writing
+    QFile file("categories.txt");
+    if (!file.open(QIODevice::ReadWrite | QIODevice::Text)) {
+        QMessageBox::warning(this, "open file error", "couldn't open categories file");
+        return;
+    }
+
+    // Create a temporary file
+    QFile tempFile("TEMPcategories.txt");
+    if (!tempFile.open(QIODevice::WriteOnly | QIODevice::Text)) {
+        QMessageBox::warning(this, "open file error", "couldn't open TEMPcategories file");
+        file.close();
+        return;
+    }
+
+    // Set up QTextStream for reading from the original file
+    QTextStream in(&file);
+
+    // Set up QTextStream for writing to the temporary file
+    QTextStream out(&tempFile);
+
+    // Read and process each line from the original file
+    while (!in.atEnd()) {
+        QString line = in.readLine();
+        if (line != categoryName) {
+            // Write the line to the temporary file if it doesn't match the line to delete
+            out << line << "\n";
+        }
+    }
+
+    // Close both files
+    file.close();
+    tempFile.close();
+
+    // Remove the original file
+    QFile::remove("categories.txt");
+
+    // Rename the temporary file to the original file name
+    tempFile.rename("categories.txt");
+
+    // Clear the categories lists
+    m_ui->admin_categories_list->clear();
+    m_ui->user_categories_list->clear();
+
+    // Set the flags for updated product lists
+    m_AdminProductIsUpdated = true;
+    m_UserProductIsUpdated = true;
+
+    // Clear the input field for category name
+    m_ui->category_name->clear();
+
+    // Update categories combo box to edit its items
+    int index = m_ui->item_type_item->findText(categoryName); // find the index of the item
+    if (index != -1)
+    {
+        m_ui->item_type_item->removeItem(index); // remove the item by index
+    }
+
+    // Clear const_catigories
+    const_categories.clear();
 }
 
 void cashRegisterSystem::on_add_quantity_clicked() {
@@ -327,5 +427,12 @@ void cashRegisterSystem::clear_vertical_layout(QVBoxLayout* VLayout) {
             delete widget;
         }
         delete child;
+    }
+}
+
+void cashRegisterSystem::fillCategories() {
+    m_ui->item_type_item->clear();
+    for (auto category : const_categories) {
+        m_ui->item_type_item->addItem(category->text());
     }
 }

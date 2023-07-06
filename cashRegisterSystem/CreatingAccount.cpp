@@ -27,3 +27,18 @@ void cashRegisterSystem::on_add_new_clicked()
     }
     m_ui->class_box->setCurrentIndex(0);
 }
+
+void cashRegisterSystem::on_remove_customer_clicked()
+{
+    Database db("mydatabase.db");
+    string Items_Names = m_ui->new_customer_phone->text().toUtf8().constData();
+    db.DeleteCustomerRow(Items_Names);
+
+    QMessageBox::information(this,"\u062d\u0627\u0644\u0629 \u0627\u0644\u062d\u0630\u0641","\u062a\u0645 \u0627\u0644\u062d\u0630\u0641 \u0628\u0646\u062c\u0627\u062d");
+
+    m_ui->new_customer_phone->clear();
+
+    db.~Database();
+
+    m_ui->class_box->setCurrentIndex(0);
+}

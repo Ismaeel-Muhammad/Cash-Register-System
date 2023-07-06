@@ -19,6 +19,7 @@
 #include <QScrollBar>
 #include <iostream>
 #include <QFile>
+#include <QTextStream>
 #include <algorithm>
 
 #define SLOT_PRICE -1
@@ -88,11 +89,13 @@ private:
     void showCategoriesList(QListWidget*, QScrollArea*);
     void showAllProducts(QVBoxLayout*, QVBoxLayout*, QLabel*, QLabel*, QScrollArea*, QPushButton*, QLineEdit*);
     QLabel* makeLabel(const QString&);
-    void makeQListCopy(QList<QLabel*>&);
+    void makeQListCopy(QList<QLabel*>&, QList<QLabel*>&);
 
     void populateProductList(QVBoxLayout*, QLabel*, QVBoxLayout*, QLabel*, QLabel*, QScrollArea*, QPushButton*, QLineEdit*);
 
     void clearProducts(QVBoxLayout*);
+
+    void fillCategories();
 private slots:
 
     void onPageChanged(int index);
@@ -104,6 +107,7 @@ private slots:
     void on_login_btn_clicked();
 
     void on_add_new_clicked();
+    void on_remove_customer_clicked();
 
     void Delete_On_Click(QPushButton*, float, QString, int, QLabel*, QLabel*, QPushButton*, QLineEdit*);
 
@@ -122,9 +126,14 @@ private slots:
     void on_admin_retrieve_clicked();
 
     void on_add_item_clicked();
-    void on_add_quantity_clicked();
     void on_remove_item_clicked();
+
+    void on_add_category_clicked();
+    void on_remove_category_clicked();
+
+    void on_add_quantity_clicked();
     void on_remove_quantity_clicked();
+
     void on_back_to_main_clicked();
 
     void on_Search_btn_clicked();

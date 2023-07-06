@@ -25,7 +25,6 @@ cashRegisterSystem::cashRegisterSystem(QWidget* parent)
     m_ui->discount_spinbox->setPrefix("% ");
 
     Add_Item_names();
-
     //connects
     connect(m_ui->item_name_price, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &cashRegisterSystem::onPriceComboIndexChanged);
 
@@ -36,13 +35,13 @@ cashRegisterSystem::cashRegisterSystem(QWidget* parent)
 
     m_ui->nav_frame->setHidden(true);
 
+    // Validators
     QIntValidator* validator = new QIntValidator(0, 99999999999, parent);
     m_ui->phoneSearch->setValidator(validator);
     m_ui->new_customer_phone->setValidator(validator);
     m_ui->admin_phone_number->setValidator(validator);
     m_ui->user_phone_number->setValidator(validator);
     m_ui->formsStackedWidget->setCurrentIndex(0);
-
 }
 
 cashRegisterSystem::~cashRegisterSystem()
@@ -66,6 +65,9 @@ void cashRegisterSystem::onPageChanged(int index) {
             showAllProducts(m_ui->user_productsVerticalLayout, m_ui->user_cartVerticalLayout, m_ui->user_price_before, m_ui->user_price_after, m_ui->user_cartScrollArea, m_ui->user_check_discount, m_ui->user_phone_number);
             m_UserProductIsUpdated = false;
         }
+    }
+    else if (index == 2) {
+        fillCategories();
     }
 }
 
@@ -223,7 +225,6 @@ void cashRegisterSystem::showCategoriesList(QListWidget* categoriesList, QScroll
             while (!in.atEnd()) {
                 const QString line = in.readLine();
                 categoriesList->addItem(line);
-
                 const_categories.append(makeLabel(line));
             }
         }
@@ -233,11 +234,13 @@ void cashRegisterSystem::showCategoriesList(QListWidget* categoriesList, QScroll
             }
         }
     }
+    clone_categories.clear();
+    makeQListCopy(clone_categories, const_categories);
+
+    //connects
     connect(categoriesList, &QListWidget::currentRowChanged, [=](int row) {
         itemClickedHandler(row, productsScrollArea);
         });
-    clone_categories.clear();
-    makeQListCopy(clone_categories);
 }
 
 void cashRegisterSystem::itemClickedHandler(int row, QScrollArea* productsScrollArea) {
@@ -245,14 +248,13 @@ void cashRegisterSystem::itemClickedHandler(int row, QScrollArea* productsScroll
     productsScrollArea->ensureWidgetVisible(clone_categories[row], 0, yMargin);
 }
 
-
 QLabel* cashRegisterSystem::makeLabel(const QString& content) {
     QLabel* label = new QLabel(content, this);
     label->setStyleSheet("font-size:20px;");
     return label;
 }
 
-void cashRegisterSystem::makeQListCopy(QList<QLabel*>& clone_categories) {
+void cashRegisterSystem::makeQListCopy(QList<QLabel*>& clone_categories, QList<QLabel*>& const_categories) {
     for (QLabel* label : const_categories) {
         QLabel* newLabel = new QLabel(label->text());
         newLabel->setStyleSheet("font-size:20px;");

@@ -51,6 +51,30 @@ void Database::insertCustomerRows(string name, string phone_number, int total_pa
     }
 }
 
+void Database::DeleteCustomerRow(string phoneNumber) {
+    sqlite3_stmt* stmt;
+    const char* delete_query = "DELETE FROM Customers WHERE phone_number = ?";
+    int rc = sqlite3_prepare_v2(m_db, delete_query, -1, &stmt, NULL);
+    if (rc != SQLITE_OK) {
+        // handle error
+        return;
+    }
+
+    rc = sqlite3_bind_text(stmt, 1, phoneNumber.c_str(), -1, SQLITE_TRANSIENT);
+    if (rc != SQLITE_OK) {
+        // handle error
+        return;
+    }
+
+    rc = sqlite3_step(stmt);
+    if (rc != SQLITE_DONE) {
+        // handle error
+        return;
+    }
+
+    sqlite3_finalize(stmt);
+}
+
 void Database::updateCustomerTotalPaid(string phone_number, float additional_pay, char type)
 {
     sqlite3_stmt* stmt;
