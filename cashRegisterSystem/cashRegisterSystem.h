@@ -101,6 +101,8 @@ private:
     void fillCategories();
 
     void printReceipt();
+
+    void confirmPayOperation(char);
 private slots:
 
     void onPageChanged(int index);
