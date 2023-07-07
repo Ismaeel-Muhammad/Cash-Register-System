@@ -21,6 +21,9 @@
 #include <QFile>
 #include <QTextStream>
 #include <algorithm>
+#include <QPrinter>
+#include <QPrintDialog>
+#include <QPainter>
 
 #define SLOT_PRICE -1
 #define PHONE_DISCOUNT 0.9f
@@ -96,6 +99,8 @@ private:
     void clearProducts(QVBoxLayout*);
 
     void fillCategories();
+
+    void printReceipt();
 private slots:
 
     void onPageChanged(int index);

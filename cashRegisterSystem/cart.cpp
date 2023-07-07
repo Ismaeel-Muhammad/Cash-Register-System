@@ -227,3 +227,4 @@ void cashRegisterSystem::on_name_button_clicked(double quantity, QString name, f
 char cashRegisterSystem::updateType(char type) {
     return  (type == '-') ? '+' : '-';
 }
+
