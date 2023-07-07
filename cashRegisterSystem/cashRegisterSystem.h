@@ -79,7 +79,6 @@ private:
     void search();
     void generateProductsTable();
     void GenrateTypesForCombo();
-    
 
     void Add_Item_names();
     void Show_Sell_window();
@@ -131,6 +130,8 @@ private slots:
     void on_admin_cancel_order_clicked();
     void on_admin_sell_clicked();
     void on_admin_retrieve_clicked();
+
+    void on_edit_admin_clicked();
 
     void on_add_item_clicked();
     void on_remove_item_clicked();

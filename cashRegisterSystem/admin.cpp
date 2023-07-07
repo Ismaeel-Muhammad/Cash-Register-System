@@ -3,9 +3,9 @@
 void cashRegisterSystem::on_add_item_clicked() {
 
 	Database db("mydatabase.db");
-	string Items_Names = m_ui->item_name_item->toPlainText().toUtf8().constData();
-	string Items_Prices = m_ui->item_price_item->toPlainText().toUtf8().constData();
-	int Quantity = m_ui->item_quantity_item->toPlainText().toInt();
+	string Items_Names = m_ui->item_name_item->text().toUtf8().constData();
+	string Items_Prices = m_ui->item_price_item->text().toUtf8().constData();
+	int Quantity = m_ui->item_quantity_item->text().toInt();
 	string type = m_ui->item_type_item->currentText().toUtf8().constData();
 	db.insertProdRows(Items_Names, Items_Prices, Quantity, type);
     m_ui->item_name_quantity->addItem(QString::fromUtf8(Items_Names));
@@ -26,7 +26,7 @@ void cashRegisterSystem::on_add_item_clicked() {
 
 void cashRegisterSystem::on_remove_item_clicked() {
     Database db("mydatabase.db");
-    QString Items_Names = m_ui->item_name_item->toPlainText();
+    QString Items_Names = m_ui->item_name_item->text();
     db.DeleteProdRow(Items_Names.toUtf8().constData());
     int index = m_ui->item_name_quantity->findText(Items_Names); // find the index of the item
     int index2 = m_ui->item_name_price->findText(Items_Names); // find the index of the item
@@ -149,7 +149,7 @@ void cashRegisterSystem::on_remove_category_clicked() {
 void cashRegisterSystem::on_add_quantity_clicked() {
     Database db("mydatabase.db");
     string item_name = m_ui->item_name_quantity->currentText().toUtf8().constData();
-    int item_Quantity = m_ui->item_quantity_quantity->toPlainText().toInt();
+    int item_Quantity = m_ui->item_quantity_quantity->text().toInt();
     db.updateProductQuantity(item_name, item_Quantity,'+');
     QMessageBox msg;
     msg.setText("\u0639\u0645\u0644\u064A\u0629 \u0646\u0627\u062C\u062D\u0629");
@@ -167,7 +167,7 @@ void cashRegisterSystem::on_add_quantity_clicked() {
 void cashRegisterSystem::on_edit_price_clicked() {
     Database db("mydatabase.db");
     string item_name = m_ui->item_name_price->currentText().toUtf8().constData();
-    string item_price = m_ui->item_price_price->toPlainText().toUtf8().constData();
+    string item_price = m_ui->item_price_price->text().toUtf8().constData();
     db.editProductPrice(item_name, item_price);
     QMessageBox msg;
     msg.setText("\u0639\u0645\u0644\u064A\u0629 \u0646\u0627\u062C\u062D\u0629");
@@ -185,7 +185,7 @@ void cashRegisterSystem::on_edit_price_clicked() {
 void cashRegisterSystem::on_remove_quantity_clicked() {
     Database db("mydatabase.db");
     string item_name = m_ui->item_name_quantity->currentText().toUtf8().constData();
-    int item_Quantity = m_ui->item_quantity_quantity->toPlainText().toInt();
+    int item_Quantity = m_ui->item_quantity_quantity->text().toInt();
     db.updateProductQuantity(item_name, item_Quantity, '-');
     QMessageBox msg;
     msg.setText("\u0639\u0645\u0644\u064A\u0629 \u0646\u0627\u062C\u062D\u0629");
@@ -399,7 +399,7 @@ void cashRegisterSystem::onPriceComboIndexChanged(int index) {
     QString selectedProductName = m_ui->item_name_price->itemText(index);
     Database db("mydatabase.db");
     string price = db.selectProductPrice(selectedProductName.toStdString());
-    m_ui->item_price_price->setPlainText(QString::fromUtf8(price));
+    m_ui->item_price_price->setText(QString::fromUtf8(price));
     db.~Database();
 }
 
@@ -435,4 +435,9 @@ void cashRegisterSystem::fillCategories() {
     for (auto category : const_categories) {
         m_ui->item_type_item->addItem(category->text());
     }
+}
+
+void cashRegisterSystem::on_edit_admin_clicked() {
+    m_ui->formsStackedWidget->setCurrentIndex(7);
+
 }
