@@ -11,7 +11,7 @@ void cashRegisterSystem::payOperation(char type, QLabel* priceBefore, QLabel* pr
         i.next();
         // name, quantity, type(add, subtract)
         db.updateProductQuantity(i.key().toStdString(), i.value().at(0).toInt(), updateType(type));
-        
+
         // name, quantity, price
         float price = check_discount(priceAfter, priceBefore, checkButton, phoneNumberField, i.value().at(1).toFloat());
         string operation_type = m_ui->admin_order_type_cmb->currentText().toUtf8().constData();
@@ -63,7 +63,7 @@ float cashRegisterSystem::check_discount(QLabel* priceAfter, QLabel* priceBefore
     float minDiscount = 0;
     if (db->checkPhoneNumber(phoneNumber.toStdString(), customerClass)) {
 
-        float adminDiscount = 1-(m_ui->discount_spinbox->value() / 100);
+        float adminDiscount = 1 - (m_ui->discount_spinbox->value() / 100);
 
         if (customerClass == "\u0637\u0627\u0644\u0628" || customerClass == "\u0639\u0645\u064A\u0644 \u0645\u0647\u0645") {
             minDiscount = min(adminDiscount, PHONE_DISCOUNT);
@@ -80,7 +80,7 @@ float cashRegisterSystem::check_discount(QLabel* priceAfter, QLabel* priceBefore
                 return price;
             }
         }
-        else if(customerClass == "\u0639\u0645\u064A\u0644 \u0639\u0627\u062F\u064A"){
+        else if (customerClass == "\u0639\u0645\u064A\u0644 \u0639\u0627\u062F\u064A") {
             // updates price after every time entering this condition
             if (price == SLOT_PRICE) price = adminDiscount;
             else price *= adminDiscount;
@@ -152,7 +152,7 @@ void cashRegisterSystem::on_name_button_clicked(double quantity, QString name, f
     QHBoxLayout* layout = new QHBoxLayout(frame);
     frame->setMaximumHeight(50);
     QLabel* names = new QLabel(name);
-    names->setStyleSheet("border: none; font-size:16px; font-weight:bold;");
+    names->setStyleSheet("border: none; font-size:14px; font-weight:bold;");
 
     QLabel* quantities = new QLabel(tr("x%1").arg(quantity));
     quantities->setStyleSheet("border: none; font-size:16px;");
@@ -197,7 +197,7 @@ void cashRegisterSystem::on_name_button_clicked(double quantity, QString name, f
             checkButton, phoneNumberField);
     });
     frame->setObjectName("CartFrame");
-    if (i % 2 == 1) { 
+    if (i % 2 == 1) {
         frame->setStyleSheet("#CartFrame{background-color:rgba(200,200,200,1); border-radius:2px; padding:2px;} QPushButton{font-size:14px;background-color:rgba(200,171,151,0.5);color:#323638;border-radius:10px;font-weight:bold;padding:2px;} QPushButton::hover{background-color: rgba(185, 191, 193, 1);}");
     }
     if (i % 2 == 0) {
@@ -228,3 +228,49 @@ char cashRegisterSystem::updateType(char type) {
     return  (type == '-') ? '+' : '-';
 }
 
+void cashRegisterSystem::printReceipt(QLabel* priceAfter, QLabel* priceBefore) {
+    QPrinter printer(QPrinter::HighResolution);
+    printer.setPrinterName("My Printer");
+
+    QPageSize pageSize(QSizeF(160, 100), QPageSize::Millimeter, "Custom 80x160");
+    QPageLayout pageLayout(pageSize, QPageLayout::Portrait, QMarginsF(0, 0, 0, 0)); // create a page layout
+    printer.setPageLayout(pageLayout); // set the page layout for the printer
+
+    float Discount = abs((1 - (priceAfter->text().toFloat() / priceBefore->text().toFloat())) * 100);
+    QDateTime currentDateTime = QDateTime::currentDateTime();
+
+    QPrintDialog dialog(&printer, this);
+    if (dialog.exec() == QDialog::Accepted) {
+
+        QString header =
+            "<body style = 'text-align: center'; >"
+            "<h1>Ali Baba!</h1>"
+            "<p>+20 10 9226 2446 </p>"
+            "<p>3 Taha Hussein El yamama Zamalek Center</p>"
+            "<br>"
+            "_______________________________________";
+
+        QString body = "";
+
+        QHash<QString, QList<QVariant>>::iterator it;
+        for (it = myHash.begin(); it != myHash.end(); ++it) {
+            QString key = it.key();
+            QList<QVariant> value = it.value();
+            body += "<p> x" + value.at(0).toString() + "  " + key + "      " + value.at(1).toString() + "EGP</p>";
+        }
+
+        QString tail = "_______________________________________"
+            "<p>Before Discount: " + priceBefore->text() + "EGP </p>"
+            "<p>Discount: " + QString::number(Discount) + " % </p>"
+            "<p>After Discount:" + priceAfter->text() + "EGP </p>"
+            "<p> " + currentDateTime.date().toString() + " " + currentDateTime.time().toString() + " </p>"
+            "<h3>Thanks for ordering!</h3>"
+            "</body>";
+
+        m_ui->receipt->insertHtml(header + body + tail);
+
+        m_ui->receipt->setAlignment(Qt::AlignCenter);
+        m_ui->receipt->print(&printer);
+        m_ui->receipt->clear();
+    }
+}

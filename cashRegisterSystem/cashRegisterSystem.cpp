@@ -96,7 +96,7 @@ void cashRegisterSystem::populateProductList(QVBoxLayout* productsVerticalLayout
     //Creating a grid layout...
 
     int verticalItems = 0;
-    int horizontalItems = 5;
+    int horizontalItems = 4;
     QLabel* nameLabel;
     QVector<QPushButton*> add_button;
     QDoubleSpinBox* quantityBox;
@@ -112,7 +112,7 @@ void cashRegisterSystem::populateProductList(QVBoxLayout* productsVerticalLayout
         QVBoxLayout* vboxLayout = new QVBoxLayout(frame);
         nameLabel = new QLabel(QString::fromUtf8(name));
         nameLabel->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-        nameLabel->setStyleSheet("border: none; font-size:16px; font-weight:bold;");
+        nameLabel->setStyleSheet("border: none; font-size:12px; font-weight:bold;");
         nameLabel->setAlignment(Qt::AlignRight);
 
         //Assigning the strings to widgets...
@@ -181,7 +181,7 @@ void cashRegisterSystem::populateProductList(QVBoxLayout* productsVerticalLayout
         if (horizontalItems == 0)
         {
             verticalItems++;
-            horizontalItems = 5;
+            horizontalItems = 4;
         }
         i++;
     }

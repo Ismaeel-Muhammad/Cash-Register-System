@@ -58,7 +58,7 @@ private:
     QHash<QList<QString>, QList<QVariant>> sellOperation;
     QHash<QList<QString>, QList<QVariant>> retrieveOperation;
     void InsertInHashOperations(QHash<QList<QString>, QList<QVariant>>&, QList<QString>, float, int);
-    
+
     string namesearch;
     string phonesearch;
     int rank;
@@ -80,6 +80,7 @@ private:
     void generateProductsTable();
     void GenrateTypesForCombo();
 
+
     void Add_Item_names();
     void Show_Sell_window();
     void Show_window(string, QWidget*, QVBoxLayout*);
@@ -99,10 +100,13 @@ private:
 
     void fillCategories();
 
-    void printReceipt();
+    void printReceipt(QLabel*, QLabel*);
 
     void confirmPayOperation(char);
+    void confirmPayOperation_admin(char);
 private slots:
+
+    void on_edit_admin_clicked();
 
     void onPageChanged(int index);
 
@@ -113,6 +117,7 @@ private slots:
     void on_login_btn_clicked();
 
     void on_add_new_clicked();
+
     void on_remove_customer_clicked();
 
     void Delete_On_Click(QPushButton*, float, QString, int, QLabel*, QLabel*, QPushButton*, QLineEdit*);
@@ -130,8 +135,6 @@ private slots:
     void on_admin_cancel_order_clicked();
     void on_admin_sell_clicked();
     void on_admin_retrieve_clicked();
-
-    void on_edit_admin_clicked();
 
     void on_add_item_clicked();
     void on_remove_item_clicked();
