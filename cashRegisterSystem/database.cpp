@@ -410,3 +410,27 @@ string Database::getTodayDate() {
     // return date as string
     return oss.str();
 }
+
+void Database::beginTransaction() {
+    // Begin a transaction using SQLite API
+    int rc = sqlite3_exec(this->m_db, "BEGIN;", 0, 0, 0);
+    if (rc != SQLITE_OK) {
+        return;
+    }
+}
+
+void Database::commitTransaction() {
+    // Commit the transaction using SQLite API
+    int rc = sqlite3_exec(this->m_db, "COMMIT;", 0, 0, 0);
+    if (rc != SQLITE_OK) {
+        return;
+    }
+}
+
+void Database::rollbackTransaction() {
+    // Rollback the transaction using SQLite API
+    int rc = sqlite3_exec(this->m_db, "ROLLBACK;", 0, 0, 0);
+    if (rc != SQLITE_OK) {
+        return;
+    }
+}

@@ -27,6 +27,11 @@ public:
     string selectProductPrice(string);
 
     static string getTodayDate();
+
+    void beginTransaction();
+    void rollbackTransaction();
+    void commitTransaction();
+
 private:
     sqlite3* m_db;
 

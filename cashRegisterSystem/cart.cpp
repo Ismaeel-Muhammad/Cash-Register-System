@@ -5,18 +5,28 @@ void cashRegisterSystem::payOperation(char type, QLabel* priceBefore, QLabel* pr
     QWidget* cartContent) {
 
     Database db("mydatabase.db");
-    db.updateCustomerTotalPaid(phoneNumberField->text().toStdString(), priceAfter->text().toFloat(), type);
-    QHashIterator<QString, QList<QVariant>> i(myHash);
-    while (i.hasNext()) {
-        i.next();
-        // name, quantity, type(add, subtract)
-        db.updateProductQuantity(i.key().toStdString(), i.value().at(0).toInt(), updateType(type));
+    db.beginTransaction();
 
-        // name, quantity, price
-        float price = check_discount(priceAfter, priceBefore, checkButton, phoneNumberField, i.value().at(1).toFloat());
-        string operation_type = m_ui->admin_order_type_cmb->currentText().toUtf8().constData();
-        db.insertOrUpdateOperation(i.key().toStdString(), i.value().at(0).toInt(), price, operation_type, type);
+    try {
+        db.updateCustomerTotalPaid(phoneNumberField->text().toStdString(), priceAfter->text().toFloat(), type);
+        QHashIterator<QString, QList<QVariant>> i(myHash);
+        while (i.hasNext()) {
+            i.next();
+            // name, quantity, type(add, subtract)
+            db.updateProductQuantity(i.key().toStdString(), i.value().at(0).toInt(), updateType(type));
+
+            // name, quantity, price
+            float price = check_discount(priceAfter, priceBefore, checkButton, phoneNumberField, i.value().at(1).toFloat());
+            string operation_type = m_ui->admin_order_type_cmb->currentText().toUtf8().constData();
+            db.insertOrUpdateOperation(i.key().toStdString(), i.value().at(0).toInt(), price, operation_type, type);
+        }
+        db.commitTransaction();
     }
+    catch (...) {
+        db.rollbackTransaction();
+        QMessageBox::warning(this, "\u062E\u0637\u0623", "\u062D\u062F\u062B \u062E\u0637\u0623 \u0627\u062B\u0646\u0627\u0621 \u0627\u0644\u0639\u0645\u0644\u064A\u0629");
+    }
+
     DeleteAll(priceBefore, priceAfter, checkButton, phoneNumberField, cartContent);
     db.~Database();
 }
