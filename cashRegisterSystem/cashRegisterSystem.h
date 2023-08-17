@@ -65,7 +65,7 @@ private:
     string productNameSearch;
     int ProductType;
     int Optype;
-    QDate date;
+    QDate m_date_from, m_date_to;
 
     QList<QLabel*> const_categories;
     QList<QLabel*> clone_categories;
@@ -104,6 +104,8 @@ private:
 
     void confirmPayOperation(char);
     void confirmPayOperation_admin(char);
+
+    void goMakeAccount(const QString);
 private slots:
 
     void on_edit_admin_clicked();

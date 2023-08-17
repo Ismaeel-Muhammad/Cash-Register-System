@@ -31,7 +31,8 @@ cashRegisterSystem::cashRegisterSystem(QWidget* parent)
     connect(m_ui->formsStackedWidget, SIGNAL(currentChanged(int)), this, SLOT(onPageChanged(int)));
 
     // set the date for the QDateEdit widget
-    m_ui->date_search->setDate(QDate::currentDate());
+    m_ui->date_search_from->setDate(QDate::currentDate());
+    m_ui->date_search_to->setDate(QDate::currentDate());
 
     m_ui->nav_frame->setHidden(true);
 
@@ -129,14 +130,14 @@ void cashRegisterSystem::populateProductList(QVBoxLayout* productsVerticalLayout
         float price_val = lab->text().split(" ")[1].toFloat();
         quantityBox->setStyleSheet("QDoubleSpinBox{"
             "border:1px solid rgba(120, 91, 71, 1);"
-        "border-radius:5px;"
-    "background:transparent;}"
-    "QDoubleSpinBox::hover{"
-    "background-color: rgba(185, 191, 193, 1);"
-    "border:none;}"
-      "  QDoubleSpinBox::down-arrow{"
-        "image:url(:/cashRegisterSystem2/media/arrow-down.png);}"
-        "QDoubleSpinBox::up-arrow{image:url(:/cashRegisterSystem2/media/arrow-up.png);}");
+            "border-radius:5px;"
+            "background:transparent;}"
+            "QDoubleSpinBox::hover{"
+            "background-color: rgba(185, 191, 193, 1);"
+            "border:none;}"
+            "QDoubleSpinBox::down-arrow{"
+            "image:url(:/cashRegisterSystem2/media/arrow-down.png);}"
+            "QDoubleSpinBox::up-arrow{image:url(:/cashRegisterSystem2/media/arrow-up.png);}");
         //Setting up the lable style sheet
         //Creating horizontal line with desired properties...
         //Setting up the pushbutton with the on-hover changes...

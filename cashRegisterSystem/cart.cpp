@@ -21,6 +21,67 @@ void cashRegisterSystem::payOperation(char type, QLabel* priceBefore, QLabel* pr
     db.~Database();
 }
 
+
+float cashRegisterSystem::check_discount(QLabel* priceAfter, QLabel* priceBefore, QPushButton* checkButton, QLineEdit* phoneNumberField, float price) {
+    const QString phoneNumber = phoneNumberField->text();
+    if (phoneNumber.isEmpty()) {
+        QMessageBox msg;
+        msg.setText("Phone number is empty");
+        msg.exec();
+        return 0;
+    }
+
+    Database* db = new Database("mydatabase.db");
+    QString customerClass = "";
+    // Execute the query and process the result
+    float minDiscount = 0;
+    if (db->checkPhoneNumber(phoneNumber.toStdString(), customerClass)) {
+
+        float adminDiscount = 1 - (m_ui->discount_spinbox->value() / 100);
+
+        if (customerClass == "\u0637\u0627\u0644\u0628" || customerClass == "\u0639\u0645\u064A\u0644 \u0645\u0647\u0645") {
+            minDiscount = min(adminDiscount, PHONE_DISCOUNT);
+            // if pressed on (check discount) button to update price after
+            if (price == SLOT_PRICE) {
+                price = priceBefore->text().toFloat();
+                price *= minDiscount;
+                priceAfter->setText(QString::number(price));
+            }
+            // if called in payOperation to apply discount on every product's price before inserting it in database
+            else {
+                // apply discount ONLY if discount button is clicked
+                if (priceBefore->text().toFloat() != priceAfter->text().toFloat()) {
+                    price *= minDiscount;
+                }
+                db->~Database();
+                return price;
+            }
+        }
+        else if (customerClass == "\u0639\u0645\u064A\u0644 \u0639\u0627\u062F\u064A") {
+            // updates price after every time entering this condition
+            if (price == SLOT_PRICE) price = adminDiscount;
+            else price *= adminDiscount;
+
+            float before = priceBefore->text().toFloat();
+            before *= adminDiscount;
+            priceAfter->setText(QString::number(before));
+            // close database
+            db->~Database();
+            // returnung adminDiscount when cicking on onPayment
+            return price;
+        }
+    }
+    else {
+        // No match found in the database
+        goMakeAccount(phoneNumber);
+    }
+
+    //close the database
+    db->~Database();
+    // Return the result
+    return minDiscount;
+}
+
 void cashRegisterSystem::DeleteAll(QLabel* priceBefore, QLabel* priceAfter,
     QPushButton* checkButton, QLineEdit* phoneNumberField,
     QWidget* cartContent) {
@@ -48,71 +109,6 @@ void cashRegisterSystem::DeleteAll(QLabel* priceBefore, QLabel* priceAfter,
     withDiscount = false;
 }
 
-float cashRegisterSystem::check_discount(QLabel* priceAfter, QLabel* priceBefore, QPushButton* checkButton, QLineEdit* phoneNumberField, float price) {
-    const QString phoneNumber = phoneNumberField->text();
-    if (phoneNumber.isEmpty()) {
-        QMessageBox msg;
-        msg.setText("Phone number is empty");
-        msg.exec();
-        return 0;
-    }
-
-    Database* db = new Database("mydatabase.db");
-    QString customerClass = "";
-    // Execute the query and process the result
-    float minDiscount = 0;
-    if (db->checkPhoneNumber(phoneNumber.toStdString(), customerClass)) {
-
-        float adminDiscount = 1 - (m_ui->discount_spinbox->value() / 100);
-
-        if (customerClass == "\u0637\u0627\u0644\u0628" || customerClass == "\u0639\u0645\u064A\u0644 \u0645\u0647\u0645") {
-            minDiscount = min(adminDiscount, PHONE_DISCOUNT);
-            // if called in on_delete to return the discount value to apply it on price after
-            if (price == SLOT_PRICE) {
-                price = priceBefore->text().toFloat();
-                price *= minDiscount;
-                priceAfter->setText(QString::number(price));
-            }
-            // if called in onPayment to apply discount on every product's price before inserting it in database
-            else {
-                price *= minDiscount;
-                db->~Database();
-                return price;
-            }
-        }
-        else if (customerClass == "\u0639\u0645\u064A\u0644 \u0639\u0627\u062F\u064A") {
-            // updates price after every time entering this condition
-            if (price == SLOT_PRICE) price = adminDiscount;
-            else price *= adminDiscount;
-
-            float before = priceBefore->text().toFloat();
-            before *= adminDiscount;
-            priceAfter->setText(QString::number(before));
-            // close database
-            db->~Database();
-            // returnung adminDiscount when cicking on onpayment
-            return price;
-        }
-    }
-    else {
-        // No match found in the database
-        QMessageBox msgBox;
-        msgBox.setText("No customer found with this phone number.");
-        msgBox.setIcon(QMessageBox::Warning);
-        msgBox.setStandardButtons(QMessageBox::Close | QMessageBox::Ok);
-        msgBox.setDefaultButton(QMessageBox::Close);
-        int ret = msgBox.exec();
-        if (ret == QMessageBox::Ok) {
-            m_ui->formsStackedWidget->setCurrentIndex(3);
-            m_ui->new_customer_phone->setText(phoneNumber);
-        }
-    }
-
-    //close the database
-    db->~Database();
-    // Return the result
-    return minDiscount;
-}
 
 void cashRegisterSystem::Delete_On_Click(QPushButton* del, float totalPrice, QString name, int quantity,
     QLabel* priceBefore, QLabel* priceAfter,
@@ -129,10 +125,11 @@ void cashRegisterSystem::Delete_On_Click(QPushButton* del, float totalPrice, QSt
 
     float discount = check_discount(priceAfter, priceBefore, checkButton, phoneNumberField);
     TotalBalanceForOperation -= totalPrice;
-    TotalBalanceForOperationDiscounted = discount * TotalBalanceForOperation;
+    //TotalBalanceForOperationDiscounted = discount * TotalBalanceForOperation;
 
     priceBefore->setText(QString::number(TotalBalanceForOperation));
-    priceAfter->setText(QString::number(TotalBalanceForOperationDiscounted));
+    //priceAfter->setText(QString::number(TotalBalanceForOperationDiscounted));
+    priceAfter->setText(QString::number(TotalBalanceForOperation));
 
     while (layout->layout()->count() != 0) {
         QLayoutItem* item = layout->layout()->takeAt(0);
@@ -272,5 +269,18 @@ void cashRegisterSystem::printReceipt(QLabel* priceAfter, QLabel* priceBefore) {
         m_ui->receipt->setAlignment(Qt::AlignCenter);
         m_ui->receipt->print(&printer);
         m_ui->receipt->clear();
+    }
+}
+
+void cashRegisterSystem::goMakeAccount(const QString phoneNumber) {
+    QMessageBox msgBox;
+    msgBox.setText("No customer found with this phone number.");
+    msgBox.setIcon(QMessageBox::Warning);
+    msgBox.setStandardButtons(QMessageBox::Close | QMessageBox::Ok);
+    msgBox.setDefaultButton(QMessageBox::Close);
+    int ret = msgBox.exec();
+    if (ret == QMessageBox::Ok) {
+        m_ui->formsStackedWidget->setCurrentIndex(3);
+        m_ui->new_customer_phone->setText(phoneNumber);
     }
 }

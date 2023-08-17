@@ -1,6 +1,10 @@
 ﻿#include "cashRegisterSystem.h"
 
 void cashRegisterSystem::on_add_item_clicked() {
+    if (m_ui->item_name_item->text() == "" || m_ui->item_price_item->text() == "" || m_ui->item_quantity_item->text() == "") {
+        QMessageBox::warning(this,"warning","برجاء ادخال البيانات كاملة");
+        return;
+    }
 
 	Database db("mydatabase.db");
 	string Items_Names = m_ui->item_name_item->text().toUtf8().constData();
@@ -25,6 +29,11 @@ void cashRegisterSystem::on_add_item_clicked() {
 }
 
 void cashRegisterSystem::on_remove_item_clicked() {
+    if (m_ui->item_name_item->text() == "" || m_ui->item_price_item->text() == "" || m_ui->item_quantity_item->text() == "") {
+        QMessageBox::warning(this, "warning", "برجاء ادخال البيانات كاملة");
+        return;
+    }
+
     Database db("mydatabase.db");
     QString Items_Names = m_ui->item_name_item->text();
     db.DeleteProdRow(Items_Names.toUtf8().constData());
@@ -47,6 +56,11 @@ void cashRegisterSystem::on_remove_item_clicked() {
 }
 
 void cashRegisterSystem::on_add_category_clicked() {
+    if (m_ui->category_name->text() == "") {
+        QMessageBox::warning(this, "warning", "برجاء ادخال البيانات كاملة");
+        return;
+    }
+
     const QString categoryName = m_ui->category_name->text();
 
     // Open the "categories.txt" file in append mode
@@ -82,6 +96,11 @@ void cashRegisterSystem::on_add_category_clicked() {
 }
 
 void cashRegisterSystem::on_remove_category_clicked() {
+    if (m_ui->category_name->text() == "") {
+        QMessageBox::warning(this, "warning", "برجاء ادخال البيانات كاملة");
+        return;
+    }
+
     const QString categoryName = m_ui->category_name->text();
 
     // Open the file for reading and writing
@@ -147,6 +166,11 @@ void cashRegisterSystem::on_remove_category_clicked() {
 }
 
 void cashRegisterSystem::on_add_quantity_clicked() {
+    if (m_ui->item_quantity_quantity->text() == "") {
+        QMessageBox::warning(this, "warning", "برجاء ادخال البيانات كاملة");
+        return;
+    }
+
     Database db("mydatabase.db");
     string item_name = m_ui->item_name_quantity->currentText().toUtf8().constData();
     int item_Quantity = m_ui->item_quantity_quantity->text().toInt();
@@ -164,7 +188,33 @@ void cashRegisterSystem::on_add_quantity_clicked() {
     m_UserProductIsUpdated = true;
 }
 
+void cashRegisterSystem::on_remove_quantity_clicked() {
+    if (m_ui->item_quantity_quantity->text() == "") {
+        QMessageBox::warning(this, "warning", "برجاء ادخال البيانات كاملة");
+        return;
+    }
+
+    Database db("mydatabase.db");
+    string item_name = m_ui->item_name_quantity->currentText().toUtf8().constData();
+    int item_Quantity = m_ui->item_quantity_quantity->text().toInt();
+    db.updateProductQuantity(item_name, item_Quantity, '-');
+    QMessageBox msg;
+    msg.setText("\u0639\u0645\u0644\u064A\u0629 \u0646\u0627\u062C\u062D\u0629");
+    msg.exec();
+
+    m_ui->item_quantity_quantity->clear();
+    m_ui->item_name_quantity->setCurrentIndex(0);
+
+    m_AdminProductIsUpdated = true;
+    m_UserProductIsUpdated = true;
+}
+
 void cashRegisterSystem::on_edit_price_clicked() {
+    if (m_ui->item_price_price->text() == "") {
+        QMessageBox::warning(this, "warning", "برجاء ادخال البيانات كاملة");
+        return;
+    }
+
     Database db("mydatabase.db");
     string item_name = m_ui->item_name_price->currentText().toUtf8().constData();
     string item_price = m_ui->item_price_price->text().toUtf8().constData();
@@ -177,22 +227,6 @@ void cashRegisterSystem::on_edit_price_clicked() {
     m_ui->item_price_price->clear();
 
     db.~Database();
-
-    m_AdminProductIsUpdated = true;
-    m_UserProductIsUpdated = true;
-}
-
-void cashRegisterSystem::on_remove_quantity_clicked() {
-    Database db("mydatabase.db");
-    string item_name = m_ui->item_name_quantity->currentText().toUtf8().constData();
-    int item_Quantity = m_ui->item_quantity_quantity->text().toInt();
-    db.updateProductQuantity(item_name, item_Quantity, '-');
-    QMessageBox msg;
-    msg.setText("\u0639\u0645\u0644\u064A\u0629 \u0646\u0627\u062C\u062D\u0629");
-    msg.exec();
-
-    m_ui->item_quantity_quantity->clear();
-    m_ui->item_name_quantity->setCurrentIndex(0);
 
     m_AdminProductIsUpdated = true;
     m_UserProductIsUpdated = true;
@@ -298,9 +332,13 @@ void cashRegisterSystem::Show_window(string type, QWidget* scrollContents,QVBoxL
     std::stringstream ss;
     ss << "select * from Operations where type = '"<<type<<"'";
 
-    date = m_ui->date_search->date();
-    string date_str = date.toString("yyyy-MM-dd").toStdString();
-    ss.str(ss.str() + " AND date = '" + date_str + "'");
+    m_date_from = m_ui->date_search_from->date();
+    m_date_to = m_ui->date_search_to->date();
+
+    string date_from_str = m_date_from.toString("yyyy-MM-dd").toStdString();
+    string date_to_str = m_date_to.toString("yyyy-MM-dd").toStdString();
+
+    ss.str(ss.str() + " AND date >= '" + date_from_str + "' AND date <= '" + date_to_str + "'");
 
     Optype = m_ui->opType->currentIndex();
     if (Optype != 0) {

@@ -19,16 +19,7 @@ void cashRegisterSystem::confirmPayOperation_admin(char operationType) {
     }
     else {
         // No match found in the database
-        QMessageBox msgBox;
-        msgBox.setText("No customer found with this phone number.");
-        msgBox.setIcon(QMessageBox::Warning);
-        msgBox.setStandardButtons(QMessageBox::Close | QMessageBox::Ok);
-        msgBox.setDefaultButton(QMessageBox::Close);
-        int ret = msgBox.exec();
-        if (ret == QMessageBox::Ok) {
-            m_ui->formsStackedWidget->setCurrentIndex(3);
-            m_ui->new_customer_phone->setText(phoneNumber);
-        }
+        goMakeAccount(phoneNumber);
     }
 }
 
@@ -39,6 +30,5 @@ void cashRegisterSystem::on_admin_retrieve_clicked()
 
 void cashRegisterSystem::on_admin_sell_clicked()
 {
-
     confirmPayOperation_admin('+');
 }
