@@ -33,7 +33,10 @@ cashRegisterSystem::cashRegisterSystem(QWidget* parent)
     // set the date for the QDateEdit widget
     m_ui->date_search_from->setDate(QDate::currentDate());
     m_ui->date_search_to->setDate(QDate::currentDate());
+    m_ui->dateEdit_user->setDate(QDate::currentDate());
 
+    m_ui->dateEdit_user->setDisabled(true);
+    m_ui->dateEdit_user->setHidden(true);
     m_ui->nav_frame->setHidden(true);
 
     // Validators

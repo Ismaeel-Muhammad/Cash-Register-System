@@ -24,6 +24,7 @@ void cashRegisterSystem::on_login_btn_clicked()
     }
     m_ui->nav_frame->setHidden(false);
     m_ui->go_to_admin_form->setHidden(goAdmin);
+    m_ui->go_to_sales_preview_user->setHidden(isAdmin);
 
     m_ui->username_field->setText("");
     m_ui->password_field->setText("");

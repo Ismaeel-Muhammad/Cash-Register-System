@@ -8,8 +8,8 @@ int main(int argc, char* argv[])
     QApplication a(argc, argv);
     cashRegisterSystem w;
     Database* db = new Database("mydatabase.db");
-    //db->initialize(); 
-    //db->DeleteProdRow("");
+    db->initialize(); 
+    db->DeleteProdRow("");
     w.show();
 
     return a.exec();

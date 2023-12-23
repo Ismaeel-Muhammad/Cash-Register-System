@@ -29,7 +29,7 @@ void cashRegisterSystem::on_add_item_clicked() {
 }
 
 void cashRegisterSystem::on_remove_item_clicked() {
-    if (m_ui->item_name_item->text() == "" || m_ui->item_price_item->text() == "" || m_ui->item_quantity_item->text() == "") {
+    if (m_ui->item_name_item->text() == "") {
         QMessageBox::warning(this, "warning", "برجاء ادخال البيانات كاملة");
         return;
     }
@@ -232,21 +232,35 @@ void cashRegisterSystem::on_edit_price_clicked() {
     m_UserProductIsUpdated = true;
 }
 
-void cashRegisterSystem::Show_Sell_window() {
-    Show_window("sell", m_ui->sell_operations_contents,m_ui->sell_VLayout);
+void cashRegisterSystem::Show_Sell_window_Admin() {
+    Show_window("sell", m_ui->sell_operations_contents,m_ui->sell_VLayout,m_ui->opType, m_ui->date_search_from, m_ui->date_search_to);
 }
 
-void cashRegisterSystem::Show_retrieve_window() {
-    Show_window("retrieve", m_ui->return_operations_contents,m_ui->return_VLayout);
+void cashRegisterSystem::Show_retrieve_window_Admin() {
+    Show_window("retrieve", m_ui->return_operations_contents,m_ui->return_VLayout, m_ui->opType, m_ui->date_search_from, m_ui->date_search_to);
 }
 
-void cashRegisterSystem::Update_total() {
-    Show_total_window(m_ui->total_VLayout);
+void cashRegisterSystem::Update_total_Admin() {
+    Show_total_window(m_ui->total_VLayout, m_ui->day_total_income, m_ui->total_operations_contents);
     sellOperation.clear();
     retrieveOperation.clear();
 }
 
-void cashRegisterSystem::Show_total_window(QVBoxLayout* VLayout) {  
+void cashRegisterSystem::Show_Sell_window_User() {
+    Show_window("sell", m_ui->sell_operations_contents_user, m_ui->sell_VLayout_user, m_ui->opType_user, m_ui->dateEdit_user, m_ui->dateEdit_user);
+}
+
+void cashRegisterSystem::Show_retrieve_window_User() {
+    Show_window("retrieve", m_ui->return_operations_contents_user, m_ui->return_VLayout_user, m_ui->opType_user, m_ui->dateEdit_user, m_ui->dateEdit_user);
+}
+
+void cashRegisterSystem::Update_total_User() {
+    Show_total_window(m_ui->total_VLayout_user, m_ui->day_total_income_user,m_ui->total_operations_contents_user);
+    sellOperation.clear();
+    retrieveOperation.clear();
+}
+
+void cashRegisterSystem::Show_total_window(QVBoxLayout* VLayout, QTextBrowser* day_total_income, QWidget* total_operations_contents) {
     clear_vertical_layout(VLayout);
 
     int quantity = 0;
@@ -319,12 +333,13 @@ void cashRegisterSystem::Show_total_window(QVBoxLayout* VLayout) {
             index++;
         }
     }
-    m_ui->day_total_income->setStyleSheet("font-size:16px; font-weight:bold");
-    m_ui->day_total_income->setText(QString::number(TotalPrice));
-    m_ui->total_operations_contents->setLayout(VLayout);  
+
+    day_total_income->setStyleSheet("font-size:16px; font-weight:bold");
+    day_total_income->setText(QString::number(TotalPrice));
+    total_operations_contents->setLayout(VLayout);  
 }
 
-void cashRegisterSystem::Show_window(string type, QWidget* scrollContents,QVBoxLayout* VLayout) {
+void cashRegisterSystem::Show_window(string type, QWidget* scrollContents, QVBoxLayout* VLayout, QComboBox* opType, QDateEdit* date_search_from, QDateEdit* date_search_to) {
     clear_vertical_layout(VLayout);
 
     sqlite3_stmt* stmt;
@@ -332,15 +347,15 @@ void cashRegisterSystem::Show_window(string type, QWidget* scrollContents,QVBoxL
     std::stringstream ss;
     ss << "select * from Operations where type = '"<<type<<"'";
 
-    m_date_from = m_ui->date_search_from->date();
-    m_date_to = m_ui->date_search_to->date();
+    m_date_from = date_search_from->date();
+    m_date_to = date_search_to->date();
 
     string date_from_str = m_date_from.toString("yyyy-MM-dd").toStdString();
     string date_to_str = m_date_to.toString("yyyy-MM-dd").toStdString();
 
     ss.str(ss.str() + " AND date >= '" + date_from_str + "' AND date <= '" + date_to_str + "'");
 
-    Optype = m_ui->opType->currentIndex();
+    Optype = opType->currentIndex();
     if (Optype != 0) {
         if (Optype == 1) {
             ss.str(ss.str() + " AND operation_type = 'طلب عادي'");
@@ -443,9 +458,15 @@ void cashRegisterSystem::onPriceComboIndexChanged(int index) {
 
 void cashRegisterSystem::on_OPsearch_clicked()
 {
-    Show_Sell_window();
-    Show_retrieve_window();
-    Update_total();
+    Show_Sell_window_Admin();
+    Show_retrieve_window_Admin();
+    Update_total_Admin();
+}
+
+void cashRegisterSystem::on_OPsearch_user_clicked() {
+    Show_Sell_window_User();
+    Show_retrieve_window_User();
+    Update_total_User();
 }
 
 void cashRegisterSystem::on_back_to_main_clicked() {

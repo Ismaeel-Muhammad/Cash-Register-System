@@ -38,3 +38,8 @@ void cashRegisterSystem::on_go_to_admin_form_clicked() {
     m_ui->formsStackedWidget->setCurrentIndex(2);
     m_ui->opType->setCurrentIndex(0);
 }
+
+void cashRegisterSystem::on_go_to_sales_preview_user_clicked() {
+    m_ui->formsStackedWidget->setCurrentIndex(8);
+    m_ui->opType_user->setCurrentIndex(0);
+}

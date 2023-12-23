@@ -80,14 +80,19 @@ private:
     void generateProductsTable();
     void GenrateTypesForCombo();
 
-
     void Add_Item_names();
-    void Show_Sell_window();
-    void Show_window(string, QWidget*, QVBoxLayout*);
-    void Show_retrieve_window();
-    void Show_total_window(QVBoxLayout*);
-    void Update_total();
+
+    void Show_Sell_window_Admin();
+    void Show_retrieve_window_Admin();
+    void Update_total_Admin();
+    void Show_total_window(QVBoxLayout*, QTextBrowser* , QWidget* );
     void clear_vertical_layout(QVBoxLayout*);
+
+    void Update_total_User();
+    void Show_retrieve_window_User();
+    void Show_Sell_window_User();
+
+    void Show_window(string, QWidget*, QVBoxLayout*, QComboBox*, QDateEdit*, QDateEdit*);
 
     void showCategoriesList(QListWidget*, QScrollArea*);
     void showAllProducts(QVBoxLayout*, QVBoxLayout*, QLabel*, QLabel*, QScrollArea*, QPushButton*, QLineEdit*);
@@ -161,11 +166,13 @@ private slots:
     void on_BackFromProductsBTN_clicked();
 
     void on_go_to_admin_form_clicked();
+    void on_go_to_sales_preview_user_clicked();
 
     void on_edit_price_clicked();
 
     void onPriceComboIndexChanged(int);
     void on_OPsearch_clicked();
+    void on_OPsearch_user_clicked();
 };
 
 #endif // CASH_REG_SYSTEM_H

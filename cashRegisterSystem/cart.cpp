@@ -50,7 +50,14 @@ float cashRegisterSystem::check_discount(QLabel* priceAfter, QLabel* priceBefore
         float adminDiscount = 1 - (m_ui->discount_spinbox->value() / 100);
 
         if (customerClass == "\u0637\u0627\u0644\u0628" || customerClass == "\u0639\u0645\u064A\u0644 \u0645\u0647\u0645") {
-            minDiscount = min(adminDiscount, PHONE_DISCOUNT);
+
+            // giving the priority to the admin discount
+            if (adminDiscount == 1) minDiscount = PHONE_DISCOUNT;
+            else minDiscount = adminDiscount;
+
+            // giving the priority to the rank
+            //minDiscount = min(adminDiscount, PHONE_DISCOUNT);
+
             // if pressed on (check discount) button to update price after
             if (price == SLOT_PRICE) {
                 price = priceBefore->text().toFloat();
@@ -265,11 +272,16 @@ void cashRegisterSystem::printReceipt(QLabel* priceAfter, QLabel* priceBefore) {
             QList<QVariant> value = it.value();
             body += "<p> x" + value.at(0).toString() + "  " + key + "      " + value.at(1).toString() + "EGP</p>";
         }
-
-        QString tail = "_______________________________________"
+        QString price_with_discount_on =
             "<p>Before Discount: " + priceBefore->text() + "EGP </p>"
             "<p>Discount: " + QString::number(Discount) + " % </p>"
-            "<p>After Discount:" + priceAfter->text() + "EGP </p>"
+            "<p>After Discount:" + priceAfter->text() + "EGP </p>";
+        QString price_with_discount_off =
+            "<p>Total Price: " + priceBefore->text() + "EGP </p>";
+
+        QString price = (priceAfter->text() == priceBefore->text()) ? price_with_discount_off : price_with_discount_on;
+        QString tail = "_______________________________________"
+            + price +
             "<p> " + currentDateTime.date().toString() + " " + currentDateTime.time().toString() + " </p>"
             "<h3>Thanks for ordering!</h3>"
             "</body>";
