@@ -32,6 +32,9 @@ public:
     void rollbackTransaction();
     void commitTransaction();
 
+    void DeleteAllProdRow();
+    void ExecuteStatement(const char* sql);
+
 private:
     sqlite3* m_db;
 

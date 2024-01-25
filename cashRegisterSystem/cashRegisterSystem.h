@@ -24,6 +24,7 @@
 #include <QPrinter>
 #include <QPrintDialog>
 #include <QPainter>
+#include <QDir>
 
 #define SLOT_PRICE -1
 #define PHONE_DISCOUNT 0.9f
@@ -111,6 +112,8 @@ private:
     void confirmPayOperation_admin(char);
 
     void goMakeAccount(const QString);
+
+    void backupDatabase();
 private slots:
 
     void on_edit_admin_clicked();
@@ -173,6 +176,8 @@ private slots:
     void onPriceComboIndexChanged(int);
     void on_OPsearch_clicked();
     void on_OPsearch_user_clicked();
+
+    void on_delete_all_products_clicked();
 };
 
 #endif // CASH_REG_SYSTEM_H

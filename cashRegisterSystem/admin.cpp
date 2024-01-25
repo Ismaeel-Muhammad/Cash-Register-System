@@ -498,5 +498,51 @@ void cashRegisterSystem::fillCategories() {
 
 void cashRegisterSystem::on_edit_admin_clicked() {
     m_ui->formsStackedWidget->setCurrentIndex(7);
+}
 
+void cashRegisterSystem::on_delete_all_products_clicked() {
+    QMessageBox msgBox;
+    msgBox.setText("متأكد من انك تريد حذف جميع المنتجات؟");
+    QPushButton* sureButton = msgBox.addButton("نعم متأكد", QMessageBox::AcceptRole);
+    QPushButton* cancelButton = msgBox.addButton("إلغاء", QMessageBox::RejectRole);
+    int result = msgBox.exec();
+    if (result == QMessageBox::AcceptRole) {
+        backupDatabase();
+        Database db("mydatabase.db");
+        db.DeleteAllProdRow();
+        db.~Database();
+
+        QMessageBox::information(this, "عملية ناجحة", "تم حذف جميع المنتجات");
+
+        m_AdminProductIsUpdated = true;
+        m_UserProductIsUpdated = true;
+    }
+    else if (result == QMessageBox::RejectRole) {
+        msgBox.close();
+    }
+}
+
+void cashRegisterSystem::backupDatabase() {
+    // Source database file
+    QString sourceDatabasePath = "mydatabase.db";
+
+    // Destination backup folder
+    QString backupFolderPath = "backup/";
+
+    // Ensure the backup folder exists
+    QDir().mkpath(backupFolderPath);
+
+    // Create a unique backup file name (e.g., based on current date/time)
+    QString backupFileName = QString("backup_%1.db").arg(QDateTime::currentDateTime().toString("yyyyMMdd_HHmmss"));
+
+    // Full path of the backup file
+    QString backupFilePath = QDir(backupFolderPath).filePath(backupFileName);
+
+    // Copy the database file to the backup folder
+    if (QFile::copy(sourceDatabasePath, backupFilePath)) {
+        qDebug() << "Database backup successful. Backup file: " << backupFilePath;
+    }
+    else {
+        qDebug() << "Database backup failed.";
+    }
 }

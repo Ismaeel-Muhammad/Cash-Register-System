@@ -434,3 +434,25 @@ void Database::rollbackTransaction() {
         return;
     }
 }
+
+void Database::ExecuteStatement(const char* sql) {
+    sqlite3_stmt* stmt;
+    int rc = sqlite3_prepare_v2(m_db, sql, -1, &stmt, NULL);
+    if (rc != SQLITE_OK) {
+        // handle error
+        return;
+    }
+
+    rc = sqlite3_step(stmt);
+    if (rc != SQLITE_DONE) {
+        // handle error
+        return;
+    }
+
+    sqlite3_finalize(stmt);
+}
+
+void Database::DeleteAllProdRow() {
+    ExecuteStatement("DELETE FROM products");
+    ExecuteStatement("VACUUM");
+}
